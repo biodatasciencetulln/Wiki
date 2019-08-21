@@ -73,6 +73,11 @@
   - Usually, it's easier to install software from the repository, but in this case it might not work as well (e.g., for me, the shared clipboard wouldn't work)
 
 ---
+### Some useful VirtualBox options
+- **Shared clipboard** (very useful): VM -> Settings -> General -> Advanced -> Shared Clipboard: Bidirectional
+- Drag'n'Drop: VM -> Settings -> General -> Advanced -> Drag'n'Drop: Bidirectional
+
+---
 ### Share a folder between the host and the guest
 - A **shared folder** is a useful way of exchanging files between the guest and the host systems. If you save all important files in the shared folder, you can delete the VM any time without loosing your data.
 - In the guest, you need to add your user to a group that can access shared folders. In the terminal:
@@ -83,11 +88,6 @@
 - In the guest, the shared folder should now be accessible under /media/sf_shared-folder-name/ and visible in the file manager
   - try to create a text file in this folder and access it from your host, or the other way round
 - Consult e.g. https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/ for troubleshooting
-
----
-### Some more useful VirtualBox options
-- **Shared clipboard** (very useful): VM -> Settings -> General -> Advanced -> Shared Clipboard: Bidirectional
-- Drag'n'Drop: VM -> Settings -> General -> Advanced -> Drag'n'Drop: Bidirectional
 
 ---
 ### Troubleshooting
