@@ -56,19 +56,21 @@
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do)
   - `&&` is an operator that connects two commands and executes the second one only if the first one successfully completed; you could also execute the `apt update` and `apt upgrade` commands subsequently
   - This might take a while and should update all installed software ("packages") to their latest versions
-- You might need some additional packages like "build-essential" (unless already installed). Enter in the terminal:
-`sudo apt install build-essential`
 - The guest additions is additional software that improves the integration of the guest with the host
-  - In the VM window menu bar, click on "Devices" -> Insert Guest Additions CD image...
-  - Usually, the guest additions CD is accessible under /media/your-username/VBox_GAs_x.y.z/ (x, y, z are version numbers)
+- The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
+  - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
+  - In the VM window menu bar: Devices -> Insert Guest Additions CD image...
+  - In the guest, the disc should be now accessible under /media/your-username/VBox_GAs_x.y.z/ (x, y, z are version numbers)
   - You can try to use the file manager to navigate to this folder, double-click VBoxLinuxAdditions.run and execute it
-  - If this doesn't work, use the terminal:
+  - Alternatively, use the terminal:
     - Use the `ls` (*list*) command to look at directory contents:
     `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) -> should list files/folders in the directory "/media/your-username".
     - Enter the directory using the `cd` (*change directory*) command:
     `cd /media/your-username/VBox_GAs_6.0.10/`
     - Install the guest additions package:
     `sudo ./VBoxLinuxAdditions.run`
+- On the internet, you might read that guest additions can (or should) be installed from the repository (which is essentially an app store/software collection specific to each Linux distribution and version), using the command `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
+  - Usually, it's easier to install software from the repository, but in this case it might not work as well (e.g., for me, the shared clipboard wouldn't work)
 
 ---
 ### Share a folder between the host and the guest
@@ -102,12 +104,11 @@
   - Still sound issues: well, that's annoying (there might be a solution, but it can be difficult to find, or you might need to wait for updates. This also explains why Linux hasn't become more popular than Windows or MacOS :) 
 - Some media can't be played: install the package "lubuntu-restricted-extras" with additional media codecs and fonts (https://help.ubuntu.com/community/RestrictedFormats):
   `sudo apt install lubuntu-restricted-extras`
-- Wrong system time: https://www.digitalocean.com/community/tutorials/how-to-set-up-time-synchronization-on-ubuntu-18-04
 - Other problems:
   - Start with reading the distribution release notes (e.g. https://lubuntu.me/disco-released/), check for known bugs and workarounds; e.g. one Lubuntu bug concerns missing proprietary drivers (shouldn't be an issue for an installation within VirtualBox, but can be a problem if Lubuntu is installed directly on a computer)
   - Try to determine in which situation the problem occurs, e.g. does rebooting the VM help?
   - Google is your friend
-- System is slow: this is really rare with Lubuntu, and is probably a host problem rather than a guest problem. One thing you can try is installing an alternative (very lightweight) window manager like IceWM (https://wiki.ubuntuusers.de/IceWM/)
+- System is slow: this shouldn't happen with Lubuntu, and is probably a host issue rather than a guest issue. One thing you can try is installing an alternative (very lightweight) window manager like IceWM (https://wiki.ubuntuusers.de/IceWM/)
 - Advanced VirtualBox-related topics: https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/
 - Note: You WILL encounter bugs; Linux was designed for system stability, transparency and production/development rather than a polished user experience
 
