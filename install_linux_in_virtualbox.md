@@ -6,7 +6,7 @@
 
 ---
 ### Download the Linux iso file (disc image)
-- Recommended Linux distribution: latest Lubuntu, downloaded from **lubuntu.me** (not lubuntu.net)
+- Recommended Linux distribution: latest Lubuntu (https://en.wikipedia.org/wiki/Lubuntu), downloaded from **lubuntu.me** (not lubuntu.net); at the moment of writing, the filename of the downloaded file is "lubuntu-19.04-desktop-amd64.iso"
 - Lubuntu is a lightweight version of Ubuntu, which has a different selection of pre-installed software, requires less resources and is in general more responsive. Any required software can also be installed later.
 
 ---
@@ -101,7 +101,7 @@
 - Sound issues: 
   - Host: VM -> Settings -> Audio -> **Audio Controller**, you can try to switch between AC97 and Intel HD Audio
   - Guest: Applications -> Sound & Video -> PulseAudio Volume Control, you can try to change some settings
-  - Still sound issues: well, that's annoying (there might be a solution, but it can be difficult to find, or you might need to wait for updates. This also explains why Linux hasn't become more popular than Windows or MacOS :) 
+  - Still sound issues: well, that's annoying. (There might be a solution, but it can be difficult to find, or you might need to wait for updates. This also explains why Linux hasn't become more popular than Windows or MacOS :) 
 - Some media can't be played: install the package "lubuntu-restricted-extras" with additional media codecs and fonts (https://help.ubuntu.com/community/RestrictedFormats):
   `sudo apt install lubuntu-restricted-extras`
 - Other problems:
