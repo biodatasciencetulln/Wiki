@@ -62,8 +62,8 @@
   - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices -> Insert Guest Additions CD image...
   - In the guest, the disc should be now accessible under /media/your-username/VBox_GAs_x.y.z/ (x, y, z are version numbers)
-  - You can try to use the file manager to navigate to this folder, double-click VBoxLinuxAdditions.run and execute it
-  - Alternatively, use the terminal:
+  - You probably can't install it from file manager, because the exeuction of VBoxLinuxAdditions.run requires root permissions
+  - So, you have to use the terminal:
     - Use the `ls` (*list*) command to look at directory contents:
     `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) -> should list files/folders in the directory "/media/your-username".
     - Enter the directory using the `cd` (*change directory*) command:
