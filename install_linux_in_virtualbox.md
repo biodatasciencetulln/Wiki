@@ -2,6 +2,7 @@
 
 ### Install VirtualBox on your computer
 - Download and install Oracle VirtualBox (https://www.virtualbox.org/)
+  - If installation on MacOS fails, consult e.g. http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/
 - Start VirtualBox and install the Extension Pack
 
 ---
