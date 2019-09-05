@@ -60,14 +60,14 @@
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do)
   - `&&` is an operator that connects two commands and executes the second one only if the first one successfully completed; you could also execute the `apt update` and `apt upgrade` commands subsequently
   - This might take a while and should update all installed software ("packages") to their latest versions
-- The guest additions is additional software that improves the integration of the guest with the host, e.g. it fixes the auto-resizing of the OS in the VirtualBox window. 
+- The guest additions is additional software that improves the integration of the guest with the host, e.g. it fixes the auto-resizing of the OS in the VirtualBox window
 - The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices -> Insert Guest Additions CD image...
   - In the guest, the disc should be now accessible under /media/your-username/VBox_GAs_x.y.z/ (x, y, z are version numbers)
   - You probably can't perform the installation from the file manager (even though you can view the files there), because the execution of VBoxLinuxAdditions.run requires root permissions; so you have to use the terminal:
     - Use the `ls` (*list*) command to look at directory contents:
-    `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) -> should list files/folders in the directory "/media/your-username".
+    `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) -> should list files/folders in the directory "/media/your-username"
     - Enter the directory using the `cd` (*change directory*) command:
     `cd /media/your-username/VBox_GAs_6.0.10/`
     - Install the guest additions package:
@@ -82,14 +82,14 @@
 
 ---
 ### Share a folder between the host and the guest
-- A **shared folder** is a useful way of exchanging files between the guest and the host systems. If you save all important files in the shared folder, you can delete the VM any time without loosing your data.
+- A **shared folder** is a useful way of exchanging files between the guest and the host systems. If you save all important files in the shared folder, you can delete the VM any time without loosing your data
 - In the guest, you need to add your user to a group that can access shared folders. In the terminal:
 `sudo adduser your-username vboxsf`
   - After this, you need to log out from the guest and then log in again
 - In VirtualBox, select your VM -> Settings -> Shared Folders -> Add shared folder: select the folder you want to share
   - check the checkboxes Auto-mount and Make Permanent
 - In the guest, the shared folder should now be accessible under /media/sf_shared-folder-name/ and visible in the file manager
-  - try to create a text file in this folder and access it from your host, or the other way round
+  - try to create a text file in this folder and access it from your host, or the other way around
 - Consult e.g. https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/ for troubleshooting
 
 ---
