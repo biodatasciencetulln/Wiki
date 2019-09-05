@@ -2,7 +2,7 @@
 
 ### Install VirtualBox on your computer
 - Download and install Oracle VirtualBox (https://www.virtualbox.org/)
-  - If installation on MacOS fails, this might be related to some security features (Gatekeeper); googling for the corresponding problem ("virtualbox macos installation failed") will bring up corresponding instructions, e.g. http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/ or https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5
+  - If installation on MacOS fails, this might be related to a security feature (Gatekeeper); googling for the corresponding problem ("virtualbox macos installation failed") will bring up instructions on how to fix it, e.g. http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/ or https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5
 - Start VirtualBox and install the Extension Pack
 
 ---
@@ -16,7 +16,7 @@
 - Enter Name: e.g. Lubuntu
 - Make sure that Type is Linux
 - Make sure that Version is **"Ubuntu (64 bit)"**
-  - Note: if Ubuntu (64 bit) is not available, you will need to activate a **BIOS setting** for virtualization. Reboot your computer into BIOS and enable hardware virtualization. This will appear as "Virtualization Technology" and/or "VT-x or AMD-V" or similar (different manufacturers word it differently). You can consult e.g. https://forums.virtualbox.org/viewtopic.php?f=1&t=62339, https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os and https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/ for instructions and troubleshooting.
+  - Note: if Ubuntu (64 bit) is not available, you will need to activate a **BIOS setting** for virtualization. Reboot your computer into BIOS/UEFI and enable hardware virtualization. This will appear as "Virtualization Technology" and/or "VT-x or AMD-V" or similar (different manufacturers word it differently). You can consult e.g. https://forums.virtualbox.org/viewtopic.php?f=1&t=62339, https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os and https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/ for instructions and troubleshooting.
 - Most other settings: the defaults are ok
 - Memory: 1-2 GB should be ok, 4 GB is even better (can be changed later)
 - Virtual hard disk size: 30-50 GB are recommended (less might be not enough; can't be changed later)
@@ -25,11 +25,13 @@
 
 ---
 ### Install the Lubuntu guest
+- General note: During all steps of the tutorial, you might encounter problems of some sort. As VirtualBox is a very popular program, those problems have usually been discussed online and there is some solution available. It can help to google for your particular problem by describing it based on the most important keywords. E.g., if there is an error message like "Hardware acceleration is not available on your system" when trying to install or launch a VM, you can search for "virtualbox error" and the error message text. You will find information that this error probably occured due to virtualization not activated in your computer's BIOS/UEFI, and how to fix it.
 - The operating system (OS) that runs on your computer is called **host**, the OS in the VM is called **guest**
 - In VirtualBox: Select the VM -> "Start"
 - It should ask you for a disc (the hard drive is empty, so it is looking for a bootable disc) -> select the iso file
 - Boot the OS (this is called "live OS" because it's booted directly from the disc/iso file, without being installed on the hard drive)
 - There should be an option to install the OS; start the installer and follow the installation instructions
+  - Pay attention that the settings are correct, e.g. the keyboard layout should correspond to your keyboard (can also be changed later)
   - If there are checkboxes like "Download updates while installing" and "Install this third-party software", check them
   - The option "Erase disk and install Lubuntu" is fine, because you are using a virtual hard drive which should not have any partitions anyway
 - The guest OS is now being installed within the VM
@@ -39,15 +41,15 @@
 ---
 ### Linux basics (general information)
 - This is how you open a terminal: Application menu -> System Tools -> Qterminal
-- This is how you start programs/run commands: type the name of the program/command and hit Enter
-- **Abort program/command running in the terminal**: press Strg-C (this key combination sends the "SIGINT" (interrupt) signal to a running process)
+- This is how you start programs/run commands: type the name of the program/command in the terminal and hit Enter
+- **Abort program/command running in the terminal**: press **Strg-C** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
 - **Abort non-responsive graphical application**: enter `xkill` in the terminal and click on the non-responsive application
   - only use this if absolutely necessary
 - Get previously entered command using up/down keys
   - e.g. enter `ls` + Enter -> "list" the directory contents
-  - press the up key -> it brings up the previously entered `ls` command
-- **Search** for previously entered commands using Strg-R
-- Important: When you interact with the terminal, **read the output messages**. You might be used from Windows that, whenever a message dialogue appears, you click "Cancel" or "Continue" to make it go away; this is very different in Linux. The messages are usually informative and let you know what's happening and if there are any problems. E.g., if you run a command, and the terminal says "Building modules...", then it's building modules, and you have to wait. If it says "Successfully installed", then the package was successfully installed. If the message says "Failed to fetch http://some/web/url", then it failed to fetch some information, possible because the url isn't valid or there is no internet connection. If the command didn't complete successfully, you can oftentimes google for the respective error message, which can help to find a solution.
+  - press the "arrow up" key -> it brings up the previously entered `ls` command
+- **Search** for previously entered commands using **Strg-R**
+- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away; this is different in Linux. The messages are usually informative and let you know what's happening and if there are any problems. E.g., if you run a command, and the terminal says "Building modules...", then it's building modules, and you have to wait. If it says "Successfully installed", then the package was successfully installed. If the message says "Failed to fetch http://some/web/url", then it failed to fetch some information, possible because the url isn't valid or there is no internet connection. If the command didn't complete successfully, you can oftentimes google for the respective error message, which can help to find a solution.
 
 ---
 ### Update the guest and install the guest additions
@@ -58,13 +60,12 @@
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do)
   - `&&` is an operator that connects two commands and executes the second one only if the first one successfully completed; you could also execute the `apt update` and `apt upgrade` commands subsequently
   - This might take a while and should update all installed software ("packages") to their latest versions
-- The guest additions is additional software that improves the integration of the guest with the host
+- The guest additions is additional software that improves the integration of the guest with the host, e.g. it fixes the auto-resizing of the OS in the VirtualBox window. 
 - The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices -> Insert Guest Additions CD image...
   - In the guest, the disc should be now accessible under /media/your-username/VBox_GAs_x.y.z/ (x, y, z are version numbers)
-  - You probably can't install it from file manager, because the exeuction of VBoxLinuxAdditions.run requires root permissions
-  - So, you have to use the terminal:
+  - You probably can't perform the installation from the file manager (even though you can view the files there), because the execution of VBoxLinuxAdditions.run requires root permissions; so you have to use the terminal:
     - Use the `ls` (*list*) command to look at directory contents:
     `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) -> should list files/folders in the directory "/media/your-username".
     - Enter the directory using the `cd` (*change directory*) command:
@@ -107,9 +108,9 @@
 - Some media can't be played: install the package "lubuntu-restricted-extras" with additional media codecs and fonts (https://help.ubuntu.com/community/RestrictedFormats):
   `sudo apt install lubuntu-restricted-extras`
 - Other problems:
-  - Start with reading the distribution release notes (e.g. https://lubuntu.me/disco-released/), check for known bugs and workarounds; e.g. one Lubuntu bug concerns missing proprietary drivers (shouldn't be an issue for an installation within VirtualBox, but can be a problem if Lubuntu is installed directly on a computer)
+  - Use a search engine to search for the problem online. Try to describe the problem as consise as possible. E.g., if the menu bar of the VirtualBox window is absent, so you can't select Devices -> Insert guest additions CD image, you cann search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared)
+  - If the problem is Linux-related, also read the distribution release notes (e.g. https://lubuntu.me/disco-released/) and check for known bugs and workarounds. E.g. one Lubuntu bug concerns missing proprietary drivers, which shouldn't be an issue for an installation within VirtualBox, but can be a problem if Lubuntu is installed directly on a computer
   - Try to determine in which situation the problem occurs, e.g. does rebooting the VM help?
-  - Google is your friend
 - System is slow: this shouldn't happen with Lubuntu, and is probably a host issue rather than a guest issue. One thing you can try is installing an alternative (very lightweight) window manager like IceWM (https://wiki.ubuntuusers.de/IceWM/)
 - Advanced VirtualBox-related topics: https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/
 - Note: You WILL encounter bugs; Linux was designed for system stability, transparency and production/development rather than a polished user experience
