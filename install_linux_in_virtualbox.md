@@ -2,7 +2,7 @@
 
 ### Install VirtualBox on your computer
 - Download and install Oracle VirtualBox (https://www.virtualbox.org/)
-  - If installation on MacOS fails, consult e.g. http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/
+  - If installation on MacOS fails, this might be related to some security features (Gatekeeper); googling for the corresponding problem ("virtualbox macos installation failed") will bring up corresponding instructions, e.g. http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/ or https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5
 - Start VirtualBox and install the Extension Pack
 
 ---
@@ -37,9 +37,9 @@
   - you *might* need to remove the disc image from the optical drive (to make sure that the VM boots from the hard drive and not from the disc image): VirtualBox -> VM -> Settings -> Storage -> Select optical disc -> Look for option "Remove Disc from Virtual Drive"; seems to not be necessary with Lubuntu
 
 ---
-### Linux basics
-- Open a terminal: Application menu -> System Tools -> Qterminal
-- Start programs/run commands: type the name of the program/command and hit Enter
+### Linux basics (general information)
+- This is how you open a terminal: Application menu -> System Tools -> Qterminal
+- This is how you start programs/run commands: type the name of the program/command and hit Enter
 - **Abort program/command running in the terminal**: press Strg-C (this key combination sends the "SIGINT" (interrupt) signal to a running process)
 - **Abort non-responsive graphical application**: enter `xkill` in the terminal and click on the non-responsive application
   - only use this if absolutely necessary
@@ -47,6 +47,7 @@
   - e.g. enter `ls` + Enter -> "list" the directory contents
   - press the up key -> it brings up the previously entered `ls` command
 - **Search** for previously entered commands using Strg-R
+- Important: When you interact with the terminal, **read the output messages**. You might be used from Windows that, whenever a message dialogue appears, you click "Cancel" or "Continue" to make it go away; this is very different in Linux. The messages are usually informative and let you know what's happening and if there are any problems. E.g., if you run a command, and the terminal says "Building modules...", then it's building modules, and you have to wait. If it says "Successfully installed", then the package was successfully installed. If the message says "Failed to fetch http://some/web/url", then it failed to fetch some information, possible because the url isn't valid or there is no internet connection. If the command didn't complete successfully, you can oftentimes google for the respective error message, which can help to find a solution.
 
 ---
 ### Update the guest and install the guest additions
