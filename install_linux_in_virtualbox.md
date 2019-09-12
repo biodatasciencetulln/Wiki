@@ -16,7 +16,8 @@
 - Enter Name: e.g. Lubuntu
 - Make sure that Type is Linux
 - Make sure that Version is **"Ubuntu (64 bit)"**
-  - Note: if Ubuntu (64 bit) is not available, you will need to activate a **BIOS setting** for virtualization. Reboot your computer into BIOS/UEFI and enable hardware virtualization. This will appear as "Virtualization Technology" and/or "VT-x or AMD-V" or similar (different manufacturers word it differently). You can consult e.g. https://forums.virtualbox.org/viewtopic.php?f=1&t=62339, https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os and https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/ for instructions and troubleshooting.
+  - Note: if Ubuntu (64 bit) is not available, you will need to activate a **BIOS setting** for virtualization. Reboot your computer into BIOS/UEFI and enable hardware virtualization. This will appear as "Virtualization Technology" and/or "VT-x or AMD-V" or similar (different manufacturers word it differently). You can consult e.g. the following links for instructions and troubleshooting: https://forums.virtualbox.org/viewtopic.php?f=1&t=62339, https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os, https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html, https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/
+  - If you have multiple BIOS options related to virtualization, e.g. VTx and VTd, you probably should enable both
 - Most other settings: the defaults are ok
 - Memory: 1-2 GB should be ok, 4 GB is even better (can be changed later)
 - Virtual hard disk size: 30-50 GB are recommended (less might be not enough; can't be changed later)
@@ -31,7 +32,8 @@
 - It should ask you for a disc (the hard drive is empty, so it is looking for a bootable disc) -> select the iso file
 - Boot the OS (this is called "live OS" because it's booted directly from the disc/iso file, without being installed on the hard drive)
 - There should be an option to install the OS; start the installer and follow the installation instructions
-  - Pay attention that the settings are correct, e.g. the keyboard layout should correspond to your keyboard (can also be changed later)
+  - Please select English as your installation language; additional languages can be added later
+  - Pay attention that the settings are correct, e.g. the keyboard layout should correspond to your keyboard (e.g., if you have a German keyboard, you should select a German keyboard layout)
   - If there are checkboxes like "Download updates while installing" and "Install this third-party software", check them
   - The option "Erase disk and install Lubuntu" is fine, because you are using a virtual hard drive which should not have any partitions anyway
 - The guest OS is now being installed within the VM
@@ -135,4 +137,3 @@
 - Use manpages (`man ls`) or simplified manpages, https://tldr.ostera.io/
 - Learn how to use a non-GUI text editor, nano (https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or vim
 - There is a ton of good introductory linux/shell tutorials on YouTube
-
