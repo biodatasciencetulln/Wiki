@@ -117,7 +117,7 @@
 - Random freezes of the guest OS -> try to modify these host VM settings:
   - Display -> "Enable 3D acceleration" = off
   - System -> Processor -> Number of virtual CPUS: 1 processor -> 2, 3 or 4 processors (you have to try to see if it helps)
-  - System -> Processor -> "Enable PAE/NX": toggle this off if it’s on, or on if it’s off, and see af this helps
+  - System -> Processor -> "Enable PAE/NX": toggle this off if it’s on, or on if it’s off, and see if this helps
   - Display -> increase "Video memory" to at least 64 MB
   - System -> Acceleration -> Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different version of VirtualBox
