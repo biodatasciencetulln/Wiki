@@ -66,13 +66,13 @@
 - The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices -> Insert Guest Additions CD image...
-  - In the guest, the disc should be now accessible under /media/your-username/VBox_GAs_x.y.z/ (x, y, z are version numbers)
-  - You probably can't perform the installation from the file manager (even though you can view the files there), because the execution of VBoxLinuxAdditions.run requires root permissions; so you have to use the terminal:
+  - In the guest, the disc should be now accessible under _/media/your-username/VBox_GAs_x.y.z/_ (x, y, z are version numbers)
+  - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal:
     - Use the `ls` (*list*) command to look at directory contents:
-    `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) -> should list files/folders in the directory "/media/your-username"
+    `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) -> should list files/folders in the directory _/media/your-username_
     - Enter the directory using the `cd` (*change directory*) command:
     `cd /media/your-username/VBox_GAs_6.0.10/`
-    - Install the guest additions package:
+    - Install the guest additions package by running the installation script:
     `sudo ./VBoxLinuxAdditions.run`
 - On the internet, you might read that guest additions can (or should) be installed from the repository (which is essentially an app store/software collection specific to each Linux distribution and version), using the command `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Usually, it's easier to install software from the repository, but in this case it might not work as well (e.g., for me, the shared clipboard wouldn't work)
@@ -97,12 +97,12 @@
 ---
 ### Troubleshooting
 - Problems can be related to the guest (and need to be addressed within the guest), or to the host/VirtualBox, and addressed e.g. by changing VirtualBox settings (usually a shutdown of the guest is required)
-- Graphics issues:
+- Graphics issues (like displaying errors or freezes):
   - Host: VM -> Settings -> Display -> **Video Memory**: Increase to 128 MB (shut down the guest first)
   - Host: VM -> Settings -> Display: Try checking/unchecking "Enable 3D acceleration" (should probably be unchecked)
   - Host: VM -> Settings -> Display -> **Graphics Controller**: Try switching to VBoxSVGA or VBoxVGA
-- Memory:
-  - Host: VM -> Settings -> System -> Base memory: Increase to ~4 GB
+- Memory (system suddenly becomes very slow):
+  - Host: VM -> Settings -> System -> Base memory: Increase to ~3-4 GB
 - Sound issues: 
   - Host: VM -> Settings -> Audio -> **Audio Controller**, you can try to switch between AC97 and Intel HD Audio
   - Guest: Applications -> Sound & Video -> PulseAudio Volume Control, you can try to change some settings
@@ -110,12 +110,21 @@
 - Some media can't be played: install the package "lubuntu-restricted-extras" with additional media codecs and fonts (https://help.ubuntu.com/community/RestrictedFormats):
   `sudo apt install lubuntu-restricted-extras`
 - Other problems:
-  - Use a search engine to search for the problem online. Try to describe the problem as consise as possible. E.g., if the menu bar of the VirtualBox window is absent, so you can't select Devices -> Insert guest additions CD image, you cann search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared)
-  - If the problem is Linux-related, also read the distribution release notes (e.g. https://lubuntu.me/disco-released/) and check for known bugs and workarounds. E.g. one Lubuntu bug concerns missing proprietary drivers, which shouldn't be an issue for an installation within VirtualBox, but can be a problem if Lubuntu is installed directly on a computer
   - Try to determine in which situation the problem occurs, e.g. does rebooting the VM help?
-- System is slow: this shouldn't happen with Lubuntu, and is probably a host issue rather than a guest issue. One thing you can try is installing an alternative (very lightweight) window manager like IceWM (https://wiki.ubuntuusers.de/IceWM/)
+  - Use a search engine to search for the problem online. Try to describe the problem as consise as possible. E.g., if the menu bar of the VirtualBox window is absent, so you can't select Devices -> Insert guest additions CD image, you cann search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared)
+- To diagnose what can cause the problems, you can use the host Task Manager and the Ubuntu equivalent, gnome-system-monitor (you might need to install it first, `sudo apt install gnome-system-monitor`)
+  - especially, pay attention at high CPU usage and high memory usage
+- Random freezes of the guest OS -> try to modify these host VM settings:
+  - Display -> "Enable 3D acceleration" = off
+  - System -> Processor -> Number of virtual CPUS: 1 processor -> 2, 3 or 4 processors (you have to try to see if it helps)
+  - System -> Processor -> "Enable PAE/NX": toggle this off if it’s on, or on if it’s off, and see af this helps
+  - Display -> increase "Video memory" to at least 64 MB
+  - System -> Acceleration -> Paravirtualization Interface: try "Minimal" or "Legacy"
+  - Try a different version of VirtualBox
 - Advanced VirtualBox-related topics: https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/
-- Note: You WILL encounter bugs; Linux was designed for system stability, transparency and production/development rather than a polished user experience
+- Guest system works, but is slow: this shouldn't happen with Lubuntu, and is probably a host issue (e.g. not enough RAM, slow processor or slow host OS) rather than a guest issue. Still, you can try to install an alternative window manager like IceWM (https://wiki.ubuntuusers.de/IceWM/, https://help.ubuntu.com/community/IceWM)
+- General note: You will most probably encounter bugs in Linux; Linux was designed for system stability, transparency and production/development rather than a polished user experience
+  - If the problem is Linux-related, also read the distribution release notes (e.g. https://lubuntu.me/disco-released/) and check for known bugs and workarounds. E.g. one Lubuntu bug concerns missing proprietary drivers, which shouldn't be an issue for an installation within VirtualBox, but can be a problem if Lubuntu is installed directly on a computer
 
 ---
 ### Updates
@@ -129,6 +138,7 @@
 ---
 ### Where to go from here
 - **Back up** your VM. You can do it based on the instructions in https://www.osradar.com/how-to-backup-vms-on-virtualbox/ and https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998, however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More information in https://forums.virtualbox.org/viewtopic.php?f=6&t=81581). If something breaks in your VM which you can't repair and you have a backup of a working state, you can always take the backup. This is usually much faster than doing an installation from scratch.
+  - You can import it later like this: Machine -> Add -> Navigate to the .vbox file in the VM folder (https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer, https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429)
 - Tweak Lubuntu settings:
   - right-click on Desktop -> Desktop preferences -> change background image
   - right-click on Panel in the lower part of the Desktop -> Manage Widgets -> add CPU monitor
@@ -136,4 +146,4 @@
 - Navigate the filesystem using `pwd`, `ls` and `cd`
 - Use manpages (`man ls`) or simplified manpages, https://tldr.ostera.io/
 - Learn how to use a non-GUI text editor, nano (https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or vim
-- There is a ton of good introductory linux/shell tutorials on YouTube
+- Check out some introductory linux/shell tutorials on YouTube
