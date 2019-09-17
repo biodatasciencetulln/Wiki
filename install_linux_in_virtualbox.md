@@ -134,6 +134,7 @@
   - When updating VirtualBox, *completely shutdown the VM* before that
     - Be careful with major (e.g. Virtualbox 6 -> 7) or minor (e.g. VirtualBox 6.0 -> 6.1) releases, they can break things (you might even need to downgrade again)
     - Maintenance releases (e.g. VirtualBox 6.0.8 -> 6.0.10) usually don't break things
+    - If, after an update of the VirtualBox, your VM doesn't start up with some strange error message, try rebooting the computer (possibly twice)
 
 ---
 ### Where to go from here
