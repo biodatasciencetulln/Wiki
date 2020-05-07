@@ -1,6 +1,7 @@
 # Guide for installing Linux in VirtualBox
 
 ### Install the program VirtualBox on your computer
+
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
   - If installation on MacOS fails, this might be related to a security feature (Gatekeeper); searching for the corresponding problem (e.g. "virtualbox macos installation failed") will help find instructions on how to fix it, e.g.
     - http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/
@@ -9,11 +10,13 @@
 
 ---
 ### Download the Linux iso file (disc image)
-- Recommended Linux distribution: latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu), which is Ubuntu with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like "xubuntu-\<version\>-desktop-amd64.iso" (for an explanation what amd64 means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
-- Xubuntu is a lightweight version of Ubuntu, which has a different selection of pre-installed software, requires less resources and is in general more responsive. Any required software can also be installed later.
+
+- Recommended Linux distribution: latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu), which is Ubuntu with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-\<version\>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
+- Xubuntu is a lightweight version of Ubuntu, which has a different selection of pre-installed software (any software can also be installed later), requires less resources and is in general more responsive.
 
 ---
 ### Create a new Virtual Machine (VM) in VirtualBox
+
 - VirtualBox → "New"
 - Enter `Name`: e.g. `Xubuntu`
 - Make sure that `Type` is `Linux`
@@ -28,11 +31,12 @@
 
 ---
 ### Install the guest OS (operating system)
+
 - The operating system (OS) that runs on your computer is called **host**, the OS in the VM is called **guest**
-- General note: During all steps of the tutorial, you might encounter problems of some sort. As VirtualBox is a very popular program, those problems have usually been discussed online and there is some solution available. It can help to perform an internet search for your particular problem by describing it based on the most important keywords. E.g., if there is an error message like "Hardware acceleration is not available on your system" when trying to install or launch a VM, you can search for "virtualbox error" and the error message text. You will find information that this error probably occured due to virtualization not activated in your computer's BIOS/UEFI, and how to fix it.
+- General note: During all steps of the tutorial, you might encounter problems of some sort. As VirtualBox is a very popular program, those problems have usually been discussed online and there is some solution available. It can help to perform an internet search for your particular problem by describing it based on the most important keywords. E.g., if there is an error message like "Hardware acceleration is not available on your system" when trying to install or launch a VM, you can search e.g. for "virtualbox error" + error message text. You will find information that this error probably occured due to virtualization not activated in your computer's BIOS/UEFI, and how to fix it.
 - In VirtualBox: Select the VM → "Start"
 - It should ask you for a disc (the hard drive is empty, so it is looking for a bootable disc) → select the iso file
-- Boot the OS (this is called "live OS" because it's booted directly from the disc/iso file, without being installed on the hard drive)
+- Boot the OS (this is called [live OS](https://en.wikipedia.org/wiki/Live_CD) because it's booted directly from the disc/iso file, without being installed on the hard drive)
 - There should be an option to install the OS; start the installer and follow the installation instructions
   - Please select English as your installation language; additional languages can be added later
   - Pay attention that the settings are correct, e.g. the keyboard layout should correspond to your keyboard (e.g., if you have a German keyboard, you should select a German keyboard layout)
@@ -44,6 +48,7 @@
 
 ---
 ### Linux basics (general information)
+
 - This is how you [open a terminal](https://docs.xubuntu.org/1910/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
 - This is how you start programs/run commands: type the name of the program/command in the terminal and hit Enter
 - **Abort program/command running in the terminal**: press **Strg-C** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
@@ -57,6 +62,7 @@
 
 ---
 ### Update the guest and install the guest additions
+
 - **Update** the Ubuntu guest: Open a terminal, type `sudo apt update && sudo apt upgrade` and press Enter
   - `sudo` (*superuser do*) grants admin rights and is required for all system-relevant tasks
   - `apt` is the command that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
@@ -84,11 +90,13 @@
 
 ---
 ### Some useful VirtualBox options
+
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
 
 ---
 ### Share a folder between the host and the guest
+
 - A **shared folder** offers a way of passing files between the guest and the host systems. If you save your files in the shared folder, you can delete the VM itself at any time without loosing your data
 - In the guest, you need to add your user to a group that can access shared folders. In the terminal:
 `sudo adduser your-username vboxsf`
@@ -101,6 +109,7 @@
 
 ---
 ### Troubleshooting
+
 - Problems can be related to the guest (and need to be addressed within the guest), or to the host/VirtualBox, and addressed e.g. by changing VirtualBox settings (usually a shutdown of the guest is required)
 - Graphics issues (like displaying errors or freezes):
   - Host: VM → Settings → Display → **Video Memory**: Increase to 128 MB (shut down the guest first)
@@ -129,23 +138,28 @@
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
 - Still problems with the guest, like freezes, high processor load for no reason, etc.: You can try another Desktop environment (https://wiki.archlinux.org/index.php/Desktop_environment); some options are LXQt, Xfce and MATE. There are others, but they might be slower. The environment can be selected in the "Session" field at login.
-- [Advanced topic.] Guest system is generally slow: this shouldn't happen with Xubuntu, and can be a host issue (e.g. not enough RAM, slow processor or slow host OS) rather than a guest issue. To make the system even lighter, you can use a Window manager in place of the Desktop environment (https://www.ghacks.net/2008/12/09/get-to-know-linux-desktop-environment-vs-window-manager/, https://askubuntu.com/questions/18078/what-is-the-difference-between-a-desktop-environment-and-a-window-manager, https://www.lifewire.com/window-manager-vs-the-desktop-environment-in-linux-4588338, https://unix.stackexchange.com/a/3024, https://wiki.debian.org/WindowManager, https://en.wikipedia.org/wiki/Comparison_of_X_window_managers, https://www.reddit.com/r/linux/comments/cig519/my_journey_with_window_managers_aka_wms/), e.g. [Openbox](https://help.ubuntu.com/community/Openbox) ([wiki.debian.org](https://wiki.debian.org/Openbox#Introduction)) or [IceWM](https://ice-wm.org/) ([wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/IceWM/), [help.ubuntu.com](https://help.ubuntu.com/community/IceWM)). After installation and logout, you should be able to select it in the login screen in the "Session" field.
-- Advanced VirtualBox-related topics: https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/
+
+#### remove this part
+- [Advanced] Guest system is generally slow: this shouldn't happen with Xubuntu, and can be a host issue (e.g. not enough RAM, slow processor or slow host OS) rather than a guest issue. To make the system even lighter, it possible to use a Window manager in place of the Desktop environment ([ghacks.net](https://www.ghacks.net/2008/12/09/get-to-know-linux-desktop-environment-vs-window-manager/), [askubuntu.com](https://askubuntu.com/questions/18078/what-is-the-difference-between-a-desktop-environment-and-a-window-manager), [lifewire.com](https://www.lifewire.com/window-manager-vs-the-desktop-environment-in-linux-4588338), [stackexchange.com](https://unix.stackexchange.com/a/3024), [debian.org](https://wiki.debian.org/WindowManager), [wikipedia.org](https://en.wikipedia.org/wiki/Comparison_of_X_window_managers), [reddit.com](https://www.reddit.com/r/linux/comments/cig519/my_journey_with_window_managers_aka_wms/)), e.g. [Openbox](https://help.ubuntu.com/community/Openbox) ([wiki.debian.org](https://wiki.debian.org/Openbox#Introduction)) or [IceWM](https://ice-wm.org/) ([wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/IceWM/), [help.ubuntu.com](https://help.ubuntu.com/community/IceWM)). After installation and logout, you should be able to select it in the login screen in the "Session" field.
+
+- Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - General note: You will most probably encounter bugs in Linux; Linux was designed for system stability, transparency and production/development rather than a polished user experience
   - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds.
 
 ---
 ### Updates
+
 - Guest: Update regularly using `sudo apt update && sudo apt upgrade` or the update dialogue
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, *completely shutdown the VM* before that
-    - Be careful with major (e.g. Virtualbox 6 → 7) or minor (e.g. VirtualBox 6.0 → 6.1) releases, they can break things (you might even need to downgrade again)
-    - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) usually don't break things
-    - If, after an update of the VirtualBox, your VM doesn't start up with some strange error message, try rebooting the computer (possibly twice)
+    - Be careful with major (e.g. Virtualbox 5 → 6) or minor (e.g. VirtualBox 6.0 → 6.1) releases, they can break things (it's even possible that you need to downgrade again)
+    - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
+    - If there are problems after a VirtualBox update (e.g. a VM that used to work suddenly doesn't start and you see strange error messages), try rebooting the computer, possibly twice
 
 ---
 ### Where to go from here
+
 - **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More information on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581). If something breaks in your VM which you can't repair and you have a backup of a working state, you can always take the backup. This is usually much faster than doing an installation from scratch.
   - You can import it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
 - Tweak Ubuntu settings:
