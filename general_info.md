@@ -18,17 +18,17 @@ A portable laptop is required for a number of courses.
 
 ## Virtual machine
 
-A virtual machine provides an easy and convenient way to work with other operating systems (OSes) than the one currently installed on your computer. **Note:** Please make a full backup of your data/operating system before any modifications to your computer.
+**Note:** Please make a full backup of your data/operating system before any modifications to your computer.
 
-[This video](https://www.youtube.com/watch?v=yIVXjl4SwVo) briefly explains what an OS and what a virtual machine is. (If you are interested in more details, [this video](https://www.youtube.com/watch?v=26QPDBe-NB8&) gives a very condensed overview of the history and basic functionality of computer OSes.) Briefly, a virtual machine is a simulated computer, that is a great way to learn and experiment with Linux and programming, because you can install it on your regular Windows or MacOS computer and start/close it as any other program. (There are some more [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/).) The virtual machine is saved as a file (or folder) on your hard drive and can be easily copied, duplicated, backed up etc. You can play with it and modify it in any way you like, and if it is broken beyond repair, you can simply restore it from an earlier backup by copying the corresponding folder back into place. 
+A virtual machine provides a convenient way of working with other operating systems (OS) than the one currently installed on your computer. [This video](https://www.youtube.com/watch?v=yIVXjl4SwVo) briefly explains what an OS and what a virtual machine is. (If you are interested in more details, [this video](https://www.youtube.com/watch?v=26QPDBe-NB8&) gives a condensed overview of the history and basic functionality of computer OSes.) Briefly, a virtual machine is a simulated computer (where you can install an OS, called "guest") that runs on your actual computer (with the host OS). It is a great way to learn and experiment with Linux and programming, because you can install it under Windows or MacOS start/close it as any other program. (There are some more [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/).) The virtual machine is saved as a file (or folder) on your hard drive and can be easily copied, duplicated, backed up etc. You can play with it and modify it in any way you like, and if it is broken beyond repair, you can simply restore it from an earlier backup by copying the corresponding folder back into place. 
 
-We will use Virtualbox ([download page](https://www.virtualbox.org/wiki/Downloads)), which is a free program available for all OSes, and allows e.g. to run a Linux OS on Windows. Linux comes in different flavors (called distrubitions), with Ubuntu being the most popular one. I suggest to use the latest Xubuntu (current release 20.04, [download page](https://xubuntu.org/download/)), which is Ubuntu with a more lightweight and responsive desktop environment (called Xfce, therefore **X**ubuntu). [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) shows how to download and install Ubuntu in Virtualbox; the process is equivalent for Xubuntu. (You might run into some problems, e.g. the option `Ubuntu (64 bit)` might be not available, because you need to activate VT-x/AMD-v in the host PC [BIOS](https://www.youtube.com/watch?v=SlzwMKcCoMI) first, as explained on the [virtualbox forum](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339) or on [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting your new OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), essentially a collection of Virtualbox-related drivers, for a fully functional virtual machine.)
+We will use Virtualbox ([download page](https://www.virtualbox.org/wiki/Downloads)), which is a free program available for all OSes, and allows e.g. to run a Linux OS on Windows. Linux comes in different flavors (called distrubitions), with Ubuntu being the most popular one. I suggest to use the latest Xubuntu (current release 20.04, [download page](https://xubuntu.org/download/)), which is Ubuntu with a more lightweight and responsive desktop environment (called Xfce, therefore **X**ubuntu). [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) shows how to download and install Ubuntu in Virtualbox; the process is equivalent for Xubuntu. (You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host PC [BIOS](https://www.youtube.com/watch?v=SlzwMKcCoMI) first, as explained on the [virtualbox forum](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339) or on [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting your new OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), essentially a collection of Virtualbox-related drivers, for a fully functional virtual machine.)
 
-Note that Windows also provides a built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux), that allows to run the Linux command line and some utilities directly within Windows. This is also based on a type of virtual machine, and can be useful in some cases. However, a fully fledged virtual machine via Virtualbox is more convenient.
+Note that Windows also provides a built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux), that allows to run the Linux command line and some utilities directly on Windows. This also works via a type of virtual machine, and can be useful in some cases. However, a fully fledged virtual machine is more convenient for us.
 
 ## Linux and Bash
 
-[Linux](https://en.wikipedia.org/wiki/Linux) is a free OS, which is stable yet customizeable, actively developed, and offers a huge selection of free software development tools. A lot of good scientific software is written only for Linux - e.g. almost all short read aligners, and many more. Some advantages are:
+[Linux](https://en.wikipedia.org/wiki/Linux) is a free OS, which is stable yet highly customizeable, actively developed, and offers a huge selection of free software development tools. A lot of good scientific software is written only for Linux - e.g. almost all short read aligners, assemblers, and many more. Some advantages are:
 
 * Software can be installed in an automated way using a package manager (similar to an app store)
 * Software can be installed by the user without administrator priviledges and easily configured in different ways (this is much harder in Windows)
@@ -40,22 +40,22 @@ Several shell programs are available, but most Linux distributions come with the
 
 Some recommended Bash introductory tutorials/resources:
 
-- ["Linux Tutorial - Basic Command Line"](https://www.youtube.com/watch?v=cBokz0LTizk)
-- ["Beginner's Guide to the Bash Terminal"](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
+- YouTube: ["Linux Tutorial - Basic Command Line"](https://www.youtube.com/watch?v=cBokz0LTizk)
+- YouTube: ["Beginner's Guide to the Bash Terminal"](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
 - [linuxcommand.org](http://linuxcommand.org/)
-- [softwarecarpentry](https://swcarpentry.github.io/shell-novice/)
+- [swcarpentry.github.io](https://swcarpentry.github.io/shell-novice/)
 
 Hint: If you find a useful Youtube channel, you might want to subscribe and/or check out their other videos.
 
 Books:
 
 - B. Ward: "How Linux Works" ([Amazon](https://www.amazon.de/How-Linux-Works-Brian-Ward/dp/1718500408))
-- W.E. Shotts Jr.: "The Linux Command Line: A Complete Introduction" ([Amazon](https://www.amazon.de/Linux-Command-Line-2nd-Introduction/dp/1593279523/))
+- W. Shotts: "The Linux Command Line: A Complete Introduction" ([Amazon](https://www.amazon.de/Linux-Command-Line-2nd-Introduction/dp/1593279523/))
 
 
 ## Python
 
-It's not very important which resource for learning Python you pick, as most of them present very similar content (the basics of the Python programming language) in different forms. It's only important that the way the author presents the information makes sense to you. Pick a resource that works well for you and stick to is as far as possible. You can also talk to your fellow students to exchange experiences and recommendations.
+It's not very important which resource for learning Python you pick, as most of them present very similar content (the basics of the Python programming language) in different forms. It's only important that the way in which the information is presented makes sense to you. Pick a resource that works well for you and stick to if possible. You can also talk to your fellow students to exchange experiences and recommendations.
 
 ### Development environment
 
@@ -66,14 +66,14 @@ One great way to learn Python is to simply run it online. There are several good
 - [Google Colab](https://colab.research.google.com) — Jupyter notebook in the cloud (via Google drive), with real-time collaboration ([short YouTube intro](https://www.youtube.com/watch?v=inN8seMm7UI))
 - [Repl.it](https://repl.it/languages/python3) — A browser-based IDE, that supports over 50 programming languages, including Python
 
-To run Python locally, the most convenient way is to use a *Python distribution* like [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)), which includes not only the Python interpreter but also a number of useful libraries and programs, including the development environments Jupyter, Spyder and VS Code (and others, like RStudio for R development). You can e.g. try Jupyter and Spyder, which are both great environments with some upsides and downsides.
+To run Python locally, the most convenient way is to use a *Python distribution* like [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)), which includes not only the Python interpreter but also a number of useful libraries and programs, including the development environments Jupyter, Spyder and VS Code (and others, like RStudio for R development). You can e.g. try Jupyter and Spyder, which are both great environments.
 
-Hint: If your use [Spyder](https://www.spyder-ide.org/), a good place to start is the `Spyder tutorial`, accessible via `Help` → `Spyder tutorial`.
+Hint: If you use [Spyder](https://www.spyder-ide.org/), a good place to start is the `Spyder tutorial`, accessible via `Help` → `Spyder tutorial`.
 
 ### Books/tutorials
 
 - ["A Byte of Python"](https://python.swaroopch.com/) (free ebook)
-- ["Think Python: How to Think Like a Computer Scientist"](http://greenteapress.com/thinkpython2/html/index.html) (free ebook)
+- ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) (free ebook)
   - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) (interactive edition)
 - E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/), very beginner-friendly, if you like the book's approach)
 - E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/))
@@ -95,5 +95,4 @@ Hint: If your use [Spyder](https://www.spyder-ide.org/), a good place to start i
   - [Software Carpentry](https://software-carpentry.org/)
   - [Data Carpentry](https://datacarpentry.org/)
   
-Hint: Problem-oriented tutorials (that solve little tasks rather than just presenting information) are more fun and provide better understanding.
-
+Hint: Problem-oriented tutorials (that solve little tasks rather than just presenting information) are usually more fun and provide better understanding.
