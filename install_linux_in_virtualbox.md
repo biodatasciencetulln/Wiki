@@ -3,9 +3,8 @@
 ### Install the program VirtualBox on your computer
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
-  - If installation on MacOS fails, this might be related to a security feature (Gatekeeper); searching for the corresponding problem (e.g. "virtualbox macos installation failed") will help find instructions on how to fix it, e.g.
-    - [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/)
-    - [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5)
+  - If you run into problems here or later on, in many cases other people ran into these problem before and discussed them on internet forums or filed bug reports with the developers. An internet search for a concise problem description can help find these discussions and the solution
+  - E.g., if installation on MacOS fails, you can search for "virtualbox macos installation failed" and find links like [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/) or [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5), which say that this can be related to a MacOS security feature (Gatekeeper) and explain how to fix it
 - Run VirtualBox and install the Extension Pack
 
 ---
