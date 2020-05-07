@@ -4,8 +4,8 @@
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
   - If installation on MacOS fails, this might be related to a security feature (Gatekeeper); searching for the corresponding problem (e.g. "virtualbox macos installation failed") will help find instructions on how to fix it, e.g.
-    - http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/
-    - https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5
+    - [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/)
+    - [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5)
 - Run VirtualBox and install the Extension Pack
 
 ---
@@ -137,7 +137,7 @@
   - Display → increase "Video memory" to at least 64 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
-- Still problems with the guest, like freezes, high processor load for no reason, etc.: You can try another Desktop environment (https://wiki.archlinux.org/index.php/Desktop_environment); some options are LXQt, Xfce and MATE. There are others, but they might be slower. The environment can be selected in the "Session" field at login.
+- Still problems with the guest, like freezes, high processor load for no reason, etc.: You can try another [Desktop environment](https://wiki.archlinux.org/index.php/Desktop_environment), suggested options are LXQt, Xfce and MATE. There are others, but they might be slower. The environment can be selected in the "Session" field at login.
 - Guest system is generally slow: this shouldn't happen with Xubuntu, and is probably a host issue (e.g. not enough RAM, slow processor, slow overall performance) rather than a guest issue.
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - General note: You will most probably encounter bugs in Linux; Linux was designed for system stability, transparency and production/development rather than a polished user experience
@@ -150,7 +150,7 @@
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, *completely shutdown the VM* before that
-    - Be careful with major (e.g. Virtualbox 5 → 6) or minor (e.g. VirtualBox 6.0 → 6.1) releases, they can break things (it's even possible that you need to downgrade again)
+    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases can introduce new features and therefore break things (it's even possible that you need to downgrade again)
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
     - If there are problems after a VirtualBox update (e.g. a VM that used to work suddenly doesn't start and you see strange error messages), try rebooting the computer, possibly twice
 
@@ -165,5 +165,5 @@
 - You should get used to the command line as early as possible. Even though many tasks like software installation can be performed via GUIs (graphical user interfaces), they are usually only the "frontends" to command-line programs like [apt](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) working in the background (and tend to be less flexible and buggy).
 - Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and become comfortable with the command line (e.g. [linuxcommand.org](linuxcommand.org))
 - Navigate the filesystem using `pwd`, `ls` and `cd`
-- Use manpages (`man ls`) or simplified manpages, https://tldr.ostera.io/
+- Use manpages (`man ls`) or simplified manpages, [tldr.ostera.io](https://tldr.ostera.io/)
 - Learn how to use a non-GUI text editor, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
