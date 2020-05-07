@@ -64,7 +64,7 @@
 
 - **Update** the Ubuntu guest: Open a terminal, type `sudo apt update && sudo apt upgrade` and press Enter
   - `sudo` (*superuser do*) grants admin rights and is required for all system-relevant tasks
-  - `apt` is the command that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
+  - `apt` is [the command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do):
     - the subcommand `apt update` is used to download package information from all configured sources
     - `apt upgrade` operates on this data to to actually install the updated package versions
@@ -156,13 +156,11 @@
 ---
 ### Where to go from here
 
-- **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More information on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581). If something breaks in your VM which you can't repair and you have a backup of a working state, you can always take the backup. This is usually much faster than doing an installation from scratch.
+- **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More information on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
   - You can import it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
-- Tweak Ubuntu settings:
-  - Right-click on Desktop → Desktop preferences → change background image
-  - Right-click on Panel in the lower part of the Desktop → Manage Widgets → add CPU monitor
-- You should get used to the command line as early as possible. Even though many tasks like software installation can be performed via GUIs (graphical user interfaces), they are usually only the "frontends" to command-line programs like [apt](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) working in the background (and tend to be less flexible and buggy).
-- Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and become comfortable with the command line (e.g. [linuxcommand.org](linuxcommand.org))
+- Customitize your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/)
+- Become comfortable with the command line early on. Even though tasks like software installation can be done via GUIs (graphical user interfaces), GUIs are usually "frontends" to command-line tools like `apt` that operate in the background. Linux GUIs can also be buggy, because neither users nor developers like them very much
+- Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and learn the command line (e.g. [linuxcommand.org](linuxcommand.org))
 - Navigate the filesystem using `pwd`, `ls` and `cd`
 - Use manpages (`man ls`) or simplified manpages, [tldr.ostera.io](https://tldr.ostera.io/)
 - Learn how to use a non-GUI text editor, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
