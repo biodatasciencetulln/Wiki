@@ -3,15 +3,15 @@
 ### Install the program VirtualBox on your computer
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
-  - If you run into problems here or later on, in many cases other people ran into these problem before and discussed them on internet forums or filed bug reports with the developers. An internet search for a concise problem description can help find these discussions and the solution
+  - General note: During all steps of the tutorial, you might encounter problems of some sort. As we are using well-known and popular software like VirtualBox or Ubuntu, those problems have usually been discussed online and there is some solution available. An internet search for your particular problem based on the most important keywords can help find these discussions and the solution
   - E.g., if installation on MacOS fails, you can search for "virtualbox macos installation failed" and find links like [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/) or [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5), which say that this can be related to a MacOS security feature (Gatekeeper) and explain how to fix it
 - Run VirtualBox and install the Extension Pack
 
 ---
 ### Download the Linux iso file (disc image)
 
-- Recommended Linux distribution: latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu), which is Ubuntu with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
-- Xubuntu is a lightweight version of Ubuntu, which has a different selection of pre-installed software (any software can also be installed later), requires less resources and is in general more responsive.
+- Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
+- Xubuntu is Ubuntu but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640) ([more info](https://www.lifewire.com/linux-desktop-environment-explained-4121640)), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different selection of pre-installed software, requires less resources and is generally more responsive than the default GNOME desktop environment 
 
 ---
 ### Create a new Virtual Machine (VM) in VirtualBox
@@ -32,10 +32,10 @@
 ### Install the guest OS (operating system)
 
 - The operating system (OS) that runs on your computer is called **host**, the OS in the VM is called **guest**
-- General note: During all steps of the tutorial, you might encounter problems of some sort. As VirtualBox is a very popular program, those problems have usually been discussed online and there is some solution available. It can help to perform an internet search for your particular problem by describing it based on the most important keywords. E.g., if there is an error message like "Hardware acceleration is not available on your system" when trying to install or launch a VM, you can search e.g. for "virtualbox error" + error message text. You will find information that this error probably occured due to virtualization not activated in your computer's BIOS/UEFI, and how to fix it.
 - In VirtualBox: Select the VM → "Start"
 - It should ask you for a disc (the hard drive is empty, so it is looking for a bootable disc) → select the iso file
 - Boot the OS (this is called [live OS](https://en.wikipedia.org/wiki/Live_CD) because it's booted directly from the disc/iso file, without being installed on the hard drive)
+  - If there is an error message like "Hardware acceleration is not available on your system" when trying to install or launch a VM, try to search for "virtualbox error" + error message text. It's possible that this error occurred because virtualization hasn't activated in your computer's BIOS/UEFI, and should be easy to fix
 - There should be an option to install the OS; start the installer and follow the installation instructions
   - Please select English as your installation language; additional languages can be added later
   - Pay attention that the settings are correct, e.g. the keyboard layout should correspond to your keyboard (e.g., if you have a German keyboard, you should select a German keyboard layout)
@@ -136,7 +136,7 @@
   - Display → increase "Video memory" to at least 64 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
-- Still problems with the guest, like freezes, high processor load for no reason, etc.: You can try another [Desktop environment](https://wiki.archlinux.org/index.php/Desktop_environment), suggested options are LXQt, Xfce and MATE. There are others, but they might be slower. The environment can be selected in the "Session" field at login.
+- Still problems with the guest, like freezes, high processor load for no reason, etc.: You can try another desktop environment, suggested options are LXQt, Xfce and MATE. There are others, but they might be slower. The environment can be selected in the "Session" field at login.
 - Guest system is generally slow: this shouldn't happen with Xubuntu, and is probably a host issue (e.g. not enough RAM, slow processor, slow overall performance) rather than a guest issue.
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - General note: You will most probably encounter bugs in Linux; Linux was designed for system stability, transparency and production/development rather than a polished user experience
