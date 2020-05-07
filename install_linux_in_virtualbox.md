@@ -1,5 +1,5 @@
 <img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
-<H1>Guide for installing Linux in VirtualBox</H1>
+<H1>Guide for installing Ubuntu in VirtualBox</H1>
 
 * TOC
 {:toc}
