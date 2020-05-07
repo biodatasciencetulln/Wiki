@@ -4,7 +4,7 @@
 * TOC
 {:toc}
 
-### Install the VirtualBox on your computer
+### Install VirtualBox on your computer
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
   - General note: During all steps of the tutorial, you might encounter problems of some sort. As we are using well-known and popular software like VirtualBox or Ubuntu, those problems have usually been discussed online and there is some solution available. An internet search for your particular problem based on the most important keywords can help find these discussions and the solution
@@ -128,7 +128,7 @@
 - Other problems:
   - Try to determine in which situation the problem occurs, e.g. does rebooting the VM help?
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window has dis appeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (like [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared))
-- Running **a system monitor** at all times to keep track of the memory usage and CPU load is a good idea, and helps to diagnose problems
+- Running a **system monitor** at all times to keep track of the memory usage and CPU load is a good idea, and helps to diagnose problems
   - Guest: Use some type of [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like gnome-system-monitor (you might need to install it first, `sudo apt install gnome-system-monitor`), or a similar program ([Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)).
   - Host: Use the Task Manager (Windows) or equivalent
   - High CPU load or memory usage can substantially slow down the system. If they are caused by a software problem, restarting the offending program can help
