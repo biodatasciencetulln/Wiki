@@ -128,7 +128,7 @@
 - Running **a system monitor** at all times to keep track of the memory usage and CPU load is a good idea, and helps to diagnose problems
   - Guest: Use some type of [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like gnome-system-monitor (you might need to install it first, `sudo apt install gnome-system-monitor`), or a similar program ([Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)).
   - Host: Use the Task Manager (Windows) or equivalent
-  - High CPU usage or memory usage can substantially slow down the system. If they are caused by a software problem, restarting the offending program can help
+  - High CPU load or memory usage can substantially slow down the system. If they are caused by a software problem, restarting the offending program can help
 - Random freezes of the guest OS → try to modify these host VM settings:
   - Display → "Enable 3D acceleration" = off
   - System → Processor → Number of virtual CPUS: 1 processor → 2, 3 or 4 processors (try and see if this helps)
