@@ -11,7 +11,7 @@
 ---
 ### Download the Linux iso file (disc image)
 
-- Recommended Linux distribution: latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu), which is Ubuntu with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-\<version\>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
+- Recommended Linux distribution: latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu), which is Ubuntu with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
 - Xubuntu is a lightweight version of Ubuntu, which has a different selection of pre-installed software (any software can also be installed later), requires less resources and is in general more responsive.
 
 ---
@@ -21,7 +21,7 @@
 - Enter `Name`: e.g. `Xubuntu`
 - Make sure that `Type` is `Linux`
 - Make sure that `Version` is `Ubuntu (64 bit)`
-  - Note: if the option `Ubuntu (64 bit)` is not available, you will need to activate a **BIOS setting** for virtualization. Reboot your computer into BIOS/UEFI and enable hardware virtualization. This will appear as `Virtualization Technology` and/or `VT-x or AMD-V` or similar (different manufacturers word it differently). You can consult e.g. the following links for instructions and troubleshooting: [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339), [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os), [docs.fedoraproject.org](https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html), [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/)
+  - Note: if the option `Ubuntu (64 bit)` is not available, you probably need to activate a **BIOS setting** for virtualization. Reboot your computer into BIOS/UEFI and enable hardware virtualization. This will appear as `Virtualization Technology` and/or `VT-x or AMD-V` or similar (different manufacturers word it differently). You can consult e.g. the following links for instructions and troubleshooting: [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339), [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os), [docs.fedoraproject.org](https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html), [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/)
   - If you have multiple BIOS options related to virtualization, e.g. `VTx` and `VTd`, you probably should enable both
 - Most other settings: the defaults are ok
 - Memory: at least 4 GB is recommended (can be changed later)
