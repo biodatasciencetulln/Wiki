@@ -1,9 +1,10 @@
-# Guide for installing Linux in VirtualBox
+<img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
+<H1 style="color:dimgray">Guide for installing Linux in VirtualBox</H1>
 
 * TOC
 {:toc}
 
-### Install the program VirtualBox on your computer
+### Install the VirtualBox on your computer
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
   - General note: During all steps of the tutorial, you might encounter problems of some sort. As we are using well-known and popular software like VirtualBox or Ubuntu, those problems have usually been discussed online and there is some solution available. An internet search for your particular problem based on the most important keywords can help find these discussions and the solution
@@ -11,13 +12,13 @@
 - Run VirtualBox and install the Extension Pack
 
 ---
-### Download the Linux iso file (disc image)
+## Download the Linux iso file (disc image)
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
 - Xubuntu is Ubuntu but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640) ([more info](https://wiki.archlinux.org/index.php/Desktop_environment)), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different selection of pre-installed software, requires less resources and is generally more responsive than the default GNOME desktop environment 
 
 ---
-### Create a new Virtual Machine (VM) in VirtualBox
+## Create a new Virtual Machine (VM) in VirtualBox
 
 - VirtualBox → "New"
 - Enter `Name`: e.g. `Xubuntu`
@@ -32,7 +33,7 @@
 - The VM is essentially a simulated computer, with a hard drive (currently empty), an optical disc drive (where you can "insert" a disc/disc image), and simulated audio/graphics hardware
 
 ---
-### Install the guest OS (operating system)
+## Install the guest OS (operating system)
 
 - The operating system (OS) that runs on your computer is called **host**, the OS in the VM is called **guest**
 - In VirtualBox: Select the VM → "Start"
@@ -49,7 +50,7 @@
   - You might need to remove the disc image from the optical drive first (to make sure that the VM boots from the hard drive and not from the disc image): VirtualBox → Select the VM → Settings → Storage → Select optical disc → Look for option "Remove Disc from Virtual Drive"
 
 ---
-### Linux basics (general information)
+## Linux basics (general information)
 
 - This is how you [open a terminal](https://docs.xubuntu.org/1910/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
 - This is how you start programs/run commands: type the name of the program/command in the terminal and hit Enter
@@ -63,7 +64,7 @@
 - When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away; this is different in Linux. The messages are usually informative and let you know what's happening and if there are any problems. E.g., if you run a command, and the terminal says "Building modules...", then it's building modules, and you have to wait. If it says "Successfully installed", then the package was successfully installed. If the message says "Failed to fetch http://some/web/url", then it failed to fetch this address, possibly because the url wasn't valid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
 ---
-### Update the guest and install the guest additions
+## Update the guest and install the guest additions
 
 - **Update** the Ubuntu guest: Open a terminal, type `sudo apt update && sudo apt upgrade` and press Enter
   - `sudo` (*superuser do*) grants admin rights and is required for all system-relevant tasks
@@ -91,12 +92,11 @@
   - Xubuntu [software installation](https://docs.xubuntu.org/1910/user/C/managing-applications.html): Start menu → Software, Start menu → Settings Manager → Software & Updates
 
 ---
-### Some useful VirtualBox options
+## Some useful VirtualBox options
 
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
 
----
 ### Share a folder between the host and the guest
 
 - A **shared folder** offers a way of passing files between the guest and the host systems. If you save your files in the shared folder, you can delete the VM itself at any time without loosing your data
@@ -110,7 +110,7 @@
 - Consult e.g. [websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/) for troubleshooting
 
 ---
-### Troubleshooting
+## Troubleshooting
 
 - Problems can be related to the guest (and need to be addressed within the guest), or to the host/VirtualBox, and addressed e.g. by changing VirtualBox settings (usually a shutdown of the guest is required)
 - Graphics issues (like displaying errors or freezes):
@@ -146,7 +146,7 @@
   - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds.
 
 ---
-### Updates
+## Updates
 
 - Guest: Update regularly using `sudo apt update && sudo apt upgrade` or the update dialogue
 - Host:
@@ -157,7 +157,7 @@
     - If there are problems after a VirtualBox update (e.g. a VM that used to work suddenly doesn't start and you see strange error messages), try rebooting the computer, possibly twice
 
 ---
-### Where to go from here
+## Where to go from here
 
 - **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More information on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
   - You can import it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
