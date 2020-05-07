@@ -11,7 +11,7 @@
 ### Download the Linux iso file (disc image)
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
-- Xubuntu is Ubuntu but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640) ([more info](https://www.lifewire.com/linux-desktop-environment-explained-4121640)), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different selection of pre-installed software, requires less resources and is generally more responsive than the default GNOME desktop environment 
+- Xubuntu is Ubuntu but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640) ([more info](https://wiki.archlinux.org/index.php/Desktop_environment)), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different selection of pre-installed software, requires less resources and is generally more responsive than the default GNOME desktop environment 
 
 ---
 ### Create a new Virtual Machine (VM) in VirtualBox
@@ -35,7 +35,7 @@
 - In VirtualBox: Select the VM → "Start"
 - It should ask you for a disc (the hard drive is empty, so it is looking for a bootable disc) → select the iso file
 - Boot the OS (this is called [live OS](https://en.wikipedia.org/wiki/Live_CD) because it's booted directly from the disc/iso file, without being installed on the hard drive)
-  - If there is an error message like "Hardware acceleration is not available on your system" when trying to install or launch a VM, try to search for "virtualbox error" + error message text. It's possible that this error occurred because virtualization hasn't activated in your computer's BIOS/UEFI, and should be easy to fix
+  - If there is an error message like "Hardware acceleration is not available on your system" when trying to install or launch a VM, try to search for "virtualbox error" + error message text. It's possible that this error occurred because virtualization wasn't activated in your computer's BIOS/UEFI, and should be easy to fix
 - There should be an option to install the OS; start the installer and follow the installation instructions
   - Please select English as your installation language; additional languages can be added later
   - Pay attention that the settings are correct, e.g. the keyboard layout should correspond to your keyboard (e.g., if you have a German keyboard, you should select a German keyboard layout)
@@ -50,14 +50,14 @@
 
 - This is how you [open a terminal](https://docs.xubuntu.org/1910/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
 - This is how you start programs/run commands: type the name of the program/command in the terminal and hit Enter
-- **Abort program/command running in the terminal**: press **Strg-C** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
+- **Abort program/command** running in the terminal: press **Strg-C** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
 - **Abort non-responsive graphical application**: enter `xkill` in the terminal and click on the non-responsive application
   - only use this if absolutely necessary
 - Get previously entered command using up/down keys
   - e.g. enter `ls` + Enter → "list" the directory contents
   - press the "arrow up" key → it brings up the previously entered `ls` command
 - **Search** for previously entered commands using **Strg-R**
-- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away; this is different in Linux. The messages are usually informative and let you know what's happening and if there are any problems. E.g., if you run a command, and the terminal says "Building modules...", then it's building modules, and you have to wait. If it says "Successfully installed", then the package was successfully installed. If the message says "Failed to fetch http://some/web/url", then it failed to fetch this address, possibly because the url isn't valid or there is no internet connection. If the command didn't complete successfully, you can search for the respective error message, which can help to find a solution.
+- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away; this is different in Linux. The messages are usually informative and let you know what's happening and if there are any problems. E.g., if you run a command, and the terminal says "Building modules...", then it's building modules, and you have to wait. If it says "Successfully installed", then the package was successfully installed. If the message says "Failed to fetch http://some/web/url", then it failed to fetch this address, possibly because the url wasn't valid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
 ---
 ### Update the guest and install the guest additions
@@ -68,7 +68,7 @@
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do):
     - the subcommand `apt update` is used to download package information from all configured sources
     - `apt upgrade` operates on this data to to actually install the updated package versions
-  - `&&` is an **operator** that can be used to connect commands; it executes the second one [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute the `apt update` and `apt upgrade` subsequently, on two separate lines.
+  - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software ("packages") to their latest versions
 - The [guest additions](https://www.virtualbox.org/manual/ch04.html) is additional software that improves the integration of the guest with the host, e.g. it enables the auto-resizing of the OS in the VirtualBox window
 - The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
@@ -82,8 +82,8 @@
     `cd /media/your-username/VBox_GAs_6.0.10/`
     - Install the guest additions package by running the installation script:
     `sudo ./VBoxLinuxAdditions.run`
-- On the internet, you might read that guest additions can (or should) be installed from the repository (an app store/software collection specific to a Linux distribution), using the command `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
-  - It's usually easier to install software from the repository, but for guest additions it might not work as well (e.g., for me, the shared clipboard wouldn't work)
+- On the internet, you might read that guest additions can (or should) be installed from the repository (an app store/software collection specific to a Linux distribution), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
+  - It's usually easier to install software from the repository, but for guest additions it might not work very well (e.g., for me, the shared clipboard wouldn't work after installation)
   - General info on software installation: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
   - Xubuntu [software installation](https://docs.xubuntu.org/1910/user/C/managing-applications.html): Start menu → Software, Start menu → Settings Manager → Software & Updates
 
@@ -124,20 +124,20 @@
   `sudo apt install ubuntu-restricted-extras`
 - Other problems:
   - Try to determine in which situation the problem occurs, e.g. does rebooting the VM help?
-  - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window has dis appeared, so you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (like [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared))
-- Monitoring the memory usage and CPU load at all times is a really good idea, and also helps to diagnose problems
-  - Guest side: Use some type of [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like gnome-system-monitor (you might need to install it first, `sudo apt install gnome-system-monitor`) or a similar program ([Conky](https://en.wikipedia.org/wiki/Conky_(software))).
-  - Host side (Windows): Use the Task Manager  
-  - High CPU usage or memory usage can substantially slow down the system
+  - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window has dis appeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (like [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared))
+- Running **a system monitor** at all times to keep track of the memory usage and CPU load is a good idea, and helps to diagnose problems
+  - Guest: Use some type of [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like gnome-system-monitor (you might need to install it first, `sudo apt install gnome-system-monitor`), or a similar program ([Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)).
+  - Host: Use the Task Manager (Windows) or equivalent
+  - High CPU usage or memory usage can substantially slow down the system. If they are caused by a software problem, restarting the offending program can help
 - Random freezes of the guest OS → try to modify these host VM settings:
   - Display → "Enable 3D acceleration" = off
-  - System → Processor → Number of virtual CPUS: 1 processor → 2, 3 or 4 processors (try and see if it helps)
+  - System → Processor → Number of virtual CPUS: 1 processor → 2, 3 or 4 processors (try and see if this helps)
   - System → Processor → "Enable PAE/NX": toggle this off if it’s on, or on if it’s off, and see if this helps
-  - Display → increase "Video memory" to at least 64 MB
+  - Display → increase "Video memory" to 128 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
-- Still problems with the guest, like freezes, high processor load for no reason, etc.: You can try another desktop environment, suggested options are LXQt, Xfce and MATE. There are others, but they might be slower. The environment can be selected in the "Session" field at login.
-- Guest system is generally slow: this shouldn't happen with Xubuntu, and is probably a host issue (e.g. not enough RAM, slow processor, slow overall performance) rather than a guest issue.
+- Still problems with the guest, like freezes, high CPU load for no reason, etc.: One possibility is to try another desktop environment; suggested options are LXQt, Xfce and MATE. There are others, but they might be slower. After the corresponding environment is installed, it can be selected in the "Session" field at login
+- Guest system is generally slow: this shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow overall performance) 
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - General note: You will most probably encounter bugs in Linux; Linux was designed for system stability, transparency and production/development rather than a polished user experience
   - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds.
