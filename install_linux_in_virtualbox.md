@@ -139,7 +139,7 @@
   - Display → increase "Video memory" to 128 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
-- Still problems with the guest, like freezes, high CPU load for no reason, etc.: One possibility is to try another desktop environment; suggested options are LXQt, Xfce and MATE. There are others, but they might be slower. After the corresponding environment is installed, it can be selected in the "Session" field at login
+- Still problems with the guest, like freezes, high CPU load for no reason, etc.: One possibility is to try another desktop environment; suggested options are LXQt, Xfce and MATE. There are others, but they are less performant. After the corresponding environment is installed, it can be selected in the "Session" field at login
 - Guest system is generally slow: this shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow overall performance) 
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - General note: You will most probably encounter bugs in Linux; Linux was designed for system stability, transparency and production/development rather than a polished user experience
@@ -148,11 +148,11 @@
 ---
 ## Updates
 
-- Guest: Update regularly using `sudo apt update && sudo apt upgrade` or the update dialogue
+- Guest: **Update regularly** using `sudo apt update && sudo apt upgrade` or the update dialogue
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, *completely shutdown the VM* before that
-    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (it's even possible that you need to downgrade again)
+    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (in the worst case, you need to downgrade again)
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
     - If there are problems after a VirtualBox update (e.g. a VM that used to work suddenly doesn't start and you see strange error messages), try rebooting the computer, possibly twice
 
