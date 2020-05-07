@@ -149,7 +149,7 @@
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, *completely shutdown the VM* before that
-    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases can introduce new features and therefore break things (it's even possible that you need to downgrade again)
+    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (it's even possible that you need to downgrade again)
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
     - If there are problems after a VirtualBox update (e.g. a VM that used to work suddenly doesn't start and you see strange error messages), try rebooting the computer, possibly twice
 
