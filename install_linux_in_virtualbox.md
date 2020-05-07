@@ -1,5 +1,8 @@
 # Guide for installing Linux in VirtualBox
 
+* TOC
+{:toc}
+
 ### Install the program VirtualBox on your computer
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
