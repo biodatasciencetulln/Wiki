@@ -4,6 +4,9 @@
 
 FH Tulln, Bio Data Science  
 
+* TOC
+{:toc}
+
 ## Laptop specifications
 
 A portable laptop is required for a number of courses.
