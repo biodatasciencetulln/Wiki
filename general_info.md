@@ -7,12 +7,18 @@ FH Tulln, Bio Data Science
 * TOC
 {:toc}
 
+## Biological background
+
+A solid biological background is indispensible for all courses of the curriculum and for your future work. As a general textbook that provides a comprehensive overview and can be used for studying or as a reference, we recommend:
+
+- Urry et al.: "Campbell Biology" ([amazon.com](https://www.amazon.com/Campbell-Biology-11th-Lisa-Urry/dp/0134093410), [pearson-studium.de](https://www.pearson-studium.de/campbell-biologie_3.html))
+
 ## Laptop specifications
 
-A portable laptop is required for a number of courses.
+A portable laptop is required for a number of courses. Minimum required specifications:
 
 - CPU: Intel Core i3/i5/i7 or equivalent AMD processor; Atom, Celeron, or similar processors (mostly used in netbooks) are too slow
-- Memory: at least 8 GB RAM
+- Memory: 8 GB RAM
 - Storage: SSD highly recommended, at least 256 GB
 - Operating system: Windows, MacOS or Linux
 - GPU: irrelevant
