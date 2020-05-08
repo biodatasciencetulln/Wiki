@@ -1,14 +1,16 @@
 <img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
+<p style="color:darkgray;">FHWN, Biotech Campus Tulln</p>
+
 <H1>Guide for installing Ubuntu in VirtualBox</H1>
 
 * TOC
 {:toc}
 
-### Install VirtualBox on your computer
+## Install VirtualBox on your computer
 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
   - General note: During all steps of the tutorial, you might encounter problems of some sort. As we are using well-known and popular software like VirtualBox or Ubuntu, those problems have usually been discussed online and there is some solution available. An internet search for your particular problem based on the most important keywords can help find these discussions and the solution
-  - E.g., if installation on MacOS fails, you can search for "virtualbox macos installation failed" and find links like [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/) or [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5), which say that this can be related to a MacOS security feature (Gatekeeper) and explain how to fix it
+  - E.g., if installation on macOS fails, you can search for "virtualbox macos installation failed" and find links like [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/) or [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5), which say that this can be related to a macOS security feature (Gatekeeper) and explain how to fix it
 - Run VirtualBox and install the Extension Pack
 
 ---
@@ -53,24 +55,24 @@
 ## Linux basics (general information)
 
 - This is how you [open a terminal](https://docs.xubuntu.org/1910/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
-- This is how you start programs/run commands: type the name of the program/command in the terminal and hit Enter
-- **Abort program/command** running in the terminal: press **Strg-C** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
+- This is how you start programs/run commands: type the name of the program/command in the terminal and hit <kbd>Enter</kbd>
+- **Abort program/command** running in the terminal: press <kbd>Strg</kbd>+<kbd>C</kbd> (this key combination sends the "SIGINT" (interrupt) signal to a running process)
 - **Abort non-responsive graphical application**: enter `xkill` in the terminal and click on the non-responsive application
-  - only use this if absolutely necessary
-- Get previously entered command using up/down keys
-  - e.g. enter `ls` + Enter → "list" the directory contents
-  - press the "arrow up" key → it brings up the previously entered `ls` command
-- **Search** for previously entered commands using **Strg-R**
-- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away; this is different in Linux. The messages are usually informative and let you know what's happening and if there are any problems. E.g., if you run a command, and the terminal says "Building modules...", then it's building modules, and you have to wait. If it says "Successfully installed", then the package was successfully installed. If the message says "Failed to fetch http://some/web/url", then it failed to fetch this address, possibly because the url wasn't valid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
+  - Only use this if absolutely necessary
+- Get previously entered command using <kbd>&#8593;</kbd>/<kbd>&#8595;</kbd>
+  - E.g. enter `ls` + <kbd>Enter</kbd> → "list" the directory contents
+  - Press <kbd>&#8593;</kbd> → it brings up the previously entered `ls` command
+- **Search** for previously entered commands using <kbd>Strg</kbd>+<kbd>R</kbd>
+- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and let you know what's happening and if there are problems. E.g., if you run a command, and the terminal says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If the message says `Failed to fetch http://some/web/url`, then it failed to fetch this address, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
 ---
 ## Update the guest and install the guest additions
 
-- **Update** the Ubuntu guest: Open a terminal, type `sudo apt update && sudo apt upgrade` and press Enter
+- **Update** the Ubuntu guest: Open a terminal and type `sudo apt update && sudo apt upgrade` + <kbd>Enter</kbd>
   - `sudo` (*superuser do*) grants admin rights and is required for all system-relevant tasks
   - `apt` is [the command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do):
-    - the subcommand `apt update` is used to download package information from all configured sources
+    - The subcommand `apt update` is used to download package information from all configured sources
     - `apt upgrade` operates on this data to to actually install the updated package versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software ("packages") to their latest versions
@@ -78,7 +80,7 @@
 - The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
-  - In the guest, the disc should be now accessible under _/media/your-username/VBox_GAs_x.y.z/_ (x, y, z are version numbers)
+  - In the guest, the disc should be now accessible under */media/your-username/VBox_GAs_x.y.z/* (x, y, z are version numbers)
   - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal:
     - Use the `ls` (*list*) command to look at directory contents:
     `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory _/media/your-username_
@@ -104,9 +106,9 @@
 `sudo adduser your-username vboxsf`
   - After this, you need to log out from the guest and then log in again
 - In VirtualBox, select your VM → Settings → Shared Folders → Add shared folder: select the folder you want to share
-  - check the checkboxes Auto-mount and Make Permanent
-- In the guest, the shared folder should now be accessible under /media/sf_shared-folder-name/ and visible in the file manager
-  - try to create a text file in this folder and access it from your host, or the other way around
+  - Check the checkboxes `Auto-mount` and `Make Permanent`
+- In the guest, the shared folder should now be accessible under */media/sf_shared-folder-name/* and visible in the file manager
+  - Try to create a text file in this folder and access it from your host, or the other way around
 - Consult e.g. [websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/) for troubleshooting
 
 ---
@@ -118,11 +120,11 @@
   - Host: VM → Settings → Display: Try checking/unchecking "Enable 3D acceleration" (should probably be unchecked)
   - Host: VM → Settings → Display → **Graphics Controller**: Try switching to VBoxSVGA or VBoxVGA
 - Memory (system suddenly becomes very slow):
-  - Host: VM → Settings → System → Base memory: Increase to at least ~3-4 GB
+  - Host: VM → Settings → System → Base memory: Increase to at least ~4 GB
 - Sound issues: 
   - Host: VM → Settings → Audio → **Audio Controller**, try to switch between AC97 and Intel HD Audio
   - Guest: Applications → Sound & Video → PulseAudio Volume Control, try to change some settings
-  - Still sound issues: well, that's annoying. (There might be a solution, but it can be difficult to find, or you might need to wait for updates. This also explains why Linux hasn't become more popular than Windows or MacOS :) 
+  - Still sound issues: well, that's annoying. (There might be a solution, but it can be difficult to find, or you might need to wait for updates. This also explains why Linux hasn't become more popular than Windows or macOS :) 
 - Some media can't be played: install the package `ubuntu-restricted-extras` with additional media codecs and fonts ([help.ubuntu.com](https://help.ubuntu.com/community/RestrictedFormats)):
   `sudo apt install ubuntu-restricted-extras`
 - Other problems:
@@ -139,10 +141,10 @@
   - Display → increase "Video memory" to 128 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
-- Still problems with the guest, like freezes, high CPU load for no reason, etc.: One possibility is to try another desktop environment; suggested options are LXQt, Xfce and MATE. There are others, but they are less performant. After the corresponding environment is installed, it can be selected in the "Session" field at login
+- Still problems with the guest (freezes, high CPU load for no reason, etc.): One possibility is to try another desktop environment; suggested options are LXQt, Xfce and MATE. There are others, but they are less performant. Installed environments can be selected in the "Session" field [at login](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)
 - Guest system is generally slow: this shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow overall performance) 
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
-- General note: You will most probably encounter bugs in Linux; Linux was designed for system stability, transparency and production/development rather than a polished user experience
+- General note: You will most likely encounter at least some problems with Linux; Linux was designed for system stability, transparency and development rather than a polished user experience
   - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds.
 
 ---
@@ -152,16 +154,16 @@
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, *completely shutdown the VM* before that
-    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (in the worst case, you need to downgrade again)
+    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (worst case, you need to downgrade again)
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
-    - If there are problems after a VirtualBox update (e.g. a VM that used to work suddenly doesn't start and you see strange error messages), try rebooting the computer, possibly twice
+    - If there are problems after a VirtualBox update, e.g. a VM that used to work doesn't boot and you get strange error messages: "Have You Tried Turning It Off and On Again?" (try rebooting the computer, possibly twice)
 
 ---
 ## Where to go from here
 
 - **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More information on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
   - You can import it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
-- Customitize your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/)
+- Customitize your Xubuntu installation just [for fun](https://itsfoss.com/customize-xfce/) ([more]((https://www.lifewire.com/customize-xfce-desktop-environment-2202080)))
 - Become comfortable with the command line early on. Even though tasks like software installation can be done via GUIs (graphical user interfaces), GUIs are usually "frontends" to command-line tools like `apt` that operate in the background. Linux GUIs can also be buggy, because neither users nor developers like them very much
 - Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and learn the command line (e.g. [linuxcommand.org](linuxcommand.org))
 - Navigate the filesystem using `pwd`, `ls` and `cd`
