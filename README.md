@@ -1,3 +1,5 @@
+<img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
+
 FHWN, Biotech Campus Tulln
 
 Hi there! This is a small collection of useful links and information.
