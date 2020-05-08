@@ -71,13 +71,14 @@
 
 - While it's possible to use the "Software Updater", which is a graphical user interface (GUI), it's just a [frontend](https://askubuntu.com/a/539067) for a command-line tool, and you have more control if you directly use the command line
 - **Update** the Ubuntu guest: Open a terminal and type `sudo apt update && sudo apt upgrade` + <kbd>Enter</kbd>
+  - It should ask you for your password; type the password (it's invisible) + <kbd>Enter</kbd>
   - `sudo` (*superuser do*) grants admin rights and is required for all system-relevant tasks
   - `apt` is [a command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do):
-    - The subcommand `apt update` is used to download package information from all configured sources
-    - `apt upgrade` operates on this data to to actually install the updated package versions
+    - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
+    - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
-  - This might take a while and should update all installed software ("packages") to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
+  - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
 - The [guest additions](https://www.virtualbox.org/manual/ch04.html) is additional software that improves the integration of the guest with the host, e.g. it enables the auto-resizing of the OS in the VirtualBox window
 - The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
@@ -92,8 +93,7 @@
     `sudo ./VBoxLinuxAdditions.run`
 - You might see websites that suggest to install the guest additions from the repository (which is a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Usually, it's better to install software from the repository, but in this case I had problems, e.g. the shared clipboard wouldn't work
-- Learn about Xubuntu [software management](https://docs.xubuntu.org/current/user/C/managing-applications.html): Start menu → Software; Start menu → Settings Manager → Software & Updates
-  - More info: [apt-get tutorial](https://itsfoss.com/apt-get-linux-guide/), [difference apt and apt-get](https://itsfoss.com/apt-vs-apt-get-difference/), [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
+  - One downside if guest additions are installed from the virtual disc, is that they are not updated automatically later
   
 ---
 ## Some useful VirtualBox options
@@ -165,9 +165,12 @@
 
 - **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More information on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
   - You can import it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
+- Take a [brief Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
 - Customitize your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/) ([more](https://www.lifewire.com/customize-xfce-desktop-environment-2202080))
-- Become comfortable with the command line early on. Even though tasks like software installation can be done via GUIs, they are usually "frontends" to command-line tools like `apt` that operate in the background. Linux GUIs can also be buggy, because neither users nor developers like them very much
-- Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and learn the command line (e.g. [linuxcommand.org](linuxcommand.org))
-- Navigate the filesystem using `pwd`, `ls` and `cd`
-- Use manpages (`man ls`) or simplified manpages, [tldr.ostera.io](https://tldr.ostera.io/)
+- Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some useful programs: Start menu → Software; Start menu → Settings Manager → Software & Updates
+  - More info: [apt-get tutorial](https://itsfoss.com/apt-get-linux-guide/), [difference apt/apt-get](https://itsfoss.com/apt-vs-apt-get-difference/), [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
+- Become comfortable with the command line. Even though tasks like software installation can be done via GUIs, they are usually just frontends to command-line tools like `apt`, and it's usually better to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
+- Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and learn the command line: [linuxcommand.org](linuxcommand.org)
+- Navigate the file system using `pwd`, `ls` and `cd`
+- Use manpages (`man ls`) or [simplified manpages](https://tldr.ostera.io/) ([help on ls](https://tldr.ostera.io/ls)) to get help on Bash commands
 - Learn how to use a non-GUI text editor, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
