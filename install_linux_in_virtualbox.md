@@ -52,18 +52,20 @@
   - You might need to remove the disc image from the optical drive first (to make sure that the VM boots from the hard drive and not from the disc image): VirtualBox → Select the VM → Settings → Storage → Select optical disc → Look for option "Remove Disc from Virtual Drive"
 
 ---
-## Linux basics (general information)
+## Linux basics
 
 - This is how you [open a terminal](https://docs.xubuntu.org/1910/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
 - This is how you start programs/run commands: type the name of the program/command in the terminal and hit <kbd>Enter</kbd>
-- **Abort program/command** running in the terminal: press <kbd>Strg</kbd>+<kbd>C</kbd> (this key combination sends the "SIGINT" (interrupt) signal to a running process)
-- **Abort non-responsive graphical application**: enter `xkill` in the terminal and click on the non-responsive application
+- **Abort program/command** running in the terminal: press **<kbd>Ctrl</kbd>+<kbd>C</kbd>** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
+- **Abort non-responsive graphical application**: enter `xkill`  + <kbd>Enter</kbd> in the terminal and click on the non-responsive application
   - Only use this if absolutely necessary
-- Get previously entered command using <kbd>&#8593;</kbd>/<kbd>&#8595;</kbd>
-  - E.g. enter `ls` + <kbd>Enter</kbd> → "list" the directory contents
-  - Press <kbd>&#8593;</kbd> → it brings up the previously entered `ls` command
-- **Search** for previously entered commands using <kbd>Strg</kbd>+<kbd>R</kbd>
-- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and let you know what's happening and if there are problems. E.g., if you run a command, and the terminal says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If the message says `Failed to fetch http://some/web/url`, then it failed to fetch this address, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
+- If you need to repeat a command, you don't have to re-type it. The entered commands are saved, and you can access the commands history using the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> keys ([howtogeek.com](https://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/))
+  - E.g. enter `ls` + <kbd>Enter</kbd> → *list* the contents of the current directory
+  - Now press <kbd>&uarr;</kbd> to bring up the previously entered `ls` command
+- **Search** for previously entered commands using <kbd>Ctrl</kbd>+<kbd>R</kbd>
+- There are several more useful [keyboard shortcuts](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts)
+- If you can't wait to learn more Bash commands, [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) is a selection of the most important ones
+- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and let you know what's happening and if there are problems. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
 ---
 ## Update the guest and install the guest additions
