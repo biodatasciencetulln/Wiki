@@ -1,6 +1,6 @@
 <img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
 
-<H1 style="color:dimgray">Introductory information, resources and recommendations</H1>
+<H1>General information, resources and recommendations</H1>
 
 FH Tulln, Bio Data Science  
 
