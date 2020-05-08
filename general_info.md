@@ -2,7 +2,7 @@
 
 <H1>General information, resources and recommendations</H1>
 
-FH Tulln, Bio Data Science  
+FHWN, Biotech Campus Tulln 
 
 ## Biological background
 
