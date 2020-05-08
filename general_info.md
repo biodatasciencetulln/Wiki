@@ -2,7 +2,7 @@
 
 <H1>General information, resources and recommendations</H1>
 
-FHWN, Biotech Campus Tulln 
+<p style="color:darkgray";>FHWN, Biotech Campus Tulln</p>
 
 * TOC
 {:toc}
@@ -29,9 +29,9 @@ A portable laptop is required for a number of courses. Minimum specifications:
 
 **Note:** Please make a full backup of your computer before making any modifications.
 
-A virtual machine provides a convenient way of working with other operating systems (OS) than the one currently installed on your computer. [This video](https://www.youtube.com/watch?v=yIVXjl4SwVo) briefly explains what an OS and what a virtual machine is. (If you are interested in more details, [this video](https://www.youtube.com/watch?v=26QPDBe-NB8&) gives a condensed overview of the history and basic functionality of computer OSes.) Briefly, a virtual machine is a simulated computer (where you can install an OS, called "guest") that runs on your actual computer (with the host OS). It is a great way to learn and experiment with Linux and programming, because you can install it on Windows or macOS and run it as any other program. (There are some more [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/).) The virtual machine is saved as a file (or folder) on your hard drive and can be easily copied, duplicated, backed up etc. You can play with it and modify it in any way you like, and if it is broken beyond repair, you can simply restore it from an earlier backup by copying the corresponding folder back into place. 
+A virtual machine provides a convenient way of working with other operating systems (OS) than the one currently installed on your computer. [This video](https://www.youtube.com/watch?v=yIVXjl4SwVo) briefly explains what an OS and what a virtual machine is. (If you are interested in more details, [this video](https://www.youtube.com/watch?v=26QPDBe-NB8&) gives a condensed overview of the history and basic functionality of computer OSes.) Briefly, a virtual machine is a simulated computer (where you can install an OS, called "guest") that runs on your actual computer (with the host OS). It is a great way to learn and experiment with Linux and programming, because you can install it on Windows or macOS and run it as any other program. (There are some more [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/).) The virtual machine is saved as a file (or folder) on your hard drive and can be easily copied, duplicated, backed up etc. You can play with it and modify it in any way you like, and if it's broken beyond repair, you can simply restore it from an earlier backup by copying the corresponding folder back into place. 
 
-We will use Virtualbox ([download page](https://www.virtualbox.org/wiki/Downloads)), which is a free program available for all OSes, and allows e.g. to run a Linux OS on Windows. Linux comes in different flavors (called distrubitions), with Ubuntu being the most popular one. I suggest to use the latest Xubuntu (current release 20.04, [download page](https://xubuntu.org/download/)), which is Ubuntu with a more lightweight and responsive desktop environment (called Xfce, therefore **X**ubuntu). [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) shows how to download and install Ubuntu in Virtualbox; the process is equivalent for Xubuntu. (You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host PC [BIOS](https://www.youtube.com/watch?v=SlzwMKcCoMI) first, as explained on the [virtualbox forum](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339) or on [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting your new OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), essentially a collection of Virtualbox-related drivers, for a fully functional virtual machine. [Detailed instructions](install_linux_in_virtualbox.md))
+We will use VirtualBox ([download page](https://www.virtualbox.org/wiki/Downloads)), which is a free program available for all OSes, and allows e.g. to run a Linux OS on Windows. Linux comes in different flavors (called distributions), with Ubuntu being the most popular one. I suggest to use the latest Xubuntu (current release 20.04, [download page](https://xubuntu.org/download/)), which is Ubuntu with a more lightweight and responsive desktop environment (called Xfce, therefore **X**ubuntu). [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) shows how to download and install Ubuntu in VirtualBox; the process is equivalent for Xubuntu. (You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host PC [BIOS](https://www.youtube.com/watch?v=SlzwMKcCoMI) first, as explained on the [virtualbox forum](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339) or on [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting your new OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), essentially a collection of VirtualBox-related drivers, for a fully functional virtual machine. [Detailed instructions](install_linux_in_virtualbox.md))
 
 Note that Windows also provides a built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux), that allows to run the Linux command line and some utilities directly on Windows. This also works via a type of virtual machine, and can sometimes be useful. However, a fully fledged virtual machine is more convenient for us.
 
@@ -64,7 +64,7 @@ Books:
 
 ## Python
 
-It's not very important which resource for learning Python you pick, as most of them present very similar content (the basics of the Python programming language) in different forms. It's only important that the way in which the information is presented makes sense to you. Pick a resource that works well for you and stick to if possible. You can also talk to your fellow students to exchange experiences and recommendations.
+It's not very important which resource for learning Python you pick, as most of them present very similar content (the basics of the Python programming language) in different forms. It's only important that the way in which the information is presented makes sense to you. Pick a resource that works well for you and stick to it if possible. You can also talk to your fellow students and exchange experiences and recommendations.
 
 ### Development environment
 
@@ -77,7 +77,7 @@ One great way to learn Python is to simply run it online. There are several good
 
 To run Python locally, the most convenient way is to use a *Python distribution* like [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)), which includes not only the Python interpreter but also a number of useful libraries and programs, including the development environments Jupyter, Spyder and VS Code (and others, like RStudio for R development). You can e.g. try Jupyter and Spyder, which are both great environments.
 
-Hint: If you use [Spyder](https://www.spyder-ide.org/), a good place to start is the `Spyder tutorial`, accessible via `Help` → `Spyder tutorial`.
+Hint: If you use [Spyder](https://www.spyder-ide.org/), a good place to start is the Spyder tutorial, accessible via `Help` → `Spyder tutorial`.
 
 ### Books/tutorials
 
@@ -100,7 +100,7 @@ Hint: If you use [Spyder](https://www.spyder-ide.org/), a good place to start is
 - [python-guide.org: useful links](https://docs.python-guide.org/intro/learning/)
 - [learnpython.org](https://www.learnpython.org/)
 - [codecademy.com](https://www.codecademy.com/learn/learn-python-3) and similar interactive learning resources
-- [**The Carpentries**](https://carpentries.org/):
+- [The Carpentries](https://carpentries.org/):
   - [Software Carpentry](https://software-carpentry.org/)
   - [Data Carpentry](https://datacarpentry.org/)
   
