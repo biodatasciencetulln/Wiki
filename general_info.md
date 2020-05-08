@@ -1,8 +1,8 @@
 <img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
 
-<H1>General information, resources and recommendations</H1>
+<p style="color:darkgray;">FHWN, Biotech Campus Tulln</p>
 
-<p style="color:darkgray";>FHWN, Biotech Campus Tulln</p>
+<H1>General information, resources and recommendations</H1>
 
 * TOC
 {:toc}
