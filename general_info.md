@@ -1,5 +1,4 @@
 <img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
-
 <p style="color:darkgray;">FHWN, Biotech Campus Tulln</p>
 
 <H1>General information, resources and recommendations</H1>
@@ -29,23 +28,24 @@ A portable laptop is required for a number of courses. Minimum specifications:
 
 **Note:** Please make a full backup of your computer before making any modifications.
 
-A virtual machine provides a convenient way of working with other operating systems (OS) than the one currently installed on your computer. [This video](https://www.youtube.com/watch?v=yIVXjl4SwVo) briefly explains what an OS and what a virtual machine is. (If you are interested in more details, [this video](https://www.youtube.com/watch?v=26QPDBe-NB8&) gives a condensed overview of the history and basic functionality of computer OSes.) Briefly, a virtual machine is a simulated computer (where you can install an OS, called "guest") that runs on your actual computer (with the host OS). It is a great way to learn and experiment with Linux and programming, because you can install it on Windows or macOS and run it as any other program. (There are some more [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/).) The virtual machine is saved as a file (or folder) on your hard drive and can be easily copied, duplicated, backed up etc. You can play with it and modify it in any way you like, and if it's broken beyond repair, you can simply restore it from an earlier backup by copying the corresponding folder back into place. 
+A virtual machine (VM) provides a convenient way of working with other operating systems (OS) than the one currently installed on your computer. Watch [this short video](https://www.youtube.com/watch?v=yIVXjl4SwVo) for an explanation of the basic terms. (If you are interested in details, [this nice video](https://www.youtube.com/watch?v=26QPDBe-NB8&) approaches the basic functionality of computer OSes from a historic perspective.) Briefly, a VM is a simulated computer (where you can install an OS, called "guest") that runs on your actual computer (with the host OS). It is a great way to learn and experiment with Linux and programming, because you can install it on Windows or macOS and run it like any other program. (There are some more [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/).) The VM is saved as a folder with a few files on your hard drive and can be copied, duplicated and backed up like any other folder. You can play with the VM and modify it in any way you like, and if it's broken beyond repair, you can restore it from an earlier backup by copying the corresponding folder back into place. 
 
-We will use VirtualBox ([download page](https://www.virtualbox.org/wiki/Downloads)), which is a free program available for all OSes, and allows e.g. to run a Linux OS on Windows. Linux comes in different flavors (called distributions), with Ubuntu being the most popular one. I suggest to use the latest Xubuntu (current release 20.04, [download page](https://xubuntu.org/download/)), which is Ubuntu with a more lightweight and responsive desktop environment (called Xfce, therefore **X**ubuntu). [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) shows how to download and install Ubuntu in VirtualBox; the process is equivalent for Xubuntu. (You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host PC [BIOS](https://www.youtube.com/watch?v=SlzwMKcCoMI) first, as explained on the [virtualbox forum](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339) or on [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting your new OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), essentially a collection of VirtualBox-related drivers, for a fully functional virtual machine. [Detailed instructions](install_linux_in_virtualbox.md))
+We will use [VirtualBox](https://www.virtualbox.org/wiki/Downloads), which is free software available for most OSes, and allows e.g. to run a Linux VM on Windows. Linux comes in different flavors (called distributions), with Ubuntu being the most popular one. I suggest to use the latest [Xubuntu](https://xubuntu.org/download/), which is Ubuntu with a more lightweight and responsive desktop environment (called Xfce, therefore **X**ubuntu). [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) shows how to download and install Ubuntu in VirtualBox; the process is equivalent for Xubuntu. (You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host PC [BIOS](https://www.youtube.com/watch?v=SlzwMKcCoMI) first, as explained e.g. on [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting the guest OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), essentially a collection of VirtualBox-related drivers, for a fully functional VM. [Click here for detailed instructions.](install_linux_in_virtualbox.md))
 
-Note that Windows also provides a built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux), that allows to run the Linux command line and some utilities directly on Windows. This also works via a type of virtual machine, and can sometimes be useful. However, a fully fledged virtual machine is more convenient for us.
+Note that Windows 10 now includes a built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux), that allows to run the Linux shell and some utilities directly on Windows. This also works via a type of VM, and can sometimes be useful. However, a fully fledged VM is more convenient for us.
 
 ## Linux and Bash
 
-[Linux](https://en.wikipedia.org/wiki/Linux) is a free OS, which is stable yet highly customizeable, actively developed, and offers a huge selection of free software development tools. A lot of good scientific software is written only for Linux - e.g. almost all short read aligners, assemblers, and many more. Some advantages are:
+[Linux](https://en.wikipedia.org/wiki/Linux) is a free OS, which is stable yet highly customizable, actively developed, and offers a huge selection of free software development tools. A lot of scientific software is written only for Linux - e.g. almost all short read aligners, assemblers, and many more. Some advantages are:
 
-* Software can be installed in an automated way using a package manager (similar to an app store)
-* Software can be installed by the user without administrator priviledges and easily configured in different ways (this is much harder in Windows)
+* Linux is completely free and open-source and widely used
 * Linux is very safe, malware is rare
+* Software can be installed in an automated way using a package manager (similar to an app store)
+* Software can be installed by the user without administrator privileges and easily configured in different ways (this is much harder in Windows)
 
-Linux includes the [shell](http://linuxcommand.org/lc3_lts0010.php), a command-line interpreter/scripting language that can execute built-in shell commands, Linux utilities and programs. It is a powerful and versatile tool, and very useful e.g. for working with text files, which is a frequent situation in biological data analysis. The shell allows to easily build pipelines using built-in and other tools, e.g. for sorting/cutting/restructuring text files and feeding the result into other programs. It is one of the most important tools for bio data science, and you should try to get comfortable with it early on.
+Linux includes the [shell](http://linuxcommand.org/lc3_lts0010.php), a command-line interpreter/scripting language that can execute built-in shell commands, Linux utilities and programs. It is a powerful and versatile tool and very useful e.g. for working with text files, which is common in biological data analysis. The shell allows to easily build pipelines using different commands and utilities, e.g. for sorting/cutting/restructuring text files and feeding the result into other commands/utilities/programs. It is one of the most important tools in bio data science, and you should get comfortable with it early on.
 
-Several shell programs are available, but most Linux distributions come with the [Bash shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the shell. Different flavors of Ubuntu use different terminals, e.g. Xubuntu uses the [Xfce 4 terminal emulator](https://superuser.com/a/269252). [Here](https://docs.xubuntu.org/current/user/C/command-line.html) is how to open Bash on Xubuntu, and a listing of some important commands. [This video](https://www.youtube.com/watch?v=V_gODEnrxI0) gives a brief Xubuntu tour.
+Several shell programs are available, but most Linux distributions come with the [Bash shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the Bash shell. Different flavors of Ubuntu use different terminals, e.g. Xubuntu uses the [Xfce 4 terminal emulator](https://superuser.com/a/269252). [Here](https://docs.xubuntu.org/current/user/C/command-line.html) is how to open Bash on Xubuntu, and a listing of some important commands. [This video](https://www.youtube.com/watch?v=V_gODEnrxI0) gives a brief Xubuntu tour.
 
 Some recommended Bash introductory tutorials/resources:
 
@@ -54,7 +54,7 @@ Some recommended Bash introductory tutorials/resources:
 - [linuxcommand.org](http://linuxcommand.org/)
 - [swcarpentry.github.io](https://swcarpentry.github.io/shell-novice/)
 
-Hint: If you find a useful Youtube channel, you might want to subscribe and/or check out their other videos.
+Hint: If you find a useful YouTube channel, you might want to subscribe and/or check out their other videos.
 
 Books:
 
@@ -64,11 +64,11 @@ Books:
 
 ## Python
 
-It's not very important which resource for learning Python you pick, as most of them present very similar content (the basics of the Python programming language) in different forms. It's only important that the way in which the information is presented makes sense to you. Pick a resource that works well for you and stick to it if possible. You can also talk to your fellow students and exchange experiences and recommendations.
+It's not very important which resource for learning Python you pick, as most of them present similar content (the basics of the Python programming language) in different ways. It's only important that the way in which the information is presented makes sense to you. Pick a resource that works well for you and stick to it if possible. You can also talk to your fellow students and exchange experiences and recommendations.
 
 ### Development environment
 
-A development environment are programs and tools that you use for writing, testing and debugging code. You can use a text editor for that, but [integrated development environments](https://www.codecademy.com/articles/what-is-an-ide) provide many features that will make your life easier and (hopefully) improve your code. You can install the programs listed below in the virtual machine, or (for testing) on your regular OS. 
+A development environment are programs and tools that you use for writing, testing and debugging code. You can use a text editor for that, but [integrated development environments](https://www.codecademy.com/articles/what-is-an-ide) provide many features that will make your life easier and (hopefully) improve your code. You can install the programs listed below in the VM, or (for testing) on the host OS. 
 
 One great way to learn Python is to simply run it online. There are several good resources for that, e.g.
 
