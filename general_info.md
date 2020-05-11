@@ -28,9 +28,9 @@ A portable laptop is required for a number of courses. Minimum specifications:
 
 **Note:** Please make a full backup of your computer before making any modifications.
 
-Virtual machines (VMs) allow you to run an operating system (OS) in an app window on your desktop that behaves like a full, separate computer. This virtual computer, called "guest", has its own emulated CPU, memory, network interface and storage, and you can install an OS on it just as you would on a real, physical machine. [This short video](https://www.youtube.com/watch?v=yIVXjl4SwVo) explains the basic terms. The [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/) are that you can try different OSes, run software your main OS can't, and try out apps in a safe, isolated environment. It's a great way to learn and experiment with an OS like Linux, because you can install it on Windows or macOS and run it like any other software. The VM is saved as a folder with some files on your hard drive and can be copied, backed up and removed like any folder. You can play with the VM and modify it as you like, and if it's broken beyond repair, you can quickly restore it from an earlier backup. Many people use VMs for their work on a regular basis. (By the way, do you know what an OS does? [This nice video](https://www.youtube.com/watch?v=26QPDBe-NB8&) approaches its basic functionality from a historical perspective.)
+Virtual machines (VMs) allow you to run an operating system (OS) in an app window on your desktop that behaves like a full, separate computer. This virtual computer, the "guest", has its own emulated CPU, memory, network interface and storage, and you can install an OS on it just as you would on a real, physical machine. [This short video](https://www.youtube.com/watch?v=yIVXjl4SwVo) explains the basic terms. The [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/) are that you can try different OSes, run software your main OS can't, and try out apps in a safe, isolated environment. It's a great way to learn and experiment with an OS like Linux, because you can install it on Windows or macOS and run it like any other software. VMs are saved as folders with some files on your hard drive and can be copied, backed up and removed like any other folders. You can play with a VM and modify it as you like, and if it's broken beyond repair, you can quickly restore it from an earlier backup. Many people use VMs for their work on a regular basis. (By the way, do you know what an OS does? [This nice video](https://www.youtube.com/watch?v=26QPDBe-NB8&) approaches its basic functionality from a historical perspective.)
 
-We will use [VirtualBox](https://www.virtualbox.org/wiki/Downloads), which is free software available for most OSes, and allows to run e.g. a Linux VM on Windows. Linux comes in different flavors (called [distributions](https://www.howtogeek.com/132624/htg-explains-whats-a-linux-distro-and-how-are-they-different/)), with Ubuntu being the most popular one. I suggest to use the latest [Xubuntu](https://xubuntu.org/download/), which is Ubuntu with the lightweight and responsive desktop environment Xfce instead of GNOME, therefore **X**ubuntu. [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) walks you through the installation of Ubuntu in VirtualBox; the process is equivalent for Xubuntu. You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host PC [BIOS](https://www.youtube.com/watch?v=SlzwMKcCoMI) first, as explained e.g. [here](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting the guest OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), essentially a collection of VirtualBox-related drivers, for a fully functional VM. [Click here for detailed instructions.](install_linux_in_virtualbox.md)
+We will use [VirtualBox](https://www.virtualbox.org/wiki/Downloads), which is free software available for most OSes, and allows to run e.g. a Linux VM on Windows. Linux comes in different flavors (called [distributions](https://www.howtogeek.com/132624/htg-explains-whats-a-linux-distro-and-how-are-they-different/)), with Ubuntu being the most popular one. I suggest to use the latest [Xubuntu](https://xubuntu.org/download/), which is Ubuntu with the lightweight and responsive desktop environment Xfce instead of GNOME, therefore **X**ubuntu. [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) walks you through the installation of Ubuntu in VirtualBox; the process is equivalent for Xubuntu. You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host BIOS/UEFI first, as explained e.g. [here](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting the guest OS, you will need to install the [guest additions](https://www.itzgeek.com/post/how-to-install-virtualbox-guest-additions-on-ubuntu-20-04/), a set of VirtualBox-related drivers and software, for a fully functional VM. [Click here for detailed instructions.](install_linux_in_virtualbox.md)
 
 Note that Windows 10 now includes a built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux), that allows to run the Linux shell and command-line tools directly on Windows. This also works via a type of VM, and can sometimes be useful. However, a fully fledged VM is more convenient for us.
 
@@ -77,20 +77,23 @@ One great way to learn Python is to simply run it online. There are several good
 
 To run Python locally I recommend the *Python distribution* [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)), which includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder and VS Code (and others, like RStudio for R development). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with. I will mostly use Jupyter, because it's perfect for presenting things and telling stories, but not necessarily the best for learning or code development.
 
-- [Spyder](https://www.spyder-ide.org/): Very learner-friendly environment. A good place to start is the Spyder tutorial, accessible via `Help` → `Spyder tutorial`; also check out [this introductory video](https://www.youtube.com/watch?v=zYNRqVimU3Q)
-- Jupyter: [Introductory video](https://www.youtube.com/watch?v=HW29067qVWk)
-- VS Code: Very nice IDE, but not necessarily the best for learning; if you want to try it, start [here](https://www.digitalocean.com/community/tutorials/getting-started-with-python-in-visual-studio-code) and continue [here](https://realpython.com/python-development-visual-studio-code/), [here](https://code.visualstudio.com/docs/python/python-tutorial) or [here](https://code.visualstudio.com/docs/getstarted/introvideos)
+- [Spyder](https://www.spyder-ide.org/): Very learning-friendly IDE. A good place to start is the Spyder tutorial, `Help` → `Spyder tutorial`; also check out [this introductory video](https://www.youtube.com/watch?v=zYNRqVimU3Q)
+- [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter): [Introductory video](https://www.youtube.com/watch?v=HW29067qVWk)
+- [VS Code](https://en.wikipedia.org/wiki/Visual_Studio_Code): Very nice IDE, but not necessarily the best for complete beginners; if you want to try it, start [here](https://www.digitalocean.com/community/tutorials/getting-started-with-python-in-visual-studio-code) and continue [here](https://realpython.com/python-development-visual-studio-code/), [here](https://code.visualstudio.com/docs/python/python-tutorial) or [here](https://code.visualstudio.com/docs/getstarted/introvideos)
 
 ### Books/tutorials
 
-- ["A Byte of Python"](https://python.swaroopch.com/) (free ebook)
-- ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) (free ebook)
+- ["A Byte of Python"](https://python.swaroopch.com/) (free ebook, beginner-friendly; doesn't go too deep, but covers the basics)
+- [w3schools.com Python tutorial](https://www.w3schools.com/python/) (very beginner-friendly, with interactive exercises)
+- E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/), very beginner-friendly, if you like the approach of the book series)
+- ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) (free and very nice ebook, maybe not great for complete beginners; you'll learn a great deal if you manage to work your way through it)
   - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) (interactive edition)
-- E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/), very beginner-friendly, if you like the book's approach)
 - E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/))
 - L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([Amazon](https://www.amazon.de/Fluent-Python-Concise-Effective-Programming-ebook/dp/B0131L3PW4/))
 - B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/); advanced, not beginner-friendly)
-- [Official Python tutorial](https://docs.python.org/3/tutorial/)
+- [Official Python tutorial](https://docs.python.org/3/tutorial/) (best-suited as reference for topics you already know, to refresh your memory or to go deeper)
+
+Hint: Practically oriented tutorials that solve little problems rather than just presenting information, are usually more fun and provide a better understanding of the material.
 
 ### Videos/YouTube channels
 
@@ -101,9 +104,16 @@ To run Python locally I recommend the *Python distribution* [Anaconda](https://e
 
 - [python-guide.org: useful links](https://docs.python-guide.org/intro/learning/)
 - [learnpython.org](https://www.learnpython.org/)
-- [codecademy.com](https://www.codecademy.com/learn/learn-python-3) and similar interactive learning resources
+- [codecademy.com](https://www.codecademy.com/learn/learn-python-3), and similar interactive learning resources
 - [The Carpentries](https://carpentries.org/):
   - [Software Carpentry](https://software-carpentry.org/)
   - [Data Carpentry](https://datacarpentry.org/)
   
-Hint: Practically oriented tutorials that solve little problems rather than just presenting information, are usually more fun and provide a better understanding of the material.
+### Stay updated
+
+Connecting with other people from whom you can learn is both fun and helps staying updated. Here are some ideas:
+
+- Twitter: look [here](https://www.youtube.com/watch?v=1hhuFrBNoLg) and maybe [here](https://www.youtube.com/watch?v=3471Vg3GaPI) 
+- Reddit: look [here](https://analyticsindiamag.com/10-data-science-subreddits-every-tech-enthusiast-should-follow/)
+- Podcasts: look [here](https://dbader.org/blog/ultimate-list-of-python-podcasts)
+- Forums: [Stackoverflow](https://stackoverflow.com/), no way around it
