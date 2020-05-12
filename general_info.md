@@ -8,7 +8,7 @@
 
 ## Biological background
 
-A solid biological background is indispensible for all courses of the curriculum. This general textbook provides a comprehensive overview and can be used for studying or as a reference:
+A solid biological background is indispensible for all courses of the curriculum. This general textbook provides a comprehensive overview and can be used for studying and as a reference:
 
 - Urry et al.: "Campbell Biology" ([amazon.com](https://www.amazon.com/Campbell-Biology-11th-Lisa-Urry/dp/0134093410), [pearson-studium.de](https://www.pearson-studium.de/campbell-biologie_3.html))
 
@@ -45,7 +45,7 @@ Note that Windows 10 now includes a built-in [Windows Subsystem for Linux](https
 
 Linux includes the [shell](http://linuxcommand.org/lc3_lts0010.php), a command-line interpreter/scripting language that can execute built-in shell commands, Linux utilities and programs. It is a powerful and versatile tool and very useful e.g. for working with text files, which is common in biological data analysis. The shell allows to easily build pipelines using different commands and utilities, e.g. for sorting/cutting/restructuring text files and feeding the result into other commands/utilities/programs. It is one of the most important tools in bio data science, and you should get comfortable with it early on.
 
-Several shell programs are available, but most Linux distributions come with the [Bash shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the Bash shell. Different flavors of Ubuntu use different terminals, e.g. Xubuntu uses the [Xfce 4 terminal emulator](https://superuser.com/a/269252). [Here](https://docs.xubuntu.org/current/user/C/command-line.html) is how to open Bash on Xubuntu, and a listing of some important commands. [This video](https://www.youtube.com/watch?v=V_gODEnrxI0) gives a brief Xubuntu tour.
+Several shell programs are available, but most Linux distributions come with the [Bash shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell)). A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the Bash shell. Different flavors of Ubuntu use different terminals, e.g. Xubuntu uses the [Xfce 4 terminal emulator](https://superuser.com/a/269252). [Here](https://docs.xubuntu.org/current/user/C/command-line.html) is how to open Bash on Xubuntu, and a listing of some important commands.
 
 Some recommended Bash introductory tutorials/resources:
 
@@ -83,15 +83,15 @@ To run Python locally I recommend the *Python distribution* [Anaconda](https://e
 
 ### Books/tutorials
 
-- ["A Byte of Python"](https://python.swaroopch.com/) (free ebook, beginner-friendly; doesn't go too deep, but covers the basics)
-- [w3schools.com Python tutorial](https://www.w3schools.com/python/) (very beginner-friendly, with interactive exercises)
-- E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/), very beginner-friendly, if you like the approach of the book series)
-- ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) (free and very nice ebook, maybe not great for complete beginners; you'll learn a great deal if you manage to work your way through it)
-  - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) (interactive edition)
+- [w3schools.com Python tutorial](https://www.w3schools.com/python/) - beginner-friendly interactive tutorial
+- ["A Byte of Python"](https://python.swaroopch.com/) - free beginner-friendly ebook; doesn't go too deep, but covers the basics
+- E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/)) - very beginner-friendly, if you like the approach of the book series
+- ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) - free and very nice ebook, maybe not great for complete beginners; you'll learn a lot if you can work your way through it
+  - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) - interactive edition
 - E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/))
 - L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([Amazon](https://www.amazon.de/Fluent-Python-Concise-Effective-Programming-ebook/dp/B0131L3PW4/))
-- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/); advanced, not beginner-friendly)
-- [Official Python tutorial](https://docs.python.org/3/tutorial/) (best-suited as reference for topics you already know, to refresh your memory or to go deeper)
+- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) -  advanced, not beginner-friendly
+- [Official Python tutorial](https://docs.python.org/3/tutorial/) - best-suited as reference for topics you already know, to refresh your memory or to go deeper
 
 Hint: Practically oriented tutorials that solve little problems rather than just presenting information, are usually more fun and provide a better understanding of the material.
 
@@ -108,6 +108,7 @@ Hint: Practically oriented tutorials that solve little problems rather than just
 - [The Carpentries](https://carpentries.org/):
   - [Software Carpentry](https://software-carpentry.org/)
   - [Data Carpentry](https://datacarpentry.org/)
+- [Rosalind](http://rosalind.info/problems/locations/) - a platform for learning bioinformatics and programming through problem solving
   
 ### Stay updated
 
