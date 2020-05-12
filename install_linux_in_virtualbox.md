@@ -18,6 +18,7 @@
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
 - Xubuntu is Ubuntu but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640) ([more info](https://wiki.archlinux.org/index.php/Desktop_environment)), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different selection of pre-installed software, requires less resources and is generally more responsive than the default GNOME desktop environment 
+  - While there are differences between Ubuntu and Xubuntu, they are only superficial, as Xubuntu *is* Ubuntu with a different look; therefore most Ubuntu-related tutorials apply to Xubuntu as well
 
 ---
 ## Create a new Virtual Machine (VM) in VirtualBox
@@ -26,7 +27,7 @@
 - Enter `Name`: e.g. `Xubuntu`
 - Make sure that `Type` is `Linux`
 - Make sure that `Version` is `Ubuntu (64 bit)`
-  - Note: if the option `Ubuntu (64 bit)` is not available, you probably need to activate a **BIOS setting** for virtualization. Reboot your computer into BIOS/UEFI and enable hardware virtualization. This will appear as `Virtualization Technology` and/or `VT-x or AMD-V` or similar (different manufacturers word it differently). You can consult e.g. the following links for instructions and troubleshooting: [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339), [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os), [docs.fedoraproject.org](https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html), [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/)
+  - Note: if the option `Ubuntu (64 bit)` is not available, you probably need to activate a **BIOS setting** for virtualization. Reboot your computer into [BIOS/UEFI](https://www.youtube.com/watch?v=SlzwMKcCoMI) and enable hardware virtualization. This will appear as `Virtualization Technology` and/or `VT-x or AMD-V` or similar (different manufacturers word it differently). You can consult e.g. the following links for instructions and troubleshooting: [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339), [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os), [docs.fedoraproject.org](https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html), [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/)
   - If you have multiple BIOS options related to virtualization, e.g. `VTx` and `VTd`, you probably should enable both
 - Most other settings: the defaults are ok
 - Memory: at least 4 GB is recommended (can be changed later)
@@ -35,9 +36,9 @@
 - The VM is essentially a simulated computer, with a hard drive (currently empty), an optical disc drive (where you can "insert" a disc/disc image), and simulated audio/graphics hardware
 
 ---
-## Install the guest OS (operating system)
+## Install the guest operating system (OS)
 
-- The operating system (OS) that runs on your computer is called **host**, the OS in the VM is called **guest**
+- The OS running on your computer is called **host**, the OS in the VM is called **guest**
 - In VirtualBox: Select the VM → "Start"
 - It should ask you for a disc (the hard drive is empty, so it is looking for a bootable disc) → select the iso file
 - Boot the OS (this is called [live OS](https://en.wikipedia.org/wiki/Live_CD) because it's booted directly from the disc/iso file, without being installed on the hard drive)
@@ -63,7 +64,7 @@
   - Press the <kbd>&uarr;</kbd> key to bring up the previously entered command (`ls`)
 - **Search** for previously entered commands using **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
 - There are several more useful [keyboard shortcuts](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts)
-- If you can't wait to learn more Bash commands, [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) is a selection of the most important ones
+- If you can't wait to learn more Bash commands, a selection of important ones is [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) or [here](https://help.ubuntu.com/community/UsingTheTerminal)
 - When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and let you know what's happening and if there were any problems. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
 ---
@@ -133,7 +134,7 @@
   - Try to determine in which situation the problem occurs, e.g. does rebooting the VM help?
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window has dis appeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (like [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared))
 - Running a **system monitor** at all times to keep track of the memory usage and CPU load is a good idea, and helps to diagnose problems
-  - Guest: Use some type of [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like gnome-system-monitor (you might need to install it first, `sudo apt install gnome-system-monitor`), or a similar program ([Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)).
+  - Guest: Use a [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like GNOME System Monitor (to install it: `sudo apt install gnome-system-monitor`), [`top`](https://www.lifewire.com/linux-top-command-2201163) or [Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)
   - Host: Use the Task Manager (Windows) or equivalent
   - High CPU load or memory usage can substantially slow down the system. If they are caused by a software problem, restarting the offending program can help
 - Random freezes of the guest OS → try to modify these host VM settings:
@@ -163,14 +164,16 @@
 ---
 ## Where to go from here
 
-- **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory. (More info on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
+- **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory (more info on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
   - You can import it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
-- Take a [brief Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
+- Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
 - Customitize your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/) ([more](https://www.lifewire.com/customize-xfce-desktop-environment-2202080))
-- Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some useful programs: Start menu → Software; Start menu → Settings Manager → Software & Updates
-  - More info: [apt-get tutorial](https://itsfoss.com/apt-get-linux-guide/), [difference apt/apt-get](https://itsfoss.com/apt-vs-apt-get-difference/), [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
+- Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some useful programs using the command line or GUIs (Start menu → Software; Start menu → Settings Manager → Software & Updates)
+  - Some tutorials use `apt` for software installation, while others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
+  - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
 - Become comfortable with the command line. Even though tasks like software installation can be done via GUIs, they are usually just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
 - Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and learn the command line: [linuxcommand.org](linuxcommand.org)
+  - There are many cheat sheets like [this one](https://devhints.io/bash), but none of them will be as good as your own cheat sheet. A text file with the important commands is a good start
 - Navigate the file system using `pwd`, `ls` and `cd`
 - Get help on Bash commands using manpages (`man ls`) or [simplified manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
 - Learn how to use a non-GUI text editor, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
