@@ -7,4 +7,5 @@ Hi there! This is a small collection of hopefully useful links and information t
 - [General information](general_info.md)
 - [Install Ubuntu in Virtualbox](install_linux_in_virtualbox.md)
 
-<img src="wordcloud.svg" alt="Wordcloud" width="300">
+<br>
+<img src="wordcloud.svg" alt="Wordcloud" width="600">
