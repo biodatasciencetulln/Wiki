@@ -2,7 +2,9 @@
 
 <p style="color:darkgray;">FHWN, Biotech Campus Tulln</p>
 
-Hi there! This is a small collection of useful links and information.
+Hi there! This is a small collection of hopefully useful links and information that will help you get started with Bio Data Science.
 
 - [General information](general_info.md)
 - [Install Ubuntu in Virtualbox](install_linux_in_virtualbox.md)
+
+![Wordcloud](wordcloud.svg)
