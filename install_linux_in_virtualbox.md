@@ -11,7 +11,7 @@
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
   - General note: During all steps of the tutorial, you might encounter problems of some sort. As we are using well-known and popular software like VirtualBox or Ubuntu, those problems have usually been discussed online and there is some solution available. An internet search for your particular problem based on the most important keywords can help find these discussions and the solution
   - E.g., if installation on macOS fails, you can search for "virtualbox macos installation failed" and find links like [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/) or [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5), which say that this can be related to a macOS security feature (Gatekeeper) and explain how to fix it
-- Run VirtualBox and install the Extension Pack
+- Run VirtualBox and install the Extension Pack, some additional Oracle proprietary components which extend the functionality of the base package
 
 ---
 ## Download the Linux iso file (disc image)
@@ -70,10 +70,10 @@
 ---
 ## Update the guest and install the guest additions
 
-- While it's possible to use the "Software Updater", which is a graphical user interface (GUI), it's just a [frontend](https://askubuntu.com/a/539067) for a command-line tool, and you have more control if you directly use the command line
+- You can use the "Software Updater" for updates, which seems easier, because it's a graphical user interface (GUI). However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of the OS if you directly use the command line
 - **Update** the Ubuntu guest: Open a terminal and type `sudo apt update && sudo apt upgrade` + <kbd>Enter</kbd>
   - It should ask you for your password; type the password (it's invisible) + <kbd>Enter</kbd>
-  - `sudo` (*superuser do*) grants admin rights and is required for all system-relevant tasks
+  - `sudo` (*superuser do*) grants [root](https://unix.stackexchange.com/a/254470) privileges and is required for all system-relevant tasks
   - `apt` is [a command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do):
     - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
@@ -82,18 +82,18 @@
   - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
 - The [guest additions](https://www.virtualbox.org/manual/ch04.html) is additional software that improves the integration of the guest with the host, e.g. it enables the auto-resizing of the OS in the VirtualBox window
 - The guest additions can be installed from the (virtual) **"Guest Additions disc image"** that comes with VirtualBox:
-  - You might need some additional packages like "build-essential" (unless already installed): `sudo apt install build-essential`
+  - You might need some additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
   - In the guest, the disc should be now accessible under */media/your-username/VBox_GAs_x.y.z/* (x, y, z are version numbers)
   - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal:
-    - Use the `ls` (*list*) command to look at directory contents:
-    `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory _/media/your-username_
-    - Enter the directory using the `cd` (*change directory*) command:
-    `cd /media/your-username/VBox_GAs_6.0.10/`
+    - Use the `ls` command to *list* the directory contents:
+    `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory */media/your-username*
+    - Enter the directory using the `cd` (*change directory*) command (using <Tab> in the same way):
+    `cd /media/your-username/VBox_GAs_6.0.10/`; inspect the directory contents via `ls`
     - Install the guest additions package by running the installation script:
     `sudo ./VBoxLinuxAdditions.run`
-- You might see websites that suggest to install the guest additions from the repository (which is a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
-  - Usually, it's better to install software from the repository, but in this case I had problems, e.g. the shared clipboard wouldn't work
+- Some websites suggest to install the guest additions from the repository (which is a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
+  - Usually, this approach is better, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
   - One downside if guest additions are installed from the virtual disc, is that they are not updated automatically later
   
 ---
@@ -164,16 +164,16 @@
 ---
 ## Where to go from here
 
-- **Back up** your VM. You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory (more info on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
+- **Back up your VM.** You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory (more info on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
   - You can import it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
 - Customitize your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/) ([more](https://www.lifewire.com/customize-xfce-desktop-environment-2202080))
 - Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some useful programs using the command line or GUIs (Start menu → Software; Start menu → Settings Manager → Software & Updates)
   - Some tutorials use `apt` for software installation, while others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
   - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
-- Become comfortable with the command line. Even though tasks like software installation can be done via GUIs, they are usually just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
-- Check out some introductory Linux and [Bash tutorials](https://www.youtube.com/watch?v=oxuRxtrO2Ag), and learn the command line: [linuxcommand.org](linuxcommand.org)
-  - There are many cheat sheets like [this one](https://devhints.io/bash), but none of them will be as good as your own cheat sheet. A text file with the important commands is a good start
-- Navigate the file system using `pwd`, `ls` and `cd`
-- Get help on Bash commands using manpages (`man ls`) or [simplified manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
-- Learn how to use a non-GUI text editor, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
+- **Learn the command line.** Even though some tasks like software installation can be done via GUIs, they are just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
+  - Go through an introductory Linux/Bash tutorial, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag) and [this online book](linuxcommand.org)
+  - Cheat sheets like [this one](https://devhints.io/bash) can help, but none of them will be as good as your own cheat sheet; a text file with important commands is a good start
+  - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
+  - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR ("Too Long; Didn't Read") manpages**](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
+- Learn how to use a **non-GUI text editor**, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
