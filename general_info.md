@@ -68,17 +68,17 @@ It's not very important which resource for learning Python you pick, as most of 
 
 ### Development environment
 
-A development environment are programs and tools that you use for writing, testing and debugging code. You could use a simple text editor, but [integrated development environments (IDEs)](https://www.codecademy.com/articles/what-is-an-ide) provide many features that will make your life easier and your code better. You can install the programs listed below in the VM, or (for testing) on the host OS.
+A development environment comprises programs and tools that you use for writing, testing and debugging code. You could use a simple text editor, but [integrated development environments (IDEs)](https://www.codecademy.com/articles/what-is-an-ide) provide many features that will make your life easier and your code better. 
 
-One great way to learn Python is to simply run it online. There are several good resources, e.g.
+**Online IDEs.** One great way to learn Python is to simply run it online. There are several good resources, e.g.
 
 - [Google Colab](https://colab.research.google.com) — Jupyter notebook in the cloud (via Google drive), with real-time collaboration ([short YouTube intro](https://www.youtube.com/watch?v=inN8seMm7UI))
 - [Repl.it](https://repl.it/languages/python3) — A browser-based IDE, that supports over 50 programming languages, including Python
 
-To run Python locally I recommend the *Python distribution* [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)), which includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder and VS Code (and others, like RStudio for R development). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with. I will mostly use Jupyter, because it's perfect for presenting things and telling stories, but not necessarily the best for learning or code development.
+**Local IDEs.** One way to install and run Python locally is via the *Python distribution* [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)). You can install it in the VM, or (for testing, if you don't have a VM yet) on the host OS. Anaconda includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder, VS Code and others, accessible via the [Anaconda navigator](https://docs.anaconda.com/anaconda/navigator/). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with.
 
 - [Spyder](https://www.spyder-ide.org/): Very learning-friendly IDE. A good place to start is the Spyder tutorial, `Help` → `Spyder tutorial`; also check out [this introductory video](https://www.youtube.com/watch?v=zYNRqVimU3Q)
-- [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter): [Introductory video](https://www.youtube.com/watch?v=HW29067qVWk)
+- [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter): Great for presenting, storytelling and exploratory data analysis; not necessarily the best for learning to code or longer scripts. [Introductory video](https://www.youtube.com/watch?v=HW29067qVWk)
 - [VS Code](https://en.wikipedia.org/wiki/Visual_Studio_Code): Very nice IDE, but not necessarily the best for complete beginners; if you want to try it, start [here](https://www.digitalocean.com/community/tutorials/getting-started-with-python-in-visual-studio-code) and continue [here](https://realpython.com/python-development-visual-studio-code/), [here](https://code.visualstudio.com/docs/python/python-tutorial) or [here](https://code.visualstudio.com/docs/getstarted/introvideos)
 
 ### Books/tutorials
@@ -110,7 +110,7 @@ Hint: Practically oriented tutorials that solve little problems rather than just
   - [Data Carpentry](https://datacarpentry.org/)
 - [Rosalind](http://rosalind.info/problems/locations/) - a platform for learning bioinformatics and programming through problem solving
   
-### Stay updated
+### Staying updated
 
 Connecting with other people from whom you can learn is both fun and helps staying updated. Here are some ideas:
 
