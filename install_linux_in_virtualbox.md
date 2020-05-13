@@ -175,5 +175,5 @@
   - Go through an introductory Linux/Bash tutorial, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag) and [this online book](linuxcommand.org)
   - Cheat sheets like [this one](https://devhints.io/bash) can help, but none of them will be as good as your own cheat sheet; a text file with important commands is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
-  - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR ("Too Long; Didn't Read") manpages**](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
+  - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
 - Learn how to use a **non-GUI text editor**, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
