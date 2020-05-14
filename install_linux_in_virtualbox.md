@@ -27,7 +27,7 @@ There are numerous tutorials which guide you through the installation of Ubuntu 
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
 - Xubuntu is Ubuntu but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640) ([more info](https://wiki.archlinux.org/index.php/Desktop_environment)), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different selection of pre-installed software, requires less resources and is generally more responsive than the default GNOME desktop environment 
-  - While there are differences between Ubuntu and Xubuntu, they are superficial, as Xubuntu *is* Ubuntu with a different look; therefore most Ubuntu-related tutorials apply to Xubuntu as well
+  - While there are differences between Ubuntu and Xubuntu, they are superficial, as Xubuntu *is* Ubuntu with a different look; therefore most Ubuntu-related tutorials also apply to Xubuntu
 
 ---
 ## Create a new Virtual Machine (VM) in VirtualBox
@@ -47,19 +47,19 @@ There are numerous tutorials which guide you through the installation of Ubuntu 
 ---
 ## Install the guest operating system (OS)
 
-- Your computer is called **host**, the VM is called **guest**
+- Your physical computer is called **host**, the VM is called **guest**
 - In VirtualBox: Select the VM → "Start"
   - It will ask you to select a start-up disk (the hard disk is empty, so it's looking for a bootable disk); click the folder button ("Choose a virtual optical disk file...") → "Add disk image" → navigate to the iso file and confirm → "Choose"; you just inserted a disk image into the virtual optical drive
   - If there was no such dialogue and the VM says "no bootable medium found", you can insert the disk by going to VirtualBox → VM → Settings → Storage → select the optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the iso file and confirm
   - There might be a message about mouse pointer integration, that's [ok](https://superuser.com/questions/1375772/what-is-mouse-pointer-integration/1375774) (unless you are playing [Warcraft](https://superuser.com/questions/377861/how-do-i-trap-the-mouse-pointer-within-a-virtualbox-guest-os))
 - The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it boots directly from the disk/iso file, without being installed on the hard drive
-  - If there is an error like `Hardware acceleration is not available on your system` when trying to install/launch a VM, search for "virtualbox error" + error message text. It's probable that this error occurred because virtualization wasn't activated in BIOS/UEFI, and should be easy to fix
+  - If there is an error like `Hardware acceleration is not available on your system` when trying to install/launch a VM, search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and should be easy to fix
 - You should see an option to install the OS; start the installer and follow the instructions
-  - Always read the questions and messages, when Linux interacts with you; it's not Windows, where many dialogues aren't helpful
+  - Always read the questions and messages, when Linux talks to you; it's not Windows, where many dialogues aren't helpful
   - Select English as your installation language; additional languages can be added later
   - Pay attention that the settings are correct, e.g. the **keyboard layout** should correspond to your keyboard (if you have a German keyboard, select a German keyboard layout)
   - Check useful options like "Download updates while installing" and "Install this third-party software" (explanation: [reddit](https://www.reddit.com/r/Ubuntu/comments/2xcoie/what_does_install_this_third_party_software_do/), [Wikipedia](https://en.wikipedia.org/wiki/Ubuntu-restricted-extras#Background))
-  - The option "Erase disk and install Xubuntu" is ok, because you are using a virtual hard disk which you just created, and it doesn't have any partitions
+  - The option "Erase disk and install Xubuntu" is ok, because you are using a virtual hard disk that you just created, and it doesn't have any partitions
 - The guest OS is now being installed within the VM
 - After the installation is complete: reboot the VM
   - You might need to remove the disk image from the optical drive first (to make sure that the VM boots from the hard drive and not from the live CD): VirtualBox → Select the VM → Settings → Storage → select optical disk → Look for option "Remove Disk from Virtual Drive"
@@ -93,7 +93,7 @@ There are numerous tutorials which guide you through the installation of Ubuntu 
     - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
-- The [guest additions](https://www.virtualbox.org/manual/ch04.html) is additional software that improves the integration of the guest with the host, e.g. it enables the auto-resizing of the OS in the VirtualBox window
+- The [guest additions](https://www.virtualbox.org/manual/ch04.html) is additional software that improves the integration of the guest with the host, e.g. it enables the auto-resizing of the guest in the VirtualBox window
 - The guest additions can be installed from the (virtual) **"Guest Additions disk image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
@@ -101,19 +101,19 @@ There are numerous tutorials which guide you through the installation of Ubuntu 
   - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal:
     - Use the `ls` command to *list* the directory contents:
     `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory */media/your-username*
-    - Enter the directory using the `cd` (*change directory*) command (using <Tab> in the same way):
+    - Enter the directory using the `cd` (*change directory*) command (using &lt;Tab&gt; in the same way):
     `cd /media/your-username/VBox_GAs_6.0.10/`; inspect the directory contents via `ls`
     - Install the guest additions package by running the installation script:
     `sudo ./VBoxLinuxAdditions.run`
-- Some websites suggest to install the guest additions from the repository (which is a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
-  - Usually, this approach is better, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
-  - One downside if guest additions are installed from the virtual disk, is that they are not updated automatically later
+- Some websites suggest to install the guest additions from the repository (a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
+  - This approach is usually better, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
+  - One downside if guest additions are installed from the virtual disk, is that they are not automatically updated later
   
 ---
 ## VirtualBox basics
 
-- Examine the VirtualBox menu bar and status bar (the symbols in the lower right corner of the VM)
-- Shutting down the VM: You can do it from within the guest, like a regular computer; if you close the VM window, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "power off" should only be used as a last resort, if the VM is frozen (it's like pulling the power cord)
+- Examine the VirtualBox menu bar and status bar (the symbols in the lower right corner of the VM window)
+- Shutting down the VM: You can do it from within the guest, in the regular way; if you close the VM window, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); `power off` should only be used as a last resort, if the VM is frozen (it's a hard reset, like pulling the power cord)
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
 
@@ -149,20 +149,20 @@ There are numerous tutorials which guide you through the installation of Ubuntu 
   - Try to [categorize and isolate](https://www.virtualbox.org/manual/ch12.html#ts_categorize-isolate) the problem. Determine in which situation the problem occurs, e.g. does rebooting the VM help?
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window has dis appeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (like [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared))
 - Running a **system monitor** at all times to keep track of the memory usage and CPU load is a good idea, and helps to diagnose problems
-  - Guest: Use a [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like GNOME System Monitor (to install it: `sudo apt install gnome-system-monitor`), [`top`](https://www.lifewire.com/linux-top-command-2201163) or [Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)
+  - Guest: Use a [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like GNOME System Monitor (install with `sudo apt install gnome-system-monitor`), the [universally available **`top`**](https://www.lifewire.com/linux-top-command-2201163), or [Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)
   - Host: Use the Task Manager (Windows) or equivalent
   - High CPU load or memory usage can substantially slow down the system. If they are caused by a software problem, restarting the offending program can help
 - Random freezes of the guest OS → try to modify these host VM settings:
   - Display → "Enable 3D acceleration" = off
-  - System → Processor → Number of virtual CPUS: 1 processor → 2, 3 or 4 processors (try and see if this helps)
-  - System → Processor → "Enable PAE/NX": toggle this off if it’s on, or on if it’s off, and see if this helps
+  - System → Processor → Number of virtual CPUs: 1 processor → 2, 3 or 4 processors (try and see if it helps)
+  - System → Processor → "Enable PAE/NX": toggle this off or on, and see if it helps
   - Display → increase "Video memory" to 128 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
 - Still problems with the guest (freezes, high CPU load for no reason, etc.): One possibility is to try another desktop environment; recommended options are LXQt, Xfce and MATE. There are others, but they may be less performant. Installed environments can be selected in the "Session" field [at login](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)
 - Guest system is generally slow: this shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow overall performance) 
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
-- General note: You will most likely encounter at least some problems with Linux; Linux was designed for system stability, transparency and development rather than a polished user experience
+- General note: You will most likely encounter at least some problems with Linux; Linux was designed for system stability, transparency and customizability rather than a polished user experience
   - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds.
 
 ---
