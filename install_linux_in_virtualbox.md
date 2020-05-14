@@ -3,6 +3,8 @@
 
 <H1>Guide for installing Ubuntu in VirtualBox</H1>
 
+**Table of contents**
+
 * TOC
 {:toc}
 
