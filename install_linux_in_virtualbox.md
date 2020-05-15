@@ -38,7 +38,7 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - Most other settings: the defaults are ok
 - Memory: at least 4 GB is recommended (can be changed later)
 - Virtual hard disk size: 30-40 GB is recommended (can't be changed later)
-- Your new **VM is saved as a folder** with a few files in it (on Windows, it should be located in the folder "C:\Users\your-user\VirtualBox VMs")
+- Your new **VM is saved as a folder** with a few files in it (on Windows, it should be located in the folder "C:\Users\<your-user>\VirtualBox VMs")
 - The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a disk/disk image), CPU, audio and graphics devices
 
 ---
@@ -94,12 +94,12 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - The guest additions can be installed from the (virtual) **"Guest Additions disk image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
-  - In the guest, the disk should be now accessible under */media/your-username/VBox_GAs_x.y.z/* (x, y, z are version numbers)
+  - In the guest, the disk should be now accessible under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers)
   - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal:
     - Use the `ls` command to *list* the directory contents:
-    `ls /media/your-username` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory */media/your-username*
+    `ls /media/<your-username>` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory */media/&lt;your-username&gt;*
     - Enter the directory using the `cd` (*change directory*) command (using [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) as before):
-    `cd /media/your-username/VBox_GAs_6.0.10/`; inspect the directory contents via `ls`
+    `cd /media/<your-username>/VBox_GAs_6.0.10/`; inspect the directory contents via `ls`
     - Install the guest additions package by running the installation script:
     `sudo ./VBoxLinuxAdditions.run`
 - Some websites suggest to install the guest additions **from the repository** (a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
@@ -120,13 +120,13 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - See e.g. [websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/) for screenshots
 - In VirtualBox: VM → Settings → Shared Folders → Add shared folder: select the folder you want to share
   - Check the checkboxes `Auto-mount` and `Make Permanent` ([superuser.com](https://superuser.com/a/1254589))
-- In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*, with an *sf_* prefix: `ll /media`
+- In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*: `ll /media` (shared folder should have an *sf_* prefix)
   - However, if you try to look inside, `ll /media/sf_<shared-folder-name>` (use Tab completion) or using the file manager, this probably won't work
-  - This is because every Linux file/folder has separate read/write/execute permissions for the *file owner*, [*the group*](https://linuxize.com/post/how-to-list-groups-in-linux/) and *other users*, so... 9 separate permission. `ll /media` [shows that](http://linuxcommand.org/lc3_lts0090.php) the owner of the shared folder is `root`, and the group is `vboxsf`
-  - The best way to access the shared folder, is to add your user to this group: `sudo adduser your-username vboxsf`
-  - To see which groups you're now part of: `groups`
+  - This is because every Linux file/folder has separate read/write/execute permissions for the **file owner**, [the **group**](https://linuxize.com/post/how-to-list-groups-in-linux/) and **other users**, so... 9 separate permissions. `ll /media/` shows that the owner of the shared folder is `root`, the group is `vboxsf`, and other users [don't have read/write access](http://linuxcommand.org/lc3_lts0090.php).
+  - The best way to access the shared folder is to add your user to the `vboxsf` group: `sudo adduser <your-username> vboxsf`
+  - To see which groups you're now part of, enter the command `groups`
   - For the change to take effect, you need to log out from the guest OS and log in again
-  - The shared folder should now be accessible under */media/sf_<shared-folder-name>/* 
+  - The shared folder should now be accessible under */media/sf_&lt;shared-folder-name&gt;/* 
   - Try to create a text file in this folder and access it from your host, and the other way around
 
 ---
@@ -160,7 +160,7 @@ There are several tutorials which guide you through the installation of Ubuntu o
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
 - Still problems with the guest (freezes, high CPU load for no reason, etc.): One possibility is to try another desktop environment; recommended options are LXQt, Xfce and MATE. There are others, but they may be less performant. Installed environments can be selected in the "Session" field [at login](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)
-- Guest system is overall slow: Shouldn't happen with Xubuntu, probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow host OS) 
+- Overall slow guest OS: This shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow host OS) 
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - Note: You will most likely encounter at least some problems with Linux; Linux was designed for system stability, transparency and customizability rather than a polished user experience
   - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds.
