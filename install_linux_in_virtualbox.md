@@ -74,6 +74,7 @@ There are several tutorials which guide you through the installation of Ubuntu o
   - Press the <kbd>&uarr;</kbd> key to bring up the previously entered command (`ls`)
 - **Search** for previously entered commands using **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
 - There are several more useful [keyboard shortcuts](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts)
+- The Linux **file system** has a single hierarchical directory structure. The top directory is `/`, the **root directory** (or simply root). All files and folders are part of this hierarchy. Devices like disks, external memory devices and network resources (e.g. shared folders) are also part of the hierarchy, and may contain subbranches of the tree. You should know at least the [basic navigation commands](http://linuxcommand.org/lc3_lts0020.php).
 - If you can't wait to learn more Bash commands, the **basic commands** are listed [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) or [here](https://help.ubuntu.com/community/UsingTheTerminal)
 - When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and tell you what's happening and if there were problems. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
@@ -94,14 +95,15 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - The guest additions can be installed from the (virtual) **"Guest Additions disk image"** that comes with VirtualBox:
   - You might need some additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
-  - In the guest, the disk should be now accessible under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers)
-  - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal:
+  - In the guest, the disk should be now accessible under */media/&lt;your-username&gt;/VBox_GAs_&lt;x&gt;.&lt;y&gt;.&lt;z&gt;/* (x, y, z are version numbers)
+  - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal. You will need several shell commands for that.
     - Use the `ls` command to *list* the directory contents:
-    `ls /media/<your-username>` (press **Tab** once or twice to auto-complete paths, e.g. you can write `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory */media/&lt;your-username&gt;*
+    `ls /media/<your-username>` (press **Tab** once or twice to auto-complete paths, e.g. you can type `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory */media/&lt;your-username&gt;*
     - Enter the directory using the `cd` (*change directory*) command (using [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) as before):
-    `cd /media/<your-username>/VBox_GAs_6.0.10/`; inspect the directory contents via `ls`
-    - Install the guest additions package by running the installation script:
-    `sudo ./VBoxLinuxAdditions.run`
+    `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
+	- Use the `pwd` command (*print working directory*) to print the name of the **current directory**
+	- Use `ls` to inspect the contents of the current directory
+    - When you're in the right directory, install the guest additions package by running the installation script: `sudo ./VBoxLinuxAdditions.run`
 - Some websites suggest to install the guest additions **from the repository** (a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Installing from the repository is usually preferable, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
   - One downside of installing the guest additions from the virtual disk is that they will not be automatically updated later, together with the system updates
@@ -120,11 +122,11 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - See e.g. [websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/) for screenshots
 - In VirtualBox: VM → Settings → Shared Folders → Add shared folder: select the folder you want to share
   - Check the checkboxes `Auto-mount` and `Make Permanent` ([superuser.com](https://superuser.com/a/1254589))
-- In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*: `ll /media` (shared folder should have an *sf_* prefix)
-  - However, if you try to look inside, `ll /media/sf_<shared-folder-name>` (use Tab completion) or using the file manager, this probably won't work
-  - This is because every Linux file/folder has separate read/write/execute permissions for the **file owner**, [the **group**](https://linuxize.com/post/how-to-list-groups-in-linux/) and **other users**, so... 9 separate permissions. `ll /media/` shows that the owner of the shared folder is `root`, the group is `vboxsf`, and other users [don't have read/write access](http://linuxcommand.org/lc3_lts0090.php).
+- In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*: `ls /media/` (shared folders have an *sf_* prefix)
+  - However, if you try to look inside using `ls /media/sf_<shared-folder-name>` (use Tab completion) or the file manager, this probably won't work
+  - This is because every Linux file/folder has separate read/write/execute permissions for the **file owner**, [the **group**](https://linuxize.com/post/how-to-list-groups-in-linux/) and **other users**, so... 9 separate permissions. `ls -l /media/` shows that the owner of the shared folder is `root`, the group is `vboxsf`, and other users [don't have read/write access](http://linuxcommand.org/lc3_lts0090.php)
   - The best way to access the shared folder is to add your user to the `vboxsf` group: `sudo adduser <your-username> vboxsf`
-  - To see which groups you're now part of, enter the command `groups`
+  - To see which groups you're part of, enter the command `groups`
   - For the change to take effect, you need to log out from the guest OS and log in again
   - The shared folder should now be accessible under */media/sf_&lt;shared-folder-name&gt;/* 
   - Try to create a text file in this folder and access it from your host, and the other way around
@@ -186,6 +188,7 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some useful programs using the command line or GUIs (Start menu → Software; Start menu → Settings Manager → Software & Updates)
   - Some tutorials use `apt` for **software installation**, while others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
   - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
+- Learn about the Linux [file system](http://linuxcommand.org/lc3_lts0040.php) ([YouTube tutorial](https://www.youtube.com/watch?v=HbgzrKJvDRw))
 - **Learn the command line.** Even though some tasks like software installation can be done via GUIs, they are just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
   - Go through an **introductory Linux/Bash tutorial**, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag) and [this online book](linuxcommand.org)
   - Cheat sheets like [this one](https://devhints.io/bash) or [this one](https://swcarpentry.github.io/shell-novice/reference/) can help, but none of them will be as good as your own cheat sheet; a text file with important commands is a good start
