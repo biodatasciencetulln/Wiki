@@ -8,7 +8,7 @@
 * TOC
 {:toc}
 
-There are several tutorials that can help you installing Ubuntu on VirtualBox, e.g. on [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108) or [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document tries to address some points not mentioned in these tutorials, and provide additional links and information. Even if you don't have enough time to study all the linked resources, try to look at least at those that seem important, like the shell commands. (Remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produces 80% of the result.)
+There are several tutorials that can help you installing Ubuntu on VirtualBox, e.g. on [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108) or [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document tries to address some points not mentioned in these tutorials, and provide additional links and information. It'll be a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
 **Note**: Please make a full backup of your computer before making any modifications.
 
@@ -22,7 +22,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 ---
 ## Download the Linux iso file (disk image)
 
-- Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
+- Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the [iso file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
 - **Xubuntu is Ubuntu** but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different **selection of pre-installed software**, requires less resources and is generally more responsive than the default GNOME desktop environment 
   - While there are differences between Ubuntu and Xubuntu, they are superficial, as Xubuntu *is* Ubuntu with a different look; therefore most Ubuntu-related tutorials also apply to Xubuntu
 
@@ -103,7 +103,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
     - Navigate to this directory using the `cd` (*change directory*) command, use [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) as before: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
 	- Use `pwd` (*print working directory*) to print the name of the **current directory**
 	- Use `ls` to inspect the contents of the current directory
-    - When you're in the correct directory, install the guest additions by running the installer script: `sudo ./VBoxLinuxAdditions.run`
+    - When you're in the correct directory, install the guest additions by running the installer script with root priveleges: `sudo ./VBoxLinuxAdditions.run`
 - Some websites suggest to install the guest additions **from the repository** (a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Installing from the repository is usually preferable, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
   - One downside of installing the guest additions from the virtual disk is that they will not be automatically updated later, together with the system updates
@@ -111,7 +111,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 ---
 ## VirtualBox basics
 
-- Examine the **VirtualBox menu bar and status bar** (the symbols in the lower right corner of the VM window)
+- Examine the **VirtualBox menu bar** and **status bar** (the symbols in the lower right corner of the VM window)
 - **Shutting down** the VM: You can do it from within the guest, in the regular way; if you close the VM window, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "Power off the machine" should only be used if the VM is frozen (it's a hard shutdown, like pulling the power cord)
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
@@ -121,13 +121,13 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - A **shared folder** is an easy way to pass files between the guest and the host OS. If you **save your files in the shared folder**, you can regularly back them up together with the rest of the host, and you can delete the VM at any time without loosing your data
 - See e.g. [websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/) for screenshots
 - In VirtualBox: VM → Settings → Shared Folders → Add shared folder: select the folder you want to share
-  - Check the checkboxes `Auto-mount` and `Make Permanent` ([superuser.com](https://superuser.com/a/1254589))
+  - Check the checkboxes "Auto-mount" and "Make Permanent" ([superuser.com](https://superuser.com/a/1254589))
 - In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*; use the command `ls /media/` to double-check (shared folders have an *sf_* prefix)
   - However, if you try to look inside using `ls /media/sf_<shared-folder-name>` (use Tab completion) or the file manager, this probably won't work
   - This is because every Linux file/folder has separate read/write/execute permissions for the **file owner**, [the **group**](https://linuxize.com/post/how-to-list-groups-in-linux/) and **other users**, so... 9 separate permissions. `ls -l /media/` shows that the owner of the shared folder is `root`, the group is `vboxsf`, and other users [don't have read/write access](http://linuxcommand.org/lc3_lts0090.php)
   - To see which groups you're part of, enter the command `groups`
   - The best way to access the shared folder is to add your user to the `vboxsf` group: `sudo adduser <your-username> vboxsf`
-  - Run `groups` again to double-check that the `adduser` command worked
+  - Run `groups` again to double-check that the previous command worked
   - For the change to take effect, you need to log out from the guest OS and log in again
   - The shared folder should now be accessible under */media/sf_&lt;shared-folder-name&gt;/* 
   - Try to create a text file in this folder and access it from your host, and the other way around
@@ -186,7 +186,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - **Back up your VM.** You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory (more info on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch
   - You can **import** it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
-- **Customitize** your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/) ([more](https://www.lifewire.com/customize-xfce-desktop-environment-2202080))
+- **Customize** your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/) ([more](https://www.lifewire.com/customize-xfce-desktop-environment-2202080))
 - Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some programs using the command line or GUIs (Start menu → Software; Start menu → Settings Manager → Software & Updates)
   - Some tutorials use `apt` for **software installation**, others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
   - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
