@@ -8,7 +8,7 @@
 * TOC
 {:toc}
 
-There are several tutorials which guide you through the installation of Ubuntu on VirtualBox, e.g. [YouTube tutorial](https://www.youtube.com/watch?v=sB_5fqiysi4), [itsfoss.com tutorial](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com tutorial](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108) or [nakivo.com tutorial](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). You can (and should) definitely use them. This document tries to address some points not mentioned in these tutorials, and provide additional links and information. If you're new to the topics, it's actually *a lot* of information, and if you don't have time to follow all the linked resources, a brief look and reading/listening to the **first few sentences, overview or introduction** can still be very helpful (the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/) applies).
+There are several tutorials that can help you installing Ubuntu on VirtualBox, e.g. on [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108) or [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document tries to address some points not mentioned in these tutorials, and provide additional links and information. Even if you don't have enough time to study all the linked resources, try to look at least at those that seem important, like the shell commands. (Remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produces 80% of the result.)
 
 **Note**: Please make a full backup of your computer before making any modifications.
 
@@ -23,7 +23,7 @@ There are several tutorials which guide you through the installation of Ubuntu o
 ## Download the Linux iso file (disk image)
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the iso file from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
-- **Xubuntu is Ubuntu** but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a **different selection of pre-installed software**, requires less resources and is generally more responsive than the default GNOME desktop environment 
+- **Xubuntu is Ubuntu** but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different **selection of pre-installed software**, requires less resources and is generally more responsive than the default GNOME desktop environment 
   - While there are differences between Ubuntu and Xubuntu, they are superficial, as Xubuntu *is* Ubuntu with a different look; therefore most Ubuntu-related tutorials also apply to Xubuntu
 
 ---
@@ -49,7 +49,7 @@ There are several tutorials which guide you through the installation of Ubuntu o
   - It will ask you to **select a start-up disk** (the hard disk is empty, so it's looking for a bootable disk); click the folder button ("Choose a virtual optical disk file...") → "Add disk image" → navigate to the iso file and confirm → "Choose"; you just inserted a disk image into the virtual optical drive
   - If there was no such dialogue and the VM says "no bootable medium found", you can insert the disk by going to VirtualBox → VM → Settings → Storage → select the optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the iso file and confirm
   - There might be a message about mouse pointer integration, that's [ok](https://superuser.com/questions/1375772/what-is-mouse-pointer-integration/1375774) (unless you are playing [Warcraft](https://superuser.com/questions/377861/how-do-i-trap-the-mouse-pointer-within-a-virtualbox-guest-os))
-- The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it **runs directly from a removable storage device** (in this case a disk image), without being installed on the hard disk drive
+- The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it **runs directly from a removable medium** (in this case a disk image), without being installed on the hard disk
   - If there is an error like `Hardware acceleration is not available on your system` when trying to install/launch a VM, search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
 - You should see an option to **install the OS**; start the installer and follow the instructions
   - Always **read the questions and messages**, when Linux talks to you; it's not Windows, where many dialogues aren't helpful
@@ -74,15 +74,15 @@ There are several tutorials which guide you through the installation of Ubuntu o
   - Press the <kbd>&uarr;</kbd> key to bring up the previously entered command (`ls`)
 - **Search** for previously entered commands using **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
 - There are several more useful [keyboard shortcuts](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts)
-- The Linux **file system** has a single hierarchical directory structure. The top directory is `/`, the **root directory** (or simply root). All files and folders are part of this hierarchy. Devices like disks, external memory devices and network resources (e.g. shared folders) are also part of the hierarchy, and may contain subbranches of the tree. You should know at least the [basic navigation commands](http://linuxcommand.org/lc3_lts0020.php).
-- If you can't wait to learn more Bash commands, the **basic commands** are listed [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) or [here](https://help.ubuntu.com/community/UsingTheTerminal)
+- The Linux **file system** has a single hierarchical directory structure. The top directory is `/`, called **root directory** (or simply root). All files and folders are part of this hierarchy. Devices like disks, external memory devices and network resources (e.g. shared folders) are also part of the hierarchy, and may contain subbranches of the tree. You should know at least the [basic navigation commands](http://linuxcommand.org/lc3_lts0020.php)
+- If you can't wait to learn more Bash commands, the **basics** are [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) or [here](https://help.ubuntu.com/community/UsingTheTerminal)
 - When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and tell you what's happening and if there were problems. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
 ---
 ## Update the guest and install the guest additions
 
-- Using the "Software Updater" GUI (graphical user interface) for updates seems easier than the command line. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's going on when you use the command line
-- **Update the guest**: Open a terminal and type `sudo apt update && sudo apt upgrade` + <kbd>Enter</kbd>
+- Using the "Software Updater" GUI (graphical user interface) for updates seems easier than the command line. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's going on if you use the command line
+- **Update the guest**: Open a terminal, type `sudo apt update && sudo apt upgrade` and hit <kbd>Enter</kbd>
   - It should ask you for your password; type the password (it's invisible) + <kbd>Enter</kbd>
   - `sudo` (*superuser do*) grants [root](https://unix.stackexchange.com/a/254470) privileges and is required for all system-relevant tasks
   - `apt` is [a command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
@@ -91,19 +91,19 @@ There are several tutorials which guide you through the installation of Ubuntu o
     - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
-- The [guest additions](https://www.virtualbox.org/manual/ch04.html) is additional software that improves the **integration of the guest with the host**, e.g. it enables the auto-resizing of the guest in the VirtualBox window
+- The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related software that improves the **integration of the guest with the host**, e.g. it enables the auto-resizing of the guest in the VirtualBox window (tutorials: [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/))
 - The guest additions can be installed from the (virtual) **"Guest Additions disk image"** that comes with VirtualBox:
-  - You might need some additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
+  - You might need additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
-  - In the guest, the disk should be now accessible under */media/&lt;your-username&gt;/VBox_GAs_&lt;x&gt;.&lt;y&gt;.&lt;z&gt;/* (x, y, z are version numbers)
-  - You probably can't use the file manager to install it (even though you can view the files), because the execution of _VBoxLinuxAdditions.run_ requires root permissions; so you have to use the terminal. You will need several shell commands for that.
-    - Use the `ls` command to *list* the directory contents:
-    `ls /media/<your-username>` (press **Tab** once or twice to auto-complete paths, e.g. you can type `ls /me<Tab>/<Tab><Tab>`) → should list files/folders in the directory */media/&lt;your-username&gt;*
-    - Enter the directory using the `cd` (*change directory*) command (using [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) as before):
-    `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
-	- Use the `pwd` command (*print working directory*) to print the name of the **current directory**
+  - It will try auto-running, click "Run" and follow the instructions
+- If something goes wrong, here is the "manual way":
+  - The guest additions disk should be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers); use the file manager to double-check
+  - You probably can't use the file manager to run the installer script *VBoxLinuxAdditions.run*, because its execution requires root permissions, so you have to use the terminal. This requires several shell commands.
+    - Use the `ls` command to *list* the directory contents: `ls /media/<your-username>` (press **Tab** once or twice to auto-complete paths, e.g. you can type `ls /me<Tab>/<Tab><Tab>`) → this should list files/folders in the directory */media/&lt;your-username&gt;*
+    - Navigate to this directory using the `cd` (*change directory*) command, use [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) as before: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
+	- Use `pwd` (*print working directory*) to print the name of the **current directory**
 	- Use `ls` to inspect the contents of the current directory
-    - When you're in the right directory, install the guest additions package by running the installation script: `sudo ./VBoxLinuxAdditions.run`
+    - When you're in the correct directory, install the guest additions by running the installer script: `sudo ./VBoxLinuxAdditions.run`
 - Some websites suggest to install the guest additions **from the repository** (a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Installing from the repository is usually preferable, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
   - One downside of installing the guest additions from the virtual disk is that they will not be automatically updated later, together with the system updates
@@ -122,11 +122,12 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - See e.g. [websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/) for screenshots
 - In VirtualBox: VM → Settings → Shared Folders → Add shared folder: select the folder you want to share
   - Check the checkboxes `Auto-mount` and `Make Permanent` ([superuser.com](https://superuser.com/a/1254589))
-- In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*: `ls /media/` (shared folders have an *sf_* prefix)
+- In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*; use the command `ls /media/` to double-check (shared folders have an *sf_* prefix)
   - However, if you try to look inside using `ls /media/sf_<shared-folder-name>` (use Tab completion) or the file manager, this probably won't work
   - This is because every Linux file/folder has separate read/write/execute permissions for the **file owner**, [the **group**](https://linuxize.com/post/how-to-list-groups-in-linux/) and **other users**, so... 9 separate permissions. `ls -l /media/` shows that the owner of the shared folder is `root`, the group is `vboxsf`, and other users [don't have read/write access](http://linuxcommand.org/lc3_lts0090.php)
-  - The best way to access the shared folder is to add your user to the `vboxsf` group: `sudo adduser <your-username> vboxsf`
   - To see which groups you're part of, enter the command `groups`
+  - The best way to access the shared folder is to add your user to the `vboxsf` group: `sudo adduser <your-username> vboxsf`
+  - Run `groups` again to double-check that the `adduser` command worked
   - For the change to take effect, you need to log out from the guest OS and log in again
   - The shared folder should now be accessible under */media/sf_&lt;shared-folder-name&gt;/* 
   - Try to create a text file in this folder and access it from your host, and the other way around
@@ -165,7 +166,7 @@ There are several tutorials which guide you through the installation of Ubuntu o
 - Overall slow guest OS: This shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow host OS) 
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - Note: You will most likely encounter at least some problems with Linux; Linux was designed for system stability, transparency and customizability rather than a polished user experience
-  - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds.
+  - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds
 
 ---
 ## Updates
@@ -177,21 +178,22 @@ There are several tutorials which guide you through the installation of Ubuntu o
     - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (worst case, you need to downgrade again)
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
     - If there are problems after a VirtualBox update, e.g. a VM that used to work doesn't boot and you get strange error messages: "Have You Tried Turning It Off and On Again?" (try **rebooting the computer**, possibly twice)
+	- After updating VirtualBox, it is recommended to update the guest additions as well
 
 ---
 ## Where to go from here
 
-- **Back up your VM.** You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory (more info on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch.
+- **Back up your VM.** You can do it based on the instructions on [osradar.com](https://www.osradar.com/how-to-backup-vms-on-virtualbox/) and [lifewire.com](https://www.lifewire.com/create-virtual-machines-clones-and-snapshots-in-virtualbox-4177998), however I highly recommend to also completely shut down your VM and copy the complete VM-folder to an external hard drive. The VM-folder should be located in the folder "VirtualBox VMs" in your home directory (more info on [virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)). If your VM is broken beyond repair and you have a functional backup, you can restore it from the backup. This is usually easier than performing an installation from scratch
   - You can **import** it later like this: Machine → Add → Navigate to the _.vbox_ file in the VM folder ([superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer), [superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
 - **Customitize** your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/) ([more](https://www.lifewire.com/customize-xfce-desktop-environment-2202080))
-- Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some useful programs using the command line or GUIs (Start menu → Software; Start menu → Settings Manager → Software & Updates)
-  - Some tutorials use `apt` for **software installation**, while others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
+- Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some programs using the command line or GUIs (Start menu → Software; Start menu → Settings Manager → Software & Updates)
+  - Some tutorials use `apt` for **software installation**, others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
   - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
-- Learn about the Linux [file system](http://linuxcommand.org/lc3_lts0040.php) ([YouTube tutorial](https://www.youtube.com/watch?v=HbgzrKJvDRw))
+- Learn about the [Linux file system](http://linuxcommand.org/lc3_lts0040.php) ([YouTube tutorial](https://www.youtube.com/watch?v=HbgzrKJvDRw))
 - **Learn the command line.** Even though some tasks like software installation can be done via GUIs, they are just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
   - Go through an **introductory Linux/Bash tutorial**, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag) and [this online book](linuxcommand.org)
   - Cheat sheets like [this one](https://devhints.io/bash) or [this one](https://swcarpentry.github.io/shell-novice/reference/) can help, but none of them will be as good as your own cheat sheet; a text file with important commands is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
-- Learn how to use a **non-GUI text editor**, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
+- Learn a **non-GUI text editor**, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
