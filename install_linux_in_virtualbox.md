@@ -46,13 +46,13 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 
 - Your physical computer is called **host**, the VM is called **guest**
 - In VirtualBox: Select the VM → "Start"
-  - It will ask you to **select a start-up disk** (the hard disk is empty, so it's looking for a bootable disk); click the folder button ("Choose a virtual optical disk file...") → "Add disk image" → navigate to the iso file and confirm → "Choose"; you just inserted a disk image into the virtual optical drive
-  - If there was no such dialogue and the VM says "no bootable medium found", you can insert the disk by going to VirtualBox → VM → Settings → Storage → select the optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the iso file and confirm
+  - A dialog box will ask you to **select a start-up disk** (the hard disk is empty, so it's looking for a bootable disk); click the folder button ("Choose a virtual optical disk file...") → "Add disk image" → navigate to the iso file and confirm → "Choose"; you just inserted a disk image into the virtual optical drive
+  - If there was no such dialog and the VM says "no bootable medium found", you can insert the disk by going to VirtualBox → VM → Settings → Storage → select the optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the iso file and confirm
   - There might be a message about mouse pointer integration, that's [ok](https://superuser.com/questions/1375772/what-is-mouse-pointer-integration/1375774) (unless you are playing [Warcraft](https://superuser.com/questions/377861/how-do-i-trap-the-mouse-pointer-within-a-virtualbox-guest-os))
 - The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it **runs directly from a removable medium** (in this case a disk image), without being installed on the hard disk
   - If you get an error like "Hardware acceleration is not available on your system" when trying to install/launch a VM, search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
 - You should see an option to **install the OS**; start the installer and follow the instructions
-  - Always **read the questions and messages**, when Linux talks to you; it's not Windows, where many dialogues aren't helpful
+  - Always **read the questions and messages**, when Linux talks to you; it's not Windows, where many dialogs aren't helpful
   - Select English as your installation language; additional languages can be added later
   - Pay attention that the settings are correct, e.g. the **keyboard layout** should correspond to your keyboard (if you have a German keyboard, select a German keyboard layout)
   - Check useful options like "Download updates while installing" and "Install this third-party software" (explanation: [reddit](https://www.reddit.com/r/Ubuntu/comments/2xcoie/what_does_install_this_third_party_software_do/), [Wikipedia](https://en.wikipedia.org/wiki/Ubuntu-restricted-extras#Background))
@@ -76,7 +76,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - There are several more useful [keyboard shortcuts](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts)
 - The Linux **file system** has a single hierarchical directory structure. The top directory is `/`, called **root directory** (or simply root). All files and folders are part of this hierarchy. Devices like disks, external memory devices and network resources (e.g. shared folders) are also part of the hierarchy, and may contain subbranches of the tree. It'll help to know at least the [basic navigation commands](http://linuxcommand.org/lc3_lts0020.php), `pwd`, `cd` and `ls`
 - If you can't wait to learn more Bash commands, the **basics** are [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) or [here](https://help.ubuntu.com/community/UsingTheTerminal)
-- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and tell you what's happening and if there were problems. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
+- When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and tell you what's happening and if there were problems. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the URL was invalid or there was no Internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
 ---
 ## Update the guest and install the guest additions
@@ -92,23 +92,23 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
   - Reboot the guest
-- The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host, e.g. enabling auto-resizing of the guest in the VirtualBox window. There are two ways to install the guest additions, from the (virtual) **Guest Additions disk image** that comes with VirtualBox, or **from the repository**, which is a distribution-specific app store/software collection. The curently **recommended way** is the installation from the disk image ([askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/)))
-  - Note: In most cases, installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`. However, guest additions is vendor-provided software, and the non-repository version is probaly more reliable
-- **A.** Disk image.
-  - Prerequisites (the packages might already be installed): `sudo apt install build-essential dkms`
+- The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host, e.g. enabling auto-resizing of the guest in the VirtualBox window. There are two ways to install the guest additions, from the (virtual) **Guest Additions disk image** that comes with VirtualBox, or **from the repository**, which is a distribution-specific app store/software collection. The currently **recommended way** is the installation from the disk image ([askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/))
+  - Note: In most cases, installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`. However, guest additions is vendor-provided software, and it's a different situation
+- **A.** Installation from CD image.
+  - Prerequisites (might already be installed): `sudo apt install build-essential dkms`
   - VM window menu bar: Devices → "Insert Guest Additions CD image..."
-  - The disk image will be mounted under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers). "Mounting" makes file systems (files and directories on a storage device such as hard drive, CD-ROM, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point)
-  - If the guest OS has autorun enabled, you will see a system dialogue (Ubuntu); otherwise you need to run the installer manually (Xubuntu):
+  - The disk image will be mounted under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers). "Mounting" makes file systems (files and directories on a storage device such as hard drive, CD, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point)
+  - If the guest OS has autorun enabled, you will see a system dialog (Ubuntu); otherwise you need to run the installer manually (Xubuntu):
   - Find the CD icon on your Desktop and open it in File Manager; right-click → "Open Terminal Here"
   - Use the `pwd` (*print working directory*) command to check that the **working directory** (= **current directory**) is `/media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
   - If it's not, navigate there using the `cd` (*change directory*) command: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/` (use Tab completion)
-  - Shell has an extremely useful [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) feature: When typing something in the shell, press **Tab** (once or twice) for autocompletion. It will autocomplete paths, shell commands, file names etc.
-  - Use `ls` to inspect the contents of the directory you're in (they should be the same as what you see in the File Manager)
+  - Shell has a very useful [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) feature: When typing something, press **Tab** (once or twice) for autocompletion. It will autocomplete paths, shell commands, file names etc.
+  - Use `ls` to inspect the contents of the current directory (should correspond to what you see in the File Manager)
   - Install the guest additions by running the installer with root priveleges: `sudo ./VBoxLinuxAdditions.run`
   - Read the output messages to make sure that the installation completed without errors. E.g., if you get the message `sudo: ./VBoxAdditions.run: command not found`, then you're in the wrong directory
   - Reboot the guest
   - Test if the shared clipboard works: VM window menu bar → Devices → Shared Clipboard → Bidirectional. You should now be able to copy-paste between the guest and the host. If it doesn't work, install an additional package: `sudo apt install virtualbox-guest-x11`, and reboot ([superuser.com](https://superuser.com/a/1367954))
-- **B.** From the repository.
+- **B.** Installation from the repository.
   - Don't do this if method A. worked. (This method is mostly useful for Ubuntu Server which doesn't have a Desktop environment, only a command line) 
   - In the terminal: `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Reboot the guest
@@ -176,7 +176,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 ---
 ## Updates
 
-- Guest: **Update regularly** using `sudo apt update && sudo apt upgrade` or the update dialogue
+- Guest: **Update regularly** using `sudo apt update && sudo apt upgrade` or the update dialog
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, **completely shut down the VM** before that
