@@ -50,7 +50,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
   - If there was no such dialogue and the VM says "no bootable medium found", you can insert the disk by going to VirtualBox → VM → Settings → Storage → select the optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the iso file and confirm
   - There might be a message about mouse pointer integration, that's [ok](https://superuser.com/questions/1375772/what-is-mouse-pointer-integration/1375774) (unless you are playing [Warcraft](https://superuser.com/questions/377861/how-do-i-trap-the-mouse-pointer-within-a-virtualbox-guest-os))
 - The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it **runs directly from a removable medium** (in this case a disk image), without being installed on the hard disk
-  - If there is an error like `Hardware acceleration is not available on your system` when trying to install/launch a VM, search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
+  - If you get an error like "Hardware acceleration is not available on your system" when trying to install/launch a VM, search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
 - You should see an option to **install the OS**; start the installer and follow the instructions
   - Always **read the questions and messages**, when Linux talks to you; it's not Windows, where many dialogues aren't helpful
   - Select English as your installation language; additional languages can be added later
@@ -59,7 +59,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
   - The option "Erase disk and install Xubuntu" is ok, because you are using a virtual hard disk that you just created, and it doesn't have any partitions
 - The guest OS is now being installed within the VM
 - After the installation is complete: reboot the VM
-  - You might need to remove the disk image from the optical drive first (to make sure that the VM boots from the hard drive and not from the live CD): VirtualBox → Select the VM → Settings → Storage → select optical disk → Look for option "Remove Disk from Virtual Drive"
+  - You might need to remove the disk image from the optical drive first (to make sure that the VM boots from the hard drive and not from the live disk): VirtualBox → Select the VM → Settings → Storage → select optical disk → Look for option "Remove Disk from Virtual Drive"
   - But probably Ubuntu does it for you
 
 ---
@@ -81,7 +81,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 ---
 ## Update the guest and install the guest additions
 
-- Using the "Software Updater" GUI (graphical user interface) for updates seems easier than the command line. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's going on if you use the command line
+- It's tempting to use the "Software Updater" GUI (graphical user interface) for installing updates. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's happening if you **use the command line**
 - **Update the guest**: Open a terminal, type `sudo apt update && sudo apt upgrade` and hit <kbd>Enter</kbd>
   - It should ask you for your password; type the password (it's invisible) + <kbd>Enter</kbd>
   - `sudo` (*superuser do*) grants [root](https://unix.stackexchange.com/a/254470) privileges and is required for all system-relevant tasks
@@ -95,15 +95,15 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - The guest additions can be installed from the (virtual) **"Guest Additions disk image"** that comes with VirtualBox:
   - You might need additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
-  - It will try auto-running, click "Run" and follow the instructions
-- If something goes wrong, here is the "manual way":
-  - The guest additions disk should be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers); use the file manager to double-check
-  - You probably can't use the file manager to run the installer script *VBoxLinuxAdditions.run*, because its execution requires root permissions, so you have to use the terminal. This requires several shell commands.
-    - Use the `ls` command to *list* the directory contents: `ls /media/<your-username>` (press **Tab** once or twice to auto-complete paths, e.g. you can type `ls /me<Tab>/<Tab><Tab>`) → this should list files/folders in the directory */media/&lt;your-username&gt;*
-    - Navigate to this directory using the `cd` (*change directory*) command, use [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) as before: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
-	- Use `pwd` (*print working directory*) to print the name of the **current directory**
-	- Use `ls` to inspect the contents of the current directory
-    - When you're in the correct directory, install the guest additions by running the installer script with root priveleges: `sudo ./VBoxLinuxAdditions.run`
+  - The disk image will be mounted under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers). "Mounting" makes file systems (files and directories on a storage device such as hard drive, CD-ROM, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point).
+- Unless the guest OS has autorun enabled, you need to run the installer manually:
+  - File Manager: right-click → "Open Terminal Here" to open the terminal in the **current directory** (= **working directory**)
+  - Type the `pwd` (*print working directory*) command to print the name of the working directory 
+  - If you are already in `/media/<your-username>/VBox_GAs_<x>.<y>.<z>/`, that's great. Otherwise, navigate there using the `cd` (*change directory*) command: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/` (use Tab completion)
+  - Shell has an extremely useful [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) feature: When typing something in the shell, press **Tab** (once or twice) for autocompletion. It will autocomplete paths, shell commands, file names etc.
+  - Use `ls` to inspect the contents of the current directory
+  - When you're in the correct directory, install the guest additions by running the installer script with root priveleges: `sudo ./VBoxLinuxAdditions.run`
+  - Read the output messages to make sure that the installation worked without errors
 - Some websites suggest to install the guest additions **from the repository** (a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Installing from the repository is usually preferable, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
   - One downside of installing the guest additions from the virtual disk is that they will not be automatically updated later, together with the system updates
@@ -174,8 +174,8 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - Guest: **Update regularly** using `sudo apt update && sudo apt upgrade` or the update dialogue
 - Host:
   - Keep the OS updated
-  - When updating VirtualBox, **completely shutdown the VM** before that
-    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (worst case, you need to downgrade again)
+  - When updating VirtualBox, **completely shut down the VM** before that
+    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (in the worst case, you need to downgrade again)
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
     - If there are problems after a VirtualBox update, e.g. a VM that used to work doesn't boot and you get strange error messages: "Have You Tried Turning It Off and On Again?" (try **rebooting the computer**, possibly twice)
 	- After updating VirtualBox, it is recommended to update the guest additions as well
@@ -192,7 +192,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
   - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
 - Learn about the [Linux file system](http://linuxcommand.org/lc3_lts0040.php) ([YouTube tutorial](https://www.youtube.com/watch?v=HbgzrKJvDRw))
 - **Learn the command line.** Even though some tasks like software installation can be done via GUIs, they are just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
-  - Go through an **introductory Linux/Bash tutorial**, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag) and [this online book](linuxcommand.org)
+  - Take an **introductory Linux/Bash tutorial**, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag) and [this online book](linuxcommand.org)
   - Cheat sheets like [this one](https://devhints.io/bash) or [this one](https://swcarpentry.github.io/shell-novice/reference/) can help, but none of them will be as good as your own cheat sheet; a text file with important commands is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
