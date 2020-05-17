@@ -92,11 +92,16 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
 - The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related software that improves the **integration of the guest with the host**, e.g. it enables the auto-resizing of the guest in the VirtualBox window (tutorials: [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/))
-- The guest additions can be installed from the (virtual) **"Guest Additions disk image"** that comes with VirtualBox:
+- There are two ways to install the guest additions, from the (virtual) **Guest Additions disk image** that comes with VirtualBox, or **from the repository**, which is a distribution-specific app store/software collection
+  - Installing from the repository is usually preferable, because such software will automatically be updated when you run `apt update && apt upgrade`
+  - A good strategy is to try one approach, and if you have problems (e.g. the shared clipboard or shared folders don't work), then the other
+- **A.** From the repository.
+  - In the terminal: `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
+- **B.** From the disk image:
   - You might need additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
   - In the VM window menu bar: Devices → Insert Guest Additions CD image...
-  - The disk image will be mounted under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers). "Mounting" makes file systems (files and directories on a storage device such as hard drive, CD-ROM, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point).
-- Unless the guest OS has autorun enabled, you need to run the installer manually:
+  - The disk image will be mounted under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers). "Mounting" makes file systems (files and directories on a storage device such as hard drive, CD-ROM, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point)
+  - If the guest OS has autorun enabled, you will see a system dialogue (Ubuntu); otherwise you need to run the installer manually (Xubuntu):
   - File Manager: right-click → "Open Terminal Here" to open the terminal in the **current directory** (= **working directory**)
   - Type the `pwd` (*print working directory*) command to print the name of the working directory 
   - If you are already in `/media/<your-username>/VBox_GAs_<x>.<y>.<z>/`, that's great. Otherwise, navigate there using the `cd` (*change directory*) command: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/` (use Tab completion)
@@ -104,9 +109,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
   - Use `ls` to inspect the contents of the current directory
   - When you're in the correct directory, install the guest additions by running the installer script with root priveleges: `sudo ./VBoxLinuxAdditions.run`
   - Read the output messages to make sure that the installation worked without errors
-- Some websites suggest to install the guest additions **from the repository** (a distribution-specific app store/software collection), using a command like `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
-  - Installing from the repository is usually preferable, but in this case I had problems after installation, e.g. the shared clipboard wouldn't work
-  - One downside of installing the guest additions from the virtual disk is that they will not be automatically updated later, together with the system updates
+- Reboot the guest
 
 ---
 ## VirtualBox basics
