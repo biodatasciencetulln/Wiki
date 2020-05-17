@@ -70,11 +70,11 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - **Abort program/command** running in the terminal: press **<kbd>Ctrl</kbd>+<kbd>C</kbd>** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
 - **Abort non-responsive graphical application**: enter `xkill`  + <kbd>Enter</kbd> in the terminal and click on the non-responsive application (only use this if absolutely necessary)
 - If you need to repeat a command, you don't have to re-type it. The entered commands are saved, and you can access the Bash history using the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> keys ([more](https://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/))
-  - E.g. enter `ls` + <kbd>Enter</kbd> → "list" the contents of the current directory
+  - E.g. enter `ls` + <kbd>Enter</kbd> → *list* the contents of the current directory
   - Press the <kbd>&uarr;</kbd> key to bring up the previously entered command (`ls`)
 - **Search** for previously entered commands using **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
 - There are several more useful [keyboard shortcuts](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts)
-- The Linux **file system** has a single hierarchical directory structure. The top directory is `/`, called **root directory** (or simply root). All files and folders are part of this hierarchy. Devices like disks, external memory devices and network resources (e.g. shared folders) are also part of the hierarchy, and may contain subbranches of the tree. You should know at least the [basic navigation commands](http://linuxcommand.org/lc3_lts0020.php)
+- The Linux **file system** has a single hierarchical directory structure. The top directory is `/`, called **root directory** (or simply root). All files and folders are part of this hierarchy. Devices like disks, external memory devices and network resources (e.g. shared folders) are also part of the hierarchy, and may contain subbranches of the tree. It'll help to know at least the [basic navigation commands](http://linuxcommand.org/lc3_lts0020.php), `pwd`, `cd` and `ls`
 - If you can't wait to learn more Bash commands, the **basics** are [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) or [here](https://help.ubuntu.com/community/UsingTheTerminal)
 - When you interact with the terminal, you should always **read the output/error messages**. You might be used from Windows that, whenever a message appears, you click "Cancel" or "Continue" to make it go away. Messages on Linux are usually more informative and tell you what's happening and if there were problems. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the url was invalid or there was no internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
 
@@ -91,25 +91,27 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
     - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
-- The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related software that improves the **integration of the guest with the host**, e.g. it enables the auto-resizing of the guest in the VirtualBox window (tutorials: [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/))
-- There are two ways to install the guest additions, from the (virtual) **Guest Additions disk image** that comes with VirtualBox, or **from the repository**, which is a distribution-specific app store/software collection
-  - Installing from the repository is usually preferable, because such software will automatically be updated when you run `apt update && apt upgrade`
-  - A good strategy is to try one approach, and if you have problems (e.g. the shared clipboard or shared folders don't work), then the other
-- **A.** From the repository.
-  - In the terminal: `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
-- **B.** From the disk image:
-  - You might need additional packages like "build-essential" (probably already installed): `sudo apt install build-essential`
-  - In the VM window menu bar: Devices → Insert Guest Additions CD image...
+  - Reboot the guest
+- The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host, e.g. enabling auto-resizing of the guest in the VirtualBox window. There are two ways to install the guest additions, from the (virtual) **Guest Additions disk image** that comes with VirtualBox, or **from the repository**, which is a distribution-specific app store/software collection. The curently **recommended way** is the installation from the disk image ([askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/)))
+  - Note: In most cases, installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`. However, guest additions is vendor-provided software, and the non-repository version is probaly more reliable
+- **A.** Disk image.
+  - Prerequisites (the packages might already be installed): `sudo apt install build-essential dkms`
+  - VM window menu bar: Devices → "Insert Guest Additions CD image..."
   - The disk image will be mounted under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers). "Mounting" makes file systems (files and directories on a storage device such as hard drive, CD-ROM, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point)
   - If the guest OS has autorun enabled, you will see a system dialogue (Ubuntu); otherwise you need to run the installer manually (Xubuntu):
-  - File Manager: right-click → "Open Terminal Here" to open the terminal in the **current directory** (= **working directory**)
-  - Type the `pwd` (*print working directory*) command to print the name of the working directory 
-  - If you are already in `/media/<your-username>/VBox_GAs_<x>.<y>.<z>/`, that's great. Otherwise, navigate there using the `cd` (*change directory*) command: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/` (use Tab completion)
+  - Find the CD icon on your Desktop and open it in File Manager; right-click → "Open Terminal Here"
+  - Use the `pwd` (*print working directory*) command to check that the **working directory** (= **current directory**) is `/media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
+  - If it's not, navigate there using the `cd` (*change directory*) command: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/` (use Tab completion)
   - Shell has an extremely useful [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) feature: When typing something in the shell, press **Tab** (once or twice) for autocompletion. It will autocomplete paths, shell commands, file names etc.
-  - Use `ls` to inspect the contents of the current directory
-  - When you're in the correct directory, install the guest additions by running the installer script with root priveleges: `sudo ./VBoxLinuxAdditions.run`
-  - Read the output messages to make sure that the installation worked without errors
-- Reboot the guest
+  - Use `ls` to inspect the contents of the directory you're in (they should be the same as what you see in the File Manager)
+  - Install the guest additions by running the installer with root priveleges: `sudo ./VBoxLinuxAdditions.run`
+  - Read the output messages to make sure that the installation completed without errors. E.g., if you get the message `sudo: ./VBoxAdditions.run: command not found`, then you're in the wrong directory
+  - Reboot the guest
+  - Test if the shared clipboard works: VM window menu bar → Devices → Shared Clipboard → Bidirectional. You should now be able to copy-paste between the guest and the host. If it doesn't work, install an additional package: `sudo apt install virtualbox-guest-x11`, and reboot ([superuser.com](https://superuser.com/a/1367954))
+- **B.** From the repository.
+  - Don't do this if method A. worked. (This method is mostly useful for Ubuntu Server which doesn't have a Desktop environment, only a command line) 
+  - In the terminal: `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
+  - Reboot the guest
 
 ---
 ## VirtualBox basics
