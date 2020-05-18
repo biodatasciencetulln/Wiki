@@ -8,6 +8,9 @@
 * TOC
 {:toc}
 
+Date: 18.05.2020
+Software: VirtualBox 6.1.6, Xubuntu 20.04
+
 There are several tutorials that can help you installing Ubuntu on VirtualBox, e.g. on [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108) or [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document tries to address some points not mentioned in these tutorials, and provide additional links and information. It'll be a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
 **Note**: Please make a full backup of your computer before making any modifications.
@@ -20,9 +23,9 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - Run VirtualBox and install the **Extension Pack** (additional Oracle proprietary components which extend the functionality of the base package)
 
 ---
-## Download the Linux iso file (disk image)
+## Download the Linux ISO file (disk image)
 
-- Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the [iso file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded file should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
+- Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the [ISO file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded disk image should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
 - **Xubuntu is Ubuntu** but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different **selection of pre-installed software**, requires less resources and is generally more responsive than the default GNOME desktop environment 
   - While there are differences between Ubuntu and Xubuntu, they are superficial, as Xubuntu *is* Ubuntu with a different look; therefore most Ubuntu-related tutorials also apply to Xubuntu
 
@@ -46,8 +49,8 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 
 - Your physical computer is called **host**, the VM is called **guest**
 - In VirtualBox: Select the VM → "Start"
-  - A dialog box will ask you to **select a start-up disk** (the hard disk is empty, so it's looking for a bootable disk); click the folder button ("Choose a virtual optical disk file...") → "Add disk image" → navigate to the iso file and confirm → "Choose"; you just inserted a disk image into the virtual optical drive
-  - If there was no such dialog and the VM says "no bootable medium found", you can insert the disk by going to VirtualBox → VM → Settings → Storage → select the optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the iso file and confirm
+  - A dialog box will ask you to **select a start-up disk** (the hard disk is empty, so it's looking for a bootable disk); click the folder button ("Choose a virtual optical disk file...") → "Add disk image" → navigate to the ISO file and confirm → "Choose"; you just inserted a disk image into the virtual optical drive
+  - If there was no such dialog and the VM says "no bootable medium found", you can insert the disk by going to VirtualBox → VM → Settings → Storage → select the optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the ISO file and confirm
   - There might be a message about mouse pointer integration, that's [ok](https://superuser.com/questions/1375772/what-is-mouse-pointer-integration/1375774) (unless you are playing [Warcraft](https://superuser.com/questions/377861/how-do-i-trap-the-mouse-pointer-within-a-virtualbox-guest-os))
 - The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it **runs directly from a removable medium** (in this case a disk image), without being installed on the hard disk
   - If you get an error like "Hardware acceleration is not available on your system" when trying to install/launch a VM, search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
@@ -84,7 +87,7 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
 - It's tempting to use the "Software Updater" GUI (graphical user interface) for installing updates. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's happening if you **use the command line**
 - **Update the guest**: Open a terminal, type `sudo apt update && sudo apt upgrade` and hit <kbd>Enter</kbd>
   - It should ask you for your password; type the password (it's invisible) + <kbd>Enter</kbd>
-  - `sudo` (*superuser do*) grants [root](https://unix.stackexchange.com/a/254470) privileges and is required for all system-relevant tasks
+  - `sudo` (*superuser do*) grants [root priveleges](https://unix.stackexchange.com/a/254470) and is required for all system-relevant tasks
   - `apt` is [a command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu (actually Debian, which Ubuntu is based on)
   - `update`/`upgrade` are **arguments** that modify the command behavior (tell the command what to do):
     - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
@@ -92,24 +95,24 @@ There are several tutorials that can help you installing Ubuntu on VirtualBox, e
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You could also execute `apt update` and `apt upgrade` one after the other, with the same effect
   - This might take a while and should update all installed software (packages) to their latest versions (more info: [apt tutorial](https://itsfoss.com/apt-command-guide/))
   - Reboot the guest
-- The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host, e.g. enabling auto-resizing of the guest in the VirtualBox window. There are two ways to install the guest additions, from the (virtual) **Guest Additions disk image** that comes with VirtualBox, or **from the repository**, which is a distribution-specific app store/software collection. The currently **recommended way** is the installation from the disk image ([askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/))
-  - Note: In most cases, installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`. However, guest additions is vendor-provided software, and it's a different situation
+- The [guest additions](https://www.virtualbox.org/manual/ch04.html) contain VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host, e.g. auto-resizing of the guest in the VirtualBox window. There are two ways to install the guest additions, from the **Guest Additions disk image** that comes with VirtualBox, or **from the repository**, a distribution-specific app store/software collection. The currently **recommended way** is the installation from the disk image, because this guarantees that it matches the VirtualBox version ([askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/), [virtualbox.org](https://www.virtualbox.org/manual/ch04.html))
+  - Note that usually installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`
 - **A.** Installation from CD image.
-  - Prerequisites (might already be installed): `sudo apt install build-essential dkms`
+  - Prerequisites (might already be installed): `sudo apt install build-essential dkms linux-headers-$(uname -r)`
   - VM window menu bar: Devices → "Insert Guest Additions CD image..."
   - The disk image will be mounted under */media/&lt;your-username&gt;/VBox_GAs_x.y.z/* (x, y, z are version numbers). "Mounting" makes file systems (files and directories on a storage device such as hard drive, CD, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point)
   - If the guest OS has autorun enabled, you will see a system dialog (Ubuntu); otherwise you need to run the installer manually (Xubuntu):
-  - Find the CD icon on your Desktop and open it in File Manager; right-click → "Open Terminal Here"
+  - Open the CD icon on your Desktop/in File Manager; right-click → "Open Terminal Here"
   - Use the `pwd` (*print working directory*) command to check that the **working directory** (= **current directory**) is `/media/<your-username>/VBox_GAs_<x>.<y>.<z>/`
   - If it's not, navigate there using the `cd` (*change directory*) command: `cd /media/<your-username>/VBox_GAs_<x>.<y>.<z>/` (use Tab completion)
   - Shell has a very useful [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) feature: When typing something, press **Tab** (once or twice) for autocompletion. It will autocomplete paths, shell commands, file names etc.
   - Use `ls` to inspect the contents of the current directory (should correspond to what you see in the File Manager)
   - Install the guest additions by running the installer with root priveleges: `sudo ./VBoxLinuxAdditions.run`
-  - Read the output messages to make sure that the installation completed without errors. E.g., if you get the message `sudo: ./VBoxAdditions.run: command not found`, then you're in the wrong directory
+  - Read the output messages to make sure that the installation completed without errors. E.g., if you get the message `sudo: ./VBoxAdditions.run: command not found`, you're probably in the wrong directory
   - Reboot the guest
-  - Test if the shared clipboard works: VM window menu bar → Devices → Shared Clipboard → Bidirectional. You should now be able to copy-paste between the guest and the host. If it doesn't work, install an additional package: `sudo apt install virtualbox-guest-x11`, and reboot ([superuser.com](https://superuser.com/a/1367954))
+  - Test if the shared clipboard works: VM window menu bar → Devices → Shared Clipboard → Bidirectional. You should now be able to copy-paste between the guest and the host. If it doesn't work, you can try to install this package: `sudo apt install virtualbox-guest-x11`, and reboot ([superuser.com](https://superuser.com/a/1367954))
 - **B.** Installation from the repository.
-  - Don't do this if method A. worked. (This method is mostly useful for Ubuntu Server which doesn't have a Desktop environment, only a command line) 
+  - Not required if method A. worked. (That's the only possible method for Ubuntu Server, which doesn't have a Desktop environment but only a command line) 
   - In the terminal: `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Reboot the guest
 
