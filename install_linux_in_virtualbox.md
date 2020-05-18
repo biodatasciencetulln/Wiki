@@ -8,8 +8,8 @@
 * TOC
 {:toc}
 
-Date: 18.05.2020
-Software: VirtualBox 6.1.6, Xubuntu 20.04
+18.05.2020  
+Software versions: VirtualBox 6.1.6, Xubuntu 20.04
 
 There are several tutorials that can help you installing Ubuntu on VirtualBox, e.g. on [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108) or [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document tries to address some points not mentioned in these tutorials, and provide additional links and information. It'll be a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
