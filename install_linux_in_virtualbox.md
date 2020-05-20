@@ -41,8 +41,8 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 - Most other settings: the defaults are ok
 - Memory: at least 4 GB is recommended (can be changed later)
 - Virtual hard disk size: 30-40 GB is recommended (can't be changed later)
-- Your new **VM is saved as a folder** with a few files in it (on Windows, it should be located in the folder "C:\Users\<your-user>\VirtualBox VMs")
-- The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a disk/disk image), CPU, audio and graphics devices
+- Your new **VM is saved as a folder** with a few files in it (on Windows, it should be located in the folder *C:\Users\&lt;your-user&gt;\VirtualBox VMs*)
+- The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a CD image), CPU, audio and graphics devices
 
 ---
 ## Install the guest operating system (OS)
@@ -132,7 +132,7 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 - See e.g. [websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/) for screenshots
 - In VirtualBox: VM → Settings → Shared Folders → Add shared folder: select the folder you want to share
   - Check the checkboxes "Auto-mount" and "Make Permanent" ([superuser.com](https://superuser.com/a/1254589))
-- In the guest, the shared folder should now be [mounted](https://en.wikipedia.org/wiki/Mount_(Unix)) under */media/*; use the command `ls /media/` to double-check (shared folders have an *sf_* prefix)
+- In the guest, the shared folder should now be mounted under */media/*; use the command `ls /media/` to double-check (shared folders have an *sf_* prefix)
   - However, if you try to look inside using `ls /media/sf_<shared-folder-name>` (use Tab completion) or the file manager, this probably won't work
   - This is because every Linux file/folder has separate read/write/execute permissions for the **file owner**, [the **group**](https://linuxize.com/post/how-to-list-groups-in-linux/) and **other users**, so... 9 separate permissions. `ls -l /media/` shows that the owner of the shared folder is `root`, the group is `vboxsf`, and other users [don't have read/write access](http://linuxcommand.org/lc3_lts0090.php)
   - To see which groups you're part of, enter the command `groups`
@@ -185,9 +185,9 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, **completely shut down the VM** before that
-    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things (in the worst case, you need to downgrade again)
+    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things; in the worst case, you need to downgrade again
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
-    - If there are problems after a VirtualBox update, e.g. a VM that used to work doesn't boot and you get strange error messages: "Have You Tried Turning It Off and On Again?" (try **rebooting the computer**, possibly twice)
+    - If there are problems after a VirtualBox update, e.g. the VM suddenly doesn't boot with some error message: try **rebooting the host** ("Have You Tried Turning It Off and On Again?")
 	- After updating VirtualBox, it is recommended to update the guest additions as well
 
 ---
