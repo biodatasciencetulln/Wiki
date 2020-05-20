@@ -26,8 +26,9 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 ## Download the Linux ISO file (disk image)
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu). You can download the [ISO file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded disk image should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what "amd64" means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
-- **Xubuntu is Ubuntu** but with a different [Desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](https://en.wikipedia.org/wiki/Xfce). It has a different **selection of pre-installed software**, requires less resources and is generally more responsive than the default GNOME desktop environment 
-  - While there are differences between Ubuntu and Xubuntu, they are superficial, as Xubuntu *is* Ubuntu with a different look; therefore most Ubuntu-related tutorials also apply to Xubuntu
+- **Xubuntu is Ubuntu** with a different [desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](http://www.linuxandubuntu.com/home/xfce-desktop-environment-a-linux-desktop-environment-for-everyone). It has a different **selection of pre-installed software**, requires less resources and is more responsive than the default GNOME desktop environment 
+  - The differences are mostly [superficial](https://askubuntu.com/questions/1177309/does-every-ubuntu-question-answer-apply-to-its-derivatives-xubuntu-lubuntu) (related to specific software and settings). All Ubuntu derivatives use the same software and the same commands, therefore most Ubuntu-related tutorials also apply to Xubuntu
+  - Another interesting and even more lightweight (needs less RAM, very fast) Ubuntu flavor is Lubuntu, using the LXQt desktop environment (might currently be less stable than Xfce). You can also use the default Ubuntu with the GNOME desktop environment, if you prefer (performant hardware is recommended)
 
 ---
 ## Create a new Virtual Machine (VM) in VirtualBox
@@ -39,7 +40,7 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
   - Note: if the option `Ubuntu (64 bit)` is not available, you probably need to activate a **BIOS setting for virtualization**. Reboot your computer into [BIOS/UEFI](https://www.youtube.com/watch?v=SlzwMKcCoMI) and enable hardware virtualization. This will appear as `Virtualization Technology` and/or `VT-x or AMD-V` or similar (different manufacturers word it differently). You can consult e.g. the following links for instructions and troubleshooting: [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339), [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os), [docs.fedoraproject.org](https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html), [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/), [YouTube video](https://www.youtube.com/watch?v=yZw_8Y-v298)
   - If you have multiple BIOS options related to virtualization, e.g. `VTx` and `VTd`, you should probably enable both
 - Most other settings: the defaults are ok
-- Memory: at least 4 GB is recommended (can be changed later)
+- Memory: 4 GB is recommended (can be changed later)
 - Virtual hard disk size: 30-40 GB is recommended (can't be changed later)
 - Your new **VM is saved as a folder** with a few files in it (on Windows, it should be located in the folder *C:\Users\&lt;your-user&gt;\VirtualBox VMs*)
 - The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a CD image), CPU, audio and graphics devices
