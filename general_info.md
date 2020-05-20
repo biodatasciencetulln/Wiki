@@ -75,7 +75,7 @@ A development environment comprises programs and tools that you use for writing,
 - [Google Colab](https://colab.research.google.com) — Jupyter notebook in the cloud (via Google drive), with real-time collaboration ([short YouTube intro](https://www.youtube.com/watch?v=inN8seMm7UI))
 - [Repl.it](https://repl.it/languages/python3) — A browser-based IDE, that supports over 50 programming languages, including Python
 
-**Local IDEs.** One way to install and run Python locally is via the *Python distribution* [Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)). You can install it in the VM, or (for testing, if you don't have a VM yet) on the host OS. Anaconda includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder, VS Code and others, accessible via the [Anaconda navigator](https://docs.anaconda.com/anaconda/navigator/). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with.
+**Local IDEs.** One way to install and run Python locally is via the *Python distribution* [Anaconda](https://stackoverflow.com/a/42096429) ([download page](https://www.anaconda.com/products/individual), [installation instructions](https://docs.anaconda.com/anaconda/install/)). You can install it in the VM, or (for testing, if you don't have a VM yet) on the host OS. Anaconda includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder, VS Code and others, accessible via the [Anaconda navigator](https://docs.anaconda.com/anaconda/navigator/). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with.
 
 - [Spyder](https://www.spyder-ide.org/): Very learning-friendly IDE. A good place to start is the Spyder tutorial, `Help` → `Spyder tutorial`; also check out [this introductory video](https://www.youtube.com/watch?v=zYNRqVimU3Q)
 - [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter): Great for presenting, storytelling and exploratory data analysis; not necessarily the best for learning to code or longer scripts. [Introductory video](https://www.youtube.com/watch?v=HW29067qVWk)
@@ -83,22 +83,25 @@ A development environment comprises programs and tools that you use for writing,
 
 ### Books/tutorials
 
-- [w3schools.com Python tutorial](https://www.w3schools.com/python/) - beginner-friendly interactive tutorial
+- [w3schools.com Python tutorial](https://www.w3schools.com/python/) - interactive tutorial, for complete beginners
 - ["A Byte of Python"](https://python.swaroopch.com/) - free beginner-friendly ebook; doesn't go too deep, but covers the basics
 - E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/)) - very beginner-friendly, if you like the approach of the book series
 - ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) - free and very nice ebook, maybe not great for complete beginners; you'll learn a lot if you can work your way through it
   - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) - interactive edition
-- E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/))
-- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([Amazon](https://www.amazon.de/Fluent-Python-Concise-Effective-Programming-ebook/dp/B0131L3PW4/))
-- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) -  advanced, not beginner-friendly
-- [Official Python tutorial](https://docs.python.org/3/tutorial/) - best-suited as reference for topics you already know, to refresh your memory or to go deeper
+- E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/)) - practical introduction for complete beginners, with exercises
+- A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/)) - practically oriented introduction for beginners (ranges from beginners to somewhat advanced content)
+- [Official Python tutorial](https://docs.python.org/3/tutorial/) - good reference for topics you already know, to refresh your memory or to go deeper
 
-Hint: Practically oriented tutorials that solve little problems rather than just presenting information, are usually more fun and provide a better understanding of the material.
+Hints: Practically oriented tutorials that solve little problems rather than just presenting information, are usually more fun and provide a better understanding of the material. When writing code based on some code template, do not copy-paste it, but re-type it yourself. This improves the learning result. 
+
+**Advanced.**
+- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([Amazon](https://www.amazon.de/Fluent-Python-Concise-Effective-Programming-ebook/dp/B0131L3PW4/)) - discussion of Python-specific language features, for Python programmers who want to improve their skills (not for complete beginners)
+- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) -  learn to write efficient and "Pythonic" code (advanced)
 
 ### Videos/YouTube channels
 
-- ["Python Tutorial for Absolute Beginners #1 - What Are Variables?" (CS Dojo)](https://www.youtube.com/watch?v=Z1Yd7upQsXY)
-- ... many others ...
+- ["Python Tutorial for Absolute Beginners #1 - What Are Variables?" (CS Dojo channel)](https://www.youtube.com/watch?v=Z1Yd7upQsXY)
+- ["Python Tutorial for Beginners 1: Install and Setup for Mac and Windows" (Corey Schafer channel)](https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU)
 
 ### Online platforms and other resources
 
