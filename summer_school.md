@@ -1,4 +1,4 @@
-In one unit of the Bio Data Science summer school, we will set up the computational environment that will be helpful for several courses. The unit will be hold online, probably via Microsoft Teams (alternatively Zoom or Hangouts). As a preparation, please make sure to have the following available:
+In one unit of the Bio Data Science summer school, we will set up the computational environment that will be helpful for several courses. The unit will be held online, probably via Microsoft Teams (alternatively Zoom or Hangouts). As a preparation, please make sure to have the following available:
 
 - Adequate laptop (Windows, macOS or Linux)
 - Internet connection
