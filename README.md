@@ -6,6 +6,7 @@ Hi there! This is a small collection of useful links and information that will h
 
 - [General information](general_info.md)
 - [Install Ubuntu in Virtualbox](install_linux_in_virtualbox.md)
+- [Summer school info](summer_school.md)
 
 <br>
 <img src="wordcloud.svg" alt="Wordcloud" width="600">
