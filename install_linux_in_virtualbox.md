@@ -38,6 +38,7 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 - `Type`: `Linux`
 - `Version`: **`Ubuntu (64 bit)`**
   - If the option `Ubuntu (64 bit)` is not available, you probably need to activate a **BIOS setting for virtualization**. Reboot your computer into [BIOS/UEFI](https://www.youtube.com/watch?v=SlzwMKcCoMI) and enable hardware virtualization. This will appear as `Virtualization Technology` and/or `VT-x or AMD-V` or similar (different manufacturers word it differently). You can consult e.g. the following links for instructions and troubleshooting: [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339), [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os), [docs.fedoraproject.org](https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html), [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/), [YouTube](https://www.youtube.com/watch?v=yZw_8Y-v298). If you have multiple BIOS options related to virtualization, e.g. `VTx` and `VTd`, you should probably enable both
+  - It's also possible that the 64 bit option is available, but when you try to start your virtual machine later, it aborts with a cryptic error message. This can be related to the same issue. Try to activate the virtualizaton settings in BIOS to solve the problem.
 - Most other settings: the defaults are ok
 - Memory: 4 GB is recommended (can be changed later)
 - Virtual hard disk size: 30-40 GB is recommended (can't be changed later)
@@ -67,7 +68,7 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 ---
 ## Linux basics
 
-- To [open a terminal]https://docs.xubuntu.org/current/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
+- To [open a terminal](https://docs.xubuntu.org/current/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
 - To start programs/run commands: type the program/command in the terminal and hit <kbd>Enter</kbd>
 - **Abort program/command** running in the terminal: press **<kbd>Ctrl</kbd>+<kbd>C</kbd>** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
 - **Abort non-responsive graphical application**: enter `xkill`  + <kbd>Enter</kbd> in the terminal and click on the non-responsive application (only use this if absolutely necessary)
@@ -132,7 +133,7 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
   - However, if you try to look inside using `ls /media/sf_<shared-folder-name>` (use Tab completion) or the file manager, you'll probably see "Permission denied"
   - This is because every Linux file/folder has read/write/execute permissions for the **file owner**, [the **group**](https://linuxize.com/post/how-to-list-groups-in-linux/), and **other users**, so... 9 separate permissions. `ls -l /media/` shows that the owner of the shared folder is `root`, the group is `vboxsf`, and other users [don't have read/write access](http://linuxcommand.org/lc3_lts0090.php)
   - To see which groups you're part of, enter the command `groups`
-  - The best way to access the shared folder is to add your user to the `vboxsf` group: `sudo adduser <username> vboxsf` (replace `<username>` by your username)
+  - The best way to access the shared folder is to add your user to the `vboxsf` group: `sudo adduser <username> vboxsf` (replace `<username>` by your username, e.g., if your username is `thanos`, the command is `sudo adduser thanos vboxsf`)
   - For the change to take effect, log out and log in again
   - Run `groups` again to check your groups, you should now be in the `vboxsf` group
   - The shared folder should be accessible under `/media/sf_<shared-folder-name>/`
