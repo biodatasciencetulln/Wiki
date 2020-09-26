@@ -183,10 +183,11 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 - Host:
   - Keep the OS updated
   - When updating VirtualBox, **completely shut down the VM** before that
-    - Major (e.g. Virtualbox 5 → 6) and even minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features and can therefore break things; in the worst case, you need to downgrade again
+    - Major (e.g. Virtualbox 5 → 6) and minor (e.g. VirtualBox 6.0 → 6.1) releases introduce new features, and can break things (e.g. prevent the VM from starting up)
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
-    - If there are problems after a VirtualBox update, e.g. the VM suddenly doesn't boot with some error message: try **rebooting the host** ("Have You Tried Turning It Off and On Again?")
-	- After updating VirtualBox, it is recommended to update the guest additions as well
+    - In case of problems after a VirtualBox update, e.g. VM doesn't boot with an error message, **reboot the host** again (<q>have you tried turning it off and on again?</q>)
+    - If you have problems with a VM after a VirtualBox update, revert to an older VirtualBox version, until the problem is fixed
+    - After updating VirtualBox, it is recommended to update the guest additions as well, so that they match the VirtualBox version
 
 ---
 ## Where to go from here
