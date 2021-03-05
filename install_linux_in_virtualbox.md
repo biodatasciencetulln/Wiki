@@ -20,7 +20,7 @@ There are several tutorials that help you installing Ubuntu on VirtualBox, e.g. 
 - Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
   - Note: During all steps of the tutorial, you might encounter problems of some sort. For widely used software like VirtualBox and Ubuntu, these problems have usually been discussed online and a solution exists. A **web search** for your particular problem based on **important keywords** (e.g. the error message) can help
   - E.g., if installation on macOS fails, you can search for "virtualbox macos installation failed" and find links like [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/) or [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5), which say that this can be related to a macOS security feature (Gatekeeper) and explain how to fix it
-- Run VirtualBox and install the **Extension Pack** (additional Oracle proprietary components which extend the functionality of the base package)
+- When you run VirtualBox, it may suggest to install the Oracle **Extension Pack**. It contains additional Oracle proprietary components which extend the functionality of the base package ([VirtualBox manual](https://www.virtualbox.org/manual/ch01.html#intro-installing)). While VirtualBox is licensed under the GPL2 license and therefore free for any use, the Extension Pack has a more restrictive license. This license includes educational use ([VirtualBox Licensing FAQ](https://www.virtualbox.org/wiki/Licensing_FAQ)), but the interpretation is ambiguous, and VirtualBox can be used without it. Therefore, installation is currently not recommended.
 
 ---
 ## Download the Linux ISO file (disk image)
