@@ -72,8 +72,8 @@ A development environment comprises programs and tools that you use for writing,
 
 **Online IDEs.** One great way to learn Python is to simply run it online. There are several good resources, e.g.
 
-- [Google Colab](https://colab.research.google.com) — Jupyter notebook in the cloud (via Google drive), with real-time collaboration ([short YouTube intro](https://www.youtube.com/watch?v=inN8seMm7UI))
-- [Repl.it](https://repl.it/languages/python3) — A browser-based IDE, that supports over 50 programming languages, including Python
+- [Repl.it](https://repl.it/languages/python3) — Browser-based IDE that supports over 50 programming languages, including Python; has real-time collaboration ([reddit](https://www.reddit.com/r/Python/comments/jlbcd9/is_there_a_real_time_collaboration_coding/))
+- [Google Colab](https://colab.research.google.com) — Jupyter notebooks in the cloud (via Google drive) ([YouTube intro](https://www.youtube.com/watch?v=inN8seMm7UI))
 
 **Local IDEs.** One way to install and run Python locally is via the *Python distribution* [Anaconda](https://stackoverflow.com/a/42096429) ([download page](https://www.anaconda.com/products/individual), [installation instructions](https://docs.anaconda.com/anaconda/install/)). You can install it in the VM, or (for testing, if you don't have a VM yet) on the host OS. Anaconda includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder, VS Code and others, accessible via the [Anaconda navigator](https://docs.anaconda.com/anaconda/navigator/). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with.
 
