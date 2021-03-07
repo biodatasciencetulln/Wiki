@@ -16,13 +16,14 @@ A solid biological background is indispensible for all courses of the curriculum
 
 A portable laptop is required for a number of courses. Minimum specifications:
 
-- CPU: Intel Core i3/i5/i7 or equivalent AMD processor; Atom, Celeron, or similar processors (mostly used in netbooks) are too slow
-- Memory: 8 GB RAM
-- Storage: SSD highly recommended, at least 256 GB
+- CPU: Intel Core i5/i7 or equivalent AMD processor (e.g. AMD Ryzen 5/7)
+    - Atom, Celeron, and similar low-end processors are too slow
+- Memory: 16 GB RAM (8 is possible, but may slow down your computer)
+- Storage: SSD recommended, ⩾256 GB
 - Operating system: Windows, macOS or Linux
 - GPU: irrelevant
-- Screen size: Whatever works for you (at least 13 inches is recommended)
-- Overall system performance: You can assess it based on the startup time of a program like Firefox. Ideally, it should take no more than 3-4 seconds.
+- Screen size: Whatever works for you (⩾13 inches is recommended)
+- Overall system performance can be assessed based on the startup time of a program like Firefox. Ideally, it should take no more than 2-3 seconds.
 
 ## Virtual machine
 
@@ -45,7 +46,7 @@ Note that Windows 10 now includes a built-in [Windows Subsystem for Linux](https
 
 Linux includes [the shell](http://linuxcommand.org/lc3_lts0010.php), a command-line interpreter/scripting language that can execute built-in shell commands, Linux utilities and programs. It is a powerful and versatile tool and very useful e.g. for working with text files, which is common in biological data analysis. The shell allows to easily build pipelines using different commands and utilities, e.g. for sorting/cutting/restructuring text files and feeding the result into other commands/utilities/programs. It is one of the most important tools in bio data science, and you should get comfortable with it early on.
 
-Several shell programs exist. The most popular is [the Bash shell](http://linuxcommand.org/lc3_lts0010.php), it is default on most or all Linux distributions. A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the Bash shell. Different Ubuntu flavors use different terminals, e.g. Xubuntu has the Xfce 4 terminal emulator. [Here](https://docs.xubuntu.org/current/user/C/command-line.html) is how to open the terminal on Xubuntu, and a listing of some important commands.
+Several shell programs exist. The [Bash shell](http://linuxcommand.org/lc3_lts0010.php) is the most popular shell and the default on most or all Linux distributions. A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the Bash shell. Different Ubuntu flavors use different terminals, e.g. Xubuntu has the Xfce 4 terminal emulator. [Here](https://docs.xubuntu.org/current/user/C/command-line.html) is how to open the terminal on Xubuntu, and a listing of some important commands.
 
 Some recommended Bash introductory tutorials/resources:
 
@@ -59,7 +60,7 @@ Hint: If you find a useful YouTube channel, you might want to subscribe and/or c
 Books:
 
 - B. Ward: "How Linux Works" ([Amazon](https://www.amazon.de/How-Linux-Works-Brian-Ward/dp/1718500408))
-- W. Shotts: "The Linux Command Line: A Complete Introduction" ([Amazon](https://www.amazon.de/Linux-Command-Line-2nd-Introduction/dp/1593279523/))
+- W. Shotts: "The Linux Command Line: A Complete Introduction" ([Amazon](https://www.amazon.de/Linux-Command-Line-2nd-Introduction/dp/1593279523/), [ebook](http://linuxcommand.org/tlcl.php))
 
 
 ## Python
@@ -90,14 +91,14 @@ A development environment comprises programs and tools that you use for writing,
   - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) - interactive edition
 - E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/)) - practical introduction for complete beginners, with exercises
   - The author provides a collection of online resources, including some nice [cheat sheets](https://ehmatthes.github.io/pcc_2e/cheat_sheets/cheat_sheets/)
-- A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/)) - practically oriented introduction for beginners (ranges from beginners to somewhat advanced content)
+- A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/), [online book](https://automatetheboringstuff.com)) - practically oriented introduction for beginners (ranges from beginners to somewhat advanced content)
 - [Official Python tutorial](https://docs.python.org/3/tutorial/) - good reference for topics you already know, to refresh your memory or to go deeper
 
 Hints: Practically oriented tutorials that solve little problems rather than just presenting information, are usually more fun and provide a better understanding of the material. When writing code based on some code template, do not copy-paste it, but re-type it yourself. This improves the learning result. 
 
 **Advanced.**
-- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([Amazon](https://www.amazon.de/Fluent-Python-Concise-Effective-Programming-ebook/dp/B0131L3PW4/)) - discussion of Python-specific language features, for Python programmers who want to improve their skills (not for complete beginners)
-- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) -  learn to write efficient and "Pythonic" code (advanced)
+- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([Amazon](https://www.amazon.de/Fluent-Python-Concise-Effective-Programming-ebook/dp/B0131L3PW4/)) - discussion of Python-specific language features, for Python programmers who want to improve their skills (advanced)
+- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) - learn to write efficient and "Pythonic" code (advanced)
 
 ### Videos/YouTube channels
 
@@ -106,6 +107,7 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 
 ### Online platforms and other resources
 
+- [freecodecamp.org: useful links](https://www.freecodecamp.org/news/best-python-tutorial/)
 - [python-guide.org: useful links](https://docs.python-guide.org/intro/learning/)
 - [learnpython.org](https://www.learnpython.org/)
 - [codecademy.com](https://www.codecademy.com/learn/learn-python-3), and similar interactive learning resources
@@ -118,7 +120,8 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 
 Connecting with other people from whom you can learn is both fun and helps staying updated. Here are some ideas:
 
-- Twitter: look [here](https://www.youtube.com/watch?v=1hhuFrBNoLg) and maybe [here](https://www.youtube.com/watch?v=3471Vg3GaPI) 
-- Reddit: look [here](https://analyticsindiamag.com/10-data-science-subreddits-every-tech-enthusiast-should-follow/)
-- Podcasts: look [here](https://dbader.org/blog/ultimate-list-of-python-podcasts)
-- Forums: [Stackoverflow](https://stackoverflow.com/), no way around it
+- Twitter: see [here](https://www.youtube.com/watch?v=1hhuFrBNoLg) and [here](https://www.youtube.com/watch?v=3471Vg3GaPI) 
+- Reddit: r/Python, and see [here](https://analyticsindiamag.com/10-data-science-subreddits-every-tech-enthusiast-should-follow/)
+- Podcasts: see [here](https://dbader.org/blog/ultimate-list-of-python-podcasts)
+- Blogs: see [here](https://blog.feedspot.com/python_blogs/)
+- Forums: [Stackoverflow](https://stackoverflow.com/)
