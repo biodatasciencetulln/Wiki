@@ -16,7 +16,7 @@ A solid biological background is indispensible for all courses of the curriculum
 
 A portable laptop is required for a number of courses. Minimum specifications:
 
-- CPU: Intel Core i5/i7 or equivalent AMD processor (e.g. AMD Ryzen 5/7)
+- CPU: Intel Core i5 or equivalent (e.g. AMD Ryzen 5)
     - Atom, Celeron, and similar low-end processors are too slow
 - Memory: 16 GB RAM (8 is possible, but may slow down your computer)
 - Storage: SSD recommended, ≥256 GB
