@@ -102,8 +102,8 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 
 ### Videos/YouTube channels
 
-- ["Python Tutorial for Absolute Beginners #1 - What Are Variables?" (CS Dojo channel)](https://www.youtube.com/watch?v=Z1Yd7upQsXY)
 - ["Python Tutorial for Beginners 1: Install and Setup for Mac and Windows" (Corey Schafer channel)](https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU)
+- ["Python Tutorial for Absolute Beginners #1 - What Are Variables?" (CS Dojo channel)](https://www.youtube.com/watch?v=Z1Yd7upQsXY)
 
 ### Online platforms and other resources
 
