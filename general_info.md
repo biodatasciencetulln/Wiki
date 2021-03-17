@@ -120,8 +120,8 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 
 Connecting with other people from whom you can learn is both fun and helps staying updated. Here are some ideas:
 
+- Reddit: r/Python, r/bioinformatics, and see [here](https://analyticsindiamag.com/10-data-science-subreddits-every-tech-enthusiast-should-follow/)
 - Twitter: see [here](https://www.youtube.com/watch?v=1hhuFrBNoLg) and [here](https://www.youtube.com/watch?v=3471Vg3GaPI) 
-- Reddit: r/Python, and see [here](https://analyticsindiamag.com/10-data-science-subreddits-every-tech-enthusiast-should-follow/)
 - Podcasts: see [here](https://dbader.org/blog/ultimate-list-of-python-podcasts)
 - Blogs: see [here](https://blog.feedspot.com/python_blogs/)
 - Forums: [Stackoverflow](https://stackoverflow.com/)
