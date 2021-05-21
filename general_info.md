@@ -10,7 +10,7 @@
 
 A solid biological background is indispensible for all courses of the curriculum. This general textbook provides a comprehensive overview and can be used for studying and as a reference:
 
-- Urry et al.: "Campbell Biology" ([amazon.com](https://www.amazon.com/Campbell-Biology-11th-Lisa-Urry/dp/0134093410), [pearson-studium.de](https://www.pearson-studium.de/campbell-biologie_3.html))
+- Urry et al.: "Campbell Biology" ([amazon.com](https://www.amazon.com/Campbell-Biology-11th-Lisa-Urry/dp/0134093410), [pearson.de](https://www.pearson.de/campbell-biologie-9783868943665))
 
 ## Laptop specifications
 
