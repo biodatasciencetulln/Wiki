@@ -109,7 +109,7 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 - ["Learn Python - Full Course for Beginners [Tutorial]" (freeCodeCamp.org channel)](https://www.youtube.com/watch?v=rfscVS0vtbw)
 - ["Python Tutorial for Absolute Beginners #1 - What Are Variables?" (CS Dojo channel)](https://www.youtube.com/watch?v=Z1Yd7upQsXY)
 - ["Introduction to Python 3 Programming Tutorial" (sentdex channel)](https://www.youtube.com/watch?v=eXBD2bB9-RA&list=PLQVvvaa0QuDeAams7fkdcwOGBpGdHpXln)
-- ["Top 13 Youtube channels to learn Python" (towardsdatascience.com)](https://towardsdatascience.com/top-13-youtube-channels-to-learn-python-524442aaab2f)
+- ["Top Youtube channels to learn Python" (towardsdatascience.com)](https://towardsdatascience.com/top-13-youtube-channels-to-learn-python-524442aaab2f)
 
 ### Online platforms and other resources
 
