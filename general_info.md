@@ -23,7 +23,7 @@ A portable laptop is required for a number of courses. Minimum specifications:
 - Operating system: Windows, macOS or Linux
 - GPU: irrelevant
 - Screen size: Whatever works for you (≥13 inches is recommended)
-- Overall system performance can be assessed based on the startup time of a program like Firefox. Ideally, it should take no more than 2-3 seconds.
+- Overall system performance can be assessed based on the startup time of a program like Firefox. Ideally, it should take no more than 2-3 seconds
 
 ## Virtual machine
 
@@ -107,7 +107,6 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 
 - ["Python Tutorial for Beginners 1: Install and Setup for Mac and Windows" (Corey Schafer channel)](https://www.youtube.com/watch?v=YYXdXT2l-Gg&list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU)
 - ["Learn Python - Full Course for Beginners [Tutorial]" (freeCodeCamp.org channel)](https://www.youtube.com/watch?v=rfscVS0vtbw)
-- ["Series Introduction - Python Basics 1/10" (Engineer Man channel)](https://www.youtube.com/watch?v=VQxBd5tLza8&list=PLlcnQQJK8SUjW_HiBWhZ_XOfCq9Hu0aeY)
 - ["Python Tutorial for Absolute Beginners #1 - What Are Variables?" (CS Dojo channel)](https://www.youtube.com/watch?v=Z1Yd7upQsXY)
 - ["Introduction to Python 3 Programming Tutorial" (sentdex channel)](https://www.youtube.com/watch?v=eXBD2bB9-RA&list=PLQVvvaa0QuDeAams7fkdcwOGBpGdHpXln)
 - ["Top 13 Youtube channels to learn Python" (towardsdatascience.com)](https://towardsdatascience.com/top-13-youtube-channels-to-learn-python-524442aaab2f)
