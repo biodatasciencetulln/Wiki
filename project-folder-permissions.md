@@ -2,11 +2,9 @@ When working on a project with others, you need a project folder
 to which the collaborators have access. To learn more about file
 permissions, see e.g.
 [linuxcommand.org](https://linuxcommand.org/lc3_lts0090.php) and the links below.
-You can view a user's primary group and secondary groups using the `id` command.
-
-If you trust other members of your primary group (they may view the files, and you don't
-expect anybody to delete the files), an easy way to make the project folder writeable for your
-collaborators is to modify the group permissions.
+You can view a user's primary group and secondary groups
+([Stackexchange](https://unix.stackexchange.com/questions/605531/primary-vs-secondary-groups-in-linux))
+using the `id` command.
 
 - Create the project folder in the directory`/proj`: `mkdir
   /proj/<your-project>`. You should select a name that clearly identifies
@@ -25,7 +23,8 @@ In case the project folder should only be accessible by you and your collaborato
 
 - Ask the server administrator to create a new Linux group for you and your
   collaborators (please provide the user names). Only these users will be
-  granted reading and writing permissions on the project folder.
+  granted reading and writing permissions on the project folder. The owner can
+  later modify the permissions for "group" and for "others", if required.
 
 In case you are using Jupyter:
 
@@ -38,9 +37,10 @@ Links:
 - File permissions:
   [linuxcommand.org](https://linuxcommand.org/lc3_lts0090.php),
   [Wikipedia](https://en.wikipedia.org/wiki/File-system_permissions),
+  [linux.com](https://www.linux.com/training-tutorials/understanding-linux-file-permissions/),
   [kb.iu.edu](https://kb.iu.edu/d/abdb),
   [wiki.archlinux.org](https://wiki.archlinux.org/title/File_permissions_and_attributes),
-  [networkworld.com](https://www.networkworld.com/article/3409781/mastering-user-groups-on-linux.html)
+  [Wikipedia: Sticky bit](https://en.wikipedia.org/wiki/Sticky_bit)
 - ACLs:
   [bytexd.com](https://bytexd.com/intro-to-acl-using-getfacl-setfacl-commands/)
 - Related questions/answers:
@@ -49,3 +49,8 @@ Links:
   [Stackoverflow](https://stackoverflow.com/questions/1321168/bash-scripting-how-to-set-the-group-that-new-files-will-be-created-with), [askubuntu.com](https://askubuntu.com/questions/487527/give-specific-user-permission-to-write-to-a-folder-using-w-notation)
   [askubuntu.com](https://askubuntu.com/questions/402980/give-user-write-access-to-folder),
   [superuser.com](https://superuser.com/questions/235297/allow-specific-user-permission-to-read-write-my-folder)
+- Groups:
+  [networkworld.com](https://www.networkworld.com/article/3409781/mastering-user-groups-on-linux.html),
+  [askubuntu.com](https://askubuntu.com/questions/538130/what-is-the-difference-between-primary-group-and-secondary-group-in-ubuntu),
+  [Stackexchange](https://unix.stackexchange.com/questions/274200/primary-and-secondary-groups),
+  [askubuntu.com](https://askubuntu.com/a/589308)
