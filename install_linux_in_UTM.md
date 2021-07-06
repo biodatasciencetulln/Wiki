@@ -1,3 +1,7 @@
+---
+title: Document Center
+---
+
 Notes:
 
 - Hacking QUEMU: [gist.github.com](https://gist.github.com/akihikodaki/87df4149e7ca87f18dc56807ec5a1bc5)
