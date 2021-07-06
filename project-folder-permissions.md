@@ -1,5 +1,5 @@
-When working on a project with others, you need to provide access to the project folder
-for all collaborators, but possibly not for others. This requires an understanding of
+When working on a project with others, you need to provide access to the project directory
+for your collaborators, but possibly not for other people. This requires an understanding of
 Unix file permissions.
 
 * TOC
@@ -9,11 +9,14 @@ Unix file permissions.
 
 Unix file permissions are based on three types of
 permissions (read, write and execute permissions) for three types of users (the
-owner, the group and others; see
-[linuxcommand.org](https://linuxcommand.org/lc3_lts0090.php), [Stackexchange](https://unix.stackexchange.com/questions/21251/execute-vs-read-bit-how-do-directory-permissions-in-linux-work) and the links
-below). Every file/directory is owned by one user and one group. Every user belongs to a primary group, which determines the group
-ownership of files/folders created by this user, and secondary groups, which
-determines the permissions the user has on files/folders owned by these groups.
+owner, the group and others); see
+[linuxcommand.org](https://linuxcommand.org/lc3_lts0090.php), and the links
+below. Every file/directory is owned by one user and one group. Every user belongs to a primary group, which determines the group
+ownership of files/directories created by this user, and secondary groups, which
+determines the permissions the user has on files/directories owned by these
+groups. The meaning of the permissions bits differs for regular files and
+directories
+([Stackexchange](https://unix.stackexchange.com/questions/21251/execute-vs-read-bit-how-do-directory-permissions-in-linux-work)).
 Additional noteworthy flags:
 
 - Setgid ("set group ID"): When set on a directory, new files and subdirectories created within
