@@ -87,7 +87,7 @@ framework](https://www.biostars.org/p/91301/) ([Leipzig
 2017](https://academic.oup.com/bib/article/18/3/530/2562749)).
 This is
 especially useful if you plan to set up a stable analysis pipeline over a large
-number of scripts. Examples are [Snakemake](https://github.com/snakemake/snakemake),
+number of samples. Examples are [Snakemake](https://github.com/snakemake/snakemake),
 [Nextflow](https://github.com/nextflow-io/nextflow) or
 [Bpipe](https://github.com/ssadedin/bpipe); for a collection of pipelines, see
 [here](https://github.com/pditommaso/awesome-pipeline).
