@@ -95,5 +95,11 @@ number of scripts. Examples are [Snakemake](https://github.com/snakemake/snakema
 ## Links
 
 - [linux.com](https://www.linux.com/audience/devops/make-peace-your-processes-part-1/)
+- Task Spooler alternatives:
+    - nq - [GitHub](https://github.com/leahneukirchen/nq),
+      [hacker-news](https://hacker-news.news/post/25920517)
+    - Pueue - [GitHub](https://github.com/Nukesor/pueue)
 - `crontab`, `at` - single-use jobs or regularly running jobs; not useful for batch
-  processing, because jobs are not executed sequentially ([redhat.com](https://www.redhat.com/sysadmin/single-use-cron), [linoxide.com](https://linoxide.com/schedule-job-linux-commands/))
+  processing, because jobs are not executed sequentially
+  ([redhat.com](https://www.redhat.com/sysadmin/single-use-cron),
+  [linoxide.com](https://linoxide.com/schedule-job-linux-commands/), [superuser.com](https://superuser.com/questions/220364/how-to-run-commands-as-in-a-queue/))
