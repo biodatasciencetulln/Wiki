@@ -47,7 +47,7 @@ Useful commands and examples:
 - `id <username>` - view user groups (a similar command is `groups`)
 - `getent group <groupname>` - view group members
 - `stat` - display file or file system status
-- `newgrp <groupname>` - change the current group ID to <group>
+- `newgrp <groupname>` - change the current group ID
 - `sg <groupname> <command>` - execute a command (or set of commands)
   with changed group ID
 
@@ -61,7 +61,7 @@ Relevant commands:
 
 - `setfacl` - set file access control lists
   - `setfacl -d -m g::rwX <directory>` - set default ACL for the group
-    ("execute" permissions set on directories, but not files; see
+    ("X" sets execute permission on directories, but not on files; see
     [computerhope.com](https://www.computerhope.com/unix/usetfacl.htm),
     [ubuntu.com](http://manpages.ubuntu.com/manpages/impish/en/man1/setfacl.1.html))
   - `setfacl -d -m o::rx <directory>` - set default ACL for others
@@ -120,8 +120,8 @@ In case you are using Jupyter:
   [wiki.archlinux.org](https://wiki.archlinux.org/title/File_permissions_and_attributes)
 - Related questions/answers:
   [Stackexchange](https://unix.stackexchange.com/questions/12842/make-all-new-files-in-a-directory-accessible-to-a-group),
-  [askubuntu.com](https://askubuntu.com/questions/487527/give-specific-user-permission-to-write-to-a-folder-using-w-notation)
-  [askubuntu.com](https://askubuntu.com/questions/402980/give-user-write-access-to-folder),
+  [askubuntu.com](https://askubuntu.com/questions/487527/give-specific-user-permission-to-write-to-a-folder-using-w-notation),
+  [askubuntu.com](https://askubuntu.com/questions/402980/give-user-write-access-to-folder)
 - Groups:
   [networkworld.com](https://www.networkworld.com/article/3409781/mastering-user-groups-on-linux.html),
   [linuxize.com](https://linuxize.com/post/how-to-list-groups-in-linux/),

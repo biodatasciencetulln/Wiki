@@ -3,6 +3,9 @@ additional software to preserve your shell session or to submit/manage a
 queue of jobs. You also need to monitor your processes for their resource usage
 (CPU, memory, I/O). 
 
+* TOC
+{:toc}
+
 ## Basic terms
 
 - **A program** is an executable file (that was compiled from code).
