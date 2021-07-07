@@ -1,6 +1,6 @@
 If you execute many processes (jobs) from the command line, you may need
-additional software to preserve your shell session or to submit/manage jobs in a
-queue. You also need to monitor your running processes for their resource usage
+additional software to preserve your shell session or to submit/manage a
+queue of jobs. You also need to monitor your processes for their resource usage
 (CPU, memory, I/O). 
 
 ## Basic terms
@@ -19,7 +19,7 @@ queue. You also need to monitor your running processes for their resource usage
   unresponsive).
 - **A job** is any process (or process group) you start in the shell. The
   job is not done until the processes complete, and a job can be stopped,
-  resumed, or terminated ([Stackexchange](https://unix.stackexchange.com/a/4215/), [linuxcommand.org](https://linuxcommand.org/lc3_lts0100.php))
+  resumed, or terminated ([linuxcommand.org](https://linuxcommand.org/lc3_lts0100.php)).
 - A shell **session** is your current shell environment. Whenever you open a new
   shell (e.g. a new terminal tab), you start a new shell session.
 
@@ -74,16 +74,14 @@ define jobs that depend on other jobs, so that these jobs won't run until
 their dependencies are finished. In all cases you should be aware of the
 processes you are currently running and of their resource usage (use `htop`).
 
-Task-Spooler
+[Task-Spooler](https://vicerveza.homeunix.net/~viric/soft/ts/):
 
 - [douglasrizzo.com.br](https://douglasrizzo.com.br/ts-queue-experiments/)
 - [librecv.org](https://librecv.org/t/deep-learning-experiments-with-task-spooler/463)
-- [homepage](https://vicerveza.homeunix.net/~viric/soft/ts/)
 
 You may also consider using a [pipeline building
 framework](https://www.biostars.org/p/91301/) ([Leipzig
-2017](https://academic.oup.com/bib/article/18/3/530/2562749), [Spjuth et al.
-2015](https://biologydirect.biomedcentral.com/articles/10.1186/s13062-015-0071-8)).
+2017](https://academic.oup.com/bib/article/18/3/530/2562749)).
 This is
 especially useful if you plan to set up a stable analysis pipeline over a large
 number of scripts. Examples are [Snakemake](https://github.com/snakemake/snakemake),
