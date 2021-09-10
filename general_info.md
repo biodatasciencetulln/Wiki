@@ -19,10 +19,10 @@ A portable laptop is required for a number of courses. Minimum specifications:
 - CPU: Intel Core i5 or equivalent (e.g. AMD Ryzen 5)
     - Atom, Celeron, and similar low-end processors are too slow
 - Memory: 16 GB RAM (8 is possible, but may slow down your computer)
-- Storage: SSD recommended, ≥256 GB
+- Storage: ≥100 GB free space (SSD recommended)
 - Operating system: Windows, macOS or Linux
 - GPU: irrelevant
-- Screen size: Whatever works for you (≥13 inches is recommended)
+- Screen size: Whatever works for you (≥13 inches recommended)
 - Overall system performance can be assessed based on the startup time of a program like Firefox. Ideally, it should take no more than 2-3 seconds
 
 ## Virtual machine
