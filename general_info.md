@@ -119,7 +119,10 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 - [freecodecamp.org: useful links](https://www.freecodecamp.org/news/best-python-tutorial/)
 - [python-guide.org: useful links](https://docs.python-guide.org/intro/learning/)
 - [codecademy.com](https://www.codecademy.com/learn/learn-python-3) and other interactive learning platforms
+- [https://www.pythonforbiologists.org/](https://www.pythonforbiologists.org/) -
+  videos and code for learning Python basics through genomics examples
   
+
 ### Staying updated
 
 Connecting with other people from whom you can learn is both fun and helps staying updated. Here are some ideas:
