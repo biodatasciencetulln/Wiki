@@ -131,7 +131,9 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
   usage, [swap](https://serverfault.com/questions/48486/what-is-swap-memory)
   usage, network usage and disk usage, helps to diagnose problems. For
   example, if RAM and swap space are filled up, the system will freeze. It's
-  therefore recommended to add the [system load monitor](https://docs.xfce.org/panel-plugins/xfce4-systemload-plugin/start) to the [Xfce panel](https://docs.xfce.org/xfce/xfce4-panel/start). 
+  therefore recommended to add the [system load
+  monitor](https://docs.xfce.org/panel-plugins/xfce4-systemload-plugin/start) to
+  the [Xfce panel](https://docs.xfce.org/xfce/xfce4-panel/start) by right-clicking on the panel and selecting `Panel` → `Add New Items`
 
 ---
 ## Update the guest and install the guest additions
