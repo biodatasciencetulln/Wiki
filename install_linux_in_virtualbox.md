@@ -85,18 +85,53 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
 ---
 ## Linux basics
 
-- To [open a terminal](https://docs.xubuntu.org/current/user/C/command-line.html): Application menu → Accessories → Terminal emulator (it's called "emulator" for [historical reasons](https://superuser.com/a/930427))
-- To start programs/run commands: type the program/command in the terminal and hit <kbd>Enter</kbd>
-- **Abort program/command** running in the terminal: press **<kbd>Ctrl</kbd>+<kbd>C</kbd>** (this key combination sends the "SIGINT" (interrupt) signal to a running process)
-- **Abort non-responsive graphical application**: enter `xkill`  + <kbd>Enter</kbd> in the terminal and click on the non-responsive application (only use this if absolutely necessary)
-- If you need to repeat a command, you don't have to re-type it. The entered commands are saved, and you can access the Bash history using the <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> keys ([more](https://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/))
-  - E.g. enter `ls` + <kbd>Enter</kbd> → *list* the contents of the current directory
-  - Press the <kbd>&uarr;</kbd> key to bring up the previously entered command (`ls`)
-- **Search** for previously entered commands using **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
-- [Here](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts) are the most important keyboard shortcuts
-- The Linux **file system** has a single hierarchical directory structure. The top directory is `/`, called **root directory** (or simply root). All files and folders are part of this hierarchy. Devices like disks, external memory devices and network resources (e.g. shared folders) are also part of the hierarchy, and may contain subbranches of the tree. It'll help to know at least the [basic navigation commands](http://linuxcommand.org/lc3_lts0020.php), `pwd`, `cd` and `ls`
-- If you can't wait to learn more Bash commands, the **basics** are [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) or [here](https://help.ubuntu.com/community/UsingTheTerminal)
-- When you interact with the terminal, you should always **read the output/error messages**, even if you don't understand everything they say. You might be used from Windows that you just click "Cancel" or "Continue" to make the messages go away. Messages on Linux are usually more informative and tell you what's happening and if a problem occurred. E.g., if you run a command, and a message says `Building modules...`, then it's building modules, and you have to wait. If it says `Successfully installed`, then the package was successfully installed. If it says `Failed to fetch http://some/web/url`, then the resource couldn't be fetched, maybe because the URL was invalid or there was no Internet connection. If the command didn't complete successfully, try to search for the respective error message, which can help to find a solution
+- To [open a
+  terminal](https://docs.xubuntu.org/current/user/C/command-line.html):
+  Application menu → Accessories → Terminal emulator (it's called "emulator" for
+  [historical reasons](https://superuser.com/a/930427))
+- Start programs/run commands: type the program/command in the terminal and
+  hit <kbd>Enter</kbd>
+- **Abort program/command** running in the terminal: press
+  **<kbd>Ctrl</kbd>+<kbd>C</kbd>** (this key combination sends the "SIGINT"
+  (interrupt) signal to a running process)
+- **Abort non-responsive graphical application**: enter `xkill`  +
+  <kbd>Enter</kbd> in the terminal and click on the non-responsive application
+  (only use this if absolutely necessary)
+- The Bash shell stores the history of commands you run
+  ([more](https://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/))
+  - Use the arrow keys <kbd>&uarr;</kbd>/<kbd>&darr;</kbd> to repeat
+    previously typed commands: E.g. enter `ls` + <kbd>Enter</kbd> → *list* the
+    contents of the current directory; now, press the <kbd>&uarr;</kbd> key to
+    bring up the previously entered command
+  - **Search** for previously entered commands using
+    **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
+- [Here](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts) are the most
+  useful keyboard shortcuts
+- The Linux **file system** has a single hierarchical directory structure. The
+  top directory is `/`, called **root directory** (or simply root). All files
+  and folders are part of this hierarchy. Devices like disks, external memory
+  devices and network resources (e.g. shared folders) are also part of the
+  hierarchy. It'll help to know at least the [basic navigation
+  commands](http://linuxcommand.org/lc3_lts0020.php), `pwd`, `cd` and `ls`
+- If you can't wait to learn more Bash commands, the **basics** are
+  [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a)
+  or [here](https://help.ubuntu.com/community/UsingTheTerminal)
+- When you interact with the terminal, you should always **read the output/error
+  messages**, even if you don't understand everything they say. You might be
+  used from Windows that you just click "Cancel" or "Continue" to make the
+  messages go away. Messages on Linux are usually more informative and tell you
+  what's happening and if a problem occurred. E.g., if you run a command, and a
+  message says `Building modules...`, then it's building modules, and you have
+  to wait. If it says `Successfully installed`, then the package was
+  successfully installed. If it says `Failed to fetch http://some/web/url`, then
+  the resource couldn't be fetched, maybe because the URL was invalid or there
+  was no Internet connection. If the command didn't complete successfully, try
+  to search for the respective error message, which can help to find a solution
+- Keeping track of the system state, like processor load, RAM
+  usage, [swap](https://serverfault.com/questions/48486/what-is-swap-memory)
+  usage, network usage and disk usage, helps to diagnose problems. For
+  example, if RAM and swap space are filled up, the system will freeze. It's
+  therefore recommended to add the [system load monitor](https://docs.xfce.org/panel-plugins/xfce4-systemload-plugin/start) to the [Xfce panel](https://docs.xfce.org/xfce/xfce4-panel/start). 
 
 ---
 ## Update the guest and install the guest additions
@@ -188,10 +223,15 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
   - Try to [categorize and isolate](https://www.virtualbox.org/manual/ch12.html#ts_categorize-isolate) the problem. **Determine in which situation** the problem occurs, e.g. does rebooting the VM help?
   - Inspect the log file `VBox.log` (select the VM in the list on the left, right-click → `Show Log...`; or view it in the VM log file folder `$HOME/VirtualBox VMs/<VM-name>/Logs`) ([virtualbox.org](https://www.virtualbox.org/manual/ch12.html#collect-debug-info))
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window disappeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared) or [superuser.com](https://superuser.com/questions/1176587/i-hid-the-menu-bar-in-virtual-box-how-to-show-it-again))
-- **Running a system monitor at all times** helps to keep track of memory usage and CPU load and to diagnose problems
-  - Guest: Use a [system monitor](http://www.linuxandubuntu.com/home/10-best-linux-task-managers) like GNOME System Monitor (install with `sudo apt install gnome-system-monitor`), the [universally available **`top`**](https://www.lifewire.com/linux-top-command-2201163), or [Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)
+- **Running a system monitor at all times** helps to keep track of memory usage
+  and CPU load and to diagnose problems
+  - Guest: Use a system monitor/task manager like GNOME System Monitor (install
+    with `sudo apt install gnome-system-monitor`),
+    [`htop`](https://spin.atomicobject.com/2020/02/10/htop-guide/), or
+    [Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)
   - Host: Use the Task Manager (Windows) or equivalent
-  - High CPU load or memory usage can substantially slow down the system. If they are caused by a software problem, restarting the offending program can help
+  - High CPU load or memory usage can slow down or freeze the system. If they
+    are caused by a software problem, restarting the offending program can help
 - Random freezes of the guest OS → try to modify these host VM settings:
   - Display → "Enable 3D acceleration" = off
   - System → Processor → Number of virtual CPUs: 1 processor → 2, 3 or 4 processors (try and see if it helps)
