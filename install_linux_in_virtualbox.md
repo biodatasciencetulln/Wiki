@@ -10,7 +10,14 @@
 
 Used software: VirtualBox 6.1, Xubuntu 20.04
 
-- VirtualBox is not available for Apple silicon (Macbooks since 2020, [quora.com](https://www.quora.com/Can-you-run-VirtualBox-on-Macs-with-Apple-s-M1-chip)). One alternative is the [UTM app](https://mac.getutm.app/gallery/) ([GitHub](https://github.com/utmapp/UTM/wiki/Install-Ubuntu-ARM64-on-Apple-M1), [mac.getutm.app](https://mac.getutm.app/gallery/ubuntu-20-04), [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133)). There is also commercial software available, [parallels.com](https://www.parallels.com/blogs/parallels-desktop-m1/)
+- VirtualBox is not available for Apple silicon (Macbooks with M1 chip or
+  later). One alternative is the open source [UTM app](https://mac.getutm.app/gallery/)
+  ([GitHub](https://github.com/utmapp/UTM/wiki/Install-Ubuntu-ARM64-on-Apple-M1),
+  [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133)),
+  or commercial software like [VMware Fusion
+  Player](https://customerconnect.vmware.com/web/vmware/evalcenter?p=fusion-player-personal)
+  and [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
+
 
 There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
