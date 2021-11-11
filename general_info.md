@@ -87,6 +87,7 @@ A development environment comprises programs and tools that you use for writing,
 
 - [w3schools.com Python tutorial](https://www.w3schools.com/python/) - interactive tutorial, for complete beginners
 - ["A Byte of Python"](https://python.swaroopch.com/) - free beginner-friendly ebook; doesn't go too deep, but covers the basics
+- ["Python for Everybody"](https://www.py4e.com/html3/) and [interactive edition](https://books.trinket.io/pfe/index.html), also see [here](https://runestone.academy/runestone/books/published/py4e-int/index.html) - free beginner-friendly ebook
 - E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/)) - very beginner-friendly, if you like the approach of the book series
 - ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) - free and very nice ebook, maybe not great for complete beginners; you'll learn a lot if you work your way through it
   - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) - interactive edition
