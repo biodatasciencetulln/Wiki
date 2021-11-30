@@ -132,7 +132,7 @@ Connecting with other people from whom you can learn is both fun and helps stayi
 - Twitter: see [here](https://www.youtube.com/watch?v=1hhuFrBNoLg) and [here](https://www.youtube.com/watch?v=3471Vg3GaPI) 
 - Podcasts: see [here](https://dbader.org/blog/ultimate-list-of-python-podcasts)
 - Blogs: see [here](https://blog.feedspot.com/python_blogs/)
-- Forums: [Stackoverflow](https://stackoverflow.com/)
+- Forums: [Stackoverflow](https://stackoverflow.com/) and other [Stackexchange](https://stackexchange.com/sites#) forums
 
 ### After the course is before the course
 
