@@ -93,7 +93,7 @@ A development environment comprises programs and tools that you use for writing,
   - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) - interactive edition
 - E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/)) - practical introduction for complete beginners, with exercises
   - The author provides a collection of online resources, including some nice [cheat sheets](https://ehmatthes.github.io/pcc_2e/cheat_sheets/cheat_sheets/)
-- A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/), [online book](https://automatetheboringstuff.com)) - practically oriented introduction for beginners (ranges from beginners to somewhat advanced content)
+- A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/), [online book](https://automatetheboringstuff.com)) - practically oriented introduction for Python (ranges from beginners to somewhat advanced content); more excellent free Python books from this author can be found at [inventwithpython.com](https://inventwithpython.com/)
 - D. Amos et al.: "Python Basics: A Practical Introduction to Python 3", 4th edition ([Amazon](https://www.amazon.com/Python-Basics-Practical-Introduction/dp/1775093328/))
 - [Official Python tutorial](https://docs.python.org/3/tutorial/) - good reference for topics you already know, to refresh your memory or to go deeper
 
