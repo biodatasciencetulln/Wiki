@@ -6,6 +6,10 @@
 * TOC
 {:toc}
 
+## Quickstart: Python
+
+If you want to know what programming is and if it's right for you, watch an introductory tutorial like "Python Project Tutorial - Your First Python Project" by freeCodeCamp.org, 2020 ([YouTube](https://www.youtube.com/watch?v=_ZqAVck-WeM)) or "Python Tutorial for Beginners" by freeCodeCamp.org, 2022 ([YouTube](https://www.youtube.com/watch?v=8124kv-632k)). For more info, read on.
+
 ## Biological background
 
 A solid biological background is indispensible for all courses of the curriculum. This general textbook provides a comprehensive overview and can be used for studying and as a reference:
@@ -20,10 +24,12 @@ A portable laptop is required for a number of courses. Minimum specifications:
     - Atom, Celeron, and similar low-end processors are too slow
 - Memory: 16 GB RAM (8 is possible, but may slow down your computer)
 - Storage: ≥100 GB free space (SSD recommended)
-- Operating system: Windows, macOS or Linux
 - GPU: irrelevant
-- Screen size: Whatever works for you (≥13 inches recommended)
-- Overall system performance can be assessed based on the startup time of a program like Firefox. Ideally, it should take no more than 2-3 seconds
+- Display: ≥13 inches recommended
+- Size/weight: lightweight (e.g. ultrabook) is recommended, but not required
+- Operating system: Windows, macOS or Linux
+- Overall system performance can be assessed based on the startup time of a program like Firefox; ideally, it should take no more than 2-3 seconds
+- Tip: Well-established model lines like Lenovo ThinkPad can be more reliable than special offers of no-name brands. You can consult buying guides and top-10 lists like [notebookcheck.com](https://www.notebookcheck.net/Laptop-Buying-Guide-Tool.13212.0.html), e.g. [notebookcheck.com: budget office laptops](https://www.notebookcheck.net/Notebookcheck-s-Top-10-Budget-Office-Business-Notebooks.98853.0.html)
 
 ## Virtual machine
 
