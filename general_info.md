@@ -77,11 +77,11 @@ Together with R and Bash, Python is an essential part of the modern bioinformati
 
 A development environment comprises programs and tools that you use for writing, testing and debugging code. You could use a simple text editor, but [integrated development environments (IDEs)](https://www.codecademy.com/articles/what-is-an-ide) provide many features that will make your life easier and your code better. 
 
-**Online IDEs.** One great way to learn Python is to simply run it online. There are several good resources, e.g.
+**Online IDEs.** One great way to learn Python is to simply run it online. There are many good resources, e.g.
 
 - [Replit](https://replit.com/languages/python3) — Browser-based IDE that supports many programming languages, including Python; has real-time collaboration
 - [Google Colab](https://colab.research.google.com) — Jupyter notebooks in the cloud (via Google drive) ([YouTube intro](https://www.youtube.com/watch?v=inN8seMm7UI))
-- [Deepnote](https://docs.deepnote.com/deepnote-crash-course-videos) — Data science notebooks in the cloud
+- [Pythonanywhere](https://www.pythonanywhere.com/)
 
 **Local IDEs.** One way to install and run Python locally is via the *Python distribution* [Anaconda](https://stackoverflow.com/a/42096429) ([download page](https://www.anaconda.com/products/individual), [installation instructions](https://docs.anaconda.com/anaconda/install/)). You can install it in the VM, or (for testing, if you don't have a VM yet) on the host OS. Anaconda includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder, VS Code and others, accessible via the [Anaconda navigator](https://docs.anaconda.com/anaconda/navigator/). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with.
 
@@ -107,7 +107,7 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 
 **Advanced.**
 
-- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([Amazon](https://www.amazon.de/Fluent-Python-Concise-Effective-Programming-ebook/dp/B0131L3PW4/)) - discussion of Python-specific language features, for Python programmers who want to improve their skills (advanced)
+- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([fluentpython.com](https://www.fluentpython.com/)) - discussion of Python-specific language features, for Python programmers who want to improve their skills (advanced)
 - B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) - learn to write efficient and "Pythonic" code (advanced)
 
 ### Videos/YouTube channels
