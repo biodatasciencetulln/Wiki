@@ -8,7 +8,7 @@
 * TOC
 {:toc}
 
-Used software: VirtualBox 6.1, Xubuntu 20.04
+Used software: VirtualBox 6.1, Xubuntu 22.04
 
 - VirtualBox is not available for Apple silicon (Macbooks with M1 chip or
   later). One alternative is the open source [UTM app](https://mac.getutm.app/gallery/)
@@ -284,5 +284,5 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
 - Learn a **non-GUI text editor**, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
-- Install Anaconda for Python 3 ([installation instructions](https://docs.anaconda.com/anaconda/install/linux/))
+- Install Anaconda for Linux ([installation instructions](https://docs.anaconda.com/anaconda/install/linux/))
   - The [getting started](https://docs.anaconda.com/anaconda/user-guide/getting-started/) and [cheat sheet](https://docs.anaconda.com/anaconda/user-guide/cheatsheet/) sections provide basic information about Anaconda
