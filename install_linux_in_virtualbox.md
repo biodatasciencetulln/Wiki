@@ -14,9 +14,7 @@ Used software: VirtualBox 6.1, Xubuntu 20.04
   later). One alternative is the open source [UTM app](https://mac.getutm.app/gallery/)
   ([GitHub](https://github.com/utmapp/UTM/wiki/Install-Ubuntu-ARM64-on-Apple-M1),
   [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133)),
-  or commercial software like [VMware Fusion
-  Player](https://customerconnect.vmware.com/web/vmware/evalcenter?p=fusion-player-personal)
-  and [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
+  or commercial software like [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
 
 
 There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
@@ -33,7 +31,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
 ---
 ## Download the Linux ISO file (disk image)
 
-- Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu) LTS release (currently 20.04, [ubuntu.com](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release)). You can download the [ISO file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded disk image should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what `amd64` means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
+- Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu) LTS release (currently 22.04, [ubuntu.com](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release)). You can download the [ISO file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded disk image should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what `amd64` means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
   - It's highly recommended to make Windows display file extensions ([howtogeek.com](https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/)); the downloaded iso file should have the `.iso` file extension
 - **Xubuntu is Ubuntu** with a different [desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](http://www.linuxandubuntu.com/home/xfce-desktop-environment-a-linux-desktop-environment-for-everyone). It has a different **selection of pre-installed software**, requires less resources and is more responsive than the default GNOME desktop environment 
   - The differences are mostly [superficial](https://askubuntu.com/questions/1177309/does-every-ubuntu-question-answer-apply-to-its-derivatives-xubuntu-lubuntu) (related to specific software and settings). All Ubuntu derivatives use the same software sources and the same commands, therefore most Ubuntu-related tutorials also apply to Xubuntu
@@ -153,7 +151,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
     - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
     - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You can also execute `apt update` and `apt upgrade` on two separate lines
-  - Apart from `apt`, Ubuntu increasingly uses another package management system, Snap (<a href="https://en.wikipedia.org/wiki/Snap_(software)">Wikipedia</a>, [snapcraft.io](https://snapcraft.io/about)); some applications like Firefox or Chromium are only available as snap packages. Snaps are updated automatically.
+  - Apart from `apt`, Ubuntu increasingly uses another package management system, Snap (<a href="https://en.wikipedia.org/wiki/Snap_(software)">Wikipedia</a>, [snapcraft.io](https://snapcraft.io/about)); some applications like Firefox or Chromium are only available as snap packages. Snaps are updated automatically
 - The [guest additions](https://www.virtualbox.org/manual/ch04.html) are VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host, e.g. they enable auto-resizing of the guest in the VirtualBox window. There are two ways to install the guest additions, from the **Guest Additions CD image** that comes with VirtualBox, or **from the repository**, a distribution-specific app store/software collection. The currently **recommended way** is the installation from the CD image, because this guarantees that it matches the VirtualBox version ([askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/), [virtualbox.org](https://www.virtualbox.org/manual/ch04.html))
   - Note that usually installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`
 - **A.** Installation from CD image.
@@ -188,7 +186,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
 ---
 ## VirtualBox basics
 
-- Examine the **VirtualBox menu bar** and **status bar** (the symbols in the lower right corner of the VM window)
+- Examine the **VirtualBox menu bar** and **status bar** (the symbols in the lower right corner of the VM window; [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/user-interface.html))
 - **Shutting down** the VM: You can do it in the regular way from within the guest. If you close the VM window instead, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "Power off the machine" should only be used if the VM is frozen (it's a hard shutdown, like pulling the power cord)
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
@@ -235,7 +233,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window disappeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared) or [superuser.com](https://superuser.com/questions/1176587/i-hid-the-menu-bar-in-virtual-box-how-to-show-it-again))
 - **Running a system monitor at all times** helps to keep track of memory usage
   and CPU load and to diagnose problems
-  - Guest: Use a system monitor/task manager like GNOME System Monitor (install
+  - Guest: Use a system monitor/task manager like a panel widget ([docs.xfce.org](https://docs.xfce.org/xfce/xfce4-panel/start#external_plugins)), the GNOME System Monitor (install
     with `sudo apt install gnome-system-monitor`),
     [`htop`](https://spin.atomicobject.com/2020/02/10/htop-guide/), or
     [Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)
@@ -249,7 +247,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
   - Display → increase "Video memory" to 128 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
-- Still problems with the guest (freezes, high CPU load for no reason, etc.): One possibility is to try another desktop environment; recommended options are LXQt, Xfce and MATE. There are others, but they may be less performant. Installed environments can be selected in the "Session" field [at login](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)
+- Still problems with the guest (freezes, high CPU load for no reason, etc.): One possibility is to try another desktop environment; recommended options are Xfce, MATE and LXQt). There are others, but they may be less performant. Installed environments can be selected in the "Session" field [at login](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)
 - Overall slow guest OS: This shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow host OS) 
 - Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
 - Note: You will most likely encounter at least some problems with Linux; Linux was designed for system stability, transparency and customizability rather than a polished user experience
@@ -275,14 +273,14 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
     - The only reliable option for a complete backup is a **full copy** of the VM folder. For this, shut down the VM and copy the VM folder (located in the folder "VirtualBox VMs" in your home directory, see [virtualbox manual](https://www.virtualbox.org/manual/ch10.html#vboxconfigdata), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)) to another location, e.g. an external hard drive. If your VM breaks beyond repair, you can restore it from the backup. This is easier than an installation from scratch
     - To **import** a VM, e.g. from a backup: Machine → Add → Navigate to the `.vbox` file in the VM folder ([superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
-- **Customize** your Xubuntu installation [just for fun](https://itsfoss.com/customize-xfce/) ([more](https://www.lifewire.com/customize-xfce-desktop-environment-2202080))
-- Learn about [Xubuntu software management](https://docs.xubuntu.org/current/user/C/managing-applications.html) and install some programs using the command line or GUIs (Start menu → Software; Start menu → Settings Manager → Software & Updates)
+- **Customize** your Xubuntu installation [just for fun](https://linuxhint.com/customize-xfce-desktop)
+- Learn about Xubuntu software management ([xubuntu.github.io](https://xubuntu.github.io/xubuntu-docs/user/C/index.html) → "5. Software Management") and install some programs using the command line or GUIs (Start menu → search term "software")
   - Some tutorials use `apt` for **software installation**, others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
   - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement)
 - Learn about the [Linux file system](http://linuxcommand.org/lc3_lts0040.php) ([YouTube tutorial](https://www.youtube.com/watch?v=HbgzrKJvDRw))
 - **Learn the command line.** Even though some tasks like software installation can be done via GUIs, they are just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
   - Take an **introductory Linux/Bash tutorial**, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag), [this short tutorial](https://ubuntu.com/tutorials/command-line-for-beginners) or [this comprehensive tutorial](http://linuxcommand.org/)
-  - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a text file with important commands is a good start
+  - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a **text file with important commands** is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
 - Learn a **non-GUI text editor**, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
