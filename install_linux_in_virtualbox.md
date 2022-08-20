@@ -17,7 +17,7 @@ Used software: VirtualBox 6.1, Xubuntu 22.04
   or commercial software like [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
 
 
-There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [lifewire.com](https://www.lifewire.com/install-ubuntu-linux-windows-10-steps-2202108), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
+There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
 **Note**: Please make a full backup of your computer before making any modifications.
 
@@ -33,7 +33,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu) LTS release (currently 22.04, [ubuntu.com](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release)). You can download the [ISO file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded disk image should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what `amd64` means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
   - It's highly recommended to make Windows display file extensions ([howtogeek.com](https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/)); the downloaded iso file should have the `.iso` file extension
-- **Xubuntu is Ubuntu** with a different [desktop environment](https://www.lifewire.com/linux-desktop-environment-explained-4121640), called [Xfce](http://www.linuxandubuntu.com/home/xfce-desktop-environment-a-linux-desktop-environment-for-everyone). It has a different **selection of pre-installed software**, requires less resources and is more responsive than the default GNOME desktop environment 
+- **Xubuntu is Ubuntu** with a different [desktop environment](https://askubuntu.com/questions/18078/what-is-the-difference-between-a-desktop-environment-and-a-window-manager), called [Xfce](http://www.linuxandubuntu.com/home/xfce-desktop-environment-a-linux-desktop-environment-for-everyone). It has a different **selection of pre-installed software** ([docs.xfce.org](https://docs.xfce.org/)), requires less resources and is more responsive than the default GNOME desktop environment 
   - The differences are mostly [superficial](https://askubuntu.com/questions/1177309/does-every-ubuntu-question-answer-apply-to-its-derivatives-xubuntu-lubuntu) (related to specific software and settings). All Ubuntu derivatives use the same software sources and the same commands, therefore most Ubuntu-related tutorials also apply to Xubuntu
   - Another interesting and even more lightweight (needs less RAM, very fast) Ubuntu flavor is Lubuntu, using the LXQt desktop environment (might currently be less stable than Xfce). You can also use the default Ubuntu with the GNOME desktop environment, if you prefer (performant hardware is recommended)
 
@@ -236,7 +236,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [YouTube](htt
   - Guest: Use a system monitor/task manager like a panel widget ([docs.xfce.org](https://docs.xfce.org/xfce/xfce4-panel/start#external_plugins)), the GNOME System Monitor (install
     with `sudo apt install gnome-system-monitor`),
     [`htop`](https://spin.atomicobject.com/2020/02/10/htop-guide/), or
-    [Conky](https://www.lifewire.com/beginners-guide-to-conky-4043352)
+    [Conky](https://github.com/brndnmtthws/conky/wiki)
   - Host: Use the Task Manager (Windows) or equivalent
   - High CPU load or memory usage can slow down or freeze the system. If they
     are caused by a software problem, restarting the offending program can help
