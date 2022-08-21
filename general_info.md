@@ -125,7 +125,7 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 ### Online platforms and other resources
 
 - [Rosalind](http://rosalind.info/problems/locations/) – a platform for learning bioinformatics and programming through problem solving
-- [codewars.com](https://www.codewars.com/), [exorcism.org](https://exercism.org/tracks/python), [checkio.org](https://py.checkio.org/), [practicepython.org](https://www.practicepython.org/), or other programming challenge websites
+- [codewars.com](https://www.codewars.com/), [exercism.org](https://exercism.org/tracks/python), [checkio.org](https://py.checkio.org/), [practicepython.org](https://www.practicepython.org/), or other programming challenge websites
 - [Reddit r/learnpython: useful links](https://www.reddit.com/r/learnpython/wiki/index), [r/learnpython: more links](https://www.reddit.com/r/learnpython/comments/tvkfih/is_codeacademy_free_worth_it_to_learn_basic_python/)
 - [freecodecamp.org: useful links](https://www.freecodecamp.org/news/best-python-tutorial/)
 - [python-guide.org: useful links](https://docs.python-guide.org/intro/learning/)
