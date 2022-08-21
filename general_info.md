@@ -71,7 +71,9 @@ Books:
 
 ## Python
 
-Together with R and Bash, Python is an essential part of the modern bioinformatics and data science toolkit ([reddit](https://www.reddit.com/r/bioinformatics/comments/lez284/the_real_question_r_vs_python/)). It's not very important which resource for learning Python you pick, as most of them present similar content (the basics of the Python programming language) in different ways. It's only important that the way in which the information is presented makes sense to you. Pick a resource that works well for you and stick to it if possible. You can also talk to your fellow students and exchange experiences and recommendations.
+Together with R and Bash, Python is an essential part of the modern bioinformatics and data science toolkit. While Bash is an integral part of Linux and is therefore [inevitable](https://www.reddit.com/r/bioinformatics/comments/e5qj7b/whats_the_advantage_of_bash_on_bioinformatics/), and R is useful for statistical modeling and visualization, Python is a general-purpose language that is applied in a wide range of applications, including data science, machine learning, software and web development, automation, "and generally getting stuff done" ([YouTube](https://www.youtube.com/watch?v=zyh2HU1efo4), [reddit](https://www.reddit.com/r/bioinformatics/comments/lez284/the_real_question_r_vs_python/)).
+
+It's not very important which resource for learning Python you pick, as most of them present similar contents in different ways. However, it's important that the way in which the information is presented makes sense to you, so that you can enjoy the learning experience and are motivated to continue. Pick a resource that works well for you and stick to it if possible. You can also talk to your fellow students and exchange experiences and recommendations.
 
 ### Development environment
 
@@ -92,24 +94,25 @@ A development environment comprises programs and tools that you use for writing,
 
 ### Books/tutorials
 
-- [w3schools.com Python tutorial](https://www.w3schools.com/python/) - interactive tutorial, for complete beginners
-- ["A Byte of Python"](https://python.swaroopch.com/) - free beginner-friendly ebook; doesn't go too deep, but covers the basics
-- ["Python for Everybody"](https://www.py4e.com/html3/) and [interactive edition](https://books.trinket.io/pfe/index.html), also see [here](https://runestone.academy/runestone/books/published/py4e-int/index.html) - free beginner-friendly ebook
-- E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/)) - very beginner-friendly, if you like the approach of the book series
-- ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) - free and very nice ebook, maybe not great for complete beginners; you'll learn a lot if you work your way through it
-  - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) - interactive edition
-- E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/)) - practical introduction for complete beginners, with exercises
+- [w3schools.com Python tutorial](https://www.w3schools.com/python/) – useful as a reference, with interactive examples
+- ["A Byte of Python"](https://python.swaroopch.com/) – free beginner-friendly ebook; doesn't go too deep, but covers the basics
+- [programming-22.mooc.fi](https://programming-22.mooc.fi/part-1) – free online course/tutorial, ranges from basic to complex topics
+- ["Python for Everybody"](https://www.py4e.com/html3/) and [interactive edition](https://books.trinket.io/pfe/index.html), also see [here](https://runestone.academy/runestone/books/published/py4e-int/index.html) – free beginner-friendly ebook
+- E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/)) – very beginner-friendly, if you like the approach of the book series
+- ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-2e/) – free and very nice ebook, maybe not great for complete beginners; you'll learn a lot if you work your way through it
+  - ["How to Think Like a Computer Scientist: Interactive Edition"](https://runestone.academy/runestone/books/published/thinkcspy/index.html) – interactive edition
+- E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/)) – practical introduction for complete beginners, with exercises
   - The author provides a collection of online resources, including some nice [cheat sheets](https://ehmatthes.github.io/pcc_2e/cheat_sheets/cheat_sheets/)
-- A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/), [online book](https://automatetheboringstuff.com)) - practically oriented introduction for Python (ranges from beginners to somewhat advanced content); more excellent free Python books from this author can be found at [inventwithpython.com](https://inventwithpython.com/)
+- A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/), [online book](https://automatetheboringstuff.com)) – practically oriented introduction for Python (ranges from beginners to somewhat advanced content); more excellent free Python books from this author can be found at [inventwithpython.com](https://inventwithpython.com/)
 - D. Amos et al.: "Python Basics: A Practical Introduction to Python 3", 4th edition ([Amazon](https://www.amazon.com/Python-Basics-Practical-Introduction/dp/1775093328/))
-- [Official Python tutorial](https://docs.python.org/3/tutorial/) - good reference for topics you already know, to refresh your memory or to go deeper
+- [Official Python tutorial](https://docs.python.org/3/tutorial/) – good reference for topics you already know, to refresh your memory or to go deeper
 
 Hints: Practically oriented tutorials that solve little problems rather than just presenting information, are usually more fun and provide a better understanding of the material. When writing code based on some code template, do not copy-paste it, but re-type it yourself. This improves the learning result. 
 
 **Advanced.**
 
-- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([fluentpython.com](https://www.fluentpython.com/)) - discussion of Python-specific language features, for Python programmers who want to improve their skills (advanced)
-- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) - learn to write efficient and "Pythonic" code (advanced)
+- L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([fluentpython.com](https://www.fluentpython.com/)) – discussion of Python-specific language features, for Python programmers who want to improve their skills (advanced)
+- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) – learn to write efficient and "Pythonic" code (advanced)
 
 ### Videos/YouTube channels
 
@@ -121,15 +124,14 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 
 ### Online platforms and other resources
 
-- [Rosalind](http://rosalind.info/problems/locations/) - a platform for learning bioinformatics and programming through problem solving
-- [edabit.com](https://edabit.com/challenges/python3) and other programming challenge websites
-- [Reddit r/learnpython: useful links](https://www.reddit.com/r/learnpython/wiki/index)
+- [Rosalind](http://rosalind.info/problems/locations/) – a platform for learning bioinformatics and programming through problem solving
+- [codewars.com](https://www.codewars.com/), [exorcism.org](https://exercism.org/tracks/python), [checkio.org](https://py.checkio.org/), [practicepython.org](https://www.practicepython.org/), or other programming challenge websites
+- [Reddit r/learnpython: useful links](https://www.reddit.com/r/learnpython/wiki/index), [r/learnpython: more links](https://www.reddit.com/r/learnpython/comments/tvkfih/is_codeacademy_free_worth_it_to_learn_basic_python/)
 - [freecodecamp.org: useful links](https://www.freecodecamp.org/news/best-python-tutorial/)
 - [python-guide.org: useful links](https://docs.python-guide.org/intro/learning/)
-- [codecademy.com](https://www.codecademy.com/learn/learn-python-3) and other interactive learning platforms
-- [https://www.pythonforbiologists.org/](https://www.pythonforbiologists.org/) -
+- [pythonforbiologists.org](https://www.pythonforbiologists.org/) -
   videos and code for learning Python basics through genomics examples
-  
+- Apps like [Sololearn](https://play.google.com/store/apps/details?id=com.sololearn&gl=at) or others
 
 ### Staying updated
 
