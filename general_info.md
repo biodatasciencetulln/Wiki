@@ -20,7 +20,9 @@ A solid biological background is indispensible for all courses of the curriculum
 
 A portable laptop is required for a number of courses. Minimum specifications:
 
-- CPU: Intel Core i5 or equivalent (e.g. AMD Ryzen 5)
+- CPU: Intel Core processor or equivalent (e.g. AMD Ryzen)
+    - Intel Core processors come in different versions and generations, therefore specific recommendations are impossible; generally, Intel Core i5 or higher is recommended, however Intel Core i3 or Ryzen 3 may well work
+    - Macbooks with the M1 chip or later (ARM-based) are also fully suitable
     - Atom, Celeron, and similar low-end processors are too slow
 - Memory: 16 GB RAM (8 is possible, but may slow down your computer)
 - Storage: ≥100 GB free space (SSD recommended)
@@ -120,6 +122,7 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 - ["Learn Python - Full Course for Beginners [Tutorial]" (freeCodeCamp.org channel)](https://www.youtube.com/watch?v=rfscVS0vtbw)
 - ["Python Tutorial for Absolute Beginners #1 - What Are Variables?" (CS Dojo channel)](https://www.youtube.com/watch?v=Z1Yd7upQsXY)
 - ["Introduction to Python 3 Programming Tutorial" (sentdex channel)](https://www.youtube.com/watch?v=eXBD2bB9-RA&list=PLQVvvaa0QuDeAams7fkdcwOGBpGdHpXln)
+- ["Data Professor" channel](https://www.youtube.com/c/DataProfessor/videos)
 - ["Top Youtube channels to learn Python" (towardsdatascience.com)](https://towardsdatascience.com/top-13-youtube-channels-to-learn-python-524442aaab2f)
 
 ### Online platforms and other resources
@@ -129,8 +132,8 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 - [Reddit r/learnpython: useful links](https://www.reddit.com/r/learnpython/wiki/index), [r/learnpython: more links](https://www.reddit.com/r/learnpython/comments/tvkfih/is_codeacademy_free_worth_it_to_learn_basic_python/)
 - [freecodecamp.org: useful links](https://www.freecodecamp.org/news/best-python-tutorial/)
 - [python-guide.org: useful links](https://docs.python-guide.org/intro/learning/)
-- [pythonforbiologists.org](https://www.pythonforbiologists.org/) -
-  videos and code for learning Python basics through genomics examples
+- [software-carpentry.org](https://software-carpentry.org/lessons/index.html) – a collection of tutorials for research computing
+- [pythonforbiologists.org](https://www.pythonforbiologists.org/) – videos and code for learning Python basics through genomics examples
 - Apps like [Sololearn](https://play.google.com/store/apps/details?id=com.sololearn&gl=at) or others
 
 ### Staying updated
