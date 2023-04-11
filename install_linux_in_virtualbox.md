@@ -10,12 +10,7 @@
 
 Used software: VirtualBox 6.1, Xubuntu 22.04
 
-- VirtualBox is not available for Apple silicon (Macbooks with M1 chip or
-  later). One alternative is the open source [UTM app](https://mac.getutm.app/gallery/)
-  ([GitHub](https://github.com/utmapp/UTM/wiki/Install-Ubuntu-ARM64-on-Apple-M1),
-  [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133)),
-  or commercial software like [Parallels Desktop](https://www.parallels.com/eu/products/desktop/)
-
+- VirtualBox is not yet available for Apple silicon (Macbooks with M1 chip or later). Alternatives are [VMware Fusion Player](https://www.vmware.com/products/fusion.html) (free for personal use), the open source [UTM app](https://mac.getutm.app/gallery/) ([GitHub](https://github.com/utmapp/UTM/wiki/Install-Ubuntu-ARM64-on-Apple-M1)), or [Parallels Desktop](https://www.parallels.com/eu/products/desktop/) (requires a paid license)
 
 There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox), [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
@@ -35,7 +30,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
   - It's highly recommended to make Windows display file extensions ([howtogeek.com](https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/)); the downloaded iso file should have the `.iso` file extension
 - **Xubuntu is Ubuntu** with a different [desktop environment](https://askubuntu.com/questions/18078/what-is-the-difference-between-a-desktop-environment-and-a-window-manager), called [Xfce](http://www.linuxandubuntu.com/home/xfce-desktop-environment-a-linux-desktop-environment-for-everyone). It has a different **selection of pre-installed software** ([docs.xfce.org](https://docs.xfce.org/)), requires less resources and is more responsive than the default GNOME desktop environment 
   - The differences are mostly [superficial](https://askubuntu.com/questions/1177309/does-every-ubuntu-question-answer-apply-to-its-derivatives-xubuntu-lubuntu) (related to specific software and settings). All Ubuntu derivatives use the same software sources and the same commands, therefore most Ubuntu-related tutorials also apply to Xubuntu
-  - Another interesting and even more lightweight (needs less RAM, very fast) Ubuntu flavor is Lubuntu, using the LXQt desktop environment (might currently be less stable than Xfce). You can also use the default Ubuntu with the GNOME desktop environment, if you prefer (performant hardware is recommended)
+  - Another interesting and even more lightweight (needs less RAM, very responsive) Ubuntu flavor is [Lubuntu](https://lubuntu.me/), using the LXQt desktop environment (possibly less stable than Xfce). You can also use the default [Ubuntu](https://ubuntu.com/download/desktop) with the GNOME desktop environment, if you prefer (performant hardware is recommended)
 
 ---
 ## Create a new Virtual Machine (VM) in VirtualBox
@@ -59,8 +54,8 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
     `VTd`, you should probably enable both. (You can check if virtualization is
     enabled using system information, `msinfo32`
     ([stackoverflow.com](https://stackoverflow.com/a/49013155/)); the Task Manager method is less reliable)
-  - It's also possible that the 64 bit option is available, but when you start your VM later, it aborts with a cryptic error message, or it just shows a black screen. This can be related to the same issue. Try to activate the virtualizaton settings in BIOS to solve the problem
-  - There are other possible reasons that can prevent a normal operation of VirtualBox (e.g., error message when you try to start the VM). The error messages are usually not very informative, and your best bet is a web search for the respective message. One issue is related to third-party software that somehow interferes, e.g. antivirus software like McAfee or Trusteer Endpoint Protection. You can try to uninstall this software as explained [here](https://forums.virtualbox.org/viewtopic.php?f=25&t=82106#p388051), reboot the computer and run the VM again to check if this helped. Another option is to follow the instructions [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277) to disable the startup of a VirtualBox service; the service probably needs to be started manually as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465502) or using a task scheduler as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465550)
+  - It's also possible that the 64 bit option is available, but when you start your VM later, it aborts with a cryptic error message, or it just shows a black screen. This can be related to the same issue. Try activating the virtualizaton settings in BIOS to solve the problem
+  - There are other possible reasons that can prevent a normal operation of VirtualBox (e.g., an error message appears when you try to start the VM). The error messages are usually not very informative, and your best bet is a web search for the respective message. One issue is related to third-party software that somehow interferes, e.g. antivirus software like McAfee or Trusteer Endpoint Protection. You can try to uninstall this software as explained [here](https://forums.virtualbox.org/viewtopic.php?f=25&t=82106#p388051), reboot the computer and run the VM again to check if this helped. Another option is to follow the instructions [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277) to disable the startup of a VirtualBox service; the service probably needs to be started manually as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465502) or using a task scheduler as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465550)
 - Most other settings: **the defaults** are OK
 - Memory: ≥4 GB is recommended (can be changed later)
 - Virtual hard disk size: ≥60 GB is recommended (changing this later is [annoying](https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtualbox-or-vmware/), because you'll also need to change the partition size on the virtual HDD)
@@ -186,7 +181,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
 ## VirtualBox basics
 
 - Examine the **VirtualBox menu bar** and **status bar** (the symbols in the lower right corner of the VM window; [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/user-interface.html))
-- **Shutting down** the VM: You can do it in the regular way from within the guest. If you close the VM window instead, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "Power off the machine" should only be used if the VM is frozen (it's a hard shutdown, like pulling the power cord)
+- **Shutting down** the VM: You can do it in the [regular way](https://xubuntu.github.io/xubuntu-docs/user/C/introduction.html) from within the guest. If you close the VM window instead, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "Power off the machine" should only be used if the VM is frozen (it's a hard shutdown, like pulling the power cord)
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
 
@@ -283,6 +278,6 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
   - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a **text file with important commands** is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
-- Learn a **non-GUI text editor**, [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4)
+- Learn how to use a **non-GUI text editor** like [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4), you will definitely need it later
 - Install Anaconda for Linux ([installation instructions](https://docs.anaconda.com/anaconda/install/linux/))
   - The [getting started](https://docs.anaconda.com/anaconda/user-guide/getting-started/) and [cheat sheet](https://docs.anaconda.com/anaconda/user-guide/cheatsheet/) sections provide basic information about Anaconda
