@@ -8,9 +8,9 @@
 * TOC
 {:toc}
 
-Used software: VirtualBox 6.1, Xubuntu 22.04
+Used software: VirtualBox 7, Xubuntu 22.04
 
-- VirtualBox is not yet available for Apple silicon (Macbooks with M1 chip or later). Alternatives are [VMware Fusion Player](https://www.vmware.com/products/fusion.html) (free for personal use), the open source [UTM app](https://mac.getutm.app/gallery/) ([GitHub](https://github.com/utmapp/UTM/wiki/Install-Ubuntu-ARM64-on-Apple-M1)), or [Parallels Desktop](https://www.parallels.com/eu/products/desktop/) (requires a paid license)
+- VirtualBox is not available for Apple silicon (Macbooks with M1 chip or later). Alternatives are the [VMware Fusion Player](https://www.vmware.com/products/fusion.html) (free for personal use), the open source [UTM app](https://mac.getutm.app/gallery/) ([GitHub](https://github.com/utmapp/UTM/wiki/Install-Ubuntu-ARM64-on-Apple-M1)), or [Parallels Desktop](https://www.parallels.com/eu/products/desktop/) (requires a paid license)
 
 There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox), [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
@@ -47,7 +47,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
     [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339)
     and
     [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os),
-    [docs.fedoraproject.org](https://docs.fedoraproject.org/en-US/Fedora/13/html/Virtualization_Guide/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html),
+    [bce.berkeley.edu](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html),
     [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/),
     [YouTube](https://www.youtube.com/watch?v=yZw_8Y-v298) for instructions. If
     you have multiple BIOS options related to virtualization, e.g. `VTx` and
@@ -277,7 +277,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
   - Take an **introductory Linux/Bash tutorial**, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag), [this short tutorial](https://ubuntu.com/tutorials/command-line-for-beginners) or [this comprehensive tutorial](http://linuxcommand.org/)
   - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a **text file with important commands** is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
-  - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.ostera.io/) (enter the "command name" in the corresponding box, try `ls`)
+  - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.inbrowser.app/) (enter the "command name" in the corresponding box, try `ls`)
 - Learn how to use a **non-GUI text editor** like [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4), you will definitely need it later
 - Install Anaconda for Linux ([installation instructions](https://docs.anaconda.com/anaconda/install/linux/))
   - The [getting started](https://docs.anaconda.com/anaconda/user-guide/getting-started/) and [cheat sheet](https://docs.anaconda.com/anaconda/user-guide/cheatsheet/) sections provide basic information about Anaconda
