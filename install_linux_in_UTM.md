@@ -1,6 +1,9 @@
 Notes:
 
-- Instructions: [mac.getutm.app/gallery/ubuntu](https://mac.getutm.app/gallery/ubuntu-20-04), [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133), [eshop.macsales.com](https://eshop.macsales.com/blog/72081-utm-virtual-machine-on-m1-mac/)
+- Instructions: 
+  - Official instructions: [docs.getutm.app](https://docs.getutm.app/guides/ubuntu/), [mac.getutm.app/gallery/ubuntu](https://mac.getutm.app/gallery/ubuntu-20-04)
+  - Blogs: [sachin-the-learner.hashnode.dev](https://sachin-the-learner.hashnode.dev/install-ubuntu-using-utm-on-mac), [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133), [eshop.macsales.com](https://eshop.macsales.com/blog/72081-utm-virtual-machine-on-m1-mac/)
+  - In case of problems, search issues on [github.com](https://github.com/utmapp/UTM/issues)
 - Drag UTM symbol into "Applications" folder to install the program
 - Update/upgrade the guest (`sudo apt update && sudo apt upgrade`) before executing tasksel command (`tasksel install ubuntu-desktop`), otherwise it may not work
 - [tasksel description](https://wiki.debian.org/tasksel)
