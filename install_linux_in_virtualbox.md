@@ -251,7 +251,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 - Random freezes of the guest OS → try to modify these host VM settings:
   - Display → "Enable 3D acceleration" = off
   - System → Processor → Number of virtual CPUs: 1 processor → 2, 3 or 4 processors (try and see if it helps)
-  - System → Processor → "Enable PAE/NX": toggle this off or on, and see if it helps
+  - System → Processor → "Enable PAE/NX" ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/settings-system.html#settings-processor)): toggle this off or on, and see if it helps
   - Display → increase "Video memory" to 128 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
