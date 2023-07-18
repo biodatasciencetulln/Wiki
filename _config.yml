@@ -1,3 +1,5 @@
 theme: jekyll-theme-cayman
 github:
   is_project_page: false
+title: Bio data science wiki
+description: Useful information to get you started with Bio data science

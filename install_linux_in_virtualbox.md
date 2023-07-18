@@ -5,7 +5,7 @@
 
 **Table of contents**
 
-- TOC
+* TOC
   {:toc}
 
 Used software: VirtualBox 7, Xubuntu 22.04
