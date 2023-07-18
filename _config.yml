@@ -3,3 +3,5 @@ github:
   is_project_page: false
 title: Bio data science wiki
 description: Useful information to get you started
+kramdown:
+  toc_levels: 2..3
