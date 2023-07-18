@@ -5,8 +5,8 @@
 
 **Table of contents**
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
 
 Used software: VirtualBox 7, Xubuntu 22.04
 
@@ -83,13 +83,13 @@ or AMD-V` or similar (different manufacturers word it differently). See
   - If you wanted, you could select a different disk file by going to VirtualBox Manager → VM → Settings → Storage → click on the CD-shaped optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the ISO file
   - There might be a message about mouse pointer integration, that's [OK](https://superuser.com/questions/1375772/what-is-mouse-pointer-integration/1375774) (unless you are playing [Warcraft](https://superuser.com/questions/377861/how-do-i-trap-the-mouse-pointer-within-a-virtualbox-guest-os))
 - The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it **runs directly from a removable medium** (in this case a disk image), without being installed on the hard disk
-  - If you get an error like "Hardware acceleration is not available on your system" when trying to install/launch a VM, search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
+  - If you get an error like "Hardware acceleration is not available on your system" when trying to install/launch a VM, do a web search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
 - You should see an option to **install the OS**; start the installer and follow the instructions
   - Always **read the questions and messages** when Linux talks to you; unlike in Windows, many messages and dialogs are actually helpful, and provide important information
   - Verify the settings, e.g. the **keyboard layout** should correspond to your keyboard (if you have a German keyboard, select a German keyboard layout)
   - Check useful options like "Download updates while installing" and "Install third-party software ..." (explanation: [reddit](https://www.reddit.com/r/Ubuntu/comments/2xcoie/what_does_install_this_third_party_software_do/), [Wikipedia](https://en.wikipedia.org/wiki/Ubuntu-restricted-extras#Background))
   - The option "Erase disk and install Xubuntu" is OK, because you are using a virtual hard disk that you just created, and it doesn't have any data and partitions on it
-  - The guest OS is now being installed within the VM
+  - The guest OS is now being installed on the emulated hard disk (within the VM)
 - Once the installation has finished, it will ask you to reboot
   - It might ask to remove the installation medium (the disk image) from the (virtual) optical disk drive, so that the OS boots from the hard disk image and not again as live OS; you can do it manually (VirtualBox → VM → Settings → Storage → select optical disk → look for option "Remove Disk from Virtual Drive"), but probably Ubuntu does it for you
 
