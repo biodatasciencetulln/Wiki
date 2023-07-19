@@ -1,4 +1,7 @@
-# Information about summer school
+<img src="https://tulln.fhwn.ac.at/assets/svg/fhwn-logo-tulln.svg">
+<p style="color:darkgray;">FHWN, Biotech Campus Tulln</p>
+
+<H1>Information about summer school</H1>
 
 - TOC
 {:toc}
