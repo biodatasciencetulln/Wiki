@@ -40,7 +40,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
 
 ## Create a new Virtual Machine (VM) in VirtualBox
 
-- VirtualBox → "New"
+- VirtualBox → "New" (for details, see [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#create-vm-wizard))
 - `Name`: e.g. `Xubuntu`
 - `Folder`: default (the new **VM is saved as a folder** with a few files in it; on Windows, it may be located in the folder `C:\Users\<username>\VirtualBox VMs`)
 - `ISO Image`: Select the downloaded ISO file (`xubuntu-<version>-desktop-amd64.iso`)
@@ -194,7 +194,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 
 ## VirtualBox basics
 
-- Examine the **VirtualBox menu bar** and **status bar** (the symbols in the lower right corner of the VM window; [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/user-interface.html))
+- Examine the **VirtualBox menu bar** and **status bar** (the symbols in the lower right corner of the VM window; [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/BasicConcepts.html#user-interface))
 - **Shutting down** the VM: You can do it in the [regular way](https://xubuntu.github.io/xubuntu-docs/user/C/introduction.html) from within the guest. If you close the VM window instead, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "Power off the machine" should only be used if the VM is frozen (it's a hard shutdown, like pulling the power cord)
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
@@ -224,7 +224,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 
 - Problems can be related to the guest (and need to be addressed within the guest), or to the host/VirtualBox, and addressed e.g. by changing VirtualBox settings (usually a shutdown of the guest is required)
 - Graphics issues (display problems, freezes): Can be related to several VM display settings, VirtualBox → VM → Settings → Display
-  - **Video Memory**: Increase to 128 MB (shut down the guest first)
+  - **Video Memory**: Increase to 128 MB (shut down the guest first); this and other settings are explained in detail on [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/BasicConcepts.html#settings-system)
   - Try checking/unchecking "Enable 3D acceleration" (should probably be unchecked)
   - **Graphics Controller**: Try switching to VBoxSVGA or VBoxVGA
   - Try switching the guest between scaled mode and full-screen mode ([askubuntu.com](https://askubuntu.com/a/1231687))
@@ -252,7 +252,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 - Random freezes of the guest OS → try to modify these host VM settings:
   - Display → "Enable 3D acceleration" = off
   - System → Processor → Number of virtual CPUs: 1 processor → 2, 3 or 4 processors (try and see if it helps)
-  - System → Processor → "Enable PAE/NX" ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/settings-system.html#settings-processor)): toggle this off or on, and see if it helps
+  - System → Processor → "Enable PAE/NX" ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/BasicConcepts.html#settings-processor)): toggle this off or on, and see if it helps
   - Display → increase "Video memory" to 128 MB
   - System → Acceleration → Paravirtualization Interface: try "Minimal" or "Legacy"
   - Try a different (older) version of VirtualBox
@@ -280,7 +280,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 
 ## Where to go from here
 
-- **Back up your VM.** There are multiple options ([cloning](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/clone.html), [snapshots](https://www.virtualbox.org/manual/ch01.html#snapshots), [exporting](https://superuser.com/questions/788625/sharing-a-virtualbox-image-clone-export-or-copy) and full copy of the VM folder) for different use cases (nicely explained on [YouTube](https://www.youtube.com/watch?v=jPiVasVHW8s), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=81897), [superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer))
+- **Back up your VM.** There are multiple options ([cloning](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/storage.html#cloningvdis), [snapshots](https://www.virtualbox.org/manual/ch01.html#snapshots), [exporting](https://superuser.com/questions/788625/sharing-a-virtualbox-image-clone-export-or-copy) and full copy of the VM folder) for different use cases (nicely explained on [YouTube](https://www.youtube.com/watch?v=jPiVasVHW8s), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=81897), [superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer))
   - The only reliable option for a complete backup is a **full copy** of the VM folder. For this, shut down the VM and copy the VM folder (located in the folder "VirtualBox VMs" in your home directory, see [virtualbox manual](https://www.virtualbox.org/manual/ch10.html#vboxconfigdata), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)) to another location, e.g. an external hard drive. If your VM breaks beyond repair, you can restore it from the backup. This is easier than an installation from scratch
   - To **import** a VM, e.g. from a backup: Machine → Add → Navigate to the `.vbox` file in the VM folder ([superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
