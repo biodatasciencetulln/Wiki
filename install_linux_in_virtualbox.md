@@ -110,7 +110,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
   <kbd>Enter</kbd> in the terminal and click on the non-responsive application
   (only use this if absolutely necessary)
 - The Bash shell stores the history of commands you run
-  ([more](https://www.howtogeek.com/howto/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/))
+  ([more](https://www.howtogeek.com/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/))
   - Use the arrow keys <kbd>&uarr;</kbd>/<kbd>&darr;</kbd> to repeat
     previously typed commands: E.g. enter `ls` + <kbd>Enter</kbd> → _list_ the
     contents of the current directory; now, press the <kbd>&uarr;</kbd> key to
@@ -295,6 +295,6 @@ or AMD-V` or similar (different manufacturers word it differently). See
   - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a **text file with important commands** is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.inbrowser.app/) (enter the "command name" in the corresponding box, try `ls`)
-- Learn how to use a **non-GUI text editor** like [nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4), you will definitely need it later
+- Learn how to use a **non-GUI text editor** like [nano](https://www.howtogeek.com/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4), you will definitely need it later
 - Install Anaconda for Linux ([installation instructions](https://docs.anaconda.com/anaconda/install/linux/))
   - The [getting started](https://docs.anaconda.com/anaconda/user-guide/getting-started/) and [cheat sheet](https://docs.anaconda.com/anaconda/user-guide/cheatsheet/) sections provide basic information about Anaconda
