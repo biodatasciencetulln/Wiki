@@ -35,7 +35,7 @@ Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a diff
 
 - VirtualBox is not available for Apple silicon; instead, install [VMware Fusion Player](https://www.vmware.com/go/getfusionplayer) or [UTM](https://mac.getutm.app/) (a commercial alternative is also available, [Parallels Desktop](https://www.parallels.com/eu/); also see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html))
 - Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 22.04) (also see the section on Ubuntu installation in the latest VMware Fusion [companion guide](https://communities.vmware.com/t5/VMware-Fusion-Discussions/Announcing-The-Unofficial-Fusion-13-for-Apple-Silicon-Companion/td-p/2939909/page/2), v19 at the time of writing)
-- For installing Anaconda ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)) in the Linux VM, download `Linux-aarch64` installer (it has a filename like `Anaconda3-202x.xx-Linux-aarch64.sh` on [anaconda.com](https://www.anaconda.com/download#downloads))
+- For installing Anaconda ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)) in the Linux VM, download the `Linux-aarch64` installer (it has a filename like `Anaconda3-202x.xx-Linux-aarch64.sh` on [anaconda.com](https://www.anaconda.com/download#downloads))
   - In case of problems, you can always install Anaconda directly on macOS ([anaconda.com](https://www.anaconda.com/blog/new-release-anaconda-distribution-now-supporting-m1))
 
 ### Additional background information
