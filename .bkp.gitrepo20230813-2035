@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/biodatasciencetulln/Wiki.git
+	branch = main
+	commit = f74063459aac4ecada4f32bc3d438c8f3083aaec
+	parent = 7a75711854ce432f9951db3e47bba5200a813c42
+	method = merge
+	cmdver = 0.4.6

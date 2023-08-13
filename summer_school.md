@@ -47,7 +47,7 @@ Watch these videos as preparation:
 - "Bash in 100 Seconds" by Fireship, 2021 ([YouTube](https://www.youtube.com/watch?v=I4EWvMFj37g)), which is a *very* short intro to Bash scripting (Bash is the name of the most popular Linux shell); you will recognize these concepts later in your lectures
   - Note the command `which $SHELL` (and the output, `/usr/bin/bash` in the video); by the way, did you notice that the `$` sign is also used later, when he talks about variables (`echo $GREET`)? Hmm, let's see if there is a pattern...
   - Note that he mentions the file `.bashrc` for customization
-  - Note that the command `echo` (it simply prints something, e.g. `echo Hi there!` prints `Hi there!`) has the same effect no matter whether it's used interactively in the shell, or in a shell script; shell scripts simply execute commands line by line
+  - Note that the command `echo` (it simply prints something, e.g. `echo Hi there!` prints `Hi there!`) has the same effect no matter whether it's used interactively in the shell, or non-interactively in a shell script; shell scripts simply execute commands line by line
   - Note that he mentions **variables**, which are just placeholders for data/information that you want to use later in your script/program
   - Note that he mentions **arguments**, which is data/information that you want to pass to the script/program; for example, if the script does some data analysis on files in a directory, you want to be able to quickly tell it which directory it should work on; this is not the same as **interactive input**, which is rarely required
   - Note that in the end he is talking about **processes** rather than scripts
