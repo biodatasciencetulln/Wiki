@@ -17,9 +17,9 @@ A very nice walkthrough through the complete installation process is given in th
   - on Apple Silicon, you need files intended for ARM architecture, x86 installers won't work (unless you use UTM "Emulation" instead of "Virtualization", which is much slower)
 - Create a new virtual machine (VM) and run the Ubuntu installer as shown in the YouTube video
   - during the installation, you are presented with some scary-sounding options, but remember that the installation happens only within the VM, so you can always repeat it if something doesn't work; the default settings are fine ([ubuntu.com](https://ubuntu.com/server/docs/install/step-by-step))
-- At 9:40 in the video, he is using the program SSH (the command is `ssh username@ip-address`) to log in to the VM without the UTM GUI, just via the command line; you can try this, even if a GUI (interacting with the VM via the UTM window) is probably more familiar
+- At 9:40 in the video, he uses the program SSH (the command `ssh username@ip-address`) to log in to the VM without the UTM GUI, just via the command line; you can try this, even if a GUI (interacting with the VM via the UTM window) is probably more familiar
 - The next step is to install system updates via `sudo apt update && sudo apt upgrade`, this is explained in detail in the [VirtualBox tutorial](install_linux_in_virtualbox.md)
-- Installing the `quemu-guest-agent` and `spice-vdagennt` packages is explained in the [UTM docs](https://docs.getutm.app/guest-support/linux/)
+- Installing the `qemu-guest-agent` and `spice-vdagent` packages is explained in the [UTM docs](https://docs.getutm.app/guest-support/linux/)
   - the QEMU guest agent is a program intended to run in the background in VMs that use the QEMU hypervisor ([qemu-project.gitlab.io](https://qemu-project.gitlab.io/qemu/interop/qemu-ga.html))
   - the SPICE agent is another helper program (technical details: [spice-space.org](https://www.spice-space.org/index.html), [manpages.ubuntu.com](https://manpages.ubuntu.com/manpages/lunar/man1/spice-vdagent.1.html))
 - Apart from the GNOME desktop (installed via the package `ubuntu-desktop`), there are other desktop environments like Xfce ([howtogeek.com](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)), this is a matter of taste
