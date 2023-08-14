@@ -50,5 +50,7 @@ A very nice walkthrough through the complete installation process is given in th
   - [ubuntu.com](https://ubuntu.com/server/docs/install/storage)
   - [digitalocean.com](https://www.digitalocean.com/community/tutorials/an-introduction-to-lvm-concepts-terminology-and-operations) - introduction to LVM concepts
   - [discourse.ubuntu.com](https://discourse.ubuntu.com/t/how-is-the-size-of-the-lvm-container-decided/24608)
+- In some cases, you will need to change the VM settings it UTM
+  - for example, if you use a VPN on your host machine, you may need to change the network mode to "Emulated VLAN" to be able to connect to the internet from within the VM ([UTM docs](https://docs.getutm.app/settings-qemu/devices/network/network/), [GitHub](https://github.com/utmapp/UTM/issues/3238))
 - Ubuntu is not the only Linux distro that can be run on UTM ([docs.getutm.app](https://docs.getutm.app/guides/guides/))
 - UTM can also run Windows VMs, see e.g. [eshop.macsales.com](https://eshop.macsales.com/blog/72081-utm-virtual-machine-on-m1-mac/) (07/2021)
