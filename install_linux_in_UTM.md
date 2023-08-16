@@ -32,7 +32,7 @@ A very nice walkthrough through the complete installation process is given in th
   - on Reddit (via Google using `site:reddit.com`, [techlicious.com](https://www.techlicious.com/tip/google-search-tips-everone-should-know/))
   - on Google
 - Display resolution: in case of problems, try to set another resolution in the VM settings, e.g. 1440x900
-- If the VM freezes on a regular basis, try changing the "Emulated display card" in the VM Display settings e.g. to virtio-ramfb ([forums.macrumors.com](https://forums.macrumors.com/threads/utm-virtualisation-of-ubuntu-20-04-randomly-freezes-on-apple-silicon-m2.2388950/))
+- If the VM freezes on a regular basis, try changing the "Emulated Display Card" in the VM Display settings e.g. to virtio-ramfb ([forums.macrumors.com](https://forums.macrumors.com/threads/utm-virtualisation-of-ubuntu-20-04-randomly-freezes-on-apple-silicon-m2.2388950/))
 
 ## Additional links
 
