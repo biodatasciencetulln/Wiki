@@ -153,17 +153,17 @@ or AMD-V` or similar (different manufacturers word it differently). See
 
 ## Update the guest
 
-The installer may contain outdated packages, so for a newly installed OS it's best practice to ensure that the system is fully up to date. After the installation, the system can be updated via the regular update mechanism, which uses the program `apt` for software management. If no software updates are available, nothing will change. (Unlike some other distributions and OSs, Ubuntu uses only well-tested software, so updates are usually safe and can help prevent problems by providing the latest drivers and such.)
+The installer may contain outdated packages, so after the installation, you should ensure that the system is fully up to date. You can do this by using the built-in update mechanism. (Unlike some other distributions, this mechanism provides only well-tested software packages, which rarely lead to problems. Instead, updates can for example provide the latest drivers that better support recent hardware.)
 
 - It's tempting to use the "Software Updater" GUI (graphical user interface) for installing updates. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's happening if you **use the command line**
-- **Update the guest**: Open a terminal, type `sudo apt update && sudo apt upgrade` (copy-pasting probably won't work yet) + <kbd>Enter</kbd>. It should ask you for your password. Type the password (it's invisible) + <kbd>Enter</kbd>. After an additional confirmation step, the command will update all installed software (packages) to their latest versions.
+- Open a terminal, type `sudo apt update && sudo apt upgrade` (copy-pasting probably won't work yet) + <kbd>Enter</kbd>. It should ask you for your password. Type the password (it's invisible) + <kbd>Enter</kbd>. After an additional confirmation step, the command will update all installed software (packages) to their latest versions.
   - `sudo` (_superuser do_) grants [root privileges](https://unix.stackexchange.com/a/254470) and is required for all system-relevant tasks
   - `apt` is [a command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu and Debian, which Ubuntu is based on; more info: [apt tutorial](https://itsfoss.com/apt-command-guide/)
   - `update` and `upgrade` are **arguments** that modify the command behavior (tell the command what to do):
     - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
     - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You can also execute `apt update` and `apt upgrade` on two separate lines
-- After `apt` is finished (the command prompt returns and you can enter new commands), reboot the guest. Upon reboot, there should be no apparent changes. To make sure that you have the latest software versions installed, you can repeat the command `sudo apt update && sudo apt upgrade`. This time, `apt` should tell you that there is nothing to update.
+- After `apt` is finished (the command prompt returns and you can enter new commands), reboot the guest. Upon reboot, there should be no apparent changes. To make sure that you have the latest software versions, you can repeat the command `sudo apt update && sudo apt upgrade`; this time, `apt` should tell you that there is nothing to update.
 
 ---
 
