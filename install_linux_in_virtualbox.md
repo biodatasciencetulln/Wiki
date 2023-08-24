@@ -151,18 +151,28 @@ or AMD-V` or similar (different manufacturers word it differently). See
 
 ---
 
-## Update the guest and install the guest additions
+## Update the guest
+
+The installer may contain outdated packages, so for a newly installed OS it's best practice to ensure that the system is fully up to date. After the installation, the system can be updated via the regular update mechanism, which uses the program `apt` for software management. If no software updates are available, nothing will change. (Unlike some other distributions and OSs, Ubuntu uses only well-tested software, so updates are usually safe and can help prevent problems by providing the latest drivers and such.)
 
 - It's tempting to use the "Software Updater" GUI (graphical user interface) for installing updates. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's happening if you **use the command line**
-- **Update the guest**: Open a terminal, type `sudo apt update && sudo apt upgrade` (copy-pasting probably won't work yet) + <kbd>Enter</kbd>. It should ask you for your password. Type the password (it's invisible) + <kbd>Enter</kbd>. After an additional confirmation step, the command will update all installed software (packages) to their latest versions. When it's done, reboot the guest.
+- **Update the guest**: Open a terminal, type `sudo apt update && sudo apt upgrade` (copy-pasting probably won't work yet) + <kbd>Enter</kbd>. It should ask you for your password. Type the password (it's invisible) + <kbd>Enter</kbd>. After an additional confirmation step, the command will update all installed software (packages) to their latest versions.
   - `sudo` (_superuser do_) grants [root privileges](https://unix.stackexchange.com/a/254470) and is required for all system-relevant tasks
   - `apt` is [a command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu and Debian, which Ubuntu is based on; more info: [apt tutorial](https://itsfoss.com/apt-command-guide/)
   - `update` and `upgrade` are **arguments** that modify the command behavior (tell the command what to do):
     - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
     - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You can also execute `apt update` and `apt upgrade` on two separate lines
-- The [guest additions](https://www.virtualbox.org/manual/ch04.html) are VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host, e.g. they enable auto-resizing of the guest in the VirtualBox window. There are two ways to install the guest additions, from the **Guest Additions CD image** that comes with VirtualBox, or **from the repository**, a distribution-specific app store/software collection. The currently **recommended way** is the installation from the CD image, because this guarantees that it matches the VirtualBox version ([askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [tecmint.com](https://www.tecmint.com/install-virtualbox-guest-additions-in-ubuntu/), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/), [virtualbox.org](https://www.virtualbox.org/manual/ch04.html))
-  - Note that usually installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`
+- After `apt` is finished (the command prompt returns and you can enter new commands), reboot the guest. Upon reboot, there should be no apparent changes. To make sure that you have the latest software versions installed, you can repeat the command `sudo apt update && sudo apt upgrade`. This time, `apt` should tell you that there is nothing to update.
+
+---
+
+## Install the guest additions
+
+The [guest additions](https://www.virtualbox.org/manual/UserManual.html#guestadditions) are VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host. For example, they enable auto-resizing of the guest in the VirtualBox window, and clipboard sharing between guest and host. Installation instructions are given in [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/guestadditions.html#additions-linux-install), but other tutorials like [askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [YouTube](https://www.youtube.com/watch?v=VTI8h1N51gY) (min 14:00), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/) etc. can also be helpful.
+
+- There are two ways to install the guest additions, from the **Guest Additions CD image** that comes with VirtualBox, or **from the repository**, a distribution-specific app store/software collection. The currently **recommended way** is the installation from the CD image, because this guarantees that it matches the VirtualBox version.
+  - Note that this is unusual; usually installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`
 - **A.** Installation from CD image.
   - Prerequisites (might be already installed): `sudo apt install build-essential dkms linux-headers-$(uname -r)`
   - VM window menu bar: Devices → "Insert Guest Additions CD image..."
@@ -183,14 +193,20 @@ or AMD-V` or similar (different manufacturers word it differently). See
   - Read the output messages to make sure that the installation completed without errors. E.g., if you get the message `sudo: ./VBoxAdditions.run: command not found`, you're probably in the wrong directory
   - Eject the guest additions CD
     ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=85799))
-  - Reboot the guest
-  - Activate the shared clipboard: VM window menu bar → Devices → Shared Clipboard → Bidirectional. You should now be able to copy-paste between the guest and the host. If it doesn't work, you can try to install this package: `sudo apt install virtualbox-guest-x11` (if it asks you about keeping the current file or installing the new one, select the new one: `Y`) and reboot ([superuser.com](https://superuser.com/a/1367954))
 - **B.** Installation from the repository.
   - Not required if method A. worked
   - This method might be better suited for guest OSes that are to be managed automatically by shell scripts, e.g. Ubuntu Server
   - In the terminal: `sudo apt install virtualbox-guest-x11 virtualbox-guest-utils virtualbox-guest-dkms`
   - Note that installing the prerequisites separately is not required in this case, because the **dependencies** are installed automatically by the package manager (APT)
-  - Reboot the guest
+- Reboot the guest
+
+How do you know that the installation was successful (apart from carefully reading all the messages in the terminal during installation)?
+
+- The shared clipboard should work now: VM window menu bar → Devices → Shared Clipboard → Bidirectional. You should now be able to copy-paste between the guest and the host. (If it still doesn't work, you can try to install this package: `sudo apt install virtualbox-guest-x11` (if it asks you about keeping the current file or installing the new one, select the new one: `Y`) and reboot ([superuser.com](https://superuser.com/a/1367954))
+- Drag'n'Drop should work now (after it's activated)
+- Auto-resizing the window should work now, including full-screen view ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#intro-resize-window))
+  - In case of problems ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?t=91084)), see the "Troubleshooting" section below → "Graphics issues" (**increasing the "Video Memory"** to 128 MB is a good idea at any case)
+  - If something still doesn't work, you can try the alternative way of installing the guest additions (as described in "B. Installation from the repository")
 
 ---
 
@@ -200,6 +216,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 - **Shutting down** the VM: You can do it in the [regular way](https://xubuntu.github.io/xubuntu-docs/user/C/introduction.html) from within the guest. If you close the VM window instead, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "Power off the machine" should only be used if the VM is frozen (it's a hard shutdown, like pulling the power cord)
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
+- Examine the settings that are available to you in VirtualBox Manager ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#gui-virtualboxmanager)), including the options available upon right-click on your VM (some settings are available only when the VM is shut down)
 
 ### Share a folder between the host and the guest
 
@@ -227,8 +244,8 @@ or AMD-V` or similar (different manufacturers word it differently). See
 - Problems can be related to the guest (and need to be addressed within the guest), or to the host/VirtualBox, and addressed e.g. by changing VirtualBox settings (usually a shutdown of the guest is required)
 - Graphics issues (display problems, freezes): Can be related to several VM display settings, VirtualBox → VM → Settings → Display
   - **Video Memory**: Increase to 128 MB (shut down the guest first); this and other settings are explained in detail on [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/BasicConcepts.html#settings-system)
-  - Try checking/unchecking "Enable 3D acceleration" (should probably be unchecked)
-  - **Graphics Controller**: Try switching to VBoxSVGA or VBoxVGA
+  - Try checking/unchecking "Enable 3D acceleration"
+  - **Graphics Controller**: Try switching to VBoxSVGA or VBoxVGA (with or without 3D acceleration)
   - Try switching the guest between scaled mode and full-screen mode ([askubuntu.com](https://askubuntu.com/a/1231687))
 - **Memory** (system suddenly becomes extremely slow):
   - VM → Settings → System → Base memory: Increase to at least ~4 GB
@@ -240,7 +257,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
   `sudo apt install ubuntu-restricted-extras`
 - Other problems:
   - Try to [categorize and isolate](https://www.virtualbox.org/manual/ch12.html#ts_categorize-isolate) the problem. **Determine in which situation** the problem occurs, e.g. does rebooting the VM help?
-  - Inspect the log file `VBox.log` (select the VM in the list on the left, right-click → `Show Log...`; or view it in the VM log file folder `$HOME/VirtualBox VMs/<VM-name>/Logs`) ([virtualbox.org](https://www.virtualbox.org/manual/ch12.html#collect-debug-info))
+  - Inspect the log file `VBox.log`, which contains a wealth of diagnostic information (select the VM in the list on the left, right-click → `Show Log...`; or view it in the VM log file folder `$HOME/VirtualBox VMs/<VM-name>/Logs`) ([virtualbox.org](https://www.virtualbox.org/manual/ch12.html#collect-debug-info))
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window disappeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared) or [superuser.com](https://superuser.com/questions/1176587/i-hid-the-menu-bar-in-virtual-box-how-to-show-it-again))
 - **Running a system monitor at all times** helps to keep track of memory usage
   and CPU load and to diagnose problems
@@ -276,15 +293,24 @@ or AMD-V` or similar (different manufacturers word it differently). See
     - Maintenance releases (e.g. VirtualBox 6.0.8 → 6.0.10) are bug fix releases and usually don't break things
     - In case of problems after a VirtualBox update, e.g. VM doesn't boot with an error message, **reboot the host** again (<q>have you tried turning it off and on again?</q>)
     - If you have problems with a VM after a VirtualBox update, revert to an older VirtualBox version, until the problem is fixed
-    - After updating VirtualBox, it is recommended to update the guest additions as well, so that they match the VirtualBox version
+    - After updating VirtualBox, update the guest additions as well, so that they match the VirtualBox version
+
+---
+
+## Back up your VM
+
+Even though the whole installation and setup process can be done quickly, it's convenient to have a ready-to-go VM available as a backup. For example, you can keep on an external hard drive. If your VM breaks beyond repair, you can restore it from the backup. This is quicker than an installation from scratch.
+
+- There are multiple options for different use cases ([cloning](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/storage.html#cloningvdis), [snapshots](https://www.virtualbox.org/manual/ch01.html#snapshots), [exporting](https://superuser.com/questions/788625/sharing-a-virtualbox-image-clone-export-or-copy) and full copy of the VM folder); this is nicely explained on [YouTube](https://www.youtube.com/watch?v=jPiVasVHW8s), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=81897), [superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer)
+- The only reliable option for a complete backup is a **full copy of the VM folder**. For this, shut down the VM and copy the VM folder (located in the folder "VirtualBox VMs" in your home directory, see [virtualbox manual](https://www.virtualbox.org/manual/ch10.html#vboxconfigdata), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)) to another location, e.g. an external hard drive.
+- To **import** a VM, e.g. from a backup: Machine → Add → Navigate to the `.vbox` file in the VM folder ([superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
 
 ---
 
 ## Where to go from here
 
-- **Back up your VM.** There are multiple options ([cloning](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/storage.html#cloningvdis), [snapshots](https://www.virtualbox.org/manual/ch01.html#snapshots), [exporting](https://superuser.com/questions/788625/sharing-a-virtualbox-image-clone-export-or-copy) and full copy of the VM folder) for different use cases (nicely explained on [YouTube](https://www.youtube.com/watch?v=jPiVasVHW8s), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=81897), [superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer))
-  - The only reliable option for a complete backup is a **full copy** of the VM folder. For this, shut down the VM and copy the VM folder (located in the folder "VirtualBox VMs" in your home directory, see [virtualbox manual](https://www.virtualbox.org/manual/ch10.html#vboxconfigdata), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)) to another location, e.g. an external hard drive. If your VM breaks beyond repair, you can restore it from the backup. This is easier than an installation from scratch
-  - To **import** a VM, e.g. from a backup: Machine → Add → Navigate to the `.vbox` file in the VM folder ([superuser.com](https://superuser.com/questions/745844/how-can-i-import-an-existing-vbox-virtual-machine-in-virtualbox/746429))
+Here are some ideas what you can do with your fresh and shiny Linux OS.
+
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
 - **Customize** your Xubuntu installation [just for fun](https://linuxhint.com/customize-xfce-desktop)
 - Learn about Xubuntu software management ([xubuntu.github.io](https://xubuntu.github.io/xubuntu-docs/user/C/index.html) → "5. Software Management") and install some programs using the command line or GUIs (Start menu → search term "software")
