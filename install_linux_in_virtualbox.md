@@ -153,7 +153,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 
 ## Update the guest
 
-The installer may contain outdated packages, so after the installation, you should ensure that the system is fully up to date. You can do this by using the built-in update mechanism. (Unlike some other distributions, this mechanism provides only well-tested software packages, which rarely lead to problems. Instead, updates can for example provide the latest drivers that better support recent hardware.)
+After a fresh install, it's good practice to update the OS, to ensure that it's fully up to date. You can do this by using the built-in update/software management mechanism. (Unlike some other distributions, Ubuntu provides only well-tested software packages via this mechanism, which rarely lead to problems. Instead, updates can for example provide the latest drivers that better support recent hardware.)
 
 - It's tempting to use the "Software Updater" GUI (graphical user interface) for installing updates. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's happening if you **use the command line**
 - Open a terminal, type `sudo apt update && sudo apt upgrade` (copy-pasting probably won't work yet) + <kbd>Enter</kbd>. It should ask you for your password. Type the password (it's invisible) + <kbd>Enter</kbd>. After an additional confirmation step, the command will update all installed software (packages) to their latest versions.
@@ -243,7 +243,7 @@ How do you know that the installation was successful (apart from carefully readi
 ## Troubleshooting
 
 - Problems can be related to the guest (and need to be addressed within the guest), or to the host/VirtualBox, and addressed e.g. by changing VirtualBox settings (usually a shutdown of the guest is required)
-- Graphics issues (display problems, freezes): Can be related to several VM display settings, VirtualBox → VM → Settings → Display
+- **Graphics issues** (display problems, freezes): Can be related to several VM display settings, VirtualBox → VM → Settings → Display
   - **Video Memory**: Increase to 128 MB (shut down the guest first); this and other settings are explained in detail on [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/BasicConcepts.html#settings-system)
   - Try checking/unchecking "Enable 3D acceleration"
   - **Graphics Controller**: Try switching to VBoxSVGA or VBoxVGA (with or without 3D acceleration)
