@@ -200,13 +200,14 @@ The [guest additions](https://www.virtualbox.org/manual/UserManual.html#guestadd
   - Note that installing the prerequisites separately is not required in this case, because the **dependencies** are installed automatically by the package manager (APT)
 - Reboot the guest
 
-How do you know that the installation was successful (apart from carefully reading all the messages in the terminal during installation)?
+How do you know that the installation was successful (apart from carefully reading all the messages in the terminal during installation)? For example, these features should work now:
 
-- The shared clipboard should work now: VM window menu bar → Devices → Shared Clipboard → Bidirectional. You should now be able to copy-paste between the guest and the host. (If it still doesn't work, you can try to install this package: `sudo apt install virtualbox-guest-x11` (if it asks you about keeping the current file or installing the new one, select the new one: `Y`) and reboot ([superuser.com](https://superuser.com/a/1367954))
-- Drag'n'Drop should work now (after it's activated)
-- Auto-resizing the window should work now, including full-screen view ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#intro-resize-window))
-  - In case of problems ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?t=91084)), see the "Troubleshooting" section below → "Graphics issues" (**increasing the "Video Memory"** to 128 MB is a good idea at any case)
-  - If something still doesn't work, you can try the alternative way of installing the guest additions (as described in "B. Installation from the repository")
+- Shared clipboard (VM window menu bar → Devices → Shared Clipboard → Bidirectional): you can now copy-paste between the guest and the host!
+  - If it still doesn't work, try to install this package: `sudo apt install virtualbox-guest-x11` (if it asks you about keeping the current file or installing the new one, select the new one: `Y`) and reboot ([superuser.com](https://superuser.com/a/1367954))
+- Drag'n'Drop (after it's switched on)
+- Auto-resizing the window ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#intro-resize-window)) and full-screen view, which is convenient for working with the VM
+  - In case of problems ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?t=91084)), see the "Troubleshooting" section below → "Graphics issues"; **increasing the "Video Memory"** to 128 MB is a good idea at any case
+  - If something still doesn't work, try the alternative way of installing the guest additions ("B. Installation from the repository")
 
 ---
 
