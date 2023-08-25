@@ -163,7 +163,7 @@ After a fresh install, it's good practice to update the OS, to ensure that it's 
     - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
     - `apt upgrade` uses this information to fetch and install packages that have new versions
   - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You can also execute `apt update` and `apt upgrade` on two separate lines
-- After `apt` is finished (the command prompt returns and you can enter new commands), reboot the guest. Upon reboot, there should be no apparent changes. To make sure that you have the latest software versions, you can repeat the command `sudo apt update && sudo apt upgrade`; this time, `apt` should tell you that there is nothing to update.
+- After `apt` is finished (the command prompt returns and you can enter new commands), [reboot](https://xubuntu.github.io/xubuntu-docs/user/C/introduction.html#session-management) the guest. Upon reboot, there should be no apparent changes. To make sure that you have the latest software versions, you can repeat the command `sudo apt update && sudo apt upgrade`; this time, `apt` should tell you that there is nothing to update.
 
 ---
 
@@ -172,7 +172,7 @@ After a fresh install, it's good practice to update the OS, to ensure that it's 
 The [guest additions](https://www.virtualbox.org/manual/UserManual.html#guestadditions) are VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host. For example, they enable auto-resizing of the guest in the VirtualBox window, and clipboard sharing between guest and host. Installation instructions are given in [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/guestadditions.html#additions-linux-install), but other tutorials like [askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [YouTube](https://www.youtube.com/watch?v=VTI8h1N51gY) (min 14:00), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/) etc. can also be helpful.
 
 - There are two ways to install the guest additions, from the **Guest Additions CD image** that comes with VirtualBox, or **from the repository**, a distribution-specific app store/software collection. The currently **recommended way** is the installation from the CD image, because this guarantees that it matches the VirtualBox version.
-  - Note that this is unusual; usually installation from the repository is preferable, because such software will automatically be updated when you run `apt update && apt upgrade`
+  - This is unusual; installation from the repository is _usually_ preferable, because such software will automatically be updated whenever you run `apt update && apt upgrade`
 - **A.** Installation from CD image.
   - Prerequisites (might be already installed): `sudo apt install build-essential dkms linux-headers-$(uname -r)`
   - VM window menu bar: Devices → "Insert Guest Additions CD image..."
@@ -202,12 +202,12 @@ The [guest additions](https://www.virtualbox.org/manual/UserManual.html#guestadd
 
 How do you know that the installation was successful (apart from carefully reading all the messages in the terminal during installation)? For example, these features should work now:
 
-- Shared clipboard (VM window menu bar → Devices → Shared Clipboard → Bidirectional): you can now copy-paste between the guest and the host!
+- Shared clipboard (VM window menu bar → Devices → Shared Clipboard → Bidirectional): you can now copy-paste between guest and host!
   - If it still doesn't work, try to install this package: `sudo apt install virtualbox-guest-x11` (if it asks you about keeping the current file or installing the new one, select the new one: `Y`) and reboot ([superuser.com](https://superuser.com/a/1367954))
 - Drag'n'Drop (after it's switched on)
-- Auto-resizing the window ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#intro-resize-window)) and full-screen view, which is convenient for working with the VM
-  - In case of problems ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?t=91084)), see the "Troubleshooting" section below → "Graphics issues"; **increasing the "Video Memory"** to 128 MB is a good idea at any case
-  - If something still doesn't work, try the alternative way of installing the guest additions ("B. Installation from the repository")
+- Auto-resizing the window ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#intro-resize-window)) and full-screen view (convenient for working with the VM)
+  - In case of problems ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?t=91084)), see the "Troubleshooting" section below → "Graphics issues"; at any case, **increase the Video Memory** to ≥128 MB
+  - If problems remain, try the alternative way of installing the guest additions ("B. Installation from the repository")
 
 ---
 
@@ -221,7 +221,7 @@ How do you know that the installation was successful (apart from carefully readi
 
 ### Share a folder between the host and the guest
 
-- A **shared folder** is an easy way to pass files between the guest and the host OS. If you **save your files in the shared folder**, you can regularly back them up together with the rest of the host, and you can delete the VM at any time without loosing your data
+- A **shared folder** is an easy way to pass files between the guest and the host OS. If you **save your files in the shared folder**, you can regularly back them up together with the rest of the host, and you can delete the VM at any time without losing your data
 - In VirtualBox: VM → Settings → Shared Folders → Add shared folder: select the
   folder you want to share ([websiteforstudents.com](https://websiteforstudents.com/access-virtualbox-host-folders-from-ubuntu-17-10-guest-machines/))
   - Check the checkboxes "Auto-mount" and "Make Permanent" ([superuser.com](https://superuser.com/a/1254589))
@@ -243,8 +243,8 @@ How do you know that the installation was successful (apart from carefully readi
 ## Troubleshooting
 
 - Problems can be related to the guest (and need to be addressed within the guest), or to the host/VirtualBox, and addressed e.g. by changing VirtualBox settings (usually a shutdown of the guest is required)
-- **Graphics issues** (display problems, freezes): Can be related to several VM display settings, VirtualBox → VM → Settings → Display
-  - **Video Memory**: Increase to 128 MB (shut down the guest first); this and other settings are explained in detail on [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/BasicConcepts.html#settings-system)
+- **Graphics issues** (display problems, freezes): Can be related to several VM display settings, VirtualBox → VM → Settings → Display (these and other settings are explained on [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/BasicConcepts.html#settings-system))
+  - **Video Memory**: Increase to 128 MB (shut down the guest first)
   - Try checking/unchecking "Enable 3D acceleration"
   - **Graphics Controller**: Try switching to VBoxSVGA or VBoxVGA (with or without 3D acceleration)
   - Try switching the guest between scaled mode and full-screen mode ([askubuntu.com](https://askubuntu.com/a/1231687))
@@ -258,9 +258,9 @@ How do you know that the installation was successful (apart from carefully readi
   `sudo apt install ubuntu-restricted-extras`
 - Other problems:
   - Try to [categorize and isolate](https://www.virtualbox.org/manual/ch12.html#ts_categorize-isolate) the problem. **Determine in which situation** the problem occurs, e.g. does rebooting the VM help?
-  - Inspect the log file `VBox.log`, which contains a wealth of diagnostic information (select the VM in the list on the left, right-click → `Show Log...`; or view it in the VM log file folder `$HOME/VirtualBox VMs/<VM-name>/Logs`) ([virtualbox.org](https://www.virtualbox.org/manual/ch12.html#collect-debug-info))
+  - Inspect the log file `VBox.log` with diagnostic information (select the VM in the list on the left, right-click → `Show Log...`; or view it in the VM log file folder `$HOME/VirtualBox VMs/<VM-name>/Logs`) ([virtualbox.org](https://www.virtualbox.org/manual/ch12.html#collect-debug-info))
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window disappeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared) or [superuser.com](https://superuser.com/questions/1176587/i-hid-the-menu-bar-in-virtual-box-how-to-show-it-again))
-- **Running a system monitor at all times** helps to keep track of memory usage
+- **Run a system monitor at all times** to keep track of memory usage
   and CPU load and to diagnose problems
   - Guest: Use a system monitor/task manager like a panel widget ([docs.xfce.org](https://docs.xfce.org/xfce/xfce4-panel/start#external_plugins)), the GNOME System Monitor (install
     with `sudo apt install gnome-system-monitor`),
