@@ -17,6 +17,7 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 - Internet connection
 - Headset
 - Microsoft Teams and Zoom
+- Required software (listed below)
 
 ## Preparation for the summer school
 
@@ -31,12 +32,12 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 
 #### Apple silicon
 
-Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a different underlying processor architecture, and there are some differences regarding the used software. Such [ARM-based CPUs](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86) are referred to as "AArch64" or "ARM64". The transition of established workflows to ARM-based processors is still ongoing, and you might encounter some problems, however there should be no major difficulties anymore.
+Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a different underlying processor architecture, and there are some differences regarding the used software. Such [ARM-based CPUs](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86) are referred to as "AArch64" or "ARM64". The transition of established workflows to ARM-based processors is still ongoing, and you might encounter occasional problems, but there should be no major difficulties anymore.
 
-- VirtualBox is not available for Apple silicon; instead, install [VMware Fusion Player](https://www.vmware.com/go/getfusionplayer) or [UTM](https://mac.getutm.app/) (a commercial alternative is also available, [Parallels Desktop](https://www.parallels.com/eu/); also see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html))
-- Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 22.04) (also see the section on Ubuntu installation in the latest VMware Fusion [companion guide](https://communities.vmware.com/t5/VMware-Fusion-Discussions/Announcing-The-Unofficial-Fusion-13-for-Apple-Silicon-Companion/td-p/2939909/page/2), v19 at the time of writing)
-- For installing Anaconda ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)) in the Linux VM, download the `Linux-aarch64` installer (it has a filename like `Anaconda3-202x.xx-Linux-aarch64.sh` on [anaconda.com](https://www.anaconda.com/download#downloads))
-  - In case of problems, you can always install Anaconda directly on macOS ([anaconda.com](https://www.anaconda.com/blog/new-release-anaconda-distribution-now-supporting-m1))
+- VirtualBox is not available for Apple silicon; instead, install [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of problems see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)) or [UTM](https://mac.getutm.app/) (a commercial alternative is also available, [Parallels Desktop](https://www.parallels.com/); also see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html))
+- Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04) (also see the section on Ubuntu installation in the latest VMware Fusion [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available), v28 at the time of writing)
+- For installing Anaconda ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)) in the Linux VM, download the `Linux-aarch64` installer (it has a filename like `Anaconda3-202x.xx-Linux-aarch64.sh` on [anaconda.com](https://www.anaconda.com/download#download))
+  - In case of problems, you can always install Anaconda directly on macOS (using the "Apple silicon" installer)
 
 ### Additional background information
 

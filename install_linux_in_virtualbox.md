@@ -8,14 +8,14 @@
 - TOC
 {:toc}
 
-Used software: VirtualBox 7, Xubuntu 22.04
+Used software: VirtualBox 7, Xubuntu 24.04
 
 VirtualBox is not available for Apple silicon (Macbooks with M1 chip or later). Alternatives are:
 
-- [VMware Fusion Player](https://www.vmware.com/go/getfusionplayer): free for personal use; see [companion guide](https://communities.vmware.com/t5/VMware-Fusion-Discussions/Announcing-The-Unofficial-Fusion-13-for-Apple-Silicon-Companion/td-p/2939909/page/2) (make sure to use the latest companion guide, you need only the "Ubuntu" section from the guide), [YouTube tutorial](https://www.youtube.com/watch?v=4dFy-4pw8NA), [forum](https://communities.vmware.com/t5/VMware-Fusion-Discussions/bd-p/3005)
+- [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of problems see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)): free for personal use; see [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available) (v28 at the time of writing; you need only the "Ubuntu" section from the guide), [YouTube tutorial](https://www.youtube.com/watch?v=4dFy-4pw8NA), [forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
 - [UTM](https://docs.getutm.app/guides/ubuntu/): open source; see [website](https://mac.getutm.app/), [GitHub](https://github.com/utmapp/UTM/)
-- [Parallels Desktop](https://www.parallels.com/eu/products/desktop/): popular, but requires a paid license
-- UTM and VMware Fusion Player both work well, you can try out each one; here is a [short installation guide](install_linux_in_UTM.md) for UTM
+- [Parallels Desktop](https://www.parallels.com/products/desktop/): popular, but requires a paid license
+- UTM and VMware Fusion Pro both work well, you can try out each one; here is a [short installation guide](install_linux_in_UTM.md) for UTM
 
 There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox), [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
