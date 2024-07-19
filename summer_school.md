@@ -24,9 +24,9 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 ### Required software
 
 - Install [VirtualBox](https://www.virtualbox.org/) (for Intel CPUs; for Apple M1 chips or later, see [below](#apple-silicon))
-- Download the ISO file of the latest [Xubuntu](https://xubuntu.org/) LTS release (currently 22.04); the ISO can be downloaded via a torrent file or directly from a nearby mirror, e.g. [this one](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/22.04/release/) → 64-bit PC ([AMD64](https://en.wikipedia.org/wiki/X86-64)) desktop image (filename `xubuntu-22.04-desktop-amd64.iso`)
+- Download the ISO file of the latest [Xubuntu](https://xubuntu.org/) LTS release (currently 24.04); the ISO can be downloaded via a torrent file or directly from a nearby mirror, e.g. [this one](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/24.04/release/) → 64-bit PC ([AMD64](https://en.wikipedia.org/wiki/X86-64)) desktop image (filename `xubuntu-24.04-desktop-amd64.iso`)
   - If you want (this is purely optional), you can verify the integrity of the downloaded file as explained on [ubuntu.com](https://ubuntu.com/tutorials/how-to-verify-ubuntu) or [pctipp.ch](https://www.pctipp.ch/praxis/windows-10/windows-10-sha256-hash-bordmitteln-pruefen-2507915.html)
-- Download the Anaconda installer for Linux-x86 from [anaconda.com](https://www.anaconda.com/download#downloads); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-x86_64.sh`
+- Download the Anaconda installer for Linux-x86 from [anaconda.com](https://www.anaconda.com/download#download); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-x86_64.sh`
 - Download the Visual Studio Code installer for Debian, Ubuntu ([code.visualstudio.com](https://code.visualstudio.com/Download))
 - Create an account on [GitHub](https://github.com/)
 
@@ -34,10 +34,10 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 
 Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a different underlying processor architecture, and there are some differences regarding the used software. Such [ARM-based CPUs](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86) are referred to as "AArch64" or "ARM64". The transition of established workflows to ARM-based processors is still ongoing, and you might encounter occasional problems, but there should be no major difficulties anymore.
 
-- VirtualBox is not available for Apple silicon; instead, install [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of problems see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)) or [UTM](https://mac.getutm.app/) (a commercial alternative is also available, [Parallels Desktop](https://www.parallels.com/); also see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html))
-- Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04) (also see the section on Ubuntu installation in the latest VMware Fusion [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available), v28 at the time of writing)
+- VirtualBox is not available for Apple silicon; instead, install [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of problems see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)) or [UTM](https://mac.getutm.app/); a commercial alternative is also available, [Parallels Desktop](https://www.parallels.com/); also see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html))
+- Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04); also see the section on Ubuntu installation in the latest VMware Fusion [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available) (v28 at the time of writing)
 - For installing Anaconda ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)) in the Linux VM, download the `Linux-aarch64` installer (it has a filename like `Anaconda3-202x.xx-Linux-aarch64.sh` on [anaconda.com](https://www.anaconda.com/download#download))
-  - In case of problems, you can always install Anaconda directly on macOS (using the "Apple silicon" installer)
+  - In case of problems, you can always install Anaconda directly on macOS, just make sure to use the right installer ("Apple silicon")
 
 ### Additional background information
 
@@ -47,11 +47,13 @@ Watch these videos as preparation:
 - "Virtual Machines explained in 15 Mins" by TechWorld with Nana, 2021 ([YouTube](https://www.youtube.com/watch?v=mQP0wqNT_DI))
 - "Bash in 100 Seconds" by Fireship, 2021 ([YouTube](https://www.youtube.com/watch?v=I4EWvMFj37g)), which is a *very* short intro to Bash scripting (Bash is the name of the most popular Linux shell); you will recognize these concepts later in your lectures
   - Note the command `which $SHELL` (and the output, `/usr/bin/bash` in the video); by the way, did you notice that the `$` sign is also used later, when he talks about variables (`echo $GREET`)? Hmm, let's see if there is a pattern...
+  - Note that he says "It's like any other application that lives in the binaries directory". Apparently there is a "binaries" directory (maybe it's the `bin` in `/usr/bin/bash`?) where applications, i.e. programs, live
   - Note that he mentions the file `.bashrc` for customization
   - Note that the command `echo` (it simply prints something, e.g. `echo Hi there!` prints `Hi there!`) has the same effect no matter whether it's used interactively in the shell, or non-interactively in a shell script; shell scripts simply execute commands line by line
   - Note that he mentions **variables**, which are just placeholders for data/information that you want to use later in your script/program
   - Note that he mentions **arguments**, which is data/information that you want to pass to the script/program; for example, if the script does some data analysis on files in a directory, you want to be able to quickly tell it which directory it should work on; this is not the same as **interactive input**, which is rarely required
-  - Note that in the end he is talking about **processes** rather than scripts
+  - Note that you can create loops (repeating instructions) and conditional logic in Bash (and also in other programming languages)
+  - Note that in the end he is talking about **processes** rather than scripts or programs; programs are code written by developers, while processes represent the actual execution of programs in memory (if you execute a program multiple times in parallel, you have multiple processes)
 
 ## Summer school goals
 
