@@ -49,18 +49,18 @@ Watch these videos as preparation:
   - Note the command `which $SHELL` (and the output, `/usr/bin/bash` in the video); by the way, did you notice that the `$` sign is also used later, when he talks about variables (`echo $GREET`)? Hmm, let's see if there is a pattern...
   - Note that he says "It's like any other application that lives in the binaries directory". Apparently there is a "binaries" directory (maybe it's the `bin` in `/usr/bin/bash`?) where applications, i.e. programs, live
   - Note that he mentions the file `.bashrc` for customization
-  - Note that the command `echo` (it simply prints something, e.g. `echo Hi there!` prints `Hi there!`) has the same effect no matter whether it's used interactively in the shell, or non-interactively in a shell script; shell scripts simply execute commands line by line
-  - Note that he mentions **variables**, which are just placeholders for data/information that you want to use later in your script/program
-  - Note that he mentions **arguments**, which is data/information that you want to pass to the script/program; for example, if the script does some data analysis on files in a directory, you want to be able to quickly tell it which directory it should work on; this is not the same as **interactive input**, which is rarely required
+  - Note that commands like `echo` (which simply prints something, e.g. `echo Hi there!` prints `Hi there!`) can be used interactively in the shell or non-interactively in a **shell script**; shell scripts simply execute commands line by line
+  - Note that he mentions **variables**, which are placeholders for data/information that you want to use later in your script/program
+  - Note that he mentions **arguments**, which is data/information that you want to pass to a script/program from the command line (e.g. if the script does some data analysis on files in a directory, and you want to tell it which directory it should work on); this is not the same as **interactive input**, which is rarely required
   - Note that you can create loops (repeating instructions) and conditional logic in Bash (and also in other programming languages)
-  - Note that in the end he is talking about **processes** rather than scripts or programs; programs are code written by developers, while processes represent the actual execution of programs in memory (if you execute a program multiple times in parallel, you have multiple processes)
+  - Note that in the end he mentions **processes** (as opposed to scripts/programs); programs are code written by developers, while processes represent the actual execution of programs in memory (if you execute a program multiple times in parallel, you have multiple processes)
 
 ## Summer school goals
 
 By the end of our summer school sessions, you should have:
 
-- A functional Linux operating system, where you can easily install/modify/test anything without worrying that you may break something on your computer
-  - If the VM breaks (e.g. it becomes unresponsive or doesn't boot anymore, which is rare), you should be able to restore it to its previous state within minutes (see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) for more information on backup)
+- A functional Linux operating system, where you can easily install/modify/test anything without worrying that you break your computer
+  - If the VM breaks (e.g. it becomes unresponsive or doesn't boot anymore), you can restore it to its previous state within minutes from a backup (see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) for information on backups)
 - An installation of Anaconda, which is a collection of software including Python, the program `conda` and many other packages like Jupyter and others
 - An installation of Visual Studio Code
 - The knowledge how to run Jupyter and open notebooks (`.ipynb` files) in JupyterLab in the browser
