@@ -56,8 +56,9 @@ or AMD-V` or similar (different manufacturers word it differently). See
     [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=62339)
     and
     [superuser.com](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os),
-    [bce.berkeley.edu](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html),
     [howtogeek.com](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/),
+    [support.bluestacks.com](https://support.bluestacks.com/hc/en-us/articles/360058102252-How-to-enable-Virtualization-VT-on-Windows-10-for-BlueStacks-5),
+    [wiki.2n.com](https://wiki.2n.com/faqac/en/virtualizace-vt-x-amd-v-povoleni-virtualizace-na-vasem-pocitaci-pro-spusteni-2n-access-commander-100572533.html),
     [YouTube](https://www.youtube.com/watch?v=yZw_8Y-v298) for instructions. If
     you have multiple BIOS options related to virtualization, e.g. `VTx` and
     `VTd`, you should probably enable both. (You can check if virtualization is
