@@ -7,7 +7,7 @@
 
 ## Installation
 
-A very nice walkthrough through the complete installation process is given in the video "Install a Linux VM in UTM \| Get Into Linux \| MacOS" by TatOG Tech, 2023 ([YouTube](https://www.youtube.com/watch?v=FS-HJTM6Oec)). Additional notes:
+A nice walkthrough through the complete installation process is given in the video "Install a Linux VM in UTM \| Get Into Linux \| MacOS" by TatOG Tech, 2023 ([YouTube](https://www.youtube.com/watch?v=FS-HJTM6Oec)). Additional notes:
 
 - If you have a large enough hard drive, you can leave the virtual drive size at 64 GB (default setting)
 - The "shared directory" is a macOS directory that the VM will be able to access; you can also add it later
