@@ -17,7 +17,7 @@ Note for Apple silicon computers (Macbooks with M1 chip or later): VirtualBox is
 - [Parallels Desktop](https://www.parallels.com/products/desktop/): popular, but requires a paid license
 - UTM and VMware Fusion Pro both work well, you can also try out both; here is a [short installation guide](install_linux_in_UTM.md) for UTM
 
-All functionality of VirtualBox is explained in the [official documentation](https://docs.oracle.com/en/virtualization/virtualbox/index.html), especially the User Manual (as [PDF](https://download.virtualbox.org/virtualbox/UserManual.pdf) or <a href="https://www.virtualbox.org/manual/">web page</a>). Apart from the documentation, there are many tutorials on the Internet for all purposes; e.g. for installing Ubuntu on VirtualBox, you can find
+All functionality of VirtualBox is explained in the [official documentation](https://docs.oracle.com/en/virtualization/virtualbox/index.html), especially the User Manual (as [PDF](https://download.virtualbox.org/virtualbox/UserManual.pdf) or <a href="https://www.virtualbox.org/manual/">web page</a>). Apart from the documentation, there are many tutorials on the internet for all purposes; e.g. for installing Ubuntu on VirtualBox, you can find
 
 - a tutorial from Canonical, the company behind Ubuntu: [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox); however, it uses the VirtualBox option for unattended install, and we don't want this, because this takes away control from the user and can introduce additional problems
 - many videos on [YouTube](https://www.youtube.com/watch?v=DhVjgI57Ino) (also [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM); hint: the [Return YouTube Dislike](https://chromewebstore.google.com/detail/return-youtube-dislike/gebbhagfogifgggkldgodflihgfeippi?hl=en) extension is helpful for a quick assessment of the video)
@@ -79,7 +79,8 @@ or AMD-V` or similar (different manufacturers word it differently). See
 - Click `Next`
 - Most other settings: **the defaults** are OK
   - Memory: ≥4 GB is recommended (can be changed later); it's better to not allocate more than half of the host memory to the guest (e.g. if the host has 16 GB RAM, you can give 8 GB to the guest), so that the host still has enough memory and won't crash
-  - Processors: ≥2 is recommended (can be changed later); again, don't give the VM more than half of your physical processors
+  - Processors: ≥2 is recommended (can be changed later)
+  - To better assess the requirements, you can consider the minimum and recommended system requirements of the intended guest OS (e.g. [askubuntu.com](https://askubuntu.com/questions/333795/what-are-the-system-requirements-for-each-flavour-of-ubuntu-desktop)), and oversee the resource usage later in a **system monitor**
   - Virtual hard disk size: ≥60 GB is recommended, 80-100 GB is even better (changing this later is [annoying](https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtualbox-or-vmware/), because you'll also need to change the partition size on the virtual HDD)
 - In the "Summary" you see the final setup of the VM that you are about to create. The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a CD image), CPU, audio and graphics devices
   - It's important to realize that the guest OS doesn't know that it lives in a VM rather than on a physical computer; this is why later, during installation, it says "Erase disk and install Ubuntu"
@@ -148,7 +149,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
   to wait. If it says `Successfully installed`, then the package was
   successfully installed. If it says `Failed to fetch http://some/web/url`, then
   the resource couldn't be fetched, maybe because the URL was invalid or there
-  was no Internet connection. If the command didn't complete successfully, try
+  was no internet connection. If the command didn't complete successfully, try
   to search for the respective error message, which can help to find a solution
 - Keeping track of the system state, like processor load, RAM
   usage, [swap](https://serverfault.com/questions/48486/what-is-swap-memory)
