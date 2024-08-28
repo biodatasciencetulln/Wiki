@@ -10,22 +10,29 @@
 
 Used software: VirtualBox 7, Xubuntu 24.04
 
-VirtualBox is not available for Apple silicon (Macbooks with M1 chip or later). Alternatives are:
+Note for Apple silicon computers (Macbooks with M1 chip or later): VirtualBox is not available for Apple silicon, alternatives are:
 
 - [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of problems see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)): free for personal use; see [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available) (v28 at the time of writing; you need only the "Ubuntu" section from the guide), [YouTube tutorial](https://www.youtube.com/watch?v=4dFy-4pw8NA), [forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
 - [UTM](https://docs.getutm.app/guides/ubuntu/): open source; see [website](https://mac.getutm.app/), [GitHub](https://github.com/utmapp/UTM/)
 - [Parallels Desktop](https://www.parallels.com/products/desktop/): popular, but requires a paid license
-- UTM and VMware Fusion Pro both work well, you can try out each one; here is a [short installation guide](install_linux_in_UTM.md) for UTM
+- UTM and VMware Fusion Pro both work well, you can also try out both; here is a [short installation guide](install_linux_in_UTM.md) for UTM
 
-There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox), [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=sB_5fqiysi4), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM), [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/). This document discusses some points in more detail, and provides additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
+All functionality of VirtualBox is explained in the [official documentation](https://docs.oracle.com/en/virtualization/virtualbox/index.html), especially the User Manual (as [PDF](https://download.virtualbox.org/virtualbox/UserManual.pdf) or <a href="https://www.virtualbox.org/manual/">web page</a>). Apart from the documentation, there are many tutorials on the Internet for all purposes; e.g. for installing Ubuntu on VirtualBox, you can find
+
+- a tutorial from Canonical, the company behind Ubuntu: [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox); however, it uses unattended install, and we don't want this, because this takes away control from the user and can introduce additional problems
+- many videos on [YouTube](https://www.youtube.com/watch?v=DhVjgI57Ino) (also [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM))
+- tutorials by more or less well-known web-portals like [itsfoss.com](https://itsfoss.com/install-linux-in-virtualbox/), companies like [nakivo.com](https://www.nakivo.com/blog/install-ubuntu-on-virtualbox-virtual-machine/), or private individuals
+
+Here, we discuss some points in more detail, with additional information and links. It's probably a lot of new information for you, but remember the [Pareto principle](https://betterexplained.com/articles/understanding-the-pareto-principle-the-8020-rule/): 20% of the work produce 80% of the result.
 
 **Note**: Please make a full backup of your computer before making any modifications.
 
 ## Install VirtualBox on your computer
 
-- Download and install [Oracle VirtualBox](https://www.virtualbox.org/)
+- Download and install [Oracle VirtualBox](https://www.virtualbox.org/) (Oracle is the company behind VirtualBox)
   - Note: During all steps of the tutorial, you might encounter some problems. For widely used software like VirtualBox and Ubuntu, these problems have usually been discussed online and a solution exists. A **web search** for your particular problem based on **important keywords** (e.g. the error message) can help
   - E.g., if installation on macOS fails, you can search for "virtualbox macos installation failed" and find links like [osxdaily.com](http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/) or [medium.com](https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5), which say that this can be related to a macOS security feature (Gatekeeper) and explain how to fix it
+  - Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on them especially for recent or non-trivial problems, as they lack an actual "understanding" of the problem, are prone to **hallucinations** (a better term might be <a href="https://www.scientificamerican.com/article/chatgpt-isnt-hallucinating-its-bullshitting/">bullshitting</a>) and may not have the latest information
 - When you run VirtualBox, it may suggest to install the Oracle **Extension Pack**. It contains additional Oracle proprietary components which extend the functionality of the base package ([VirtualBox manual](https://www.virtualbox.org/manual/ch01.html#intro-installing)). While VirtualBox is licensed under the GPL2 license and therefore free for any use, the Extension Pack has a more restrictive license. This license includes educational use ([VirtualBox Licensing FAQ](https://www.virtualbox.org/wiki/Licensing_FAQ)), but the interpretation is ambiguous, and VirtualBox can be used without it. Therefore, the installation of the Oracle extension pack is currently not recommended
 
 ---
@@ -33,7 +40,7 @@ There are many tutorials for installing Ubuntu on VirtualBox, e.g. [ubuntu.com](
 ## Download the Linux ISO file (disk image)
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu) LTS release (currently 24.04, [ubuntu.com](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release)). You can download the [ISO file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded disk image should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what `amd64` means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
-  - It's highly recommended to make Windows display file extensions ([howtogeek.com](https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/)); the downloaded ISO file should have the `.iso` file extension
+  - If your host OS is Windows, it's highly recommended to make it display file extensions ([howtogeek.com](https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/)); the downloaded ISO file should have the `.iso` file extension
 - **Xubuntu is Ubuntu** with a different [desktop environment](https://askubuntu.com/questions/18078/what-is-the-difference-between-a-desktop-environment-and-a-window-manager), called [Xfce](http://www.linuxandubuntu.com/home/xfce-desktop-environment-a-linux-desktop-environment-for-everyone). It has a different **selection of pre-installed software** ([docs.xfce.org](https://docs.xfce.org/)), requires less resources and is more responsive than the default GNOME desktop environment
   - The differences are mostly [superficial](https://askubuntu.com/questions/1177309/does-every-ubuntu-question-answer-apply-to-its-derivatives-xubuntu-lubuntu) (related to specific software and settings). All Ubuntu derivatives use the same software sources and the same commands, therefore most Ubuntu-related tutorials also apply to Xubuntu
   - Another interesting and even more lightweight (needs less RAM, very responsive) Ubuntu flavor is [Lubuntu](https://lubuntu.me/), using the LXQt desktop environment (possibly less stable than Xfce). You can also use the default [Ubuntu](https://ubuntu.com/download/desktop) with the GNOME desktop environment, if you prefer (performant hardware is recommended)
@@ -68,19 +75,20 @@ or AMD-V` or similar (different manufacturers word it differently). See
   - There are other possible reasons that can prevent a normal operation of VirtualBox (e.g., an error message appears when you try to start the VM). The error messages are usually not very informative, and your best bet is a web search for the respective message. One issue is related to third-party software that somehow interferes, e.g. antivirus software like McAfee or Trusteer Endpoint Protection. You can try to uninstall this software as explained [here](https://forums.virtualbox.org/viewtopic.php?f=25&t=82106#p388051), reboot the computer and run the VM again to check if this helped. Another option is to follow the instructions [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277) to disable the startup of a VirtualBox service; the service probably needs to be started manually as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465502) or using a task scheduler as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465550)
 - Now, you have two options. You can proceed with the **unattended guest OS installation**, which is now the default option, as described in [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox). In this case, VirtualBox pre-configures and performs some actions described later in this tutorial automatically (especially [Install the guest operating system (OS)](#install-the-guest-operating-system-os) and installing the guest additions).
   - If you choose to continue with the unattended installation, in the next step you get to the "Unattended Guest OS Install Setup" dialog, where you pick a username and a [hostname](https://itsfoss.com/change-hostname-ubuntu/) (the [domain name](https://superuser.com/questions/59093/difference-between-host-name-and-domain-name) doesn't matter)
-  - However, for a better understanding of what is going on, it is instructive to **perform a regular installation**. (Also, you may be using other virtualization software in the future, which doesn't have such convenience options.) For this, check the box `Skip Unattended Installation`. The continuation of this tutorial will assume a regular installation.
+  - However, for more control and a better understanding of what is going on, it is preferable to **perform a regular installation**. (Also, you may be using other virtualization software in the future, which doesn't have such convenience options.) For this, check the box `Skip Unattended Installation`. The continuation of this tutorial will assume a regular installation.
 - Click `Next`
 - Most other settings: **the defaults** are OK
-  - Memory: ≥4 GB is recommended (can be changed later)
-  - Processors: 2 is recommended (can be changed later)
-  - Virtual hard disk size: ≥60 GB is recommended (changing this later is [annoying](https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtualbox-or-vmware/), because you'll also need to change the partition size on the virtual HDD)
+  - Memory: ≥4 GB is recommended (can be changed later); it's better to not allocate more than half of the host memory to the guest (e.g. if the host has 16 GB RAM, you can give 8 GB to the guest), so that the host still has enough memory and won't crash
+  - Processors: ≥2 is recommended (can be changed later); again, don't give the VM more than half of your physical processors
+  - Virtual hard disk size: ≥60 GB is recommended, 80-100 GB is even better (changing this later is [annoying](https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtualbox-or-vmware/), because you'll also need to change the partition size on the virtual HDD)
 - In the "Summary" you see the final setup of the VM that you are about to create. The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a CD image), CPU, audio and graphics devices
+  - It's important to realize that the guest OS doesn't know that it lives in a VM rather than on a physical computer; this is why later, during installation, it says "Erase disk and install Ubuntu"
 
 ---
 
 ## Install the guest operating system (OS)
 
-- Your physical computer is called **host**, the VM is called **guest**
+- Your physical computer is called **host**, the VM is called **guest**; the operating system (OS) running on the host is called host OS, and on the guest it's the guest OS ([VirtualBox Manual: terminology](https://www.virtualbox.org/manual/ch01.html#virtintro)); often people don't make the distinction between the computer and the OS, and just call them host or guest
 - In VirtualBox: Select the VM → "Start"
   - In older VirtualBox versions, you needed to **select a start-up disk** (the emulated hard disk is still empty, so the VM is looking for a bootable disk); in VirtualBox 7, you already selected the ISO file in the previous step, so the OS boots from this ISO (it corresponds to a DVD inserted into an optical drive of a computer)
   - If you wanted, you could select a different disk file by going to VirtualBox Manager → VM → Settings → Storage → click on the CD-shaped optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the ISO file
@@ -218,6 +226,7 @@ How do you know that the installation was successful (apart from carefully readi
 - **Shutting down** the VM: You can do it in the [regular way](https://xubuntu.github.io/xubuntu-docs/user/C/introduction.html) from within the guest. If you close the VM window instead, you will be presented with [three shutdown options](https://www.virtualbox.org/manual/ch01.html#intro-save-machine-state); "Power off the machine" should only be used if the VM is frozen (it's a hard shutdown, like pulling the power cord)
 - **Shared clipboard** (very useful): VM → Settings → General → Advanced → Shared Clipboard: Bidirectional
 - Drag'n'Drop: VM → Settings → General → Advanced → Drag'n'Drop: Bidirectional
+- Sometimes it's convenient to use the full-screen mode: Menu bar → View → Full-screen mode (or use the keyboard shortcut "Host+F", where they Host key is the right Ctrl key on your keyboard ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#keyb_mouse_normal:~:text=To%20return%20ownership%20of%20keyboard%20and%20mouse%20to%20your%20host%20OS%2C%20Oracle%20VM%20VirtualBox%20reserves%20a%20special%20key%20on%20your%20keyboard%3A%20the%20Host%20key.%20By%20default%2C%20this%20is%20the%20right%20Ctrl%20key%20on%20your%20keyboard.))
 - Examine the settings that are available to you in VirtualBox Manager ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#gui-virtualboxmanager)), including the options available upon right-click on your VM (some settings are available only when the VM is shut down)
 
 ### Share a folder between the host and the guest
@@ -325,6 +334,7 @@ Here are some ideas what you can do with your fresh and shiny Linux OS.
   - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a **text file with important commands** is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.inbrowser.app/) (enter the "command name" in the corresponding box, try `ls`)
+  - AI tools like ChatGPT, Microsoft Copilot or Claude are highly useful for discussing Linux and command line-related questions; as always with LLMs, you shouldn't take the results for granted especially for non-trivial questions, but always double-check them
 - Learn how to use a **non-GUI text editor** like [nano](https://www.howtogeek.com/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4), you will definitely need it later
 - Install Anaconda for Linux ([installation instructions](https://docs.anaconda.com/anaconda/install/linux/))
   - The [getting started](https://docs.anaconda.com/anaconda/user-guide/getting-started/) and [cheat sheet](https://docs.anaconda.com/anaconda/user-guide/cheatsheet/) sections provide basic information about Anaconda

@@ -19,6 +19,8 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 - Microsoft Teams and Zoom
 - Required software (listed below)
 
+The first part (setting up the virtual machine) is very detailed and quite technical. This is challenging at the beginning, but it's a one-time setup, and you'll get used to working with it very soon.
+
 ## Preparation for the summer school
 
 ### Required software
@@ -59,9 +61,12 @@ Watch these videos as preparation:
 
 By the end of our summer school sessions, you should have:
 
-- A functional Linux operating system, where you can easily install/modify/test anything without worrying that you break your computer
+- A virtual machine with Xubuntu or Ubuntu, i.e. a fully functional Linux operating system
+  - This allows to easily install/modify/test anything without worrying that you break your computer
   - If the VM breaks (e.g. it becomes unresponsive or doesn't boot anymore), you can restore it to its previous state within minutes from a backup (see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) for information on backups)
-- An installation of Anaconda, which is a collection of software including Python, the program `conda` and many other packages like Jupyter and others
-- An installation of Visual Studio Code
-- The knowledge how to run Jupyter and open notebooks (`.ipynb` files) in JupyterLab in the browser
-- Some experience of working with the Linux shell
+- An installation of Anaconda, which is a collection of software including Python, the program `conda` and many other software packages like Jupyter and others
+- An installation of the code editor Visual Studio Code
+- The knowledge how to run Jupyter and open "notebooks" (`.ipynb` files) in JupyterLab in the browser
+  - Notebook documents (or "notebooks") are text files, which contain both computer code (e.g. Python) and text. They are both human-readable documents containing text and results (figures, tables, etc.) as well as executable documents which can be run to perform data analysis. Jupyter allows editing and running notebooks via a web browser. It can be executed on a local desktop requiring no internet access, or on a remote server and accessed through the internet. Jupyter also allows to edit text files and provides a built-in terminal.
+  - You can also try JupyterLab online (on a remote server somewhere on the internet), including a very short tour of JupyterLab: https://jupyter.org/try -> click "JupyterLab"
+- Basic knowledge of the Linux shell
