@@ -11,19 +11,21 @@ A nice walkthrough through the complete installation process is given in the vid
 
 - If you have a large enough hard drive, you can leave the virtual drive size at 64 GB (default setting)
 - The "shared directory" is a macOS directory that the VM will be able to access; you can also add it later
-- For Ubuntu, currently it's recommended to install Ubuntu Server ([ubuntu.com](https://ubuntu.com/download/server/arm)) and add the GUI (desktop environment) in the next step, rather than directly installing Ubuntu Desktop ([askubuntu.com](https://askubuntu.com/questions/1405124/install-ubuntu-desktop-22-04-arm64-on-macos-apple-silicon-m1-pro-max-in-parall), not recommended)
+- For Ubuntu, currently it's recommended to install Ubuntu Server ([ubuntu.com](https://ubuntu.com/download/server/arm)) and add the GUI ("graphical user interface", i.e. the desktop environment) in the next step, rather than directly installing Ubuntu Desktop ([askubuntu.com](https://askubuntu.com/questions/1405124/install-ubuntu-desktop-22-04-arm64-on-macos-apple-silicon-m1-pro-max-in-parall), not recommended)
   - "server" just means that the downloaded operating system doesn't have a desktop environment/GUI
   - you don't have to use the Ubuntu LTS version, but it will make life easier, as updates are provided for a longer time, and many tutorials are oriented towards LTS versions
   - on Apple Silicon, you need files intended for ARM architecture, x86 installers won't work (unless you use UTM "Emulation" instead of "Virtualization", which is much slower)
 - Create a new virtual machine (VM) and run the Ubuntu installer as shown in the YouTube video
   - during the installation, you are presented with some scary-sounding options, but remember that the installation happens only within the VM, so you can always repeat it if something doesn't work; the default settings are fine ([ubuntu.com](https://ubuntu.com/server/docs/install/step-by-step))
-- At 9:40 in the video, he uses the program SSH (the command `ssh username@ip-address`) to log in to the VM without the UTM GUI, just via the command line; you can try this, even if a GUI (interacting with the VM via the UTM window) is probably more familiar
+- At 9:40 in the video, he uses the program SSH (the command `ssh username@ip-address`) to log in to the VM without the UTM GUI, just via the command line. This has the same effect as opening a terminal in the VM, and entering commands there. You can try this, even if a GUI (interacting with the VM via the UTM window) is probably more familiar for you
 - The next step is to install system updates via `sudo apt update && sudo apt upgrade`, this is explained in detail in the [VirtualBox tutorial](install_linux_in_virtualbox.md)
-- Installing the `qemu-guest-agent` and `spice-vdagent` packages is explained in the [UTM docs](https://docs.getutm.app/guest-support/linux/)
+- Installing the `qemu-guest-agent` and `spice-vdagent` packages is explained in the [UTM docs](https://docs.getutm.app/guest-support/linux/); this is the equivalent of VirtualBox guest additions
   - the QEMU guest agent is a program intended to run in the background in VMs that use the QEMU hypervisor ([qemu-project.gitlab.io](https://qemu-project.gitlab.io/qemu/interop/qemu-ga.html))
   - the SPICE agent is another helper program (technical details: [spice-space.org](https://www.spice-space.org/index.html), [manpages.ubuntu.com](https://manpages.ubuntu.com/manpages/lunar/man1/spice-vdagent.1.html))
 - Apart from the GNOME desktop (installed via the package `ubuntu-desktop`), there are other desktop environments like Xfce ([howtogeek.com](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)), this is a matter of taste
 - Set up a shared folder according to the instructions in [docs.getutm.app](https://docs.getutm.app/guest-support/linux/#virtfs)
+- Note that during startup of your VM you may briefly see some log messages ([askubuntu.com](https://askubuntu.com/questions/982632/what-are-the-messages-i-see-during-the-startup-shutdown-process-of-ubuntu)) and possibly even some error messages, this is part of the normal boot process
+- If you get a message about not enough free space (e.g. 
 
 ## Problems?
 

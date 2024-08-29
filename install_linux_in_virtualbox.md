@@ -10,12 +10,7 @@
 
 Used software: VirtualBox 7, Xubuntu 24.04
 
-Note for Apple silicon computers (Macbooks with M1 chip or later): VirtualBox is not available for Apple silicon, alternatives are:
-
-- [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of problems see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)): free for personal use; see [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available) (v28 at the time of writing; you need only the "Ubuntu" section from the guide), [YouTube tutorial](https://www.youtube.com/watch?v=4dFy-4pw8NA), [forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
-- [UTM](https://docs.getutm.app/guides/ubuntu/): open source; see [website](https://mac.getutm.app/), [GitHub](https://github.com/utmapp/UTM/)
-- [Parallels Desktop](https://www.parallels.com/products/desktop/): popular, but requires a paid license
-- UTM and VMware Fusion Pro both work well, you can also try out both; here is a [short installation guide](install_linux_in_UTM.md) for UTM
+Note for Apple silicon computers (Macbooks with M1 chip or later): VirtualBox is not available for Apple silicon, for details see [HERE](summer_school.md#apple-silicon). Most part of this tutorial is oriented towards VirtualBox. The only relevant sections for Apple silicon users are [Linux basics](#linux-basics), [update the guest](#update-the-guest) and [where to go from here](#where-to-go-from-here). For example, while guest additions exist both for UTM and VMware Fusion, they are called differently and the installation process is easier (see the links to VMware Fusion companion guide and to my short UTM tutorial on [this page](summer_school.md#apple-silicon)). The other sections of this tutorial may still contain helpful information and are useful for comparison, so you should at least read them.
 
 All functionality of VirtualBox is explained in the [official documentation](https://docs.oracle.com/en/virtualization/virtualbox/index.html), especially the User Manual (as [PDF](https://download.virtualbox.org/virtualbox/UserManual.pdf) or <a href="https://www.virtualbox.org/manual/">web page</a>). Apart from the documentation, there are many tutorials on the internet for all purposes; e.g. for installing Ubuntu on VirtualBox, you can find
 
@@ -327,6 +322,7 @@ Here are some ideas what you can do with your fresh and shiny Linux OS.
 
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
 - **Customize** your Xubuntu installation [just for fun](https://linuxhint.com/customize-xfce-desktop)
+  - Increase the default font size in the terminal to make working with it more comfortable ([docs.xfce.org](https://docs.xfce.org/apps/xfce4-terminal/preferences))
 - Learn about Xubuntu software management ([xubuntu.github.io](https://xubuntu.github.io/xubuntu-docs/user/C/index.html) → "5. Software Management") and install some programs using the command line or GUIs (Start menu → search term "software")
   - Some tutorials use `apt` for **software installation**, others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
   - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement), [help.ubuntu.com](https://help.ubuntu.com/stable/ubuntu-help/addremove.html.en)
