@@ -22,7 +22,7 @@ Canonical does not provide an official Ubuntu Desktop release for platforms othe
 Links:
 
 - [UTM homepage](https://mac.getutm.app/) and [GitHub](https://github.com/utmapp/UTM/)
-- official [documentation](https://docs.getutm.app/basics/basics/), especially the [Ubuntu guide](https://docs.getutm.app/guides/ubuntu/)
+- Official [documentation](https://docs.getutm.app/basics/basics/), especially the [Ubuntu guide](https://docs.getutm.app/guides/ubuntu/)
 - Recommended YouTube walkthrough through the complete installation process: "Install a Linux VM in UTM \| Get Into Linux \| MacOS" by TatOG Tech, 06/2023 ([YouTube](https://www.youtube.com/watch?v=FS-HJTM6Oec)).
 
 Additional notes:
@@ -77,8 +77,8 @@ Additional notes:
 
 - VMware Fusion Pro: [blogs.vmware.com](https://blogs.vmware.com/teamfusion/2024/05/fusion-pro-now-available-free-for-personal-use.html), [knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (also see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/))
 - Recommended YouTube walkthrough for installing Ubuntu in the virtual machine: "How to install Ubuntu on Macbook M1 or M2 Using VMWare Fusion" by Murphy Tsai, 05/2023 ([YouTube](https://www.youtube.com/watch?v=4dFy-4pw8NA))
-- [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available): v28 at the time of writing; you need only the "Ubuntu" section from the guide
-- [forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
+- [Companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available): v28 at the time of writing; you need only the "Ubuntu" section from the guide
+- [Forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
 
 ## Installation of Anaconda
 
