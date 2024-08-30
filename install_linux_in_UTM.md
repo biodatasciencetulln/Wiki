@@ -13,7 +13,9 @@ VirtualBox is not available for Apple silicon. Alternatives are:
 - A commercial alternative is [Parallels Desktop](https://www.parallels.com/products/desktop/), which is popular, but requires a paid license
 - Note that my tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) is mostly oriented towards VirtualBox, but also contains universally useful information, which you should read
 
-Important note: For Apple silicon computers (ARM-based CPU architecture), you will need software which was written for this CPU architecture; the file names of such installers usually include "arm64" or "aarch64". Canonical does not provide an official Ubuntu Desktop release for platforms other than x86_64 and Raspberry Pi. The best approach to set up Ubuntu Desktop on ARM is to install Ubuntu Server for ARM and convert it to an Ubuntu Desktop by installing additional software (the desktop environment). This is currently the preferred way for both UTM and VMware Fusion. You will need the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04).
+Important note: For Apple Silicon computers (ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include ‘arm64’ or ‘aarch64’ in their file names.
+
+Canonical does not provide an official Ubuntu Desktop release for platforms other than x86_64 and Raspberry Pi. The best approach to set up Ubuntu Desktop on ARM is to install Ubuntu Server for ARM and then convert it to Ubuntu Desktop by installing additional software (the desktop environment). This is currently the preferred method with both UTM and VMware Fusion. You will need the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04).
 
 ## Installation in UTM
 
