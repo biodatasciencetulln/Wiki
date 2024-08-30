@@ -73,8 +73,6 @@ Additional notes:
 
 ## Installation in VMware Fusion
 
-- First, install [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html)
-  - In case of installation problems, see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)
 - Recommended YouTube walkthrough for installing Ubuntu in the virtual machine: "How to install Ubuntu on Macbook M1 or M2 Using VMWare Fusion" by Murphy Tsai, 05/2023 ([YouTube](https://www.youtube.com/watch?v=4dFy-4pw8NA))
 - [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available): v28 at the time of writing; you need only the "Ubuntu" section from the guide
 - [forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)

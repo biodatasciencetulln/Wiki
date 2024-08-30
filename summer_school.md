@@ -45,7 +45,7 @@ Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a diff
 
 **VirtualBox is not available** for Apple silicon. Alternatives and important notes are found in my [short installation guide for Apple silicon](install_linux_in_UTM.md). As preparation:
 
-- Install [UTM](https://docs.getutm.app/installation/macos/) and [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html)
+- Install [UTM](https://docs.getutm.app/installation/macos/) and [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of installation problems, see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/))
 - Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04)
 - Download the Anaconda installer for Linux-aarch64 from [anaconda.com](https://www.anaconda.com/download#download); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-aarch64.sh`
 
