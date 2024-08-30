@@ -23,7 +23,7 @@ The first part (setting up the virtual machine) is very detailed and quite techn
 
 ### Plan for each session
 
-1. "Vorbereitungen für den Studienbeginn - Installation notwendiger Programme": Setting up virtual machine with Xubuntu (or Ubuntu), installation of Anaconda
+1. "Vorbereitungen für den Studienbeginn - Installation notwendiger Programme": Setting up a virtual machine with Xubuntu (or Ubuntu), installation of Anaconda
 2. "Freiwillige Übungseinheit - Installation notwendiger Programme": Questions/problems regarding virtual machine and Anaconda
 3. "Linux": Linux basics, important computer terms, essential shell comands, Linux file hierarchy
 4. "Linux": Package manager, variables, environment, shell expansion, file permissions, output redirection
@@ -47,7 +47,7 @@ Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a diff
 
 - Install [UTM](https://docs.getutm.app/installation/macos/) and [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html)
 - Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04)
-- Download the Anaconda installer for Linux-aarch64 from [anaconda.com](https://www.anaconda.com/download#download)); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-aarch64.sh`
+- Download the Anaconda installer for Linux-aarch64 from [anaconda.com](https://www.anaconda.com/download#download); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-aarch64.sh`
 
 ### Additional background information
 
