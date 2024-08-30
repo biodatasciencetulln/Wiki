@@ -29,7 +29,7 @@ Here, we discuss some points in more detail, with additional information and lin
 
 Note: During all steps of the tutorial, you might encounter some problems. For widely used software like VirtualBox and Ubuntu, these problems have usually been discussed online and a solution exists. A **web search** for your particular problem based on **important keywords** (e.g. the error message) can help.
 
-Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on them especially for recent or non-trivial problems, as they lack an actual "understanding" of the problem, are prone to **hallucinations** (a better term might be <a href="https://www.scientificamerican.com/article/chatgpt-isnt-hallucinating-its-bullshitting/">bullshitting</a>) and may not have the latest information
+Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on them especially for recent or non-trivial problems, as they lack an actual "understanding" of the problem, are prone to **hallucinations** (a better term might be <a href="https://www.scientificamerican.com/article/chatgpt-isnt-hallucinating-its-bullshitting/">bullshitting</a>) and may not have the latest information.
 
 <div class="more">
     <p>Issues encountered:</p>
@@ -44,11 +44,17 @@ Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on th
 ## Download the Linux ISO file (disk image)
 
 - Recommended Linux distribution is the latest [Xubuntu](https://en.wikipedia.org/wiki/Xubuntu) LTS release (currently 24.04, [ubuntu.com](https://ubuntu.com/blog/what-is-an-ubuntu-lts-release)). You can download the [ISO file](https://www.howtogeek.com/356714/what-is-an-iso-file-and-how-do-i-open-one/) from the [official download page](https://xubuntu.org/download/). The downloaded disk image should have a name like `xubuntu-<version>-desktop-amd64.iso` (for an explanation what `amd64` means, see e.g. [askubuntu.com](https://askubuntu.com/a/67468/))
-  - The ISO file is available for download via torrent or from a mirror. A mirror is a server that hosts an identical copy of files from a primary source, reducing the load on the main server and providing faster downloads based on the user's geographic location. Torrent downloads use peer-to-peer sharing, which can result in faster downloads, but they require a torrent client and some familiarity with the process. Therefore, using a mirror is recommended for most users
-  - If your host OS is Windows, it's highly recommended to make it display file extensions ([howtogeek.com](https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/)); the downloaded ISO file should have the `.iso` file extension
 - **Xubuntu is Ubuntu** with a different [desktop environment](https://askubuntu.com/questions/18078/what-is-the-difference-between-a-desktop-environment-and-a-window-manager), called [Xfce](http://www.linuxandubuntu.com/home/xfce-desktop-environment-a-linux-desktop-environment-for-everyone). It has a different **selection of pre-installed software** ([docs.xfce.org](https://docs.xfce.org/)), requires less resources and is more responsive than the default GNOME desktop environment
   - The differences are mostly [superficial](https://askubuntu.com/questions/1177309/does-every-ubuntu-question-answer-apply-to-its-derivatives-xubuntu-lubuntu) (related to specific software and settings). All Ubuntu derivatives (or <a href="https://ubuntu.com/desktop/flavours">flavors</a>) use the same software sources and the same commands, therefore most Ubuntu-related tutorials also apply to Xubuntu
-  - Another interesting and even more lightweight (needs less RAM, very responsive) Ubuntu flavor is [Lubuntu](https://lubuntu.me/), using the LXQt desktop environment (possibly less stable than Xfce). You can also use the default [Ubuntu](https://ubuntu.com/download/desktop) with the GNOME desktop environment, if you prefer (performant hardware is recommended)
+
+<div class="more">
+    <p>Additional notes:</p>
+    <ul>
+        <li>The Xubuntu ISO file is available for download via torrent or from a mirror. A mirror is a server that hosts an identical copy of files from a primary source, reducing the load on the main server and providing faster downloads based on the user's geographic location. Torrent downloads use peer-to-peer sharing, which can result in faster downloads, but they require a torrent client and some familiarity with the process. Therefore, using a mirror is recommended for most users</li>
+        <li>If your host OS is Windows, it's highly recommended to make it display file extensions (<a href="https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/">howtogeek.com</a>); the downloaded ISO file should have the <code>.iso</code> file extension</li>
+        <li>An Ubuntu flavor that is even more lightweight than Xubuntu is <a href="https://lubuntu.me/">Lubuntu</a>), using the LXQt desktop environment; it needs less RAM and is very responsive, but is possibly less stable than Xfce. You can also use the default <a href="https://ubuntu.com/download/desktop">Ubuntu</a> with the GNOME desktop environment, if you prefer (performant hardware is recommended)</li>
+    </ul>
+</div>
 
 ---
 
