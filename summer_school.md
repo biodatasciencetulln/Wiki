@@ -21,6 +21,13 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 
 The first part (setting up the virtual machine) is very detailed and quite technical. This is challenging at the beginning, but it's a one-time setup, and you'll get used to working with it very soon.
 
+### Plan for each session
+
+1. "Vorbereitungen für den Studienbeginn - Installation notwendiger Programme": Setting up virtual machine with Xubuntu (or Ubuntu), installation of Anaconda
+2. "Freiwillige Übungseinheit - Installation notwendiger Programme": Questions/problems regarding virtual machine and Anaconda
+3. "Linux": Linux basics, important computer terms, essential shell comands, Linux file hierarchy
+4. "Linux": Package manager, variables, environment, shell expansion, file permissions, output redirection
+
 ## Preparation for the summer school
 
 ### Required software
@@ -34,17 +41,13 @@ The first part (setting up the virtual machine) is very detailed and quite techn
 
 #### Apple silicon
 
-Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a different underlying processor architecture, and there are some differences regarding the used software. Such [ARM-based CPUs](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86) are referred to as "AArch64" or "ARM64". The transition of established workflows to ARM-based processors is still ongoing, and you might encounter occasional problems, but there should be no major difficulties anymore.
+Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a different underlying processor architecture, and there are some differences regarding the used software. Such [ARM-based CPUs](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86) are referred to as "AArch64" or "ARM64". The transition of established workflows to ARM-based processors is still ongoing, and you might encounter occasional problems, but there should be no major difficulties.
 
-- **VirtualBox is not available** for Apple silicon; alternatives are:
-  - [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of problems see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)): free for personal use; see [companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available) (v28 at the time of writing; you need only the "Ubuntu" section from the guide), [YouTube tutorial](https://www.youtube.com/watch?v=4dFy-4pw8NA), [forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
-  - [UTM](https://mac.getutm.app/): open source ([GitHub](https://github.com/utmapp/UTM/)); see the official [documentation](https://docs.getutm.app/basics/basics/) and especially the [Ubuntu guide](https://docs.getutm.app/guides/ubuntu/) and my [short installation guide](install_linux_in_UTM.md)
-  - UTM and VMware Fusion Pro both work well; you can also try out both, and stick to the one that works best for you
-  - a commercial alternative is [Parallels Desktop](https://www.parallels.com/products/desktop/), which is popular, but requires a paid license
-  - note that my tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) is mostly oriented towards VirtualBox, even though it also contains universally useful information
-- Canonical does not provide an official Ubuntu Desktop release for platforms other than x86_64 and Raspberry Pi. The best approach to set up Ubuntu Desktop on ARM is to install Ubuntu Server for ARM and convert it to an Ubuntu Desktop by installing additional software (the desktop environment). This is the preferred way for both UTM and VMware Fusion. You will need the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04).
-- For installing Anaconda ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)) in the Linux VM, download the `Linux-aarch64` installer (it has a filename like `Anaconda3-202x.xx-Linux-aarch64.sh` on [anaconda.com](https://www.anaconda.com/download#download))
-  - In case of problems, you can always install Anaconda directly on macOS, just make sure to use the right installer ("Apple silicon")
+**VirtualBox is not available** for Apple silicon. Alternatives and important notes are found in my [short installation guide for Apple silicon](install_linux_in_UTM.md). As preparation:
+
+- Install [UTM](https://docs.getutm.app/installation/macos/) and [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html)
+- Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04)
+- Download the Anaconda installer for Linux-aarch64 from [anaconda.com](https://www.anaconda.com/download#download)); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-aarch64.sh`
 
 ### Additional background information
 
