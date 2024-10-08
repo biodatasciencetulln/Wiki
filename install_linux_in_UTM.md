@@ -69,6 +69,7 @@ Additional notes:
   - [ubuntu.com](https://ubuntu.com/server/docs/install/storage)
   - [digitalocean.com](https://www.digitalocean.com/community/tutorials/an-introduction-to-lvm-concepts-terminology-and-operations) - introduction to LVM concepts
   - [discourse.ubuntu.com](https://discourse.ubuntu.com/t/how-is-the-size-of-the-lvm-container-decided/24608)
+  - [askubuntu.com](https://askubuntu.com/questions/1269493/how-to-make-lv-use-all-disk-space-in-pv)
 - In some cases, you will need to change the VM settings in UTM
   - For example, if you use a VPN on your host machine, you may need to change the network mode to "Emulated VLAN" to be able to connect to the internet from within the VM ([UTM docs](https://docs.getutm.app/settings-qemu/devices/network/network/), [GitHub](https://github.com/utmapp/UTM/issues/3238))
 - Ubuntu is not the only Linux distro that can be run on UTM ([docs.getutm.app](https://docs.getutm.app/guides/guides/))
