@@ -283,10 +283,7 @@ How do you know that the installation was successful (apart from carefully readi
   - Use a search engine to search for the problem online. Try to describe the problem as concise as possible. E.g., if the menu bar of the VirtualBox window disappeared, and you can't select Devices → Insert guest additions CD image, you can search for "virtualbox menu bar missing"; you will usually find blogs or forum discussions on how to fix the problem (in this case, [askubuntu.com](https://askubuntu.com/questions/59103/why-has-virtualboxs-menu-disappeared) or [superuser.com](https://superuser.com/questions/1176587/i-hid-the-menu-bar-in-virtual-box-how-to-show-it-again))
 - **Run a system monitor at all times** to keep track of memory usage
   and CPU load and to diagnose problems
-  - Guest: Use a system monitor/task manager like a panel widget ([docs.xfce.org](https://docs.xfce.org/xfce/xfce4-panel/start#external_plugins)), the GNOME System Monitor (install
-    with `sudo apt install gnome-system-monitor`),
-    [`htop`](https://spin.atomicobject.com/2020/02/10/htop-guide/), or
-    [Conky](https://github.com/brndnmtthws/conky/wiki)
+  - Guest: Use a system monitor/task manager like a panel widget ([docs.xfce.org](https://docs.xfce.org/xfce/xfce4-panel/start#external_plugins)), the GNOME System Monitor (install with `sudo apt install gnome-system-monitor`), [`htop`](https://spin.atomicobject.com/2020/02/10/htop-guide/), or [Conky](https://github.com/brndnmtthws/conky/wiki)
   - Host: Use the Task Manager (Windows) or equivalent
   - High CPU load or memory usage can slow down or freeze the system. If they
     are caused by a software problem, restarting the offending program can help
@@ -299,7 +296,7 @@ How do you know that the installation was successful (apart from carefully readi
   - Try a different (older) version of VirtualBox
 - Still problems with the guest (freezes, high CPU load for no reason, etc.): One possibility is to try another desktop environment; recommended options are Xfce, MATE and LXQt). There are others, but they may be less performant. Installed environments can be selected in the "Session" field [at login](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/)
 - Overall slow guest OS: This shouldn't happen with Xubuntu, and is probably a host issue rather than a guest issue (e.g. not enough RAM, slow CPU, slow host OS)
-- Advanced VirtualBox-related topics: e.g. [wiki.ubuntuusers.de](https://wiki.ubuntuusers.de/VirtualBox/Problembehebung/)
+- For advanced use cases, VirtualBox offers various network configurations; for a short introduction, watch the video "How VirtualBox 7.0 networking works - NAT, NAT Network, Internal Network, Bridged Adapter" ([YouTube](https://www.youtube.com/watch?v=Fhdxk4bmJCs))
 - Note: You will most likely encounter at least some problems with Linux; Linux was designed for system stability, transparency and customizability rather than a polished user experience
   - If the problem is Linux-related, also read the distribution [release notes](https://wiki.xubuntu.org/start?do=index) and check for known bugs and workarounds
 
@@ -321,7 +318,9 @@ How do you know that the installation was successful (apart from carefully readi
 
 ## Back up your VM
 
-Even though the whole installation and setup process can be done quickly, it's convenient to have a ready-to-go VM as backup, e.g. you can keep it on an external hard drive. If the VM you are working with breaks beyond repair, you can restore it from the backup. This is quicker than an installation from scratch. (You can perform another backup later, after installing all the necessary programs in your VM like Anaconda, VS Code etc.)
+It's convenient to have a ready-to-go VM as backup. This ensures that the computational environment, including installed software, configurations, and data, can be easily restored in case of any problems or accidental changes.
+
+A VM can be backed up as a simple file or folder. For example, you can keep it on an external hard drive. If the VM on your computer breaks beyond repair, you can simply restore it from this backup. This is quicker than an installation from scratch. It's good practice to perform regular backups, maybe once a week or once a month, dependent on the situation.
 
 - There are multiple options for different use cases ([cloning](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/storage.html#cloningvdis), [snapshots](https://www.virtualbox.org/manual/ch01.html#snapshots), [exporting](https://superuser.com/questions/788625/sharing-a-virtualbox-image-clone-export-or-copy) and full copy of the VM folder); this is nicely explained on [YouTube](https://www.youtube.com/watch?v=jPiVasVHW8s), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=81897), [superuser.com](https://superuser.com/questions/633431/whats-the-recommended-way-to-move-a-virtualbox-vm-to-another-computer)
 - The only reliable option for a complete backup is a **full copy of the VM folder**. For this, shut down the VM and copy the VM folder (located in the folder "VirtualBox VMs" in your home directory, see [VirtualBox Manual](https://www.virtualbox.org/manual/ch10.html#vboxconfigdata), [forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=6&t=81581)) to another location, e.g. an external hard drive.
