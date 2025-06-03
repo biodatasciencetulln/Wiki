@@ -9,13 +9,14 @@ VirtualBox is not available for Apple silicon. Alternatives are:
 
 - [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html): free for personal use
 - [UTM](https://mac.getutm.app/): open source
-- UTM and VMware Fusion Pro both work well; you can also try out both, and stick to the one that works best for you
-- A commercial alternative is [Parallels Desktop](https://www.parallels.com/products/desktop/), which is popular, but requires a paid license
-- Note that my tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) is mostly oriented towards VirtualBox, but also contains universally useful information, which you should read
 
-Important note: For Apple Silicon computers (ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include ‘arm64’ or ‘aarch64’ in their file names.
+UTM and VMware Fusion Pro both work well; you can also try out both, and stick to the one that works best for you. A popular commercial alternative is [Parallels Desktop](https://www.parallels.com/products/desktop/), which requires a paid license. You probably don't need it, unless you have a specific application for which the free options are not suitable.
 
-Canonical does not provide an official Ubuntu Desktop release for platforms other than x86_64 and Raspberry Pi. The best approach to set up Ubuntu Desktop on ARM is to install Ubuntu Server for ARM and then convert it to Ubuntu Desktop by installing additional software (the desktop environment). This is currently the preferred method with both UTM and VMware Fusion. You will need the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04).
+My tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) is mostly oriented towards VirtualBox, but contains important information, which you should read even if you use VMWare or UTM.
+
+**Important note**: For Apple Silicon computers (ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include ‘arm64’ or ‘aarch64’ in their file names. Not all software packages are available for all CPU architectures.
+
+Canonical does not provide an official Ubuntu Desktop release for platforms other than x86_64 and Raspberry Pi. The best approach to set up Ubuntu Desktop on ARM is to install Ubuntu Server for ARM and then convert it to Ubuntu Desktop by installing additional software, the **desktop environment**. This is currently the preferred method with both UTM and VMware Fusion. You will need the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release, currently 24.04.
 
 ## Installation in UTM
 
@@ -79,7 +80,7 @@ Additional notes:
 
 - VMware Fusion Pro: [blogs.vmware.com](https://blogs.vmware.com/teamfusion/2024/05/fusion-pro-now-available-free-for-personal-use.html), [knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (also see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/))
 - Recommended YouTube walkthrough for installing Ubuntu in the virtual machine: "How to install Ubuntu on Macbook M1 or M2 Using VMWare Fusion" by Murphy Tsai, 05/2023 ([YouTube](https://www.youtube.com/watch?v=4dFy-4pw8NA))
-- [Companion guide](https://community.broadcom.com/vmware-cloud-foundation/discussion/version-28-of-the-fusion-companion-guide-is-now-available): v28 at the time of writing; you need only the "Ubuntu" section from the guide
+- [Companion guide](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/the-unofficial-fusion-for-apple-sil): v32 at the time of writing; you need only the "Ubuntu" section from the guide
 - [Forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
 
 ## Installation of Anaconda
@@ -88,4 +89,3 @@ Additional notes:
 - The installation instructions are found in the official documentation, on [docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)); read them carefully and follow them step by step
   - If some of the software packages listed in the "Prerequisites" section ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/linux/)) can't be installed (e.g. because the package is not found), install only those packages for which it's possible
 - In case of problems, you can always install Anaconda directly on macOS, just make sure to use the right installer ("Apple silicon")
- 

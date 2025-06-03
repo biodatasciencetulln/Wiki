@@ -43,7 +43,7 @@ The initial step, setting up the virtual machine, can be somewhat technical (ref
 ### Required software
 
 - Install [VirtualBox](https://www.virtualbox.org/) (for Intel CPUs; for Apple M1 chips or later, see [below](#apple-silicon)).
-- Download the ISO file of the latest [Xubuntu](https://xubuntu.org/) LTS release (currently 24.04). You can download the ISO via a torrent file or directly from a nearby mirror, such as [this one](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/24.04/release/) → 64-bit PC ([AMD64](https://en.wikipedia.org/wiki/X86-64)) desktop image (filename `xubuntu-24.04-desktop-amd64.iso`).
+- Download the ISO file of the latest [Xubuntu](https://xubuntu.org/) LTS release, currently 24.04 (pick the latest minor version, e.g. 24.04.02). You can download the ISO via a torrent file or directly from a nearby mirror, such as [this one](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/24.04/release/) → 64-bit PC ([AMD64](https://en.wikipedia.org/wiki/X86-64)) desktop image (filename `xubuntu-24.04-desktop-amd64.iso`).
   - Optionally, you can verify the integrity of the downloaded file as explained on [ubuntu.com](https://ubuntu.com/tutorials/how-to-verify-ubuntu) or [pctipp.ch](https://www.pctipp.ch/praxis/windows-10/windows-10-sha256-hash-bordmitteln-pruefen-2507915.html).
 - Download the Anaconda installer for Linux-x86 from [anaconda.com](https://www.anaconda.com/download#download); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-x86_64.sh`
 - Download the Visual Studio Code installer for Debian, Ubuntu ([code.visualstudio.com](https://code.visualstudio.com/Download)).
