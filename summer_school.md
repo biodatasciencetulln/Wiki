@@ -10,7 +10,7 @@
 
 Welcome to the **Bio Data Science summer school**! This session is all about setting up your personal bioinformatics toolkit – a powerful digital workspace that you'll use throughout your master's curriculum.
 
-We'll begin by installing **Ubuntu** or its derivative **Xubuntu**, both user-friendly versions of Linux, inside a virtual machine. Think of a virtual machine like a computer within your computer; it lets you run Linux and all its programs without altering your main operating system.
+We'll begin by installing **Ubuntu** or its derivative **Xubuntu**, both user-friendly versions of Linux, inside a virtual machine. Think of a virtual machine like a computer within your computer; it lets you run Linux and all its programs without altering your main operating system (OS).
 
 Once Ubuntu is set up, we'll equip it with essential software:
 
@@ -18,7 +18,7 @@ Once Ubuntu is set up, we'll equip it with essential software:
 - **Jupyter**: This tool lets you create interactive "notebooks" directly in your web browser. These notebooks combine Python code, its output, and explanatory text, making them perfect for many applications.
 - **Visual Studio Code**: A popular and highly customizable development environment where you can write, run, and debug code in Python and many other languages.
 
-Finally, we'll dive into the Linux shell. While it might sound technical, it's simply a program that acts as an interface to the operating system (OS). It takes commands from the keyboard (**command-line interface**) and gives them to the operating system to perform. Knowing the shell is fundamental for efficient biological data analyses. Mastering the basics here will give you a significant advantage in your bioinformatics journey!
+Finally, we'll dive into the Linux shell. While it might sound technical, it's simply a program that acts as an interface to the OS. It takes commands from the keyboard (**command-line interface**) and gives them to the OS to perform. Knowing the shell is fundamental for efficient biological data analyses. Mastering these basics will give you a significant advantage in your bioinformatics journey!
 
 The sessions will be held online, via Microsoft Teams (alternatively Zoom). Please have the following available:
 
@@ -29,7 +29,7 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 - Microsoft Teams and Zoom
 - Required software (listed below)
 
-The initial step, setting up the virtual machine, can be somewhat technical (refer to the detailed tutorial). It might be challenging at first, but it's a one-time setup, and you'll quickly get used to it.
+The initial step, setting up the virtual machine, can be somewhat technical (refer to the [detailed tutorial](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html)). This is challenging at first, but it's a one-time setup, and you'll quickly get used to it.
 
 ### Plan for each session
 
@@ -79,7 +79,7 @@ Watch these videos as preparation:
 
 By the end of our summer school sessions, you should have:
 
-- A virtual machine with Xubuntu or Ubuntu, providing a fully functional Linux operating system.
+- A virtual machine with Xubuntu or Ubuntu, providing a fully functional Linux OS.
   - This allows you to easily install, modify, and test software without any risk or changes to your main OS.
   - If the VM malfunctions (e.g., becomes unresponsive or fails to boot), you can quickly restore it to a previous state from a backup (see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) for information on backups).
 - An installation of Anaconda, which is a software collection including Python, the `conda` program, and many software packages like Jupyter.
