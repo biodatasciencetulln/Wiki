@@ -28,12 +28,12 @@ Links:
 
 Additional notes:
 
-- If you have a large enough hard drive, you can leave the virtual drive size at 64 GB (default setting)
-- The "shared directory" is a macOS directory that the VM will be able to access; you can also add it later
+- If you have a large enough hard drive, you can leave the virtual drive size at 64 GB (default setting), or increase it to ~80-100 GB
+- The "shared directory" is a macOS directory that the VM will be able to access (you can also add it later)
 - For Ubuntu, currently it's recommended to install Ubuntu Server ([ubuntu.com](https://ubuntu.com/download/server/arm)) and add the GUI ("graphical user interface", i.e. the desktop environment) in the next step, rather than directly installing Ubuntu Desktop ([askubuntu.com](https://askubuntu.com/questions/1405124/install-ubuntu-desktop-22-04-arm64-on-macos-apple-silicon-m1-pro-max-in-parall), not recommended)
   - "server" just means that the downloaded operating system doesn't have a desktop environment/GUI
-  - you don't have to use the Ubuntu LTS version, but it will make life easier, as updates are provided for a longer time, and many tutorials are oriented towards LTS versions
-  - on Apple Silicon, you need files intended for ARM architecture, x86 installers won't work (unless you use UTM "Emulation" instead of "Virtualization", which is much slower)
+  - you don't have to use the Ubuntu LTS version, but it receives [longer support](https://ubuntu.com/about/release-cycle), and many tutorials are oriented towards LTS versions
+  - on Apple Silicon, you need software intended for ARM architecture, x86 installers won't work (unless you use UTM "Emulation" instead of "Virtualization", which is much slower)
 - Create a new virtual machine (VM) and run the Ubuntu installer as shown in the YouTube video
   - during the installation, you are presented with some scary-sounding options, but remember that the installation happens only within the VM, so you can always repeat it if something doesn't work; the default settings are fine ([ubuntu.com](https://ubuntu.com/server/docs/install/step-by-step))
 - At 9:40 in the video, he uses the program SSH (the command `ssh username@ip-address`) to log in to the VM without the UTM GUI, just via the command line. This has the same effect as opening a terminal in the VM, and entering commands there. You can try this, even if a GUI (interacting with the VM via the UTM window) is probably more familiar for you
@@ -80,7 +80,7 @@ Additional notes:
 
 - VMware Fusion Pro: [blogs.vmware.com](https://blogs.vmware.com/teamfusion/2024/05/fusion-pro-now-available-free-for-personal-use.html), [knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (also see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/))
 - Recommended YouTube walkthrough for installing Ubuntu in the virtual machine: "How to install Ubuntu on Macbook M1 or M2 Using VMWare Fusion" by Murphy Tsai, 05/2023 ([YouTube](https://www.youtube.com/watch?v=4dFy-4pw8NA))
-- [Companion guide](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/the-unofficial-fusion-for-apple-sil): v32 at the time of writing; you need only the "Ubuntu" section from the guide
+- [Companion guide](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/the-unofficial-fusion-for-apple-sil): version 32 at the time of writing; you need only the "Ubuntu" section from the guide
 - [Forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
 
 ## Installation of Anaconda
