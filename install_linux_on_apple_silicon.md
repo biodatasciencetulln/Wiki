@@ -90,16 +90,18 @@ Additional notes:
 
 ### Problems
 
-Different kinds of problems are possible. Below are just some examples.
+Below are examples of encountered problems.
 
-- Problem: One keyboard key didn't work.
+- Problem: After the installation of the OS, one keyboard key didn't work.
   - Solution: Debugging together with Claude helped identify the issue. Deactivating the checkbox "Enable Mac OS Host Keyboard Shortcuts" ([techdocs.broadcom.com](https://techdocs.broadcom.com/us/en/vmware-cis/desktop-hypervisors/fusion-pro/13-0/using-vmware-fusion/configuring-vmware-fusion/setting-fusion-preferences/enable-or-disable-mac-os-shortcuts-on-the-keyboard-and-mouse-preference-pane.html)) fixed the problem. This option allows the host system to intercept key presses before they reach the guest operating system.
+- Problem: The default terminal text size was too small, and the window size was inconvenient.
+  - Solution: The default font and terminal size were set in the preferences of the Terminal app.
 - Problem: The dock was inconvenient to use, because it was located at the same side as the macOS dock.
-  - Solution: Dock settings were discovered using the [search bar](https://itsfoss.com/gnome-search/). The dock icons were resized, auto-hide was enabled and the dock location was changed. After installing [GNOME extensions](https://extensions.gnome.org/), more fine-grained settings like "pressure threshold" for "intelligent autohide" could be set to a more convenient value.
+  - Solution: Dock settings were discovered using the [search bar](https://itsfoss.com/gnome-search/). The dock location was changed, icons were resized, and auto-hide was enabled. After installing [GNOME extensions](https://extensions.gnome.org/), more fine-grained settings like "pressure threshold" for "intelligent autohide" were set to a more convenient value.
 - Problem: The shared folder wasn't accessible ("mounted") in the VM. (When mounted correctly, the folder should be visible if you execute the command `ls /mnt/hgfs` in the terminal.)
   - Solution: See section "Shared folders do not automatically mount" in the companion guide. A temporary solution was to uncheck and then again check the box "Enable Shared Folders" in the VM settings. A permanent solution requires to modify a system file (`/etc/fstab`) and reboot. After this, you can execute the command `ln -s /mnt/hgfs/<shared folder>`, which creates a "symbolic link" in your home directory to the shared folder. This allows to conveniently access the folder, e.g. via the Files app.
 
-The GNOME philosophy differs from more traditional desktops like XFCE. It focuses on minimalism and touchscreen-friendliness, whereas XFCE and other traditional desktops prioritize a conventional, menu-driven interface akin to older Windows versions, offering extensive customization and a lighter resource footprint. Especially on GNOME, the use of keyboard shortcuts can significantly boost your productivity. For instance, Super (Windows key) opens the activities overview, and Alt + Tab to quickly switch between open windows.
+The GNOME philosophy differs from more traditional desktops like XFCE. It focuses on minimalism and touchscreen-friendliness, whereas XFCE and other traditional desktops prioritize a conventional, menu-driven interface akin to older Windows versions, offering extensive customization and a lighter resource footprint. Especially on GNOME, the use of keyboard shortcuts can significantly boost your productivity. For instance, Super (Windows key) opens the activities overview, and Alt + Tab are used to quickly switch between open windows.
 
 ## Installation of Anaconda
 
