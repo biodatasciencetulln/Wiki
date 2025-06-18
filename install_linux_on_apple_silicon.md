@@ -100,8 +100,10 @@ Below are examples of encountered problems.
   - Solution: Dock settings were discovered using the [search bar](https://itsfoss.com/gnome-search/). The dock location was changed, icons were resized, and auto-hide was enabled. After installing [GNOME extensions](https://extensions.gnome.org/), more fine-grained settings like "pressure threshold" for "intelligent autohide" were set to a more convenient value.
 - Problem: The shared folder wasn't accessible ("mounted") in the VM. (When mounted correctly, the folder should be visible if you execute the command `ls /mnt/hgfs` in the terminal.)
   - Solution: See section "Shared folders do not automatically mount" in the companion guide. A temporary solution was to uncheck and then again check the box "Enable Shared Folders" in the VM settings. A permanent solution requires to modify a system file (`/etc/fstab`) and reboot. After this, you can execute the command `ln -s /mnt/hgfs/<shared folder>`, which creates a "symbolic link" in your home directory to the shared folder. This allows to conveniently access the folder, e.g. via the Files app.
+ 
+Hint: Some of the given explanations are rather brief and technical. For more details, discuss them with an LLM like Gemini, Claude or ChatGPT.
 
-The GNOME philosophy differs from more traditional desktops like XFCE. It focuses on minimalism and touchscreen-friendliness, whereas XFCE and other traditional desktops prioritize a conventional, menu-driven interface akin to older Windows versions, offering extensive customization and a lighter resource footprint. Especially on GNOME, the use of keyboard shortcuts can significantly boost your productivity. For instance, Super (Windows key) opens the activities overview, and Alt + Tab are used to quickly switch between open windows.
+The GNOME philosophy differs from more traditional desktops like XFCE. It focuses on minimalism and touchscreen-friendliness, whereas XFCE and other traditional desktops prefer a conventional, menu-driven interface akin to older Windows versions, offering extensive customization and a lighter resource footprint. Especially on GNOME, keyboard shortcuts can significantly boost your productivity. For instance, Super (Windows key) opens the activities overview, and Alt + Tab are used to quickly switch between open windows.
 
 ## Installation of Anaconda
 
