@@ -28,7 +28,7 @@ Links:
 
 Additional notes:
 
-- If you have a large enough hard drive, you can leave the virtual drive size at 64 GB (default setting), or increase it to ~80-100 GB.
+- If you have a large enough hard drive, you can leave the virtual drive size at 64 GB (default setting), or increase it to ~80-100 GB (recommended).
 - The "shared directory" is a macOS directory that the VM will be able to access (you can also add it later).
 - For Ubuntu, it's currently recommended to install Ubuntu Server ([ubuntu.com](https://ubuntu.com/download/server/arm)) and add the GUI ("graphical user interface", i.e. the desktop environment) in the next step, rather than directly installing Ubuntu Desktop ([askubuntu.com](https://askubuntu.com/questions/1405124/install-ubuntu-desktop-22-04-arm64-on-macos-apple-silicon-m1-pro-max-in-parall), not recommended).
   - "Server" just means that the downloaded operating system doesn't have a desktop environment/GUI.
@@ -106,6 +106,8 @@ Below are examples of encountered problems.
   - Solution: See [this thread](https://community.broadcom.com/vmware-cloud-foundation/question/after-macos-15sequoia-repetitive-asks-if-ive-moved-or-copied-the-file). As a temporary solution, you can simply answer "moved" every time it asks.
 - Problem: The time in the VM was wrong (UTC time, not local time), even though [time synchronization](https://knowledge.broadcom.com/external/article/344340/enabling-time-synchronization-between-th.html) was enabled.
   - Solution: Additional [research](https://community.broadcom.com/communities/community-home/digestviewer/viewthread?GroupId=7171&MessageKey=adc94593-6490-4b59-9ad3-e77da294d831&CommunityKey=fb707ac3-9412-4fad-b7af-018f5da56d9f#:~:text=Generally%20speaking%2C%20time%20synchronization%20is%20only%20applied%20to%20system%20time%20which%20should%20be%20on%20the%20UTC%20time%20scale%2C%20and%20time%20zone%20/%20day%20light%20savings%20are%20managed%20by%20the%20OS%20as%20offsets.) showed that the time synchronization is only applied to system time which should be on the UTC time scale, and time zone / day light savings are managed by the OS as offsets. A search for "time zone" in the Ubuntu activities search bar, and setting the correct time zone in the settings fixed the issue.
+- VMware process `vmnet-natd` runs at 100% CPU (see e.g. [community.broadcom.com](https://community.broadcom.com/vmware-cloud-foundation/discussion/1220-high-cpu-vmnet-natd)).
+  - Solution: Requires further investigation, see e.g. "Understanding networking types in VMware Fusion" ([knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/303393/understanding-networking-types-in-vmware.html)) and "How does networking inside a virtual machine work?" ([community.broadcom.com](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/understanding-networking-in-vmware?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0&tab=librarydocuments)). Try switching to bridged mode.
  
 Hint: If the given explanations are too brief or technical, you can discuss them with an LLM like Gemini, Claude or ChatGPT.
 
