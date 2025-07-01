@@ -5,38 +5,43 @@
 
 **Note**: Please make a full backup of your computer before making any modifications.
 
-Even though VirtualBox supports Apple silicon since version 7.1, it doesn't seem to be as popular or well-tested as as other free options:
-
-- [VMware Fusion](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html): [Free](https://blogs.vmware.com/cloud-foundation/2024/11/11/vmware-fusion-and-workstation-are-now-free-for-all-users/) for personal use.
-- [UTM](https://mac.getutm.app/): Free and open source.
-
-Both UTM and VMware Fusion work well; you can try both and see which one you prefer. A popular commercial alternative is [Parallels Desktop](https://www.parallels.com/products/desktop/), but it requires a paid license. You probably don't need it, unless you have a specific application for which the free options are not suitable.
-
-My tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) contains important information that you should read even if you use VMWare or UTM.
-
 **Important note**: For Apple Silicon computers (which have an ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include ‘arm64’ or ‘aarch64’ in their file names. Not all software packages are available for all CPU architectures.
 
-Canonical currently doesn't provide an official Ubuntu Desktop release for platforms other than x86_64 and Raspberry Pi. The best approach to set up Ubuntu Desktop on an ARM-based Mac is to install **Ubuntu Server** for ARM and then convert it to Ubuntu Desktop by installing additional software, the **desktop environment**. This is currently the preferred method for both UTM and VMware Fusion. You will need the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release, currently 24.04. (Generally, you don't have to use the Ubuntu LTS version, but it conveniently receives [longer support](https://ubuntu.com/about/release-cycle), and many tutorials are oriented towards LTS versions.)
+## Installation of UTM and VMware Fusion
 
-## Installation in UTM
+- [UTM](https://mac.getutm.app/) is a free and open-source frontend for the open-source [QEMU](https://en.wikipedia.org/wiki/QEMU) virtualization software. QEMU is known for its broad OS compatibility, sometimes at the cost of stability and advanced features.
+- [VMware Fusion](https://en.wikipedia.org/wiki/VMware_Fusion) is now also [free](https://blogs.vmware.com/cloud-foundation/2025/03/10/vmware-fusion-workstation-going-free-new-resources/) for private and commercial use. It was developed specifically for macOS by the company [VMware](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion), which is now owned by [Broadcom](https://en.wikipedia.org/wiki/Broadcom). Previously, there was a separate product, [VMware Fusion Pro](https://techdocs.broadcom.com/us/en/vmware-cis/desktop-hypervisors/fusion-pro/13-0/using-vmware-fusion.html); this is no longer the case.
 
-Links:
+Some users prefer UTM for its open-source nature and broad OS support. Others say that VMware Fusion is more stable and reliable. Both apps work well; you can try both and see which one works best for you. A popular commercial alternative is [Parallels Desktop](https://www.parallels.com/products/desktop/), but it requires a paid license. You probably don't need it, unless you have a specific application for which the free options are not suitable.
 
-- [UTM homepage](https://mac.getutm.app/) and [GitHub](https://github.com/utmapp/UTM/)
+- Install UTM according to [docs.getutm.app](https://docs.getutm.app/installation/macos/)
+    - Additional links: [GitHub](https://github.com/utmapp/UTM/)
+- Install VMware Fusion according to [knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html)
+    - Additional links: [Broadcom forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
+    - The download requires creating a Broadcom account. Alternatively, you can install the [Homebrew](https://brew.sh/) package manager (also see [mac.install.guide](https://mac.install.guide/homebrew/3)), and use it to install and update other programs. For example, the command `brew install --cask utm` installs UTM ([formulae.brew.sh](https://formulae.brew.sh/cask/utm)), and the command `brew install --cask vmware-fusion` installs VMware Fusion ([formulae.brew.sh](https://formulae.brew.sh/cask/vmware-fusion)) without a Broadcom account. If you have never worked with a package manager before, it's easier to perform the installation manually, without Homebrew.
+
+My tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) also contains important information that you should read even if you use VMWare or UTM.
+
+## Installation of Ubuntu in UTM
+
 - Official [documentation](https://docs.getutm.app/basics/basics/), especially the [Ubuntu guide](https://docs.getutm.app/guides/ubuntu/)
 - Recommended YouTube walkthrough through the complete installation process: "Install a Linux VM in UTM \| Get Into Linux \| MacOS" by TatOG Tech, 06/2023 ([YouTube](https://www.youtube.com/watch?v=FS-HJTM6Oec)). This video provides a comprehensive guide on installing a Linux virtual machine (VM) on macOS using UTM.
 
-Additional notes:
+Canonical currently doesn't provide an official Ubuntu Desktop release for platforms other than [x86_64](https://www.techtarget.com/whatis/definition/x86-64) and Raspberry Pi. The best approach to set up Ubuntu Desktop on an ARM-based Mac is to install **Ubuntu Server** for ARM and then convert it to Ubuntu Desktop by installing additional software, the **desktop environment**. This is currently the preferred method for both UTM and VMware Fusion. You will need the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release, currently 24.04.
+
+- "Server" just means that the downloaded operating system (OS) doesn't have a desktop environment/GUI.
+- Generally, you don't have to use the Ubuntu LTS (Long-Term Support) version, but the [extended support](https://ubuntu.com/about/release-cycle) is convenient, and many tutorials are oriented towards LTS versions.
+
+Notes related to the YouTube walkthrough:
 
 - You can leave the virtual drive size at 64 GB (default setting), or increase it to ~80-100 GB (recommended).
 - The "shared directory" is a macOS directory that the VM will be able to access (you can also add it later).
 - For Ubuntu, it's currently recommended to install Ubuntu Server ([ubuntu.com](https://ubuntu.com/download/server/arm)) and add the GUI ("graphical user interface", i.e. the desktop environment) in the next step, rather than directly installing Ubuntu Desktop ([askubuntu.com](https://askubuntu.com/questions/1405124/install-ubuntu-desktop-22-04-arm64-on-macos-apple-silicon-m1-pro-max-in-parall), not recommended).
-  - "Server" just means that the downloaded operating system doesn't have a desktop environment/GUI.
-  - On Apple Silicon, you need software intended for ARM architecture; x86 installers won't work (unless you use UTM "Emulation" instead of "Virtualization", which is much slower)
+  - On Apple Silicon, you need software intended for ARM architecture; x86 installers won't work, unless you use UTM "Emulation" instead of "Virtualization", which is much slower.
 - Create a new virtual machine (VM) and run the Ubuntu installer as shown in the YouTube video.
   - During the installation, you are presented with some scary-sounding options, but remember that the installation happens only within the VM, so you can always repeat it if something doesn't work. The default settings are fine ([ubuntu.com](https://ubuntu.com/server/docs/install/step-by-step)).
 - At 9:40 in the video, he uses the program SSH (the command `ssh username@ip-address`) to log in to the VM without the UTM GUI, just via the command line. This has the same effect as opening a terminal in the VM, and entering commands there. You can try this, even if a GUI (interacting with the VM via the UTM window) is probably more familiar for you.
-  - Note that you cannot run graphical applications via SSH without an additional option `-X`, which enables [X11 forwarding](https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely), also see [here](https://unix.stackexchange.com/questions/566/how-does-ssh-x-function). If you want to run graphical applications, simply do it directly in the UTM window, not via SSH.
+  - Note that you cannot run graphical applications via SSH without an additional option `-X`, which enables [X11 forwarding](https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely), also see [unix.stackexchange.com](https://unix.stackexchange.com/questions/566/how-does-ssh-x-function). If you want to run graphical applications, simply do it directly in the UTM window, not via SSH.
 - The next step is to install system updates via `sudo apt update && sudo apt upgrade`; this is explained in detail in the [VirtualBox tutorial](install_linux_in_virtualbox.md).
 - Installing the `qemu-guest-agent` and `spice-vdagent` packages is explained in the [UTM docs](https://docs.getutm.app/guest-support/linux/); this is the equivalent of VirtualBox guest additions.
   - The QEMU guest agent is a program intended to run in the background in VMs that use the QEMU hypervisor ([qemu-project.gitlab.io](https://qemu-project.gitlab.io/qemu/interop/qemu-ga.html)).
@@ -48,24 +53,23 @@ Additional notes:
 
 ### Problems?
 
-- Try to search for the respective issue
+- Try searching for the respective issue
   - on GitHub ([UTM issues](https://github.com/utmapp/UTM/issues), [UTM discussions](https://github.com/utmapp/UTM/discussions/))
-  - on Reddit (via Google using `site:reddit.com`, [techlicious.com](https://www.techlicious.com/tip/google-search-tips-everone-should-know/))
+  - on Reddit (via Google: simply add `reddit` to your search query, or `site:reddit.com`, see [techlicious.com](https://www.techlicious.com/tip/google-search-tips-everone-should-know/))
   - on Google
 - Display resolution: in case of problems, try to set another resolution in the VM settings, e.g. 1440x900
 - If the VM freezes regularly, try changing the "Emulated Display Card" in the VM Display settings, e.g. to virtio-ramfb ([forums.macrumors.com](https://forums.macrumors.com/threads/utm-virtualisation-of-ubuntu-20-04-randomly-freezes-on-apple-silicon-m2.2388950/))
 
 ### Additional links
 
-- Ubuntu server tutorials/installation:
-  - [ubuntu.com](https://ubuntu.com/server/docs/tutorials)
+- Ubuntu server tutorial and How-to guides: [ubuntu.com](https://documentation.ubuntu.com/server/tutorial/)
 - Blogs:
   - [sachin-the-learner.hashnode.dev](https://sachin-the-learner.hashnode.dev/install-ubuntu-using-utm-on-mac)
   - [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133)
 
 ### Additional notes for hackers
 
-- The Ubuntu installer sets up an LVM partitioning scheme, here are some more details:
+- The Ubuntu installer sets up an "LVM partitioning scheme". More information:
   - [ubuntu.com](https://ubuntu.com/server/docs/install/storage)
   - [digitalocean.com](https://www.digitalocean.com/community/tutorials/an-introduction-to-lvm-concepts-terminology-and-operations) - introduction to LVM concepts
   - [discourse.ubuntu.com](https://discourse.ubuntu.com/t/how-is-the-size-of-the-lvm-container-decided/24608)
@@ -75,25 +79,22 @@ Additional notes:
 - Ubuntu is not the only Linux distro that can be run on UTM ([docs.getutm.app](https://docs.getutm.app/guides/guides/))
 - UTM can also run Windows VMs, see e.g. [eshop.macsales.com](https://eshop.macsales.com/blog/72081-utm-virtual-machine-on-m1-mac/) (07/2021)
 
-## Installation in VMware Fusion
+## Installation of Ubuntu in VMware Fusion
 
-- UTM is a free and open-source frontend for the open-source [QEMU](https://en.wikipedia.org/wiki/QEMU) virtualization software. QEMU is known for its broad OS compatibility, sometimes at the cost of stability and advanced features. [VMware Fusion](https://en.wikipedia.org/wiki/VMware_Fusion) is a free alternative by the company VMware (now owned by [Broadcom](https://en.wikipedia.org/wiki/Broadcom)) specifically for macOS. While some users prefer UTM for its open-source nature and broad OS support, others say that VMware Fusion can offer a more stable and reliable experience on macOS.
-- VMware Fusion Pro: [blogs.vmware.com](https://blogs.vmware.com/teamfusion/2024/05/fusion-pro-now-available-free-for-personal-use.html), [knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (also see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/))
-  - Additional links: [Broadcom forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
-- Recommended YouTube walkthrough for installing Ubuntu in the virtual machine: "How to install Ubuntu on Macbook M1 or M2 Using VMWare Fusion" by Murphy Tsai, 05/2023 ([YouTube](https://www.youtube.com/watch?v=4dFy-4pw8NA))
+- Recommended YouTube walkthrough: "How to install Ubuntu on Macbook M1 or M2 Using VMWare Fusion" by Murphy Tsai, 05/2023 ([YouTube](https://www.youtube.com/watch?v=4dFy-4pw8NA))
 - [Companion guide](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/the-unofficial-fusion-for-apple-sil): version 32 at the time of writing; you need only the "Ubuntu" section from the guide
 - Note: The companion guide suggests installing `ubuntu-desktop` or `ubuntu-desktop-minimal`, which installs the [GNOME desktop](https://www.reddit.com/r/gnome/comments/9do3s1/please_tell_in_simple_term_what_is_gnome_will_i/). After installing the GNOME desktop, you can customize the resolution as explained in [this video](https://youtu.be/kDosGTdwqO0?t=610). 
   - Instead of `ubuntu-desktop`, you could also install `xubuntu-desktop`, which installs the XFCE desktop (and thus, effectively, Xubuntu). However, setting a high resolution didn't work for me in Xubuntu; after setting the "scaling" option to 200%, the screen remained black. Therefore, this is currently not recommended. You will often encounter different sorts of problems like this, especially in non-standard configurations. Just be mindful about this, and don't let it discourage you.
 - Ubuntu has additional useful settings. For example, you can visit [extensions.gnome.org](https://extensions.gnome.org/) to learn more about GNOME extensions, and install e.g. a system monitor like [this one](https://extensions.gnome.org/extension/6807/system-monitor/).
 - After setting up the VM, you can make a complete backup of the VM as explained in the [best practices](https://knowledge.broadcom.com/external/article/303386/#:~:text=There%20is%20no,back%20it%20up.) for virtual machine backup (programs and data) in VMware Fusion. For instructions how to locate the VM file for backup, see [here](https://knowledge.broadcom.com/external/article/344570/locating-the-virtual-machine-bundle-in-v.html).
-  - It's good practice to backup the VM in regular time intervals, to be able to quickly revert to the last working version if needed.
+  - It's good practice to backup the VM in regular time intervals, so that you can quickly revert to the last working version if needed.
 
 ### Problems and solutions
 
 Below are examples of encountered problems.
 
 - After the installation of the OS, one keyboard key didn't work.
-  - Solution: Debugging together with Claude showed that deactivating the checkbox "Enable Mac OS Host Keyboard Shortcuts" ([techdocs.broadcom.com](https://techdocs.broadcom.com/us/en/vmware-cis/desktop-hypervisors/fusion-pro/13-0/using-vmware-fusion/configuring-vmware-fusion/setting-fusion-preferences/enable-or-disable-mac-os-shortcuts-on-the-keyboard-and-mouse-preference-pane.html)) fixed the problem. This option allows the host system to intercept key presses before they reach the guest operating system. In case of other key mapping problems, see [this thread](https://community.broadcom.com/vmware-cloud-foundation/discussion/dead-keys-on-host-system-prevent-vmware-guest-from-receiving-keystrokes-at-all). If you want to use the same key bindings in the VM as on the host, you can add additional key mappings, e.g. <kbd>⌘</kbd> → <kbd>Ctrl</kbd>, and <kbd>⌘</kbd> + <kbd>Tab</kbd> → <kbd>Alt</kbd> + <kbd>Tab</kbd>, as explained [here](https://community.broadcom.com/vmware-cloud-foundation/discussion/dead-keys-on-host-system-prevent-vmware-guest-from-receiving-keystrokes-at-all#:~:text=Command%2DTab%20%C2%A0%2D%3E%20Alt,removes%20windows%20key). One possible (untested) alternative is a project like [toshy](https://github.com/RedBearAK/toshy). In all cases, you should clearly differentiate between the host system, the VMware application, and the guest system, to clearly understand who does what. For example, the key mappings are managed by VMware, while the keyboard layout within the guest is something else entirely and managed by the guest OS, which doesn't involve the host or VMware.
+  - Solution: Debugging together with Claude showed that deactivating the checkbox "Enable Mac OS Host Keyboard Shortcuts" ([techdocs.broadcom.com](https://techdocs.broadcom.com/us/en/vmware-cis/desktop-hypervisors/fusion-pro/13-0/using-vmware-fusion/configuring-vmware-fusion/setting-fusion-preferences/enable-or-disable-mac-os-shortcuts-on-the-keyboard-and-mouse-preference-pane.html)) fixed the problem. This option allows the host system to intercept key presses before they reach the guest OS. In case of other key mapping problems, see [this thread](https://community.broadcom.com/vmware-cloud-foundation/discussion/dead-keys-on-host-system-prevent-vmware-guest-from-receiving-keystrokes-at-all). If you want to use the same key bindings in the VM as on the host, you can add additional key mappings, e.g. <kbd>⌘</kbd> → <kbd>Ctrl</kbd>, and <kbd>⌘</kbd> + <kbd>Tab</kbd> → <kbd>Alt</kbd> + <kbd>Tab</kbd>, as explained [here](https://community.broadcom.com/vmware-cloud-foundation/discussion/dead-keys-on-host-system-prevent-vmware-guest-from-receiving-keystrokes-at-all#:~:text=Command%2DTab%20%C2%A0%2D%3E%20Alt,removes%20windows%20key). One possible (untested) alternative is a project like [toshy](https://github.com/RedBearAK/toshy). In all cases, you should clearly differentiate between the host system, the VMware application, and the guest system, to clearly understand who does what. For example, the key mappings are managed by VMware, while the keyboard layout within the guest is something else entirely and managed by the guest OS, which doesn't involve the host or VMware.
 - Key combination <kbd>⌘</kbd> + <kbd>F</kbd> didn't work as expected in the text editor.
   - Solution: See the problem above. Deactivating the key mapping <kbd>⌘</kbd> + <kbd>F</kbd> in the preset VMware keyboard settings fixed the issues.
 - The default terminal text size was too small, and the window size was inconvenient.

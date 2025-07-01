@@ -51,14 +51,13 @@ The initial step, setting up the virtual machine, can be somewhat technical (ref
 
 #### Apple silicon
 
-Apple silicon computers (Macbooks since 2020, with M1 chip or later) have a different underlying processor architecture, leading to some software differences. These [ARM-based CPUs](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86) are also known as "AArch64" or "ARM64". The transition of established workflows to ARM-based processors is still ongoing, and you might encounter occasional problems, but no significant difficulties.
+Apple silicon computers (MacBooks from 2020 onwards, with M1 chips or later) use a different processor architecture than previous Intel-based Macs. This [ARM-based](https://en.wikipedia.org/wiki/Apple_silicon) CPU architecture is also known as AArch64 or ARM64, and represents a significant [shift](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86). The transition of established workflows to ARM-based processors is still ongoing, and you may encounter occasional problems, but there should be no significant difficulties.
 
-VirtualBox supports Apple silicon since [version 7.1](https://blogs.oracle.com/virtualization/post/oracle-virtualbox-710). This is a relatively recent development, and it's currently recommended to stick to alternatives described in my [short installation guide for Apple silicon](install_linux_on_apple_silicon). As preparation:
+VirtualBox supports Apple silicon since [version 7.1](https://blogs.oracle.com/virtualization/post/oracle-virtualbox-710). This is a relatively recent development, and it's not as popular or well-tested as other free options. Therefore, it's currently recommended to stick to the alternatives. As preparation:
 
-- Install [UTM](https://docs.getutm.app/installation/macos/) and [VMware Fusion Pro](https://knowledge.broadcom.com/external/article/368667/download-and-license-information-for-vmw.html) (in case of installation problems, see [reddit](https://www.reddit.com/r/vmware/comments/1cry8ej/comment/l426xtq/)).
-    - You can install VMware Fusion Pro by creating a Broadcom account and downloading "VMware Fusion Pro for Personal Use". Alternatively, you can install the [Homebrew](https://brew.sh/) package manager (also see [mac.install.guide](https://mac.install.guide/homebrew/3)), and use it to install and update other programs. For example, the command `brew install --cask utm` installs UTM ([formulae.brew.sh](https://formulae.brew.sh/cask/utm)), and the command `brew install --cask vmware-fusion` installs VMware Fusion ([formulae.brew.sh](https://formulae.brew.sh/cask/vmware-fusion)). If you have never worked with a package manager before, it's easier to perform the installations manually, without using Homebrew.
+- Install UTM and VMware Fusion on you Mac according to the instructions in the [tutorial](install_linux_on_apple_silicon.md).
 - Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04).
-- Download the Anaconda installer for Linux-aarch64 from [anaconda.com](https://www.anaconda.com/download#download). The downloaded file should have a filename like `Anaconda3-202x.xx-Linux-aarch64.sh`
+- Download the Anaconda installer for Linux-aarch64 from [anaconda.com](https://www.anaconda.com/download#download). The downloaded file should have a filename like `Anaconda3-202x.xx-Linux-aarch64.sh`.
 
 ### Additional background information
 
