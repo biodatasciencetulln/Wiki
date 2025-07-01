@@ -5,7 +5,9 @@
 
 **Note**: Please make a full backup of your computer before making any modifications.
 
-**Important note**: For Apple Silicon computers (which have an ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include ‘arm64’ or ‘aarch64’ in their file names. Not all software packages are available for all CPU architectures.
+**Important note**: For Apple Silicon computers (which have an ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include **arm64** or **aarch64** in their file names. Not all software packages are available for all CPU architectures.
+
+**Hint**: If the given explanations are too brief or technical, or a command doesn't work as expected, you can discuss them with an LLM like Gemini, Claude or ChatGPT. However, these tools may sometimes output wrong or imprecise information. The authoritative source is still the technical documentation.
 
 ## Installation of UTM and VMware Fusion
 
@@ -20,7 +22,7 @@ Some users prefer UTM for its open-source nature and broad OS support. Others sa
     - Additional links: [Broadcom forum](https://community.broadcom.com/communities/communityhomeblogs?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0)
     - The download requires creating a Broadcom account. Alternatively, you can install the [Homebrew](https://brew.sh/) package manager (also see [mac.install.guide](https://mac.install.guide/homebrew/3)), and use it to install and update other programs. For example, the command `brew install --cask utm` installs UTM ([formulae.brew.sh](https://formulae.brew.sh/cask/utm)), and the command `brew install --cask vmware-fusion` installs VMware Fusion ([formulae.brew.sh](https://formulae.brew.sh/cask/vmware-fusion)) without a Broadcom account. If you have never worked with a package manager before, it's easier to perform the installation manually, without Homebrew.
 
-My tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) also contains important information that you should read even if you use VMWare or UTM.
+Note that my tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) includes important Ubuntu-specific information applicable to users of other virtualization platforms like VMWare or UTM.
 
 ## Installation of Ubuntu in UTM
 
@@ -34,22 +36,23 @@ Canonical currently doesn't provide an official Ubuntu Desktop release for platf
 
 Notes related to the YouTube walkthrough:
 
-- You can leave the virtual drive size at 64 GB (default setting), or increase it to ~80-100 GB (recommended).
-- The "shared directory" is a macOS directory that the VM will be able to access (you can also add it later).
+- You can leave the **virtual drive size** at 64 GB (default setting), or increase it to ~80-100 GB (recommended).
+- The "**shared directory**" is a macOS directory that the VM will be able to access (you can also add it later).
 - For Ubuntu, it's currently recommended to install Ubuntu Server ([ubuntu.com](https://ubuntu.com/download/server/arm)) and add the GUI ("graphical user interface", i.e. the desktop environment) in the next step, rather than directly installing Ubuntu Desktop ([askubuntu.com](https://askubuntu.com/questions/1405124/install-ubuntu-desktop-22-04-arm64-on-macos-apple-silicon-m1-pro-max-in-parall), not recommended).
   - On Apple Silicon, you need software intended for ARM architecture; x86 installers won't work, unless you use UTM "Emulation" instead of "Virtualization", which is much slower.
-- Create a new virtual machine (VM) and run the Ubuntu installer as shown in the YouTube video.
+- Create a new virtual machine (VM) and run the **Ubuntu installer** as shown in the YouTube video.
   - During the installation, you are presented with some scary-sounding options, but remember that the installation happens only within the VM, so you can always repeat it if something doesn't work. The default settings are fine ([ubuntu.com](https://ubuntu.com/server/docs/install/step-by-step)).
 - At 9:40 in the video, he uses the program SSH (the command `ssh username@ip-address`) to log in to the VM without the UTM GUI, just via the command line. This has the same effect as opening a terminal in the VM, and entering commands there. You can try this, even if a GUI (interacting with the VM via the UTM window) is probably more familiar for you.
   - Note that you cannot run graphical applications via SSH without an additional option `-X`, which enables [X11 forwarding](https://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-to-run-graphics-applications-remotely), also see [unix.stackexchange.com](https://unix.stackexchange.com/questions/566/how-does-ssh-x-function). If you want to run graphical applications, simply do it directly in the UTM window, not via SSH.
-- The next step is to install system updates via `sudo apt update && sudo apt upgrade`; this is explained in detail in the [VirtualBox tutorial](install_linux_in_virtualbox.md).
+- The next step is to **install system updates** via `sudo apt update && sudo apt upgrade`; this is explained in detail in the [VirtualBox tutorial](install_linux_in_virtualbox.md).
 - Installing the `qemu-guest-agent` and `spice-vdagent` packages is explained in the [UTM docs](https://docs.getutm.app/guest-support/linux/); this is the equivalent of VirtualBox guest additions.
-  - The QEMU guest agent is a program intended to run in the background in VMs that use the QEMU hypervisor ([qemu-project.gitlab.io](https://qemu-project.gitlab.io/qemu/interop/qemu-ga.html)).
+  - The QEMU **guest agent** is a program intended to run in the background in VMs that use the QEMU hypervisor ([qemu-project.gitlab.io](https://qemu-project.gitlab.io/qemu/interop/qemu-ga.html)).
   - The SPICE agent is another helper program (technical details: [spice-space.org](https://www.spice-space.org/index.html), [manpages.ubuntu.com](https://manpages.ubuntu.com/manpages/lunar/man1/spice-vdagent.1.html)).
 - Apart from the GNOME desktop (installed via the package `ubuntu-desktop`), there are other desktop environments like Xfce ([howtogeek.com](https://www.howtogeek.com/193129/how-to-install-and-use-another-desktop-environment-on-linux/), which can be installed via `sudo apt install xubuntu-desktop` instead of `ubuntu-desktop`. This is a matter of taste.
 - Set up a shared folder according to the instructions in [docs.getutm.app](https://docs.getutm.app/guest-support/linux/#virtfs).
 - Note that during startup of your VM you may briefly see some log messages ([askubuntu.com](https://askubuntu.com/questions/982632/what-are-the-messages-i-see-during-the-startup-shutdown-process-of-ubuntu)) and possibly even some error messages; this is part of the normal boot process.
 - If you get a warning about low disk space, inspect the disk usage in the [disk usage analyzer](https://help.gnome.org/users/baobab/stable/); did you select an appropriate disk size when configuring the VM in UTM?
+- After setting up the VM, you can [make a backup](https://github.com/utmapp/UTM/discussions/5234) of the VM. It's good practice to perform a backup in regular intervals, so that you can quickly revert to the last working version if required.
 
 ### Problems?
 
@@ -62,7 +65,7 @@ Notes related to the YouTube walkthrough:
 
 ### Additional links
 
-- Ubuntu server tutorial and How-to guides: [ubuntu.com](https://documentation.ubuntu.com/server/tutorial/)
+- **Ubuntu server tutorial** and How-to guides: [ubuntu.com](https://documentation.ubuntu.com/server/tutorial/)
 - Blogs:
   - [sachin-the-learner.hashnode.dev](https://sachin-the-learner.hashnode.dev/install-ubuntu-using-utm-on-mac)
   - [medium.com](https://medium.com/@lizrice/linux-vms-on-an-m1-based-mac-with-vscode-and-utm-d73e7cb06133)
@@ -83,10 +86,10 @@ Notes related to the YouTube walkthrough:
 
 - Recommended YouTube walkthrough: "How to install Ubuntu on Macbook M1 or M2 Using VMWare Fusion" by Murphy Tsai, 05/2023 ([YouTube](https://www.youtube.com/watch?v=4dFy-4pw8NA))
 - [Companion guide](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/the-unofficial-fusion-for-apple-sil): version 32 at the time of writing; you need only the "Ubuntu" section from the guide
-- Note: The companion guide suggests installing `ubuntu-desktop` or `ubuntu-desktop-minimal`, which installs the [GNOME desktop](https://www.reddit.com/r/gnome/comments/9do3s1/please_tell_in_simple_term_what_is_gnome_will_i/). After installing the GNOME desktop, you can customize the resolution as explained in [this video](https://youtu.be/kDosGTdwqO0?t=610). 
+- Note: The **companion guide** suggests installing `ubuntu-desktop` or `ubuntu-desktop-minimal`, which installs the [GNOME desktop](https://www.reddit.com/r/gnome/comments/9do3s1/please_tell_in_simple_term_what_is_gnome_will_i/). After installing the GNOME desktop, you can customize the resolution as explained in [this video](https://youtu.be/kDosGTdwqO0?t=610). 
   - Instead of `ubuntu-desktop`, you could also install `xubuntu-desktop`, which installs the XFCE desktop (and thus, effectively, Xubuntu). However, setting a high resolution didn't work for me in Xubuntu; after setting the "scaling" option to 200%, the screen remained black. Therefore, this is currently not recommended. You will often encounter different sorts of problems like this, especially in non-standard configurations. Just be mindful about this, and don't let it discourage you.
 - Ubuntu has additional useful settings. For example, you can visit [extensions.gnome.org](https://extensions.gnome.org/) to learn more about GNOME extensions, and install e.g. a system monitor like [this one](https://extensions.gnome.org/extension/6807/system-monitor/).
-- After setting up the VM, you can make a complete backup of the VM as explained in the [best practices](https://knowledge.broadcom.com/external/article/303386/#:~:text=There%20is%20no,back%20it%20up.) for virtual machine backup (programs and data) in VMware Fusion. For instructions how to locate the VM file for backup, see [here](https://knowledge.broadcom.com/external/article/344570/locating-the-virtual-machine-bundle-in-v.html).
+- After setting up the VM, you can **make a backup** of the VM as explained in the [best practices](https://knowledge.broadcom.com/external/article/303386/#:~:text=There%20is%20no,back%20it%20up.) for virtual machine backup (programs and data) in VMware Fusion. For instructions how to locate the VM file for backup, see [here](https://knowledge.broadcom.com/external/article/344570/locating-the-virtual-machine-bundle-in-v.html).
   - It's good practice to backup the VM in regular time intervals, so that you can quickly revert to the last working version if needed.
 
 ### Problems and solutions
@@ -111,8 +114,6 @@ Below are examples of encountered problems.
   - Solution: Additional [research](https://community.broadcom.com/communities/community-home/digestviewer/viewthread?GroupId=7171&MessageKey=adc94593-6490-4b59-9ad3-e77da294d831&CommunityKey=fb707ac3-9412-4fad-b7af-018f5da56d9f#:~:text=Generally%20speaking%2C%20time%20synchronization%20is%20only%20applied%20to%20system%20time%20which%20should%20be%20on%20the%20UTC%20time%20scale%2C%20and%20time%20zone%20/%20day%20light%20savings%20are%20managed%20by%20the%20OS%20as%20offsets.) showed that the time synchronization is only applied to system time which should be on the UTC time scale, and time zone / day light savings are managed by the OS as offsets. A search for "time zone" in the Ubuntu activities search bar, and setting the correct time zone in the settings fixed the issue.
 - VMware process `vmnet-natd` runs at 100% CPU (see e.g. [community.broadcom.com](https://community.broadcom.com/vmware-cloud-foundation/discussion/1220-high-cpu-vmnet-natd)).
   - Solution: Requires further investigation, see e.g. "Understanding networking types in VMware Fusion" ([knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/303393/understanding-networking-types-in-vmware.html)) and "How does networking inside a virtual machine work?" ([community.broadcom.com](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/understanding-networking-in-vmware?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0&tab=librarydocuments)). Try switching to bridged mode.
- 
-**Hint**: If the given explanations are too brief or technical, or a command doesn't work as expected, you can discuss them with an LLM like Gemini, Claude or ChatGPT.
 
 The GNOME philosophy differs from more traditional desktops like XFCE. It focuses on minimalism and touchscreen-friendliness, whereas XFCE and other traditional desktops prefer a conventional, menu-driven interface akin to older Windows versions, offering extensive customization and a lighter resource footprint. Especially on GNOME, keyboard shortcuts can significantly boost your productivity. For instance, Super (Windows key) opens the activities overview, and Alt + Tab allows to quickly switch between open windows.
 
@@ -121,4 +122,4 @@ The GNOME philosophy differs from more traditional desktops like XFCE. It focuse
 - For installing Anaconda in the Linux VM, download the `Linux-aarch64` installer (it has a filename like `Anaconda3-202x.xx-Linux-aarch64.sh` on [anaconda.com](https://www.anaconda.com/download#download))
 - The installation instructions are found in the official documentation, on [docs.anaconda.com](https://docs.anaconda.com/anaconda/install/)); read them carefully and follow them step by step
   - If some of the software packages listed in the "Prerequisites" section ([docs.anaconda.com](https://docs.anaconda.com/anaconda/install/linux/)) can't be installed (e.g. because the package is not found), install only those packages for which it's possible
-- In case of problems, you can also install Anaconda directly on the host system, just make sure to use the right installer ("Apple silicon")
+- In case of problems, you can also install Anaconda directly on the host system; be sure to use the right installer ("Apple silicon")
