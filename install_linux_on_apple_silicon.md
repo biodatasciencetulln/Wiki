@@ -3,11 +3,12 @@
 
 <H1>Ubuntu virtualization on Apple silicon</H1>
 
+* TOC
+{:toc}
+
+For Apple Silicon computers (which have an ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include **arm64** or **aarch64** in their file names. Not all software packages are available for all CPU architectures. While VirtualBox recently added support for Apple Silicon, it's still in its early days and not widely adopted yet. We'll used more well-established solutions.
+
 **Note**: Please make a full backup of your computer before making any modifications.
-
-**Important note**: For Apple Silicon computers (which have an ARM-based CPU architecture), you need software that is specifically written for this architecture. Such installers usually include **arm64** or **aarch64** in their file names. Not all software packages are available for all CPU architectures.
-
-**Hint**: If the given explanations are too brief or technical, or a command doesn't work as expected, you can discuss them with an LLM like Gemini, Claude or ChatGPT. However, these tools sometimes give wrong or imprecise information. The authoritative source is still the technical documentation.
 
 ## Installation of UTM and VMware Fusion
 
@@ -54,6 +55,8 @@ Notes related to the YouTube video:
 - Note that during startup of your VM you may briefly see some log messages ([askubuntu.com](https://askubuntu.com/questions/982632/what-are-the-messages-i-see-during-the-startup-shutdown-process-of-ubuntu)) and possibly even some error messages; this is part of the normal boot process.
 - If you get a warning about low disk space, inspect the disk usage in the [disk usage analyzer](https://help.gnome.org/users/baobab/stable/); did you select an appropriate disk size when configuring the VM in UTM?
 - After setting up the VM, you can [make a backup](https://github.com/utmapp/UTM/discussions/5234) of the VM. It's good practice to perform backups in regular intervals, so that you can quickly revert to the last working version if required.
+
+Hint: If the given explanations are too brief or technical, or a command doesn't work as expected, you can discuss them with an LLM like Gemini, Claude or ChatGPT. However, these tools sometimes give wrong or imprecise information. The authoritative source is still the technical documentation.
 
 ### Problems?
 
