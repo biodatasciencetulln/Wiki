@@ -10,9 +10,19 @@
 
 Used software: VirtualBox 7, Xubuntu 24.04
 
-Note for Apple silicon computers (Macbooks with M1 chip or later): VirtualBox is not available for Apple silicon, for details see [here](summer_school.md#apple-silicon) and my [notes on virtualization on Apple silicon](install_linux_on_apple_silicon.md). This tutorial is mostly oriented towards VirtualBox; the only relevant sections for Apple silicon users are [Linux basics](#linux-basics), [update the guest](#update-the-guest) and [where to go from here](#where-to-go-from-here). For example, while UTM and VMware Fusion also have a kind of "guest additions" to improve the integration of guest and host, they are called differently and the installation process differs. Other sections of this tutorial may still contain helpful information and be useful for comparison.
+**Note for Apple silicon** computers (Macbooks with M1 chip or later): VirtualBox is not available for Apple silicon, for details see [here](summer_school.md#apple-silicon) and my [notes on virtualization on Apple silicon](install_linux_on_apple_silicon.md). This tutorial is mostly oriented towards VirtualBox, but some sections are universal, e.g. [Linux basics](#linux-basics), [update the guest](#update-the-guest) and [where to go from here](#where-to-go-from-here). For example, while UTM and VMware Fusion also have a kind of "guest additions" to improve the integration of guest and host, they are called differently and the installation process differs. Other sections of this tutorial may still contain helpful information and be useful for comparison.
 
-All functionality of VirtualBox is explained in the [official documentation](https://docs.oracle.com/en/virtualization/virtualbox/index.html), especially the User Manual (as [PDF](https://download.virtualbox.org/virtualbox/UserManual.pdf) or <a href="https://www.virtualbox.org/manual/">web page</a>). Apart from the documentation, there are many tutorials on the internet for all purposes; for example, for installing Ubuntu on VirtualBox, you can find
+The **official VirtualBox documentation** is the primary resource for all things VirtualBox, with essential information for installation, configuration, and troubleshooting:
+
+- [virtualbox.org](https://www.virtualbox.org/manual/) – the User Manual (also as [PDF](https://download.virtualbox.org/virtualbox/UserManual.pdf))
+    - [VirtualBox forums](https://forums.virtualbox.org/index.php) – the go-to place for all VirtualBox related questions
+- [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/index.html)
+
+<div class="more">
+    <p>VirtualBox documentation appears on both <code>virtualbox.org</code> and <code>oracle.com</code> due to its <a href="https://en.wikipedia.org/wiki/VirtualBox">history</a>. VirtualBox was originally an independent open-source project, created by InnoTek Systemberatung GmbH, which was acquired by Sun Microsystems in 2008, which was in turn acquired by Oracle in 2010. The <code>virtualbox.org</code> domain was (and still is) the primary hub for the open-source community, hosting downloads, forums, and the official user manual and technical documentation. When Oracle took over, they integrated VirtualBox into their own product portfolio and documentation system. This is why you now find documentation for "Oracle VirtualBox" on <code>docs.oracle.com</code>. Essentially, <code>virtualbox.org</code> maintains its role as the community and open-source home, while <code>oracle.com</code> provides official, Oracle-branded documentation and support, often targeting enterprise users who might be using other Oracle products. The content is largely similar, as it refers to the same software, but the presentation and surrounding resources differ based on the domain's purpose.</p>
+</div>
+
+Apart from the documentation, there are many internet tutorials for different situations; for example, for installing Ubuntu on VirtualBox, you can find
 
 - a tutorial from Canonical, the company behind Ubuntu: [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox); however, it uses the VirtualBox option for unattended install, and we don't want this, because this takes away control from the user and can introduce additional problems
 - many videos on [YouTube](https://www.youtube.com/watch?v=DhVjgI57Ino) (also [YouTube](https://www.youtube.com/watch?v=v1JVqd8M3Yc), [YouTube](https://www.youtube.com/watch?v=wX75Z-4MEoM); hint: the [Return YouTube Dislike](https://chromewebstore.google.com/detail/return-youtube-dislike/gebbhagfogifgggkldgodflihgfeippi?hl=en) extension is helpful for a quick first assessment of videos)
@@ -35,6 +45,7 @@ Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on th
     <p>Issues encountered:</p>
     <ul>
         <li>If the installation fails because VirtualBox "needs the Microsoft Visual C++ 2019 Redistribution Package being installed first", you can do a web search for "Microsoft Visual C++ 2019 Redistribution package", the first hit should be <a href="https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170">Microsoft</a>; download and install the library according to your system type, probably you need <a href="https://superuser.com/questions/179919/x86-vs-x64-why-is-32-bit-called-x86">X64</a> (also see <a href="https://forums.virtualbox.org/viewtopic.php?t=108104">forums.virtualbox.org</a>, <a href="https://answers.microsoft.com/en-us/windows/forum/all/oracle-vm-virtual-box-7010-needs-microsoft-visual/bb6621fa-8fd8-4df1-a97c-03c6deae37c9">answers.microsoft.com</a>)</li>
+        <li>VirtualBox may ask for additional dependencies, like "Python Core" and "win32api". A search in the <a href="https://forums.virtualbox.org/search.php?keywords=win32api">VirtualBox forum</a>, which is the go-to place for such questions, shows that these are optional dependencies. You can install them later, if needed.
         <li>If installation on macOS fails, you can search for "virtualbox macos installation failed" and find links like <a href="http://osxdaily.com/2018/12/31/install-run-virtualbox-macos-install-kernel-fails/">osxdaily.com</a> or <a href="https://medium.com/@DMeechan/fixing-the-installation-failed-virtualbox-error-on-mac-high-sierra-7c421362b5b5">medium.com</a>, which say that this can be related to a macOS security feature (Gatekeeper) and explain how to fix it</li>
     </ul>
 </div>
@@ -52,7 +63,7 @@ Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on th
     <ul>
         <li>The Xubuntu ISO file is available for download via torrent or from a mirror. A mirror is a server that hosts an identical copy of files from a primary source, reducing the load on the main server and providing faster downloads based on the user's geographic location. Torrent downloads use peer-to-peer sharing, which can result in faster downloads, but they require a torrent client and some familiarity with the process. Therefore, using a mirror is recommended for most users</li>
         <li>If your host OS is Windows, it's highly recommended to make it display file extensions (<a href="https://www.howtogeek.com/205086/beginner-how-to-make-windows-show-file-extensions/">howtogeek.com</a>); the downloaded ISO file should have the <code>.iso</code> file extension</li>
-        <li>An Ubuntu flavor that is even more lightweight than Xubuntu is <a href="https://lubuntu.me/">Lubuntu</a>, using the LXQt desktop environment; it needs less RAM and is very responsive, but possibly less stable than Xfce. You can also use the default <a href="https://ubuntu.com/download/desktop">Ubuntu</a> with the GNOME desktop environment, if you prefer (performant hardware is recommended)</li>
+        <li>An Ubuntu flavor that is even more lightweight than Xubuntu is <a href="https://lubuntu.me/">Lubuntu</a>, based on the <a href="https://lxqt-project.org/">LXQt</a> desktop environment. It needs less RAM and is very responsive, but possibly less stable than Xfce. You can also use the default <a href="https://ubuntu.com/download/desktop">Ubuntu</a> with the GNOME desktop environment, if you prefer (performant hardware is recommended)</li>
     </ul>
 </div>
 
@@ -62,7 +73,7 @@ Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on th
 
 - VirtualBox → "New" (for details, see [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#create-vm-wizard))
 - `Name`: e.g. `Xubuntu`
-- `Folder`: default (the new **VM is saved as a folder** with a few files in it; on Windows, it may be located in the folder `C:\Users\<username>\VirtualBox VMs`)
+- `Folder`: default (the new **VM is saved as a folder** with a few files in it; on Windows, it should be located in the folder `C:\Users\<username>\VirtualBox VMs`)
 - `ISO Image`: Select the downloaded ISO file (`xubuntu-<version>-desktop-amd64.iso`)
 - `Type`: `Linux` (should have been auto-selected)
 - `Version`: **`Ubuntu (64 bit)`** (should have been auto-selected)
@@ -86,14 +97,14 @@ or AMD-V` or similar (different manufacturers word it differently). See
   - There are other possible reasons that can prevent a normal operation of VirtualBox (e.g., an error message appears when you try to start the VM). The error messages are usually not very informative, and your best bet is a web search for the respective message. One issue is related to third-party software that somehow interferes, e.g. antivirus software like McAfee or Trusteer Endpoint Protection. You can try to uninstall this software as explained [here](https://forums.virtualbox.org/viewtopic.php?f=25&t=82106#p388051), reboot the computer and run the VM again to check if this helped. Another option is to follow the instructions [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277) to disable the startup of a VirtualBox service; the service probably needs to be started manually as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465502) or using a task scheduler as explained [here](https://forums.virtualbox.org/viewtopic.php?f=6&t=82277&start=30#p465550)
 - Now, you have two options. You can proceed with the **unattended guest OS installation**, which is now the default option, as described in [ubuntu.com](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox). In this case, VirtualBox pre-configures and performs some actions described later in this tutorial automatically (especially [Install the guest operating system (OS)](#install-the-guest-operating-system-os) and installing the guest additions).
   - If you choose to continue with the unattended installation, in the next step you get to the "Unattended Guest OS Install Setup" dialog, where you pick a username and a [hostname](https://itsfoss.com/change-hostname-ubuntu/) (the [domain name](https://superuser.com/questions/59093/difference-between-host-name-and-domain-name) doesn't matter)
-  - However, for more control and a better understanding of what is going on, it is preferable to **perform a regular installation**. (Also, you may be using other virtualization software in the future, which doesn't have such convenience options.) For this, check the box `Skip Unattended Installation`. The continuation of this tutorial will assume a regular installation.
+  - However, for more control and a better understanding of what is going on, it is **recommended to perform a regular installation**. Also, you may be using other virtualization software in the future, which doesn't have such convenience options. For this, check the box `Skip Unattended Installation`. The continuation of this tutorial will assume a regular installation.
 - Click `Next`
 - Most other settings: **the defaults** are OK
   - Memory: ≥4 GB is recommended (can be changed later); it's better to not allocate more than half of the host memory to the guest (e.g. if the host has 16 GB RAM, you can give 8 GB to the guest), so that the host still has enough memory and won't crash
   - Processors: ≥2 is recommended (can be changed later)
   - To better assess the requirements, you can consider the minimum and recommended system requirements of the intended guest OS (e.g. [askubuntu.com](https://askubuntu.com/questions/333795/what-are-the-system-requirements-for-each-flavour-of-ubuntu-desktop)), and oversee the resource usage later in a **system monitor**
-  - Virtual hard disk size: ≥60 GB is recommended, 80-100 GB is even better (changing this later is [annoying](https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtualbox-or-vmware/), because you'll also need to change the partition size on the virtual HDD)
-- In the "Summary" you see the final setup of the VM that you are about to create. The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a CD image), CPU, audio and graphics devices
+  - Virtual hard disk size: 80-100 GB is recommended, but at least ≥60 GB (changing this later is [annoying](https://www.howtogeek.com/124622/how-to-enlarge-a-virtual-machines-disk-in-virtualbox-or-vmware/), because you'll also need to change the partition size on the virtual HDD)
+- In the "Summary" you see the final setup of the VM that you are about to create. The **VM is a virtual computer**, with emulated hardware like a hard disk (currently empty), an optical disk drive (where you can "insert" a CD image), CPU, audio and graphics devices. You are going to install an operating system (OS) on it in the next step
   - It's important to realize that the guest OS doesn't know that it lives in a VM rather than on a physical computer; this is why later, during installation, it says "Erase disk and install Ubuntu"
 
 ---
@@ -103,7 +114,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
 - Your physical computer is called **host**, the VM is called **guest**; the operating system (OS) running on the host is called host OS, and on the guest it's the guest OS ([VirtualBox Manual](https://www.virtualbox.org/manual/ch01.html#virtintro)); often people don't make the distinction between the computer and the OS, and just call them host or guest
 - In VirtualBox: Select the VM → "Start"
   - In older VirtualBox versions, you needed to **select a start-up disk** (the emulated hard disk is still empty, so the VM is looking for a bootable disk); in VirtualBox 7, you already selected the ISO file in the previous step, so the OS boots from this ISO (it corresponds to a DVD inserted into an optical drive of a computer)
-  - If you wanted, you could select a different disk file by going to VirtualBox Manager → VM → Settings → Storage → click on the CD-shaped optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the ISO file
+  - If you wanted, you could select a different disk file by going to [VirtualBox Manager](https://www.virtualbox.org/manual/ch01.html#gui-virtualboxmanager) → VM → Settings → Storage → click on the CD-shaped optical drive (below the "Controller: IDE") → "Choose a disk file..." (blue CD-shaped button on the right) → select the ISO file
   - There might be a message about mouse pointer integration, that's [OK](https://superuser.com/questions/1375772/what-is-mouse-pointer-integration/1375774) (unless you are playing [Warcraft](https://superuser.com/questions/377861/how-do-i-trap-the-mouse-pointer-within-a-virtualbox-guest-os))
 - The OS should boot now; this is called [live OS](https://en.wikipedia.org/wiki/Live_CD), because it **runs directly from a removable medium** (in this case a disk image), without being installed on the hard disk
   - If you get an error like "Hardware acceleration is not available on your system" when trying to install/launch a VM, do a web search for "virtualbox error" + error message text. This error probably occurred because virtualization wasn't activated in BIOS/UEFI, and is easy to fix
@@ -115,6 +126,7 @@ or AMD-V` or similar (different manufacturers word it differently). See
   - The guest OS is now being installed on the emulated hard disk (within the VM)
 - Once the installation has finished, it will ask you to reboot
   - It might ask to remove the installation medium (the disk image) from the (virtual) optical disk drive, so that the OS boots from the hard disk image and not again as live OS; you can do it manually (VirtualBox → VM → Settings → Storage → select optical disk → look for option "Remove Disk from Virtual Drive"), but probably Ubuntu does it for you
+  - Sometimes it seems to hang during reboot, and simply pressing <kbd>Enter</kbd> helps, you have to try
 
 ---
 
@@ -193,7 +205,6 @@ After a fresh install, it's good practice to update the OS, to ensure that it's 
 The [guest additions](https://www.virtualbox.org/manual/UserManual.html#guestadditions) are VirtualBox-related drivers/software provided by Oracle that improve the **integration of the guest** with the host. For example, they enable auto-resizing of the guest in the VirtualBox window, and clipboard sharing between guest and host. Installation instructions are given in [docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/guestadditions.html#additions-linux-install), but other tutorials like [askubuntu.com](https://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm), [YouTube](https://www.youtube.com/watch?v=VTI8h1N51gY) (min 14:00), [itsfoss.com](https://itsfoss.com/virtualbox-guest-additions-ubuntu/) etc. can also be helpful.
 
 - There are two ways to install the guest additions, from the **Guest Additions CD image** that comes with VirtualBox, or **from the repository**, a distribution-specific app store/software collection. The currently **recommended way** is the installation from the CD image, because this guarantees that it matches the VirtualBox version.
-  - This is unusual; installation from the repository is _usually_ preferable, because such software will automatically be updated whenever you run `apt update && apt upgrade`
 - **A.** Installation from CD image.
   - Prerequisites (might be already installed): `sudo apt install build-essential dkms linux-headers-$(uname -r)`
   - VM window menu bar: Devices → "Insert Guest Additions CD image..."
@@ -203,16 +214,16 @@ The [guest additions](https://www.virtualbox.org/manual/UserManual.html#guestadd
       in the file manager, or "Devices" → "Optical drives" → "Remove disk from
       virtual drive", or shut down the guest and do it from the Settings →
       Storage section in the VirtualBox Manager)
-  - The disk image will be mounted under `/media/<username>/VBox_GAs_<x>.<y>.<z>/` (x, y, z are version numbers). **Mounting** makes file systems (files and directories on a storage device such as hard drive, CD, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point)
+  - The disk image will be mounted under `/media/<username>/VBox_GAs_<x>.<y>.<z>/` (GA probably means Guest Additions, and x, y, z are version numbers). **Mounting** makes file systems (files and directories on a storage device such as hard drive, CD, or network share) available for use, and associates them with a particular point in the file system hierarchy (its mount point)
   - If the guest OS has autorun enabled, a system dialog will appear (Ubuntu); otherwise you need to run the installer manually (Xubuntu):
-  - Open the CD icon on your Desktop/in File Manager; right-click → "Open Terminal Here"
+  - It's possible that the newly mounted disk opens automatically in the File manager (the default Xfce File manager is called [Thunar](https://docs.xfce.org/xfce/thunar/start)). Otherwise, open the CD icon on your Desktop (if it appeared on the Desktop) or in the File manager. Then, right-click in the File manager window → "Open Terminal Here"
   - Use the `pwd` (_print working directory_) command to check if the **working directory** (= **current directory**) is `/media/<username>/VBox_GAs_<x>.<y>.<z>/`
   - If it's not, navigate there using the `cd` (_change directory_) command: `cd /media/<username>/VBox_GAs_<x>.<y>.<z>/` (use Tab completion)
   - Shell has a very useful [Tab completion](https://en.wikipedia.org/wiki/Command-line_completion) feature: When typing something, press **Tab** (once or twice) for autocompletion. It will autocomplete paths, shell commands, file names etc.
   - Use `ls` to inspect the contents of the current directory (should correspond to what you see in the File Manager)
-  - Install the guest additions by running the installer with root privileges: `sudo ./VBoxLinuxAdditions.run` (using Tab completion, you can type e.g. `sudo ./VBoxL<Tab>` → will autocomplete the path; if it doesn't, you're probably in the wrong directory or mistyped something)
+  - Install the guest additions by running the installer with root privileges: `sudo ./VBoxLinuxAdditions.run` (using Tab completion, you can type e.g. `sudo ./VBoxL<Tab>` → will autocomplete the path; if it doesn't, you're probably in the wrong directory or mistyped something; autocompletion will stop at any ambiguous position, e.g. `VBoxLinuxAdditions`, then you have to continue typing the correct name, in this case you can type a single `.`, then again <kbd>Tab</kbd>, and it will autocomplete the name to `VBoxLinuxAdditions.run`
   - Read the output messages to make sure that the installation completed without errors. E.g., if you get the message `sudo: ./VBoxAdditions.run: command not found`, you're probably in the wrong directory
-  - Eject the guest additions CD
+  - Eject the guest additions CD, e.g. by pressing the eject button in the File manager next to the CD symbol
     ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?f=1&t=85799))
 - **B.** Installation from the repository.
   - Not required if method A. worked
@@ -225,7 +236,7 @@ How do you know that the installation was successful (apart from carefully readi
 
 - Shared clipboard (VM window menu bar → Devices → Shared Clipboard → Bidirectional): you can now copy-paste between guest and host!
   - If it still doesn't work, try to install this package: `sudo apt install virtualbox-guest-x11` (if it asks you about keeping the current file or installing the new one, select the new one: `Y`) and reboot ([superuser.com](https://superuser.com/a/1367954))
-- Drag'n'Drop (after it's switched on)
+- Drag'n'Drop (you need to switch it on first)
 - Auto-resizing the window ([docs.oracle.com](https://docs.oracle.com/en/virtualization/virtualbox/7.0/user/Introduction.html#intro-resize-window)) and full-screen view (convenient for working with the VM)
   - In case of problems ([forums.virtualbox.org](https://forums.virtualbox.org/viewtopic.php?t=91084)), see the "Troubleshooting" section below → "Graphics issues"; at any case, **increase the Video Memory** to ≥128 MB
   - If problems remain, try the alternative way of installing the guest additions ("B. Installation from the repository")
