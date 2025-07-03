@@ -3,9 +3,7 @@
 
 <H1>Guide for installing Ubuntu in VirtualBox</H1>
 
-**Table of contents**
-
-- TOC
+* TOC
 {:toc}
 
 Used software: VirtualBox 7, Xubuntu 24.04
