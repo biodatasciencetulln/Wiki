@@ -6,9 +6,9 @@
 * TOC
 {:toc}
 
-Used software: VirtualBox 7, Xubuntu 24.04
+Used software: VirtualBox 7.1, Xubuntu 24.04
 
-**Note for Apple silicon** computers (Macbooks with M1 chip or later): VirtualBox is not available for Apple silicon, for details see [here](summer_school.md#apple-silicon) and my [notes on virtualization on Apple silicon](install_linux_on_apple_silicon.md). This tutorial is mostly oriented towards VirtualBox, but some sections are universal, e.g. [Linux basics](#linux-basics), [update the guest](#update-the-guest) and [where to go from here](#where-to-go-from-here). For example, while UTM and VMware Fusion also have a kind of "guest additions" to improve the integration of guest and host, they are called differently and the installation process differs. Other sections of this tutorial may still contain helpful information and be useful for comparison.
+**Note for Apple silicon** computers (Macbooks with M1 chip or later): While VirtualBox now also supports Apple silicon, it's currently not the recommended options, see [here](summer_school.md#apple-silicon) and my [notes on virtualization on Apple silicon](install_linux_on_apple_silicon.md). This tutorial is mostly oriented towards VirtualBox, but some sections are universal, e.g. [Linux basics](#linux-basics), [update the guest](#update-the-guest) and [where to go from here](#where-to-go-from-here). For example, while UTM and VMware Fusion also have a kind of "guest additions" to improve the integration of guest and host, they are called differently and the installation process differs. Other sections of this tutorial may still contain helpful information and be useful for comparison.
 
 The **official VirtualBox documentation** is the primary resource for all things VirtualBox, with essential information for installation, configuration, and troubleshooting:
 
@@ -37,7 +37,7 @@ Here, we discuss some points in more detail, with additional information and lin
 
 Note: During all steps of the tutorial, you might encounter some problems. For widely used software like VirtualBox and Ubuntu, these problems have usually been discussed online and a solution exists. A **web search** for your particular problem based on **important keywords** (e.g. the error message) can help.
 
-Of course, you can also talk to LLMs like ChatGPT - but you shouldn't rely on them especially for recent or non-trivial problems, as they lack an actual "understanding" of the problem, are prone to **hallucinations** (a better term might be <a href="https://www.scientificamerican.com/article/chatgpt-isnt-hallucinating-its-bullshitting/">bullshitting</a>) and may not have the latest information.
+Of course, you can also talk to LLMs like Gemini, Claude and ChatGPT - but you shouldn't rely on them especially for recent or non-trivial problems, as they lack an actual "understanding" of the problem, are prone to **hallucinations** (a better term might be <a href="https://www.scientificamerican.com/article/chatgpt-isnt-hallucinating-its-bullshitting/">bullshitting</a>) and may not have the latest information.
 
 <div class="more">
     <p>Issues encountered:</p>
@@ -355,7 +355,7 @@ Here are some ideas what you can do with your fresh and shiny Linux OS.
   - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a **text file with important commands** is a good start
   - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
   - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.inbrowser.app/) (enter the "command name" in the corresponding box, try `ls`)
-  - AI tools like ChatGPT, Microsoft Copilot or Claude are highly useful for discussing Linux and command line-related questions; as always with LLMs, you shouldn't take the results for granted especially for non-trivial questions, but always double-check them
+  - AI tools like ChatGPT, Gemini or Claude are highly useful for discussing Linux and command line-related questions; as always with LLMs, you shouldn't take the results for granted especially for non-trivial questions, but always double-check them
 - Learn how to use a **non-GUI text editor** like [nano](https://www.howtogeek.com/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4), you will definitely need it later
 - Install Anaconda for Linux ([installation instructions](https://docs.anaconda.com/anaconda/install/linux/))
   - The [getting started](https://docs.anaconda.com/anaconda/user-guide/getting-started/) and [cheat sheet](https://docs.anaconda.com/anaconda/user-guide/cheatsheet/) sections provide basic information about Anaconda
