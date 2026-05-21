@@ -53,14 +53,14 @@ Note that Windows 10 and 11 include a built-in [Windows Subsystem for Linux](htt
 
 Linux includes [the shell](http://linuxcommand.org/lc3_lts0010.php), a command-line interpreter/scripting language that can execute built-in shell commands, Linux utilities and programs. It is a powerful and versatile tool and very useful e.g. for working with text files, which is common in biological data analysis. The shell allows to easily build pipelines using different commands and utilities, e.g. for sorting/cutting/restructuring text files and feeding the result into other commands/utilities/programs. It is one of the most important tools in bio data science, and you should get comfortable with it early on.
 
-Several shell programs exist. The [Bash shell](http://linuxcommand.org/lc3_lts0010.php) is the most popular shell and the default on most or all Linux distributions. A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the Bash shell. Different Ubuntu flavors use different terminals, e.g. Xubuntu has the Xfce 4 terminal emulator. [Here](https://docs.xubuntu.org/current/user/C/command-line.html) is how to open the terminal on Xubuntu, and a listing of some important commands.
+Several shell programs exist. The [Bash shell](http://linuxcommand.org/lc3_lts0010.php) is the most popular shell and the default on most or all Linux distributions. A [terminal emulator](https://dev.to/nestedsoftware/comment/4a33) is a program that opens a window and lets you interact with the Bash shell. Different Ubuntu flavors use different terminals, e.g. Xubuntu has the Xfce 4 terminal emulator.
 
 Some recommended Bash introductory tutorials/resources:
 
-- YouTube: ["Linux Tutorial - Basic Command Line"](https://www.youtube.com/watch?v=cBokz0LTizk)
-- YouTube: ["Beginner's Guide to the Bash Terminal"](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
-- [linuxcommand.org](http://linuxcommand.org/)
-- [swcarpentry.github.io](https://swcarpentry.github.io/shell-novice/)
+* YouTube: ["Linux Tutorial - Basic Command Line"](https://www.youtube.com/watch?v=cBokz0LTizk)
+* YouTube: ["Beginner's Guide to the Bash Terminal"](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
+* [linuxcommand.org](http://linuxcommand.org/)
+* [swcarpentry.github.io](https://swcarpentry.github.io/shell-novice/)
 
 Hint: If you find a useful YouTube channel, you might want to subscribe and/or check out their other videos.
 
