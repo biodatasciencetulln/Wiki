@@ -3,7 +3,7 @@
 
 <H1>General information, resources and recommendations</H1>
 
-* TOC
+- TOC
 {:toc}
 
 ## Quickstart: Python
@@ -14,21 +14,21 @@ If you want to know what programming is and if it's right for you, watch an intr
 
 A solid biological background is indispensible for all courses of the curriculum. This general textbook provides a comprehensive overview and can be used for studying and as a reference:
 
-* Urry et al.: "Campbell Biology" ([pearson.com](https://www.pearson.com/en-us/subject-catalog/p/campbells-biology/P200000014184/9780135455890), [pearson.de](https://www.pearson.de/campbell))
+- Urry et al.: "Campbell Biology" ([pearson.com](https://www.pearson.com/en-us/subject-catalog/p/campbells-biology/P200000014184/9780135455890), [pearson.de](https://www.pearson.de/campbell))
 
 ## Laptop specifications
 
 A portable laptop is required for a number of courses. Because data-intensive computations and heavy simulations will be performed on FH servers, your laptop primarily needs to handle code editing, web research, multitasking, and remote server connections. Minimum specifications:
 
-* CPU: Intel Core i5 / AMD Ryzen 5 or higher
-  * Apple Silicon Macs (M-series chips) are also excellent
-  * Avoid slow low-end processors; if you are unsure whether a specific chip qualifies, look it up on a processor benchmark site like [notebookcheck.com](https://www.notebookcheck.com/Mobile-Prozessoren-Benchmarkliste.1809.0.html) or [cpubenchmark.net](https://www.cpubenchmark.net/)
-* Memory: 16 GB RAM, more is preferable; this ensures smooth performance when running a virtual machine, an IDE (like VS Code or RStudio), a web browser with dozens of research tabs, and connection software simultaneously
-* Storage: ≥200 GB of free disk space (SSD) at the start of the curriculum; most current laptops ship with at least 512 GB SSDs
-* GPU: not required for any course; if you want headroom for local AI model experimentation on your own time, consider a MacBook (Apple Silicon's unified memory works well for this) or a discrete NVIDIA GPU with ≥8 GB VRAM (but a dGPU adds weight, cost, and reduces battery life)
-* Display & portability: ≥13 inches; a lightweight ultrabook is recommended
-* Operating system: Windows 11, macOS, or Linux
-* Tip: Prioritize well-established business lines (e.g., Lenovo ThinkPad, Dell Latitude, Apple MacBook) over cheap consumer special offers; you can check independent reviews on [notebookcheck.net](https://www.notebookcheck.net/Laptop-Buying-Guide-Tool.13212.0.html), e.g. [budget office laptops](https://www.notebookcheck.net/Notebookcheck-s-Top-10-Budget-Office-Business-Notebooks.98853.0.html)
+- CPU: Intel Core i5 / AMD Ryzen 5 or higher
+  - Apple Silicon Macs (M-series chips) are also excellent
+  - Avoid slow low-end processors; if you are unsure whether a specific chip qualifies, look it up on a processor benchmark site like [notebookcheck.com](https://www.notebookcheck.com/Mobile-Prozessoren-Benchmarkliste.1809.0.html) or [cpubenchmark.net](https://www.cpubenchmark.net/)
+- Memory: 16 GB RAM, more is preferable; this ensures smooth performance when running a virtual machine, an IDE (like VS Code or RStudio), a web browser with dozens of research tabs, and connection software simultaneously
+- Storage: ≥200 GB of free disk space (SSD) at the start of the curriculum; most current laptops ship with at least 512 GB SSDs
+- GPU: not required for any course; if you want headroom for local AI model experimentation on your own time, consider a MacBook (Apple Silicon's unified memory works well for this) or a discrete NVIDIA GPU with ≥8 GB VRAM (but a dGPU adds weight, cost, and reduces battery life)
+- Display & portability: ≥13 inches; a lightweight ultrabook is recommended
+- Operating system: Windows 11, macOS, or Linux
+- Tip: Prioritize well-established business lines (e.g., Lenovo ThinkPad, Dell Latitude, Apple MacBook) over cheap consumer special offers; you can check independent reviews on [notebookcheck.net](https://www.notebookcheck.net/Laptop-Buying-Guide-Tool.13212.0.html), e.g. [budget office laptops](https://www.notebookcheck.net/Notebookcheck-s-Top-10-Budget-Office-Business-Notebooks.98853.0.html)
 
 Note: benchmarks describe a laptop's optimal performance. Real-world responsiveness can diverge significantly due to a bloated system, malware, aggressive antivirus, slow SSDs, or poor thermal design. A useful informal check: after a normal startup, opening common applications and switching between them should feel immediate, not laggy. If your existing laptop already feels slow in daily use, that is reason enough to reinstall the OS or replace the laptop, even if the specifications look acceptable on paper.
 
@@ -46,10 +46,10 @@ Note that Windows 10 and 11 include a built-in [Windows Subsystem for Linux](htt
 
 [Linux](https://en.wikipedia.org/wiki/Linux) is a free OS, which is stable yet highly customizable, actively developed, and offers a huge selection of free software development tools. A lot of scientific software is written only for Linux - e.g. almost all short read aligners, assemblers, and many more. Some advantages are:
 
-* Linux is completely free and open-source and widely used
-* Linux is very safe, malware is rare
-* Software can be installed in an automated way using a package manager (similar to an app store)
-* Software can be installed by the user without administrator privileges and easily configured in different ways (this is much harder in Windows)
+- Linux is completely free and open-source and widely used
+- Linux is very safe, malware is rare
+- Software can be installed in an automated way using a package manager (similar to an app store)
+- Software can be installed by the user without administrator privileges and easily configured in different ways (this is much harder in Windows)
 
 Linux includes [the shell](http://linuxcommand.org/lc3_lts0010.php), a command-line interpreter/scripting language that can execute built-in shell commands, Linux utilities and programs. It is a powerful and versatile tool and very useful e.g. for working with text files, which is common in biological data analysis. The shell allows to easily build pipelines using different commands and utilities, e.g. for sorting/cutting/restructuring text files and feeding the result into other commands/utilities/programs. It is one of the most important tools in bio data science, and you should get comfortable with it early on.
 
@@ -57,10 +57,10 @@ Several shell programs exist. The [Bash shell](http://linuxcommand.org/lc3_lts00
 
 Some recommended Bash introductory tutorials/resources:
 
-* YouTube: ["Linux Tutorial - Basic Command Line"](https://www.youtube.com/watch?v=cBokz0LTizk)
-* YouTube: ["Beginner's Guide to the Bash Terminal"](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
-* [linuxcommand.org](http://linuxcommand.org/)
-* [swcarpentry.github.io](https://swcarpentry.github.io/shell-novice/)
+- YouTube: ["Linux Tutorial - Basic Command Line"](https://www.youtube.com/watch?v=cBokz0LTizk)
+- YouTube: ["Beginner's Guide to the Bash Terminal"](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
+- [linuxcommand.org](http://linuxcommand.org/)
+- [swcarpentry.github.io](https://swcarpentry.github.io/shell-novice/)
 
 Hint: If you find a useful YouTube channel, you might want to subscribe and/or check out their other videos.
 
@@ -68,7 +68,6 @@ Books:
 
 - B. Ward: "How Linux Works" ([Amazon](https://www.amazon.de/How-Linux-Works-Brian-Ward/dp/1718500408))
 - W. Shotts: "The Linux Command Line: A Complete Introduction" ([Amazon](https://www.amazon.de/Linux-Command-Line-2nd-Introduction/dp/1593279523/), [ebook](http://linuxcommand.org/tlcl.php))
-
 
 ## Python
 
