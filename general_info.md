@@ -14,7 +14,7 @@ If you want to know what programming is and if it's right for you, watch an intr
 
 A solid biological background is indispensible for all courses of the curriculum. This general textbook provides a comprehensive overview and can be used for studying and as a reference:
 
-- Urry et al.: "Campbell Biology" ([amazon.com](https://www.amazon.com/Campbell-Biology-Lisa-Urry/dp/0135188741), [pearson.de](https://www.pearson.de/campbell-biologie-9783868943665))
+* Urry et al.: "Campbell Biology" ([pearson.com](https://www.pearson.com/en-us/subject-catalog/p/campbells-biology/P200000014184/9780135455890), [pearson.de](https://www.pearson.de/campbell))
 
 ## Laptop specifications
 
