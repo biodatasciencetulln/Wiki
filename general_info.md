@@ -8,7 +8,7 @@
 
 ## Quickstart: Python
 
-If you want to know what programming is and if it's right for you, watch an introductory tutorial like "Python Project Tutorial - Your First Python Project" by freeCodeCamp.org, 2020 ([YouTube](https://www.youtube.com/watch?v=_ZqAVck-WeM)) or talk to ChatGPT ("Give me simple examples of programming in Python"). For more info, read on.
+If you want to know what programming is and if it's right for you, watch an introductory tutorial like "Python Project Tutorial - Your First Python Project" by freeCodeCamp.org, 2020 ([YouTube](https://www.youtube.com/watch?v=_ZqAVck-WeM)) or ask one of the frontier LLMs ("Give me simple examples of programming in Python"). For more info, read on.
 
 ## Biological background
 
@@ -18,12 +18,12 @@ A solid biological background is indispensible for all courses of the curriculum
 
 ## Laptop specifications
 
-A portable laptop is required for a number of courses. Because data-intensive computations and heavy simulations will be performed on FH servers, your laptop primarily needs to handle code editing, web research, multitasking, and remote server connections. Minimum specifications:
+A portable laptop is required for a number of courses. Data-intensive computations and heavy simulations are meant to run on dedicated FH hardware rather than on your laptop, so your laptop primarily needs to handle code editing, web research, multitasking, and remote connections. Minimum specifications:
 
 - CPU: Intel Core i5 / AMD Ryzen 5 or higher
   - Apple Silicon Macs (M-series chips) are also excellent
   - Avoid slow low-end processors; if you are unsure whether a specific chip qualifies, look it up on a processor benchmark site like [notebookcheck.com](https://www.notebookcheck.com/Mobile-Prozessoren-Benchmarkliste.1809.0.html) or [cpubenchmark.net](https://www.cpubenchmark.net/)
-- Memory: 16 GB RAM, more is preferable; this ensures smooth performance when running a virtual machine, an IDE (like VS Code or RStudio), a web browser with dozens of research tabs, and connection software simultaneously
+- Memory: ≥16 GB RAM recommended; this ensures smooth performance when running a Linux environment, an IDE (like VS Code or RStudio), a web browser with dozens of research tabs, and connection software simultaneously. 8 GB can work if you use WSL, which shares memory with Windows dynamically rather than reserving a fixed amount, but you will feel the difference.
 - Storage: ≥200 GB of free disk space (SSD) at the start of the curriculum; most current laptops ship with at least 512 GB SSDs
 - GPU: not required for any course; if you want headroom for local AI model experimentation on your own time, consider a MacBook (Apple Silicon's unified memory works well for this) or a discrete NVIDIA GPU with ≥8 GB VRAM (but a dGPU adds weight, cost, and reduces battery life)
 - Display & portability: ≥13 inches; a lightweight ultrabook is recommended
@@ -32,15 +32,25 @@ A portable laptop is required for a number of courses. Because data-intensive co
 
 Note: benchmarks describe a laptop's optimal performance. Real-world responsiveness can diverge significantly due to a bloated system, malware, aggressive antivirus, slow SSDs, or poor thermal design. A useful informal check: after a normal startup, opening common applications and switching between them should feel immediate, not laggy. If your existing laptop already feels slow in daily use, that is reason enough to reinstall the OS or replace the laptop, even if the specifications look acceptable on paper.
 
-## Virtual machine
+## Linux environment
 
 **Note:** Please make a full backup of your computer before making any modifications.
 
-Some courses of the curriculum require a Linux operating system. One easy and flexible way is to use a virtual machine. Virtual machines (VMs) allow you to run an operating system (OS) in an app window on your desktop that behaves like a full, separate computer. This virtual computer, the "guest", has its own emulated CPU, memory, network interface and storage, and you can install an OS on it just as you would on a real, physical machine. [This short video](https://www.youtube.com/watch?v=yIVXjl4SwVo) explains the basic terms. The [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/) are that you can try different OSes, run software your main OS can't, and try out apps in a safe, isolated environment. It's a great way to learn and experiment with an OS like Linux, because you can install it on Windows or macOS and run it like any other software. VMs are saved as folders with some files on your hard drive and can be copied, backed up and removed like any other folders. You can play with a VM and modify it as you like, and if it's broken beyond repair, you can quickly restore it from an earlier backup. Many people use VMs for their work on a regular basis. (By the way, do you know what an OS does? [This nice video](https://www.youtube.com/watch?v=26QPDBe-NB8&) approaches its basic functionality from a historical perspective.)
+Some courses of the curriculum require a Linux operating system. You do not need to give up Windows or macOS for this: Linux runs alongside your usual system, either tightly integrated with it (WSL on Windows) or as a **virtual machine**. Virtual machines (VMs) allow you to run an operating system (OS) in an app window on your desktop that behaves like a full, separate computer. This virtual computer, the "guest", has its own emulated CPU, memory, network interface and storage, and you can install an OS on it just as you would on a real, physical machine. [This short video](https://www.youtube.com/watch?v=yIVXjl4SwVo) explains the basic terms. The [advantages](https://www.makeuseof.com/tag/reasons-start-using-virtual-machine/) are that you can try different OSes, run software your main OS can't, and try out apps in a safe, isolated environment. It's a great way to learn and experiment with an OS like Linux, because you can install it on Windows or macOS and run it like any other software. VMs are saved as folders with some files on your hard drive and can be copied, backed up and removed like any other folders. You can play with a VM and modify it as you like, and if it's broken beyond repair, you can quickly restore it from an earlier backup. Many people use VMs for their work on a regular basis. (By the way, do you know what an OS does? [This nice video](https://www.youtube.com/watch?v=26QPDBe-NB8&) approaches its basic functionality from a historical perspective.)
 
-We will use [VirtualBox](https://www.virtualbox.org/wiki/Downloads), which is free software available for most OSes, and allows to run e.g. a Linux VM on Windows. (ARM-based MacBooks can use VMware Fusion or UTM instead of VirtualBox.) Linux comes in different flavors (called [distributions](https://www.howtogeek.com/132624/htg-explains-whats-a-linux-distro-and-how-are-they-different/)), with Ubuntu being the most popular one. I suggest to use the latest [Xubuntu](https://xubuntu.org/download/), which is Ubuntu with the lightweight and responsive desktop environment Xfce instead of GNOME, therefore **X**ubuntu. [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) walks you through the installation of Ubuntu in VirtualBox; the process is equivalent for Xubuntu. You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host BIOS/UEFI first, as explained e.g. [here](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting the guest OS, you will need to install the "guest additions", a set of VirtualBox-related drivers and software, for a fully functional VM. [Click here for detailed instructions.](install_linux_in_virtualbox.md)
+WSL works differently: instead of a window containing a desktop, you get a Linux terminal integrated into Windows, running on a lightweight VM that Windows manages for you. It is faster to set up and lighter on resources, at the cost of not having a Linux desktop.
 
-Note that Windows 10 and 11 include a built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (also see [ubuntu.com](https://ubuntu.com/desktop/wsl)), that allows to run the Linux shell and command-line tools directly on Windows. This also works via a type of VM, and can sometimes be useful. However, a fully fledged VM is more convenient for us.
+Linux comes in different flavors (called [distributions](https://www.howtogeek.com/132624/htg-explains-whats-a-linux-distro-and-how-are-they-different/)), with Ubuntu being the most popular one; that's what we use. Which route is right for you depends on your computer.
+
+### Which option should I use?
+
+- **Windows: use WSL** ([detailed instructions](install_linux_in_wsl.md)). Windows 10 and 11 include the built-in [Windows Subsystem for Linux](https://en.wikipedia.org/wiki/Windows_Subsystem_for_Linux) (also see [ubuntu.com](https://ubuntu.com/desktop/wsl)), which runs a real Ubuntu system — the same `apt`, the same `sudo`, the same Bash — in a lightweight VM managed by Windows itself. It installs with a single command, needs no ISO and no guest additions, shares memory and disk with Windows dynamically instead of reserving them up front, and integrates with Visual Studio Code so that you edit in a familiar Windows window while all code runs in Linux. What it does not give you is a Linux *desktop*, you only get a terminal – this is fine, as it matches how you will work on the FH compute servers.
+- **macOS with Apple silicon: use UTM or VMware Fusion** ([detailed instructions](install_linux_on_apple_silicon.md)). WSL is Windows-only, so on a Mac you run a real VM.
+- **VirtualBox** ([detailed instructions](install_linux_in_virtualbox.md)) is still a good choice if you want a full Linux desktop. One important [caveat](https://forums.virtualbox.org/viewtopic.php?t=112113) is that Windows 11 enables its own hypervisor, Hyper-V, by default for security features; if you have installed WSL it is enabled in any case. VirtualBox must then run on top of it and falls back to a [slower mode](https://learn.microsoft.com/en-us/troubleshoot/windows-client/application-management/virtualization-apps-not-work-with-hyper-v). Hyper-V can be switched off, but doing so disables some [security features](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity), and is not generally recommended.
+
+### Notes on the VirtualBox route
+
+If you go the VirtualBox way, I suggest the latest [Xubuntu](https://xubuntu.org/download/) LTS, which is Ubuntu with the lightweight and responsive desktop environment Xfce instead of GNOME, therefore **X**ubuntu. [This video](https://www.youtube.com/watch?v=sB_5fqiysi4) walks you through the installation of Ubuntu in VirtualBox; the process is equivalent for Xubuntu. You might run into some problems, e.g. the option `Ubuntu (64 bit)` might not be available, because you need to activate VT-x/AMD-v in the host BIOS/UEFI first, as explained e.g. [here](https://superuser.com/questions/1241956/virtualbox-only-allowing-32-bit-os). Also, after installing and booting the guest OS, you will need to install the "guest additions", a set of VirtualBox-related drivers and software, for a fully functional VM. [Click here for detailed instructions.](install_linux_in_virtualbox.md)
 
 ## Linux and Bash
 
@@ -81,27 +91,34 @@ A development environment comprises programs and tools that you use for writing,
 
 **Online IDEs.** One great way to learn Python is to simply run it online. There are many good resources, e.g.
 
-- [Replit](https://replit.com/languages/python3) — Browser-based IDE that supports many programming languages, including Python; has real-time collaboration
-- [Google Colab](https://colab.research.google.com) — Jupyter notebooks in the cloud (via Google drive) ([YouTube intro](https://www.youtube.com/watch?v=inN8seMm7UI))
-- [Pythonanywhere](https://www.pythonanywhere.com/)
-- Without an account: [onlinegdb.com](https://www.onlinegdb.com/online_python_compiler), [trinket.io](https://trinket.io/python)
+- [Google Colab](https://colab.research.google.com) — Jupyter notebooks in the cloud (via Google Drive), very popular
+- [Try Jupyter / JupyterLite](https://jupyter.org/try-jupyter/lab/) — a full JupyterLab in the browser, with no account and no server; NumPy, pandas and matplotlib are included, and files live only in browser storage
+- [PythonAnywhere](https://www.pythonanywhere.com/) — a Linux console with Python in the browser; the free tier is quite limited
+- [GitHub Codespaces](https://github.com/features/codespaces) — a real Linux container with VS Code in the browser, with a monthly free allowance for personal accounts
+- [molab](https://molab.marimo.io/) — free cloud notebooks in the [marimo](https://marimo.io/) format; the [gallery](https://molab.marimo.io/notebooks) shows examples
+- Without an account: [onlinegdb.com](https://www.onlinegdb.com/online_python_compiler) (also does Bash)
+- [Python Tutor](https://pythontutor.com/) — steps through your code and visualizes variables, references and the call stack
 
-**Local IDEs.** One way to install and run Python locally is via the *Python distribution* [Anaconda](https://stackoverflow.com/a/42096429) ([download page](https://www.anaconda.com/products/individual), [installation instructions](https://docs.anaconda.com/anaconda/install/)). You can install it in the VM, or (for testing, if you don't have a VM yet) on the host OS. Anaconda includes not only the Python interpreter but also many additional libraries and tools for data science, including the IDEs Jupyter, Spyder, VS Code and others, accessible via the [Anaconda navigator](https://docs.anaconda.com/anaconda/navigator/). All three are great IDEs with somewhat different strengths and main focus. Roll the dice and pick one to start with.
+**Local IDEs.** To install and run Python locally, we use [Miniforge](https://github.com/conda-forge/miniforge), a minimal installer for the **conda** package and environment manager, preconfigured for the [conda-forge](https://conda-forge.org/) channel. You install it in your Linux environment (see the setup tutorials above), and then create an environment containing Python plus whichever libraries and tools you need.
 
-- [Spyder](https://www.spyder-ide.org/): Very learning-friendly IDE. A good place to start is the Spyder tutorial, `Help` → `Spyder tutorial`; also check out [this introductory video](https://www.youtube.com/watch?v=zYNRqVimU3Q)
+Note: you may encounter the larger [Anaconda](https://stackoverflow.com/a/42096429) distribution in other tutorials, which bundles conda with many preinstalled packages and the [Anaconda Navigator](https://docs.anaconda.com/anaconda/navigator/). However, its terms of service have changed several times, requiring a paid license in some cases. Beyond that confusion, there is little reason to use it: anything Anaconda preinstalls can be added to a conda environment on demand and building minimal per-project environments is better practice anyway. The licensing limitations don't affect conda itself or the conda-forge channel – only Anaconda's distribution and its own package repository (the "defaults" channel), which Miniforge does not use.
+
+All three IDEs listed below are popular for Python code development, and have somewhat different strengths and focus:
+
 - [Jupyter](https://en.wikipedia.org/wiki/Project_Jupyter): Great for presenting, storytelling and exploratory data analysis; not necessarily the best for learning to code or longer scripts. [Introductory video](https://www.youtube.com/watch?v=HW29067qVWk)
 - [VS Code](https://en.wikipedia.org/wiki/Visual_Studio_Code): Popular code editor with many plugins, but not necessarily the best for complete beginners; if you want to try it, start [here](https://www.digitalocean.com/community/tutorials/getting-started-with-python-in-visual-studio-code) and continue [here](https://realpython.com/python-development-visual-studio-code/), [here](https://code.visualstudio.com/docs/python/python-tutorial) or [here](https://code.visualstudio.com/docs/getstarted/introvideos)
+- [Spyder](https://www.spyder-ide.org/): Very learning-friendly IDE. A good place to start is the Spyder tutorial, `Help` → `Spyder tutorial`; also check out [this introductory video](https://www.youtube.com/watch?v=zYNRqVimU3Q)
 
 ### Books/tutorials
 
 - [w3schools.com Python tutorial](https://www.w3schools.com/python/) – useful as a reference, with interactive examples
 - ["A Byte of Python"](https://python.swaroopch.com/) – free beginner-friendly ebook; doesn't go too deep, but covers the basics
-- [programming-24.mooc.fi](https://programming-24.mooc.fi/part-1) – free online course/tutorial, ranges from basic to complex topics
+- [programming-26.mooc.fi](https://programming-26.mooc.fi/part-1) – free online course/tutorial, ranges from basic to complex topics
 - ["Python for Everybody"](https://www.py4e.com/html3/) and [interactive edition](https://books.trinket.io/pfe/index.html), also see [here](https://runestone.academy/runestone/books/published/py4e-int/index.html) – free beginner-friendly ebook
 - E. Freeman: "Head First Learn to Code: A Brain-Friendly Guide" ([Amazon](https://www.amazon.de/Head-First-Learn-Code-Brain-Friendly/dp/1491958863/)); P. Barry: "Head First Python" ([oreilly.com](https://www.oreilly.com/library/view/head-first-python/9781491919521/)) – very beginner-friendly, if you like the approach of the book series
 - ["Think Python: How to Think Like a Computer Scientist"](https://greenteapress.com/wp/think-python-3rd-edition/) – free and very nice ebook; you'll learn a lot if you work your way through it
-- E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming" ([Amazon](https://www.amazon.de/Python-Crash-Course-Eric-Matthes/dp/1593279280/)) – practical introduction for complete beginners, with exercises
-  - The author provides a collection of online resources, including some nice [cheat sheets](https://ehmatthes.github.io/pcc_2e/cheat_sheets/cheat_sheets/)
+- E. Matthes: "Python Crash Course: A Hands-On, Project-Based Introduction to Programming", 3rd edition ([nostarch.com](https://nostarch.com/python-crash-course-3rd-edition)) – practical introduction for complete beginners, with exercises
+  - The author provides a collection of online resources, including some nice [cheat sheets](https://ehmatthes.github.io/pcc_3e/cheat_sheets/)
 - A. Sweigart: "Automate the Boring Stuff with Python: Practical Programming for Total Beginners" ([Amazon](https://www.amazon.de/Al-Sweigart/dp/1593279922/), [online book](https://automatetheboringstuff.com)) – practically oriented introduction for Python (ranges from beginners to somewhat advanced content); more excellent free Python books from this author can be found at [inventwithpython.com](https://inventwithpython.com/)
 - D. Amos et al.: "Python Basics: A Practical Introduction to Python 3", 4th edition ([Amazon](https://www.amazon.com/Python-Basics-Practical-Introduction/dp/1775093328/))
 - [Official Python tutorial](https://docs.python.org/3/tutorial/) – good reference for topics you already know, to refresh your memory or to go deeper
@@ -111,7 +128,7 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 **Advanced.**
 
 - L. Ramalho: "Fluent Python: Clear, Concise, and Effective Programming", ([fluentpython.com](https://www.fluentpython.com/)) – discussion of Python-specific language features, for Python programmers who want to improve their skills (advanced)
-- B. Slatkin: "Effective Python: 59 Specific Ways to Write Better Python" ([Amazon](https://www.amazon.de/Effective-Python-Specific-Software-Development-ebook/dp/B00TKGY0GU/)) – learn to write efficient and "Pythonic" code (advanced)
+- B. Slatkin: "Effective Python: 125 Specific Ways to Write Better Python", 3rd edition ([effectivepython.com](https://effectivepython.com/)) – learn to write efficient and "Pythonic" code (advanced)
 
 ### Videos/YouTube channels
 
@@ -138,7 +155,8 @@ Hints: Practically oriented tutorials that solve little problems rather than jus
 Connecting with other people from whom you can learn is both fun and helps staying updated. Here are some ideas:
 
 - Reddit: r/Python, r/learnpython, r/bioinformatics, and see [here](https://analyticsindiamag.com/10-data-science-subreddits-every-tech-enthusiast-should-follow/)
-- Twitter: see [here](https://www.youtube.com/watch?v=1hhuFrBNoLg) and [here](https://www.youtube.com/watch?v=3471Vg3GaPI) 
+- X (formerly Twitter): still one of the fastest sources for tech and especially AI news, where a lot breaks first. Curated accounts do the filtering for you, e.g. [@kimmonismus](https://x.com/kimmonismus) for AI. Be aware that the signal-to-noise ratio depends entirely on whom you follow.
+- [Bluesky](https://bsky.app/): where much of the academic and bioinformatics community moved after 2023; better for research discussion and for following individual scientists than for breaking news.
 - Podcasts: see [here](https://dbader.org/blog/ultimate-list-of-python-podcasts)
 - Blogs: see [here](https://blog.feedspot.com/python_blogs/)
 - Forums: [Stackoverflow](https://stackoverflow.com/) and other [Stackexchange](https://stackexchange.com/sites#) forums

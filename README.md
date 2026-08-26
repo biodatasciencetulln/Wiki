@@ -6,8 +6,12 @@ Hi there! This is a small collection of useful links and information that will h
 
 - [General information](general_info.md)
 - [Summer school info](summer_school.md)
-- [Install Ubuntu in Virtualbox](install_linux_in_virtualbox.md)
-- [Install Ubuntu on Apple silicon](install_linux_on_apple_silicon.md)
+
+Setting up your Linux environment — pick the one that matches your computer:
+
+- [Install Ubuntu in WSL](install_linux_in_wsl.md) — **recommended for Windows**
+- [Install Ubuntu on Apple silicon](install_linux_on_apple_silicon.md) — for Macs with M-series chips
+- [Install Ubuntu in VirtualBox](install_linux_in_virtualbox.md) — alternative for Windows, if you want a Linux desktop or WSL is unavailable
 
 <br>
 <img src="wordcloud.svg" alt="Wordcloud" width="600">

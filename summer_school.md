@@ -10,15 +10,21 @@
 
 Welcome to the **Bio Data Science summer school**! This session is all about setting up your personal bioinformatics toolkit – a powerful digital workspace that you'll use throughout your master's curriculum.
 
-We'll begin by installing **Ubuntu** or its derivative **Xubuntu**, both user-friendly versions of Linux, inside a virtual machine. Think of a virtual machine like a computer within your computer; it lets you run Linux and all its programs without altering your main operating system (OS).
+We'll begin by setting up a **Linux environment** on your laptop. Linux is the operating system (OS) that essentially all bioinformatics software is written for, and the one running on the FH compute servers you'll use later. How you get there depends on your computer:
 
-Once Ubuntu is set up, we'll equip it with essential software:
+- On **Windows**, we use the [Windows Subsystem for Linux](install_linux_in_wsl.md) (WSL), which lets you run a real Linux environment, such as Ubuntu, directly on Windows using a lightweight built-in virtual machine. The default Linux distribution is Ubuntu, others are also [available](https://learn.microsoft.com/en-us/windows/wsl/basic-commands). It installs with a single command and integrates tightly with your Windows desktop and editor.
+- On a **Mac with Apple silicon**, we use a virtual machine — a computer within your computer — via [UTM or VMware Fusion](install_linux_on_apple_silicon.md).
+- If you prefer a full Linux desktop in a window, or WSL is unavailable on your machine, [VirtualBox](install_linux_in_virtualbox.md) remains a good alternative.
 
-- **Anaconda**: A collection of popular tools and packages for data science, including the versatile Python programming language.
+Once Ubuntu is running, we'll equip it with essential software:
+
+- **Miniforge**: A minimal installer for `conda`, the package and environment manager we use to install Python and scientific software. Nearly all bioinformatics tools are distributed this way, via the conda-forge and bioconda channels.
 - **Jupyter**: This tool lets you create interactive "notebooks" directly in your web browser. These notebooks combine Python code, its output, and explanatory text, making them perfect for many applications.
 - **Visual Studio Code**: A popular and highly customizable development environment where you can write, run, and debug code in Python and many other languages.
 
-Finally, we'll dive into the Linux shell. This is simply a program that acts as an interface to the OS. It takes commands from the keyboard (**command-line interface**) and gives them to the OS to perform. Knowing the shell is fundamental for efficient biological data analyses. Mastering these basics will give you a significant advantage in your bioinformatics journey!
+Then we'll dive into the Linux shell. This is simply a program that acts as an interface to the OS. It takes commands from the keyboard (**command-line interface**) and gives them to the OS to perform. Knowing the shell is fundamental for efficient biological data analyses.
+
+The shell is where we'll spend most of our time, and there will be plenty of hands-on exercises. It's the tool you'll use for most courses of the curriculum, so it's worth getting comfortable with it now.
 
 The sessions will be held online, via Microsoft Teams (alternatively Zoom). Please have the following available:
 
@@ -29,35 +35,50 @@ The sessions will be held online, via Microsoft Teams (alternatively Zoom). Plea
 - Microsoft Teams and Zoom
 - Required software (listed below)
 
-The initial step, setting up the virtual machine, may seem challenging at first. Luckily, there is a [detailed tutorial](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) to guide you. Also, it's a one-time setup, and you'll quickly get used to it. 
+The setup step may seem daunting at first, but there are detailed tutorials to guide you (linked above), and it's a one-time investment that you'll benefit from for the rest of the curriculum.
 
 ### Plan for each session
 
-1. "Vorbereitungen für den Studienbeginn - Installation notwendiger Programme": Setting up a virtual machine with Xubuntu (or Ubuntu), installation of Anaconda
-2. "Freiwillige Übungseinheit - Installation notwendiger Programme": Questions/problems regarding virtual machine and Anaconda
-3. "Linux": Linux basics, important computer terms, essential shell comands
-4. "Linux": Package manager, Linux file hierarchy, variables, environment
+1. **"Vorbereitungen für den Studienbeginn – Installation notwendiger Programme"**: Setting up your Linux environment (WSL on Windows, a VM on Apple silicon), installing Miniforge and VS Code. First steps in the terminal.
+2. **"Freiwillige Übungseinheit – Installation notwendiger Programme"**: Questions and problems regarding the setup, Miniforge, and VS Code. Bring whatever didn't work.
+3. **"Linux I"**: Linux basics, important computer terms, essential shell commands, navigating the file system.
+4. **"Linux II"**: Package manager, Linux file hierarchy, variables, environment. Practical exercises.
 
 ## Preparation for the summer school
 
-### Required software
+Please do as much of this as you can before the first session, so that we can spend our time together on the parts that actually need discussion.
 
-- Install [VirtualBox](https://www.virtualbox.org/) (for Intel CPUs; for Apple M1 chips or later, see [below](#apple-silicon)).
-- Download the ISO file of the latest [Xubuntu](https://xubuntu.org/) LTS release, currently 24.04 (pick the latest minor version, e.g. 24.04.02). You can download the ISO via a torrent file or directly from a nearby mirror, such as [this one](http://ftp.uni-kl.de/pub/linux/ubuntu-dvd/xubuntu/releases/24.04/release/) → 64-bit PC ([AMD64](https://en.wikipedia.org/wiki/X86-64)) desktop image (filename `xubuntu-24.04-desktop-amd64.iso`).
-  - Optionally, you can verify the integrity of the downloaded file as explained on [ubuntu.com](https://ubuntu.com/tutorials/how-to-verify-ubuntu) or [pctipp.ch](https://www.pctipp.ch/praxis/windows-10/windows-10-sha256-hash-bordmitteln-pruefen-2507915.html).
-- Download the Anaconda installer for Linux-x86 from [anaconda.com](https://www.anaconda.com/download#download); the downloaded file should have a filename like `Anaconda3-202x.xx-Linux-x86_64.sh`
-- Download the Visual Studio Code installer for Debian, Ubuntu ([code.visualstudio.com](https://code.visualstudio.com/Download)).
-- Create an account on [GitHub](https://github.com/).
+### Everyone
 
-#### Apple silicon
+- Create an account on [GitHub](https://github.com/). Use a professional-looking username; you may well end up linking to it in a CV. We won't be using Git in the summer school — you'll learn version control properly in the "Best Practices" course in the second semester — but the account is useful for browsing and downloading course materials in the meantime.
+- Make a **full backup of your computer** before making any modifications.
+- Nothing to download in advance for Miniforge — we install it from the command line inside Linux during the session.
 
-Apple silicon computers (MacBooks from 2020 onwards, with M1 chips or later) use a different processor architecture than previous Intel-based Macs. This [ARM-based](https://en.wikipedia.org/wiki/Apple_silicon) CPU architecture is also known as AArch64 or ARM64, and represents a significant [shift](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86). The transition of established workflows to ARM-based processors is still ongoing, and you may encounter occasional problems, but there should be no significant difficulties.
+### Windows
 
-VirtualBox supports Apple silicon since [version 7.1](https://blogs.oracle.com/virtualization/post/oracle-virtualbox-710). This is a relatively recent development, and it's not as popular or well-tested as other free options. Therefore, it's currently recommended to stick to the alternatives. As preparation:
+- Check that you're on Windows 10 version 2004 (build 19041) or later, or Windows 11: press <kbd>Win</kbd> + <kbd>R</kbd>, type `winver`, press Enter.
+- Check that virtualization is enabled: Task Manager (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Esc</kbd>) → Performance → CPU → look for "Virtualization: Enabled".
+- Install [Visual Studio Code](https://code.visualstudio.com/Download) for Windows.
+- Note that you do **not** need to download an Ubuntu ISO for WSL — it downloads Ubuntu itself during the installation. Full instructions: [Install Ubuntu in WSL](install_linux_in_wsl.md).
 
-- Install UTM and VMware Fusion on you Mac according to the instructions in the [tutorial](install_linux_on_apple_silicon.md).
-- Download the ISO file of the latest [Ubuntu Server](https://ubuntu.com/download/server/arm) LTS release (currently 24.04).
-- Download the Anaconda installer for Linux-aarch64 from [anaconda.com](https://www.anaconda.com/download#download). The downloaded file should have a filename like `Anaconda3-202x.xx-Linux-aarch64.sh`.
+**Backup plan.** WSL works on the large majority of machines, but occasionally it can't be enabled — an older Windows build, a locked-down laptop, or virtualization switched off in the firmware. So that nobody loses a session to this, please also prepare the VirtualBox route in advance:
+
+- Install [VirtualBox](https://www.virtualbox.org/).
+- Download the ISO file of the latest [Xubuntu](https://xubuntu.org/download/) LTS release, currently 26.04 — the 64-bit PC ([AMD64](https://en.wikipedia.org/wiki/X86-64)) desktop image. You can download via torrent or from a nearby mirror.
+  - Optionally, verify the integrity of the downloaded file as explained on [ubuntu.com](https://ubuntu.com/tutorials/how-to-verify-ubuntu).
+
+Most likely we won't need this, and you can uninstall VirtualBox afterwards if WSL works for you. Two things worth knowing if you keep both:
+
+- Installing VirtualBox does **not** interfere with WSL, in either order.
+- Once WSL is installed, VirtualBox runs on top of the Windows hypervisor and is therefore somewhat slower than it would be on its own. That's fine for occasional use. If you end up preferring VirtualBox as your main environment, see the [VirtualBox tutorial](install_linux_in_virtualbox.md).
+
+### macOS (Apple silicon)
+
+Apple silicon computers (MacBooks from 2020 onwards, with M1 chips or later) use a different processor architecture than previous Intel-based Macs. This [ARM-based](https://en.wikipedia.org/wiki/Apple_silicon) CPU architecture is also known as AArch64 or ARM64, and represents a significant [shift](https://www.quora.com/How-is-the-Apple-MacBook-M1-capable-of-beating-every-x86-chip-I-taught-ARM-was-weaker-than-x86). Software installers for this architecture usually have `arm64` or `aarch64` in their filenames.
+
+- Install UTM and/or VMware Fusion according to the instructions in the [tutorial](install_linux_on_apple_silicon.md).
+- Download the **Ubuntu Desktop ISO for ARM** — the latest LTS release, currently 26.04 LTS — from [ubuntu.com](https://ubuntu.com/download/desktop). Be sure to pick the **ARM 64-bit** (arm64) image, not the Intel/AMD one.
+- Install [Visual Studio Code](https://code.visualstudio.com/Download) for macOS (Apple silicon build).
 
 ### Additional background information
 
@@ -79,12 +100,13 @@ Watch these videos as preparation:
 
 By the end of our summer school sessions, you should have:
 
-- A virtual machine with Xubuntu or Ubuntu, providing a fully functional Linux OS.
+- **A working Linux environment**, via WSL or a virtual machine, giving you a fully functional Ubuntu system.
   - This allows you to easily install, modify, and test software without any risk or changes to your main OS.
-  - If the VM malfunctions (e.g., becomes unresponsive or fails to boot), you can quickly restore it to a previous state from a backup (see [here](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) for information on backups).
-- An installation of Anaconda, which is a software collection including Python, the `conda` program, and many software packages like Jupyter.
-- An installation of the Visual Studio Code editor.
-- The ability to run Jupyter and open "notebooks" (`.ipynb` files) in JupyterLab in the browser.
+  - If it breaks (becomes unresponsive, or you install something that ruins it), you can restore it from a backup, or simply wipe it and start over. WSL users: `wsl --export` and `wsl --import`; VM users: see the backup sections of the respective tutorials. Knowing you can always start over is what makes it safe to experiment — and experimenting is how you learn.
+- **An installation of Miniforge**, giving you the `conda` package and environment manager, and a working environment containing Python and Jupyter.
+  - You'll also understand *why* we use environments: if one breaks, you delete and recreate it instead of repairing your whole system.
+- **An installation of Visual Studio Code**, connected to your Linux environment, so that you edit code in a comfortable graphical editor while it runs in Linux.
+- **The ability to run Jupyter** and open "notebooks" (`.ipynb` files) in JupyterLab in the browser, or directly in VS Code.
   - Notebook documents (or "notebooks") are text files containing both computer code (e.g., Python) and text. They are human-readable documents containing text and results (figures, tables, etc.), but also executable code that can be run to perform data analysis. Jupyter enables editing and running notebooks via a web browser. It can be run locally without internet access, or on a remote server and accessed through the internet. Jupyter also includes a text file editor and a built-in terminal.
   - You can also try JupyterLab online (on a remote server somewhere in the internet), including a very short tour: [jupyter.org/try](https://jupyter.org/try) → click "JupyterLab".
-- Basic knowledge of the Linux shell.
+- **Working knowledge of the Linux shell**: navigating the file system, inspecting and manipulating text files, installing software with the package manager, and understanding variables and the environment. This is the main goal, and the one that pays off soonest.
