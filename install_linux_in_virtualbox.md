@@ -8,7 +8,7 @@
 
 Used software: VirtualBox 7.1, Xubuntu 24.04
 
-**Note for Apple silicon** computers (Macbooks with M1 chip or later): While VirtualBox now also supports Apple silicon, it's currently not the recommended option, see [here](summer_school.md#apple-silicon) and my [notes on virtualization on Apple silicon](install_linux_on_apple_silicon.md). This tutorial is mostly oriented towards VirtualBox, but some sections are universal, e.g. [Linux basics](#linux-basics), [update the guest](#update-the-guest) and [where to go from here](#where-to-go-from-here). For example, while UTM and VMware Fusion also have a kind of "guest additions" to improve the integration of guest and host, they are called differently and the installation process differs. Other sections of this tutorial may still contain helpful information and be useful for comparison.
+**Note for Apple silicon** computers (Macbooks with M1 chip or later): While VirtualBox now also supports Apple silicon, it's currently not the recommended option, see [here](summer_school.md#macos-apple-silicon) and my [notes on virtualization on Apple silicon](install_linux_on_apple_silicon.md). This tutorial is oriented towards VirtualBox; the universal Ubuntu material — the shell, the file system, package management — now lives in [Ubuntu basics](ubuntu_basics.md), which applies to other VM software like UTM and VMware Fusion just as well. For example, while UTM and VMware Fusion also have a kind of "guest additions" to improve the integration of guest and host, they are called differently and the installation process differs. Other sections of this tutorial may still contain helpful information and be useful for comparison.
 
 The **official VirtualBox documentation** is the primary resource for all things VirtualBox, with essential information for installation, configuration, and troubleshooting:
 
@@ -130,71 +130,9 @@ or AMD-V` or similar (different manufacturers word it differently). See
 
 ## Linux basics
 
-- To [open a
-  terminal](https://docs.xubuntu.org/current/user/C/command-line.html):
-  Application menu → Accessories → Terminal emulator (it's called "emulator" for
-  [historical reasons](https://superuser.com/a/930427))
-- Start programs/run commands: type the program/command in the terminal and
-  hit <kbd>Enter</kbd>
-- **Abort program/command** running in the terminal: press
-  **<kbd>Ctrl</kbd>+<kbd>C</kbd>** (this key combination sends the "SIGINT"
-  (interrupt) signal to a running process)
-- **Abort non-responsive graphical application**: enter `xkill` +
-  <kbd>Enter</kbd> in the terminal and click on the non-responsive application
-  (only use this if absolutely necessary)
-- The Bash shell stores the history of commands you run
-  ([more](https://www.howtogeek.com/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/))
-  - Use the arrow keys <kbd>&uarr;</kbd>/<kbd>&darr;</kbd> to repeat
-    previously typed commands: E.g. enter `ls` + <kbd>Enter</kbd> → _list_ the
-    contents of the current directory; now, press the <kbd>&uarr;</kbd> key to
-    bring up the previously entered command
-  - **Search** for previously entered commands using
-    **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
-- [Here](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts) are the most
-  useful keyboard shortcuts
-- The Linux **file system** has a single hierarchical directory structure. The
-  top directory is `/`, called **root directory** (or simply root). All files
-  and folders are part of this hierarchy. Devices like disks, external memory
-  devices and network resources (e.g. shared folders) are also part of the
-  hierarchy. It'll help to know at least the [basic navigation
-  commands](http://linuxcommand.org/lc3_lts0020.php), `pwd`, `cd` and `ls`
-- If you can't wait to learn more Bash commands, the **basics** are
-  [here](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a)
-  or [here](https://help.ubuntu.com/community/UsingTheTerminal)
-- When you interact with the terminal, you should always **read the output/error
-  messages**, even if you don't understand everything they say. You might be
-  used from Windows that you just click "Cancel" or "Continue" to make the
-  messages go away. Messages on Linux are usually more informative and tell you
-  what's happening and if a problem occurred. E.g., if you run a command, and a
-  message says `Building modules...`, then it's building modules, and you have
-  to wait. If it says `Successfully installed`, then the package was
-  successfully installed. If it says `Failed to fetch http://some/web/url`, then
-  the resource couldn't be fetched, maybe because the URL was invalid or there
-  was no internet connection. If the command didn't complete successfully, try
-  to search for the respective error message, which can help to find a solution
-- Keeping track of the system state, like processor load, RAM
-  usage, [swap](https://serverfault.com/questions/48486/what-is-swap-memory)
-  usage, network usage and disk usage, helps to diagnose problems. For
-  example, if RAM and swap space are filled up, the system will freeze. It's
-  therefore recommended to add the [system load
-  monitor](https://docs.xfce.org/panel-plugins/xfce4-systemload-plugin/start) to
-  the [Xfce panel](https://docs.xfce.org/xfce/xfce4-panel/start) by right-clicking on the panel and selecting `Panel` → `Add New Items`
+Now that Ubuntu is running, work through **[Ubuntu basics](ubuntu_basics.md)**: opening a terminal, running and aborting commands, command history, the file system hierarchy, and keeping the system up to date with `apt`. That material applies to VMs on every platform, Windows or macOS, so it lives on its own page.
 
----
-
-## Update the guest
-
-After a fresh install, it's good practice to update the OS, to ensure that it's fully up to date. You can do this by using the built-in update/software management mechanism. (Unlike some other distributions, Ubuntu provides only well-tested software packages via this mechanism, which rarely lead to problems. Instead, updates can for example provide the latest drivers that better support recent hardware.)
-
-- It's tempting to use the "Software Updater" GUI (graphical user interface) for installing updates. However, it's just a [frontend](https://askubuntu.com/a/539067) for Ubuntu's Advanced Packing System (APT) command-line tools, and you have more control and a better understanding of what's happening if you **use the command line**
-- Open a terminal, type `sudo apt update && sudo apt upgrade` (copy-pasting probably won't work yet) + <kbd>Enter</kbd>. It should ask you for your password. Type the password (it's invisible) + <kbd>Enter</kbd>. After an additional confirmation step, the command will update all installed software (packages) to their latest versions.
-  - `sudo` (_superuser do_) grants [root privileges](https://unix.stackexchange.com/a/254470) and is required for all system-relevant tasks
-  - `apt` is [a command](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) that manages installing/removing/updating most software on Ubuntu and Debian, which Ubuntu is based on; more info: [apt tutorial](https://itsfoss.com/apt-command-guide/)
-  - `update` and `upgrade` are **arguments** that modify the command behavior (tell the command what to do):
-    - The subcommand `apt update` updates the list of available packages and their versions in the configured sources (repositories)
-    - `apt upgrade` uses this information to fetch and install packages that have new versions
-  - `&&` is an **operator** that can be used to connect commands; it executes the second command [only if](https://unix.stackexchange.com/a/24685) the first one completed successfully. You can also execute `apt update` and `apt upgrade` on two separate lines
-- After `apt` is finished (the command prompt returns and you can enter new commands), [reboot](https://xubuntu.github.io/xubuntu-docs/user/C/introduction.html#session-management) the guest. Upon reboot, there should be no apparent changes. To make sure that you have the latest software versions, you can repeat the command `sudo apt update && sudo apt upgrade`; this time, `apt` should tell you that there is nothing to update.
+**Do the update step before continuing here** — `sudo apt update && sudo apt upgrade`, then reboot the guest. The guest additions below need an up-to-date system.
 
 ---
 
@@ -342,23 +280,11 @@ A VM can be backed up as a simple file or folder. For example, you can keep it o
 
 Here are some ideas what you can do with your fresh and shiny Linux OS.
 
+First, work through **[Ubuntu basics](ubuntu_basics.md)** — the shell, the file system, permissions, and package management with `apt`. That page also collects tutorials and courses for learning the command line.
+
+Specific to your Xubuntu desktop:
+
 - Take a [quick Xubuntu tour](https://www.youtube.com/watch?v=V_gODEnrxI0)
 - **Customize** your Xubuntu installation [just for fun](https://linuxhint.com/customize-xfce-desktop)
   - Increase the default font size in the terminal to make working with it more comfortable ([docs.xfce.org](https://docs.xfce.org/apps/xfce4-terminal/preferences))
 - Learn about Xubuntu software management ([xubuntu.github.io](https://xubuntu.github.io/xubuntu-docs/user/C/index.html) → "5. Software Management") and install some programs using the command line or GUIs (Start menu → search term "software")
-  - Some tutorials use `apt` for **software installation**, others use [`apt-get`](https://itsfoss.com/apt-get-linux-guide/); the differences are [marginal](https://itsfoss.com/apt-vs-apt-get-difference/)
-  - More info: [help.ubuntu.com](https://help.ubuntu.com/community/SoftwareManagement), [help.ubuntu.com](https://help.ubuntu.com/stable/ubuntu-help/addremove.html.en)
-  - Apart from `apt`, Ubuntu increasingly uses another package management system, Snap (<a href="https://en.wikipedia.org/wiki/Snap_(software)">Wikipedia</a>, [snapcraft.io](https://snapcraft.io/about)); some applications like Firefox or Chromium are only available as snap packages. Snaps are updated automatically, or manually using the `snap refresh` command (see [snapcraft.io](https://snapcraft.io/docs/getting-started))
-- Learn about the [Linux file system](http://linuxcommand.org/lc3_lts0040.php) ([YouTube tutorial](https://www.youtube.com/watch?v=HbgzrKJvDRw))
-- **Learn the command line.** Even though some tasks like software installation can be done via GUIs, they are just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much
-  - Take an **introductory Linux/Bash tutorial**, like [this YouTube video](https://www.youtube.com/watch?v=oxuRxtrO2Ag), [this short tutorial](https://ubuntu.com/tutorials/command-line-for-beginners) or [this comprehensive tutorial](http://linuxcommand.org/)
-  - Cheat sheets like [this](https://devhints.io/bash) or [this](https://www.educative.io/blog/bash-shell-command-cheat-sheet) can help, but none will be as good as your own cheat sheet; a **text file with important commands** is a good start
-  - Take [an interactive course](https://linuxsurvival.com/) or [play a game](https://overthewire.org/wargames/bandit/)
-  - Get help on Bash commands using the manpages (`man ls`) or the [**TLDR** ("Too Long; Didn't Read") manpages](https://tldr.inbrowser.app/) (enter the "command name" in the corresponding box, try `ls`)
-  - AI tools like Claude, ChatGPT or Gemini are highly useful for discussing Linux and command line-related questions; as always with LLMs, you shouldn't take the results for granted especially for non-trivial questions, but always double-check them
-- Learn how to use a **non-GUI text editor** like [nano](https://www.howtogeek.com/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) or [vim](https://www.youtube.com/watch?v=ggSyF1SVFr4), you will definitely need it later
-- Install [Miniforge](https://github.com/conda-forge/miniforge) for Linux, which provides the **conda** package and environment manager preconfigured for the [conda-forge](https://conda-forge.org/) channel:
-  - `wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh` and then `bash Miniforge3-Linux-x86_64.sh`
-  - Afterwards, create a working environment rather than installing into `base`: `conda create -n bioinf python jupyterlab numpy pandas matplotlib scikit-learn biopython`, then `conda activate bioinf`
-  - Basic information: [conda-forge docs](https://conda-forge.org/docs/user/introduction/), [conda cheat sheet](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
-  - Note: we use Miniforge rather than the larger Anaconda distribution, because Anaconda's terms of service changed several times, and because Miniforge is what [conda-forge](https://conda-forge.org/docs/user/transitioning_from_defaults/) itself and most bioinformatics documentation (e.g. [Bioconda](https://bioconda.github.io/faqs.html#what-s-the-difference-between-anaconda-conda-miniconda-mamba-mambaforge-micromamba)) recommend

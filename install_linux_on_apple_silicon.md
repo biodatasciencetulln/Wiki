@@ -21,7 +21,7 @@ Two alternatives (which you usually don't need):
 
 Install UTM according to [docs.getutm.app](https://docs.getutm.app/installation/macos/). (Additional links: [GitHub](https://github.com/utmapp/UTM/).) Note that UTM is also sold on the Mac App Store; that version is identical, and paying for it is simply a way of supporting the developers.
 
-Note that my tutorial for [installing Linux in VirtualBox](https://biodatasciencetulln.github.io/Wiki/install_linux_in_virtualbox.html) includes important Ubuntu-specific information applicable to users of other virtualization platforms like UTM or VMware.
+Once Ubuntu is running, see **[Ubuntu basics](ubuntu_basics.md)** for the Ubuntu-specific material — the shell, the file system and package management — which applies to every virtualization platform.
 
 ## Host, hypervisor, guest: who does what?
 
@@ -55,7 +55,7 @@ Installation notes:
 - Remember that on Apple Silicon, you need software intended for ARM architecture; x86 installers won't work, unless you use UTM "Emulation" instead of "Virtualization", which is much slower.
 - Create a new virtual machine (VM) and run the **Ubuntu installer** as shown in the YouTube video.
 - Remember that the installation happens only within the VM, so you can always repeat it if something doesn't work. The default settings are usually fine ([ubuntu.com](https://ubuntu.com/desktop/docs/en/latest/tutorial/install-ubuntu-desktop/)).
-- The next step is to **install system updates** via `sudo apt update && sudo apt upgrade`; this is explained in detail in the [VirtualBox tutorial](install_linux_in_virtualbox.md).
+- The next step is to **install system updates** via `sudo apt update && sudo apt upgrade`; this is explained in detail in [Ubuntu basics](ubuntu_basics.md).
 - Install the `qemu-guest-agent` and `spice-vdagent` packages as explained in the [UTM docs](https://docs.getutm.app/guest-support/linux/) to improve the guest support; this is the equivalent of VirtualBox **guest additions**.
   - The QEMU guest agent is a program intended to run in the background in VMs that use the QEMU hypervisor ([qemu-project.gitlab.io](https://qemu-project.gitlab.io/qemu/interop/qemu-ga.html)).
   - The SPICE agent is another helper program (technical details: [spice-space.org](https://www.spice-space.org/index.html), [manpages.ubuntu.com](https://manpages.ubuntu.com/manpages/lunar/man1/spice-vdagent.1.html)).
@@ -145,27 +145,9 @@ Below are examples of problems I encountered with VMware Fusion, and how they we
 
 ## Installation of Miniforge (conda)
 
-[Miniforge](https://github.com/conda-forge/miniforge) is a minimal installer for **conda**, the package and environment manager we use throughout the curriculum. It is preconfigured to use the [conda-forge](https://conda-forge.org/) channel, which — together with [bioconda](https://bioconda.github.io/) — is where essentially all bioinformatics software is published. We deliberately don't use the larger **Anaconda** distribution: its `defaults` channel is no longer recommended for bioinformatics (bioconda dropped it in 2024), and its terms of service require a paid license in companies with 200 or more employees.
+With Ubuntu running, install **conda**, the package and environment manager we use throughout the curriculum. The instructions are the same for every platform and live on their own page: [Install Miniforge (conda)](install_conda.md).
 
-Install it **inside the Linux VM**, using the `aarch64` (ARM) installer:
+Two things specific to Apple silicon:
 
-```bash
-cd ~
-wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-aarch64.sh
-bash Miniforge3-Linux-aarch64.sh
-```
-
-This download link always points at the newest release, so there is no version number to keep up to date. Remember that on Apple silicon you need the `aarch64` build; an `x86_64` installer will not run.
-
-Follow the prompts: accept the license, accept the default install location, and answer "yes" when asked whether to run `conda init`. Close and reopen your terminal; your prompt should then begin with `(base)`.
-
-Then create a separate environment for your work, rather than installing into `base`:
-
-```bash
-conda create -n bds python jupyterlab numpy pandas matplotlib scikit-learn biopython
-conda activate bds
-```
-
-- If you ever break the environment, you can simply delete and recreate it (`conda env remove -n bds`) without reinstalling conda.
-- In case of problems, you can also install Miniforge directly on the host system; be sure to use the macOS `arm64` installer ([conda-forge.org/download](https://conda-forge.org/download/)).
-- More information: [Miniforge on GitHub](https://github.com/conda-forge/miniforge), [conda-forge docs](https://conda-forge.org/docs/user/introduction/)
+- Use the **`aarch64`** installer (`Miniforge3-Linux-aarch64.sh`). An `x86_64` installer will not run on an ARM guest.
+- If you run into problems inside the VM, you can also install Miniforge directly on the macOS host, using the macOS `arm64` installer ([conda-forge.org/download](https://conda-forge.org/download/)).

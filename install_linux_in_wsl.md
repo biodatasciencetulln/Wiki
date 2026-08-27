@@ -67,7 +67,7 @@ Now update the system's software packages — do this regularly, Windows will no
 sudo apt update && sudo apt upgrade
 ```
 
-`apt update` refreshes the list of available packages, and `apt upgrade` actually installs the newer versions. You will be asked for your Linux password.
+`apt update` refreshes the list of available packages, and `apt upgrade` actually installs the newer versions. You will be asked for your Linux password. See [Ubuntu basics](ubuntu_basics.md) for what these commands do in more detail.
 
 ### Check that everything worked
 
@@ -126,44 +126,12 @@ Also see:
 
 ## Install Miniforge (conda)
 
-[Miniforge](https://github.com/conda-forge/miniforge) is a minimal installer for **conda**, the package and environment manager we use throughout the curriculum. It is preconfigured to use the [conda-forge](https://conda-forge.org/) channel, which — together with the [bioconda](https://bioconda.github.io/) channel — is where essentially all the bioinformatics software you'll need is published.
+With Linux in place, install **conda**, the package and environment manager we use throughout the curriculum. The instructions are the same for every platform and live on their own page: [Install Miniforge (conda)](install_conda.md).
 
-You may have heard of **Anaconda** instead. Anaconda is a much larger distribution that bundles conda together with hundreds of preinstalled packages. We don't use it for two reasons: its `defaults` channel is [no longer recommended](https://bioconda.github.io/) for bioinformatics work (bioconda dropped it in 2024), and its terms of service changed several times, leading to some confusion and limitations. Miniforge avoids both problems and is a fraction of the size. Anything Anaconda preinstalls can be added to a conda environment on demand and building minimal per-project environments is better practice anyway.
+Two things specific to WSL:
 
-Install it *inside* WSL — not the Windows version, and not both:
-
-```bash
-cd ~
-wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
-bash Miniforge3-Linux-x86_64.sh
-```
-
-Note that this download link always points at the newest release, so there is no version number to keep up to date.
-
-Follow the prompts: read (or page through with <kbd>Space</kbd>) and accept the license, accept the default install location, and answer "yes" when asked whether to run `conda init`. Then close and reopen your terminal. Your prompt should now begin with `(base)`, showing that the conda base environment is active.
-
-Verify:
-
-```bash
-conda --version
-python --version
-which python
-```
-
-`which python` should print a path inside your Miniforge directory (e.g. `/home/<username>/miniforge3/bin/python`), not `/usr/bin/python`. This tells you which Python you are actually running — a distinction that will matter later.
-
-### Create your working environment
-
-Don't install packages into `base`. Instead, create a separate **environment** for your work. If you ever break it, you can simply delete it and recreate it, without touching your conda installation:
-
-```bash
-conda create -n bioinf python jupyterlab numpy pandas matplotlib scikit-learn biopython
-conda activate bioinf
-```
-
-The name `bioinf` is arbitrary — pick what you like. Your prompt changes from `(base)` to `(bioinf)` to show which environment is active. You need to run `conda activate bioinf` in each new terminal; we'll make this automatic later.
-
-Detailed instructions: [Miniforge on GitHub](https://github.com/conda-forge/miniforge), [conda-forge docs](https://conda-forge.org/docs/user/introduction/)
+- Install it **inside WSL**, using the `x86_64` installer — not the Windows version of Miniforge, and not both.
+- Your environment will be called `bioinf`; the rest of this page assumes it is active.
 
 ## Run Jupyter
 
@@ -279,4 +247,4 @@ Hint: If an explanation here is too brief or technical, or a command doesn't beh
 
 - Get comfortable with the shell: [linuxcommand.org](http://linuxcommand.org/), [swcarpentry.github.io](https://swcarpentry.github.io/shell-novice/)
 - The [general information](general_info.md) page lists further books, tutorials and videos
-- The [VirtualBox tutorial](install_linux_in_virtualbox.md) contains a good deal of Ubuntu-specific material (package management, the file hierarchy, permissions) that applies equally to WSL
+- **[Ubuntu basics](ubuntu_basics.md)** covers the shell, the file system, and package management with `apt` — all of it applies to WSL
