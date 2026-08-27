@@ -67,10 +67,7 @@ Please do as much of this as you can before the first session, so that we can sp
 - Download the ISO file of the latest [Xubuntu](https://xubuntu.org/download/) LTS release, currently 26.04 — the 64-bit PC ([AMD64](https://en.wikipedia.org/wiki/X86-64)) desktop image. You can download via torrent or from a nearby mirror.
   - Optionally, verify the integrity of the downloaded file as explained on [ubuntu.com](https://ubuntu.com/tutorials/how-to-verify-ubuntu).
 
-Most likely we won't need this, and you can uninstall VirtualBox afterwards if WSL works for you. Two things worth knowing if you keep both:
-
-- Installing VirtualBox does **not** interfere with WSL, in either order.
-- Once WSL is installed, VirtualBox runs on top of the Windows hypervisor and is therefore somewhat slower than it would be on its own. That's fine for occasional use. If you end up preferring VirtualBox as your main environment, see the [VirtualBox tutorial](install_linux_in_virtualbox.md).
+For now, we will use VirtualBox as a fallback option; for installation instructions, see the [VirtualBox tutorial](install_linux_in_virtualbox.md). You don't have to use it later if WSL works well for you. Generally, installing VirtualBox does not interfere with WSL. However, once WSL is installed, VirtualBox runs on top of the Windows hypervisor and is therefore somewhat slower than it would be on its own.
 
 ### macOS (Apple silicon)
 

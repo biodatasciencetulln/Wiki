@@ -6,7 +6,7 @@
 * TOC
 {:toc}
 
-This is now the **recommended way to get a Linux environment on Windows**. If you use a Mac with Apple silicon, follow the [Apple silicon tutorial](install_linux_on_apple_silicon.md) instead. If you specifically want a Linux *desktop* in a window, or WSL is blocked on your machine, see the [VirtualBox tutorial](install_linux_in_virtualbox.md).
+This is now the **recommended way to get a Linux environment on Windows**. (As a fallback option, also follow the [VirtualBox tutorial](install_linux_in_virtualbox.md) to install a full virtual machine.) If you use a Mac with Apple silicon, follow the [Apple silicon tutorial](install_linux_on_apple_silicon.md) instead.
 
 **Note**: Please make a full backup of your computer before making any modifications.
 
