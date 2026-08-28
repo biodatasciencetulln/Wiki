@@ -64,6 +64,7 @@ Installation notes:
 - Note that during startup of your VM you may briefly see some log messages ([askubuntu.com](https://askubuntu.com/questions/982632/what-are-the-messages-i-see-during-the-startup-shutdown-process-of-ubuntu)) and possibly even some error messages; this is part of the normal boot process.
 - If you get a warning about low disk space, inspect the disk usage in the [disk usage analyzer](https://help.gnome.org/users/baobab/stable/); did you select an appropriate disk size when configuring the VM in UTM?
 - After setting up the VM, you can [make a backup](https://github.com/utmapp/UTM/discussions/5234) of the VM. It's good practice to perform backups in regular intervals, so that you can quickly revert to the last working version if required.
+- For using the shell, you'll need characters like `\`, `|`, `@` and `~`. See the section [Keyboard cheat sheet](#keyboard-cheat-sheet) for details.
 
 A note on the desktop: the GNOME philosophy differs from more traditional desktops like XFCE. It focuses on minimalism and touchscreen-friendliness, whereas XFCE and other traditional desktops prefer a conventional, menu-driven interface akin to older Windows versions, offering extensive customization and a lighter resource footprint. Especially on GNOME, [keyboard shortcuts](https://help.gnome.org/gnome-help/shell-keyboard-shortcuts.html) can significantly boost your productivity. For instance, [Super](https://help.gnome.org/gnome-help/keyboard-key-super.html) (Command key) opens the activities overview, and Super + Tab allows to quickly switch between open windows.
 
@@ -142,6 +143,45 @@ Below are examples of problems I encountered with VMware Fusion, and how they we
   - Solution: Additional [research](https://community.broadcom.com/communities/community-home/digestviewer/viewthread?GroupId=7171&MessageKey=adc94593-6490-4b59-9ad3-e77da294d831&CommunityKey=fb707ac3-9412-4fad-b7af-018f5da56d9f#:~:text=Generally%20speaking%2C%20time%20synchronization%20is%20only%20applied%20to%20system%20time%20which%20should%20be%20on%20the%20UTC%20time%20scale%2C%20and%20time%20zone%20/%20day%20light%20savings%20are%20managed%20by%20the%20OS%20as%20offsets.) showed that the time synchronization is only applied to system time which should be on the UTC time scale, and time zone / day light savings are managed by the OS as offsets. A search for "time zone" in the Ubuntu activities search bar, and setting the correct time zone in the settings fixed the issue.
 - VMware process `vmnet-natd` runs at 100% CPU (see e.g. [community.broadcom.com](https://community.broadcom.com/vmware-cloud-foundation/discussion/1220-high-cpu-vmnet-natd)).
   - Solution: Requires further investigation, see e.g. "Understanding networking types in VMware Fusion" ([knowledge.broadcom.com](https://knowledge.broadcom.com/external/article/303393/understanding-networking-types-in-vmware.html)) and "How does networking inside a virtual machine work?" ([community.broadcom.com](https://community.broadcom.com/vmware-cloud-foundation/viewdocument/understanding-networking-in-vmware?CommunityKey=0c3a2021-5113-4ad1-af9e-018f5da40bc0&tab=librarydocuments)). Try switching to bridged mode.
+
+## Keyboard cheat sheet
+
+UTM passes raw key codes (numeric values that correspond to physical keys on the keyboard) to the VM, so **the guest layout decides what each key does**. Set the guest layout during the Ubuntu installer ("Keyboard layout" step), or later under Settings → Keyboard. **Your macOS layout has no effect inside the VM**.
+
+The tables below describe key **positions**, since legends vary.
+
+### English guest layout (`us`) — recommended
+
+| Character | Key |
+|---|---|
+| `` ` `` `~` | key below Esc (unshifted / shifted) |
+| `\` `\|` | key left of Enter, or above it on ANSI keyboards (unshifted / shifted) |
+| `[` `]` `{` `}` | two keys right of `P` |
+
+Everything is a plain or shifted keypress. If you don't need to type German text in the VM, choose this.
+
+### German guest layout (`de`)
+
+On a Mac, the **right Option key acts as AltGr** in the guest (it sends the same code as a PC's AltGr key). There is no separate AltGr key on Apple hardware.
+
+| Character | Key |
+|---|---|
+| `\|` | right ⌥ + key left of `Z` |
+| `\` | right ⌥ + key right of `0` |
+| `~` | right ⌥ + key left of Enter |
+| `{` `}` | right ⌥ + `7` / `0` |
+| `[` `]` | right ⌥ + `8` / `9` |
+| `@` | right ⌥ + `Q` |
+
+Also, `Y` and `Z` swap positions. They keys right of `L` produce `ö ä`, and the key right of `P` produces `ü`.
+
+**ANSI keyboards have no pipe.** US-style keyboards without the extra key left of `Z` (a wide left Shift instead) cannot reach `|` in this layout — it exists nowhere else. Use the `us` layout instead.
+
+**German Mac hardware may swap `^` and `<`.** Apple's ISO layout differs from PC ISO here. If the key left of `1` produces `<` instead of `^`, switch the guest layout to German (Macintosh) in Settings → Keyboard.
+
+### When a key doesn't do what you expect
+
+The `xev` tool tells you exactly what the guest thinks a key is. Install it with `sudo apt install x11-utils`. Run `xev -event keyboard` in a terminal, click the small window it opens, and press the key in question. Each press prints a line like `state 0x10, keycode ... (keysym ..., ...)` indicating the character the guest thinks that key produces. Add a modifier (Shift, right Option) and press again to see the other levels. This is the fastest way to identify a character when the keycaps don't match the guest layout.
 
 ## Installation of Miniforge (conda)
 

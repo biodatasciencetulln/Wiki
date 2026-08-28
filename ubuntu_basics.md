@@ -20,7 +20,7 @@ On both desktops, <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd> also opens a termi
 
 It's called a terminal "emulator" because it emulates the physical terminals that were once the only way to talk to a computer.
 
-*Further reading: [Ubuntu command line for beginners](https://ubuntu.com/desktop/docs/en/latest/tutorial/the-linux-command-line-for-beginners/) · [GNOME keyboard shortcuts](https://help.gnome.org/gnome-help/shell-keyboard-shortcuts.html) · [why "emulator"?](https://superuser.com/a/930427)*
+*Further reading: [Ubuntu command line for beginners](https://ubuntu.com/desktop/docs/en/latest/tutorial/the-linux-command-line-for-beginners/) · [GNOME keyboard shortcuts](https://help.gnome.org/gnome-help/shell-keyboard-shortcuts.html)*
 
 ## Run and stop commands
 
@@ -33,16 +33,24 @@ To stop a program that isn't attached to your terminal, use `pkill <name>` (e.g.
 
 Different desktop environments use different "display server protocols", i.e. different ways to draw windows on the screen. You can check in the terminal using the command `echo $XDG_SESSION_TYPE`, which prints `wayland` or `x11` (on WSL it prints nothing, because there is no desktop and thus no display server). Note that `xkill` is an X11 tool, so it does not work for applications running natively under Wayland, which recent GNOME versions use by default — there, use the System Monitor, or `pkill`.
 
-*Further reading: [the most useful keyboard shortcuts](https://linuxreviews.org/Basic_Linux_Keyboard_Shortcuts)*
+A handful of shell shortcuts are worth learning straight away. These work in any terminal, on any platform:
+
+| Shortcut | What it does |
+| --- | --- |
+| <kbd>Tab</kbd> | Complete the command or filename you started typing |
+| <kbd>Ctrl</kbd>+<kbd>C</kbd> | Abort the running command |
+| <kbd>Ctrl</kbd>+<kbd>D</kbd> | End input / close the shell |
+| <kbd>Ctrl</kbd>+<kbd>L</kbd> | Clear the screen |
+| <kbd>Ctrl</kbd>+<kbd>A</kbd> / <kbd>Ctrl</kbd>+<kbd>E</kbd> | Jump to start / end of the line |
+| <kbd>Ctrl</kbd>+<kbd>U</kbd> | Delete everything left of the cursor |
 
 ## Command history
 
 The Bash shell stores the history of commands you run.
 
 - Use the arrow keys <kbd>&uarr;</kbd>/<kbd>&darr;</kbd> to repeat previously typed commands: e.g. enter `ls` + <kbd>Enter</kbd> → _list_ the contents of the current directory; now press <kbd>&uarr;</kbd> to bring up the previously entered command
-- **Search** for previously entered commands using **<kbd>Ctrl</kbd>+<kbd>R</kbd>**
-
-*Further reading: [using Bash history to work faster](https://www.howtogeek.com/44997/how-to-use-bash-history-to-improve-your-command-line-productivity/)*
+- **Search** for previously entered commands using **<kbd>Ctrl</kbd>+<kbd>R</kbd>**: Press this shortcut and start typing to search your bash history for a command
+- View the **complete history** using the command `history`
 
 ## The file system
 
@@ -50,13 +58,13 @@ The Linux **file system** has a single hierarchical directory structure. The top
 
 The three commands you need first are `pwd` (where am I?), `cd` (go somewhere) and `ls` (what's here?).
 
-*Further reading: [navigating the file system](http://linuxcommand.org/lc3_lts0020.php) · [how the Linux file system is organized](http://linuxcommand.org/lc3_lts0040.php) ([YouTube](https://www.youtube.com/watch?v=HbgzrKJvDRw)) · [Bash basics for beginners](https://towardsdatascience.com/basics-of-bash-for-beginners-92e53a4c117a) · [using the terminal](https://help.ubuntu.com/community/UsingTheTerminal)*
+*Further reading: [navigating the file system](https://linuxcommand.org/lc3_lts0020.php) · [how the Linux file system is organized](https://linuxcommand.org/lc3_lts0040.php) · [YouTube](https://www.youtube.com/watch?v=HbgzrKJvDRw)*
 
 ### File permissions
 
 Every Linux file and directory has read/write/execute permissions for the **file owner**, the **group**, and **other users** — nine permissions in total. `ls -l` shows them. This matters as soon as you share a directory with collaborators, or wonder why you get "Permission denied".
 
-*Further reading: [file permissions explained](http://linuxcommand.org/lc3_lts0090.php) · [users and groups](https://linuxize.com/post/how-to-list-groups-in-linux/)*
+*Further reading: [file permissions explained](https://linuxcommand.org/lc3_lts0090.php)*
 
 ## Read the output
 
@@ -79,8 +87,6 @@ Open a terminal, type `sudo apt update && sudo apt upgrade` (copy-pasting probab
 
 After `apt` is finished (the command prompt returns and you can enter new commands), restart Linux. On a desktop VM, run `sudo reboot` (or use the desktop's log-out/restart menu); on WSL, run `wsl --shutdown` in PowerShell and then start your distribution again. Upon restart, there should be no apparent changes. To make sure that you have the latest software versions, you can repeat the command `sudo apt update && sudo apt upgrade`; this time, `apt` should tell you that there is nothing to update.
 
-*Further reading: [what apt is](https://askubuntu.com/questions/155538/what-is-apt-and-aptitude-in-ubuntu) · [apt tutorial](https://itsfoss.com/apt-command-guide/) · [what root privileges are](https://unix.stackexchange.com/a/254470) · [what `&&` does](https://unix.stackexchange.com/a/24685)*
-
 ### Installing software
 
 Install software with `sudo apt install <package>`, e.g. `sudo apt install htop`. Some tutorials use `apt-get` instead of `apt`; the differences are marginal.
@@ -89,7 +95,7 @@ Apart from `apt`, Ubuntu increasingly uses a second package management system, *
 
 For **scientific software**, you will usually use neither of these, but conda — see [Install Miniforge (conda)](install_conda.md).
 
-*Further reading: [apt vs. apt-get](https://itsfoss.com/apt-vs-apt-get-difference/) ([apt-get guide](https://itsfoss.com/apt-get-linux-guide/)) · [Ubuntu software management](https://help.ubuntu.com/community/SoftwareManagement) · [adding and removing software](https://help.ubuntu.com/stable/ubuntu-help/addremove.html.en) · [what Snap is](https://snapcraft.io/about) (<a href="https://en.wikipedia.org/wiki/Snap_(software)">Wikipedia</a>, [getting started](https://snapcraft.io/docs/getting-started))*
+*Further reading: [what Snap is](https://snapcraft.io/about) · [managing snap updates](https://snapcraft.io/docs/managing-updates)*
 
 ## Keep an eye on the system state
 
@@ -99,14 +105,14 @@ In the terminal, `htop` (install with `sudo apt install htop`) gives you a live 
 
 On a desktop you can also keep a permanent readout in view, which is worth doing:
 
-- **Xubuntu/Xfce**: add the [system load monitor](https://docs.xfce.org/panel-plugins/xfce4-systemload-plugin/start) to the Xfce panel, by right-clicking on the panel and selecting `Panel` → `Add New Items`.
+- **Xubuntu/Xfce**: add the [system load monitor](https://docs.xfce.org/panel-plugins/xfce4-systemload-plugin/start) to the [Xfce panel](https://docs.xfce.org/xfce/xfce4-panel/start), by right-clicking on the panel and selecting `Panel` → `Add New Items`.
 - **Ubuntu/GNOME**: install a [system monitor extension](https://extensions.gnome.org/extension/6807/system-monitor/) from [extensions.gnome.org](https://extensions.gnome.org/).
 
 **WSL**: `htop` and `df -h` work as described above, but they only show the Linux side of things. Windows sees your entire Linux environment as a *single* process, called `Vmmem` (or `vmmemWSL` on newer builds), in the Task Manager (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Esc</kbd>). The two views answer different questions: use the Task Manager to see what Linux is costing Windows overall, and `htop` inside Linux to see *which* program is responsible.
 
 WSL claims memory dynamically as it needs it, and does not always hand it back to Windows promptly. If it takes too much, you can set an upper limit in a [`.wslconfig` file](https://learn.microsoft.com/en-us/windows/wsl/wsl-config#example-wslconfig-file). Also note that `df -h` reports usage inside the Linux virtual disk, which grows on demand but does not shrink by itself — see [Troubleshooting](install_linux_in_wsl.md#troubleshooting) on the WSL page.
 
-*Further reading: [what swap memory is](https://serverfault.com/questions/48486/what-is-swap-memory) · [GNOME disk usage analyzer](https://help.gnome.org/users/baobab/stable/) · [the Xfce panel](https://docs.xfce.org/xfce/xfce4-panel/start)*
+*Further reading: [GNOME disk usage analyzer](https://help.gnome.org/users/baobab/stable/)*
 
 ## Where to go from here
 
@@ -114,11 +120,11 @@ This section *is* a list of links — pick one, don't read them all.
 
 **Learn the command line.** Even though some tasks like software installation can be done via GUIs, they are just frontends to command-line tools like `apt`, and it's preferable to use the original thing. Linux GUIs can also be buggy, because neither users nor developers like them very much.
 
-- Start here: [the Ubuntu command line tutorial](https://ubuntu.com/tutorials/command-line-for-beginners) (short) or [Software Carpentry's shell lesson](https://swcarpentry.github.io/shell-novice/) (thorough, aimed at researchers)
+- Start here: [Software Carpentry's shell lesson](https://swcarpentry.github.io/shell-novice/) (thorough, aimed at researchers)
 - Prefer video? [Introduction to Linux and the command line](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
-- Prefer a book-length treatment? [linuxcommand.org](http://linuxcommand.org/)
+- Prefer a book-length treatment? [linuxcommand.org](https://linuxcommand.org/)
 - Prefer learning by doing? [an interactive course](https://linuxsurvival.com/), or [Bandit, a hacking game](https://overthewire.org/wargames/bandit/)
-- Keep a **cheat sheet**: [devhints.io](https://devhints.io/bash) or [this one](https://www.educative.io/blog/bash-shell-command-cheat-sheet) to start with — but a text file of your own commands will serve you better than either
+- Keep a **cheat sheet**: [devhints.io](https://devhints.io/bash) to start with — but a text file of your own commands will serve you better than either
 - Look up a command: `man ls` for the full manual, or the friendlier [TLDR pages](https://tldr.inbrowser.app/) for examples (try `ls`)
 
 **Other things worth doing:**

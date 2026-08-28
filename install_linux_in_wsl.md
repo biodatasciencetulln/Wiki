@@ -14,19 +14,21 @@ This is now the **recommended way to get a Linux environment on Windows**. (As a
 
 The [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/) (WSL) is a feature built into Windows 10 and 11 that runs a real Linux system alongside Windows. WSL 2, the current version, runs an actual [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel) in a lightweight, tightly integrated virtual machine that Windows manages for you.
 
-The important point for us: what you get is **a real Ubuntu system**. The same `apt` package manager, the same `sudo`, the same file hierarchy, the same Bash shell as on a Linux server. Everything you will learn about the shell applies unchanged.
+The important point for us: what you get is **a real Ubuntu system**. The same `apt` package manager, the same `sudo`, the same file hierarchy, the same Bash shell as on a regular Linux OS. Everything you will learn about the shell applies unchanged.
 
 Compared to a full virtual machine in VirtualBox, WSL:
 
 - installs with **a single command**, with no ISO download, no installer to click through, and no [guest additions](install_linux_in_virtualbox.md) to configure afterwards
 - **shares memory and disk dynamically** with Windows, instead of reserving a fixed amount up front
-- integrates with **Visual Studio Code** so well that you edit files in your familiar Windows editor while all code runs in Linux (this is the main practical advantage, see [below](#visual-studio-code))
+- integrates with **Visual Studio Code** so that you can edit files in your familiar Windows editor while all code runs in Linux (this is the main practical advantage, see [below](#visual-studio-code))
 - starts in about a second, rather than booting an operating system
 
-What you *don't* get is a Linux desktop environment (no Xfce, no GNOME, no wallpaper). You only get a terminal. This is intentional: it is also how you will work on the FH compute servers, where there is no desktop either.
+What you *don't* get is a Linux desktop environment (no Xfce, no GNOME, no wallpaper). You only get a terminal. This is perfectly fine: it is also how you will work on the FH compute servers, where there is no desktop either.
 
-- Background video: "What is a Virtual Machine (VM)? In 3 minutes" ([YouTube](https://www.youtube.com/watch?v=yIVXjl4SwVo))
-- Background video: "Bash in 100 Seconds" by Fireship ([YouTube](https://www.youtube.com/watch?v=I4EWvMFj37g))
+Additional videos:
+
+- "WSL Explained: Run Linux on Windows + Docker Like a Pro" by Techies Lounge 01/2026 ([YouTube](https://www.youtube.com/watch?v=wcXiZcpW5Gg))
+- "What Is The Windows Subsystem for Linux (WSL) For?!" by Michael Horn, 06/2025 ([YouTube](https://www.youtube.com/watch?v=EAROgwvOV4s)) – examples of use cases
 
 ## Requirements
 
@@ -40,8 +42,6 @@ What you *don't* get is a Linux desktop environment (no Xfce, no GNOME, no wallp
 Some possibly helpful YouTube videos:
 
 - "Install Windows Subsystem for Linux - WSL2 and Linux Ubuntu in Windows 11" by Aleksandar Haber PhD, 01/2025 ([YouTube](https://www.youtube.com/watch?v=1XuoUlaIEFo))
-- "What Is The Windows Subsystem for Linux (WSL) For?!" by 
-Michael Horn, 06/2025 ([YouTube](https://www.youtube.com/watch?v=EAROgwvOV4s)) – examples of use cases
 - "Running Linux on Windows with WSL 2" by Programming with Dr. Hayes, 01/2022 ([YouTube](https://www.youtube.com/watch?v=qPMsV1DSGJY)) – for additional details
 
 Open **PowerShell as administrator** (right-click the Start button → "Terminal (Admin)" or "Windows PowerShell (Admin)") and run:
@@ -51,6 +51,8 @@ wsl --install
 ```
 
 This one command enables the required Windows features, downloads the Linux kernel, sets WSL 2 as the default, and installs Ubuntu ([learn.microsoft.com](https://learn.microsoft.com/en-us/windows/wsl/install)). **Restart your computer** when prompted.
+
+You may have to run the command twice: the first run installs WSL itself, the second one downloads and installs Ubuntu. If WSL is installed afterwards but Ubuntu is still missing, see [Troubleshooting](#troubleshooting) below.
 
 After the restart, open Ubuntu from the Start menu (just type "Ubuntu"). On first launch it unpacks itself and then asks you to create a **username** and **password**:
 
@@ -128,8 +130,6 @@ Also see:
 
 With Linux in place, install **conda**, the package and environment manager we use throughout the curriculum. The instructions are the same for every platform and live on their own page: [Install Miniforge (conda)](install_conda.md).
 
-Two things specific to WSL:
-
 - Install it **inside WSL**, using the `x86_64` installer — not the Windows version of Miniforge, and not both.
 - Your environment will be called `bioinf`; the rest of this page assumes it is active.
 
@@ -190,6 +190,7 @@ Run these in **PowerShell**, not inside Linux:
 | Command | Meaning |
 | --- | --- |
 | `wsl` | Enter your default Linux distribution |
+| `wsl --status` | View your general WSL configuration |
 | `wsl --list --verbose` | List installed distributions and their WSL version |
 | `wsl --shutdown` | Stop all distributions (the standard fix when something misbehaves) |
 | `wsl --update` | Update the WSL platform itself |
@@ -209,6 +210,10 @@ And inside **Linux**:
 
 **"Please enable the Virtual Machine Platform Windows feature"** or an error mentioning virtualization
 : Virtualization is disabled in your BIOS/UEFI. Reboot into the firmware settings and enable it (it is called VT-x, Intel Virtualization Technology, AMD-V, or SVM Mode, depending on the manufacturer).
+: If virtualization is already enabled there, the Windows feature itself may be switched off instead — see the next entry.
+
+**WSL was installed, but Ubuntu was not**
+: Two Windows features have to be switched on. Press <kbd>Win</kbd>+<kbd>R</kbd>, type `optionalfeatures` and press <kbd>Enter</kbd> to open "Turn Windows features on or off" ("Windows-Features aktivieren oder deaktivieren"). Tick *Virtual Machine Platform* ("Plattform für virtuelle Computer") and *Windows Subsystem for Linux* ("Windows-Subsystem für Linux"), confirm, and reboot. Then run `wsl --install` again.
 
 **Everything feels slow**
 : Almost always this means you are working in `/mnt/c/...` instead of your Linux home directory. Run `pwd` to check where you are; if the path starts with `/mnt/`, move your files (see [above](#where-to-put-your-files)).

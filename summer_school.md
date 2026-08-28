@@ -107,3 +107,27 @@ By the end of our summer school sessions, you should have:
   - Notebook documents (or "notebooks") are text files containing both computer code (e.g., Python) and text. They are human-readable documents containing text and results (figures, tables, etc.), but also executable code that can be run to perform data analysis. Jupyter enables editing and running notebooks via a web browser. It can be run locally without internet access, or on a remote server and accessed through the internet. Jupyter also includes a text file editor and a built-in terminal.
   - You can also try JupyterLab online (on a remote server somewhere in the internet), including a very short tour: [jupyter.org/try](https://jupyter.org/try) → click "JupyterLab".
 - **Working knowledge of the Linux shell**: navigating the file system, inspecting and manipulating text files, installing software with the package manager, and understanding variables and the environment. This is the main goal, and the one that pays off soonest.
+
+## What is a server, anyway?
+
+Later, you will also get an account on a shared Linux server, and for some jobs it is the better tool.
+
+A server is a computer you use over the network instead of sitting in front of it. The plain way in is `ssh`: you get a shell, and from there it behaves like the Linux machine on your desk — same commands, same files, no windows. Servers often also run browser-based interfaces such as JupyterLab or RStudio Server, which give you an editor and a notebook or console on the same machine. (If you are wondering why it's called RStudio Server: The word "server" refers not only to a physical computer, but also to software running in the background that "client" software connects to; in this case, the client is your browser.) Both of these interfaces include a terminal, so the shell is never far away; the browser interfaces are just a convenience layer. The server stays on whether you are logged in or not, so a job you start on Friday is still running on Monday.
+
+The reason bioinformatics leans on servers is the data amount. A sequencing run produces files in the tens or hundreds of gigabytes; a genome assembly or a large alignment can want much more memory than a laptop has installed, and will fail otherwise. A server has the RAM, the cores, the disk, and a copy of the reference data everyone in the group would otherwise download separately. Several people use it at once, which is also why you share it politely.
+
+### Why set up a local environment when there is a server?
+
+It's still very convenient to have a development environment on your own machine, for several reasons.
+
+**You are allowed to break it.** On a shared machine you are a guest: no root, no system packages, no reboots. On your own VM you can install anything, misconfigure it, and reinstall from scratch in half an hour. Breaking things and repairing them is a large part of how you find out how something actually works.
+
+**Admin rights change your perspective.** Permissions, package management, mounting filesystems – these are abstract concepts until you are the person responsible for them.
+
+**It keeps working when the network does not.** Trains, conference wifi, maintenance windows, a VPN certificate that expires the morning of a deadline — none of these stop you if the work is on your own machine.
+
+**You keep it.** Your server account ends with the curriculum. The environment on your laptop does not, and neither does the knowledge of how you built it – next time it'll be easy for you to set it up, if you need it.
+
+**The loop is shorter.** Writing a script and running it against a small test file is quicker when the file, the editor and the interpreter are on the same machine.
+
+On the other hand, the server is the right place for data that does not fit on a laptop, for jobs that run for hours, for anything needing a lot of memory or many cores, and for shared reference datasets you should not be copying around. The realistic workflow is both: develop and debug locally against a small subset, then run the full analysis remotely.
