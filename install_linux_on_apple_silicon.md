@@ -151,22 +151,24 @@ UTM passes raw key codes (numeric values that correspond to physical keys on the
 The tables below describe key **positions**, since legends vary.
 
 ### English guest layout (`us`) — recommended
+{:.no_toc}
 
 | Character | Key |
 |---|---|
 | `` ` `` `~` | key below Esc (unshifted / shifted) |
-| `\` `\|` | key left of Enter, or above it on ANSI keyboards (unshifted / shifted) |
+| `\` `|` | key left of Enter, or above it on ANSI keyboards (unshifted / shifted) |
 | `[` `]` `{` `}` | two keys right of `P` |
 
 Everything is a plain or shifted keypress. If you don't need to type German text in the VM, choose this.
 
 ### German guest layout (`de`)
+{:.no_toc}
 
 On a Mac, the **right Option key acts as AltGr** in the guest (it sends the same code as a PC's AltGr key). There is no separate AltGr key on Apple hardware.
 
 | Character | Key |
 |---|---|
-| `\|` | right ⌥ + key left of `Z` |
+| `|` | right ⌥ + key left of `Z` |
 | `\` | right ⌥ + key right of `0` |
 | `~` | right ⌥ + key left of Enter |
 | `{` `}` | right ⌥ + `7` / `0` |
@@ -180,6 +182,7 @@ Also, `Y` and `Z` swap positions. They keys right of `L` produce `ö ä`, and th
 **German Mac hardware may swap `^` and `<`.** Apple's ISO layout differs from PC ISO here. If the key left of `1` produces `<` instead of `^`, switch the guest layout to German (Macintosh) in Settings → Keyboard.
 
 ### When a key doesn't do what you expect
+{:.no_toc}
 
 The `xev` tool tells you exactly what the guest thinks a key is. Install it with `sudo apt install x11-utils`. Run `xev -event keyboard` in a terminal, click the small window it opens, and press the key in question. Each press prints a line like `state 0x10, keycode ... (keysym ..., ...)` indicating the character the guest thinks that key produces. Add a modifier (Shift, right Option) and press again to see the other levels. This is the fastest way to identify a character when the keycaps don't match the guest layout.
 
