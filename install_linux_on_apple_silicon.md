@@ -146,11 +146,11 @@ Below are examples of problems I encountered with VMware Fusion, and how they we
 
 ## Keyboard cheat sheet
 
-UTM passes raw key codes (numeric values that correspond to physical keys on the keyboard) to the VM, so **the guest layout decides what each key does**. Set the guest layout during the Ubuntu installer ("Keyboard layout" step), or later under Settings → Keyboard. **Your macOS layout has no effect inside the VM**.
+UTM passes raw key codes (numeric values that correspond to physical keys on the keyboard) to the VM, so **the guest layout decides what each key does**. Set the guest layout during the Ubuntu installer ("Keyboard layout" step), or later under Settings → Keyboard. You can install multiple layouts and switch between them. **Your macOS layout has no effect inside the VM**.
 
 The tables below describe key **positions**, since legends vary.
 
-### English guest layout (`us`) — recommended
+### English guest layout (`us`)
 {:.no_toc}
 
 | Character | Key |
@@ -159,7 +159,7 @@ The tables below describe key **positions**, since legends vary.
 | `\` `|` | key left of Enter, or above it on ANSI keyboards (unshifted / shifted) |
 | `[` `]` `{` `}` | two keys right of `P` |
 
-Everything is a plain or shifted keypress. If you don't need to type German text in the VM, choose this.
+Everything is a plain or shifted keypress, which is convenient.
 
 ### German guest layout (`de`)
 {:.no_toc}
